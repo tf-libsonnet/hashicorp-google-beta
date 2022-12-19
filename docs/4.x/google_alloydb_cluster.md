@@ -81,9 +81,9 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `automated_backup_policy` (`list[obj]`): The automated backup policy for this cluster.
 
-If no policy is provided then the default policy will be used. The default policy takes one backup a day, has a backup window of 1 hour, and retains backups for 14 days. When `null`, the `automated_backup_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.new](#fn-google_alloydb_clusterautomated_backup_policynew) constructor.
-  - `initial_user` (`list[obj]`): Initial user to setup during cluster creation. When `null`, the `initial_user` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.initial_user.new](#fn-google_alloydb_clusterinitial_usernew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.timeouts.new](#fn-google_alloydb_clustertimeoutsnew) constructor.
+If no policy is provided then the default policy will be used. The default policy takes one backup a day, has a backup window of 1 hour, and retains backups for 14 days. When `null`, the `automated_backup_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.new](#fn-automated_backup_policynew) constructor.
+  - `initial_user` (`list[obj]`): Initial user to setup during cluster creation. When `null`, the `initial_user` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.initial_user.new](#fn-initial_usernew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -99,7 +99,7 @@ newAttrs()
 `google-beta.google_alloydb_cluster.newAttrs` constructs a new object with attributes and blocks configured for the `google_alloydb_cluster`
 Terraform resource.
 
-Unlike [google-beta.google_alloydb_cluster.new](#fn-google_alloydb_clusternew), this function will not inject the `resource`
+Unlike [google-beta.google_alloydb_cluster.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -117,9 +117,9 @@ injecting into a complete block.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `automated_backup_policy` (`list[obj]`): The automated backup policy for this cluster.
 
-If no policy is provided then the default policy will be used. The default policy takes one backup a day, has a backup window of 1 hour, and retains backups for 14 days. When `null`, the `automated_backup_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.new](#fn-google_alloydb_clusterautomated_backup_policynew) constructor.
-  - `initial_user` (`list[obj]`): Initial user to setup during cluster creation. When `null`, the `initial_user` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.initial_user.new](#fn-google_alloydb_clusterinitial_usernew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.timeouts.new](#fn-google_alloydb_clustertimeoutsnew) constructor.
+If no policy is provided then the default policy will be used. The default policy takes one backup a day, has a backup window of 1 hour, and retains backups for 14 days. When `null`, the `automated_backup_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.new](#fn-automated_backup_policynew) constructor.
+  - `initial_user` (`list[obj]`): Initial user to setup during cluster creation. When `null`, the `initial_user` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.initial_user.new](#fn-initial_usernew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_alloydb_cluster` resource into the root Terraform configuration.
@@ -356,9 +356,9 @@ A duration in seconds with up to nine fractional digits, terminated by &#39;s&#3
   - `enabled` (`bool`): Whether automated automated backups are enabled. When `null`, the `enabled` field will be omitted from the resulting object.
   - `labels` (`obj`): Labels to apply to backups created using this configuration. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the backup will be stored. Currently, the only supported option is to store the backup in the same region as the cluster. When `null`, the `location` field will be omitted from the resulting object.
-  - `quantity_based_retention` (`list[obj]`): Quantity-based Backup retention policy to retain recent backups. When `null`, the `quantity_based_retention` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.quantity_based_retention.new](#fn-automated_backup_policyquantity_based_retentionnew) constructor.
-  - `time_based_retention` (`list[obj]`): Time-based Backup retention policy. When `null`, the `time_based_retention` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.time_based_retention.new](#fn-automated_backup_policytime_based_retentionnew) constructor.
-  - `weekly_schedule` (`list[obj]`): Weekly schedule for the Backup. When `null`, the `weekly_schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.weekly_schedule.new](#fn-automated_backup_policyweekly_schedulenew) constructor.
+  - `quantity_based_retention` (`list[obj]`): Quantity-based Backup retention policy to retain recent backups. When `null`, the `quantity_based_retention` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.quantity_based_retention.new](#fn-quantity_based_retentionnew) constructor.
+  - `time_based_retention` (`list[obj]`): Time-based Backup retention policy. When `null`, the `time_based_retention` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.time_based_retention.new](#fn-time_based_retentionnew) constructor.
+  - `weekly_schedule` (`list[obj]`): Weekly schedule for the Backup. When `null`, the `weekly_schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.weekly_schedule.new](#fn-weekly_schedulenew) constructor.
 
 **Returns**:
   - An attribute object that represents the `automated_backup_policy` sub block.
@@ -429,7 +429,7 @@ Terraform sub block.
 
 **Args**:
   - `days_of_week` (`list`): The days of the week to perform a backup. At least one day of the week must be provided. Possible values: [&#34;MONDAY&#34;, &#34;TUESDAY&#34;, &#34;WEDNESDAY&#34;, &#34;THURSDAY&#34;, &#34;FRIDAY&#34;, &#34;SATURDAY&#34;, &#34;SUNDAY&#34;] When `null`, the `days_of_week` field will be omitted from the resulting object.
-  - `start_times` (`list[obj]`): The times during the day to start a backup. At least one start time must be provided. The start times are assumed to be in UTC and to be an exact hour (e.g., 04:00:00). When `null`, the `start_times` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.weekly_schedule.start_times.new](#fn-weekly_schedulestart_timesnew) constructor.
+  - `start_times` (`list[obj]`): The times during the day to start a backup. At least one start time must be provided. The start times are assumed to be in UTC and to be an exact hour (e.g., 04:00:00). When `null`, the `start_times` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_cluster.automated_backup_policy.weekly_schedule.start_times.new](#fn-automated_backup_policystart_timesnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `weekly_schedule` sub block.

@@ -63,9 +63,9 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `description` (`string`): The description of the response policy, such as &#39;My new response policy&#39;. When `null`, the `description` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `response_policy_name` (`string`): The user assigned name for this Response Policy, such as &#39;myresponsepolicy&#39;.
-  - `gke_clusters` (`list[obj]`): The list of Google Kubernetes Engine clusters that can see this zone. When `null`, the `gke_clusters` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.gke_clusters.new](#fn-google_dns_response_policygke_clustersnew) constructor.
-  - `networks` (`list[obj]`): The list of network names specifying networks to which this policy is applied. When `null`, the `networks` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.networks.new](#fn-google_dns_response_policynetworksnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.timeouts.new](#fn-google_dns_response_policytimeoutsnew) constructor.
+  - `gke_clusters` (`list[obj]`): The list of Google Kubernetes Engine clusters that can see this zone. When `null`, the `gke_clusters` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.gke_clusters.new](#fn-gke_clustersnew) constructor.
+  - `networks` (`list[obj]`): The list of network names specifying networks to which this policy is applied. When `null`, the `networks` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.networks.new](#fn-networksnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -81,7 +81,7 @@ newAttrs()
 `google-beta.google_dns_response_policy.newAttrs` constructs a new object with attributes and blocks configured for the `google_dns_response_policy`
 Terraform resource.
 
-Unlike [google-beta.google_dns_response_policy.new](#fn-google_dns_response_policynew), this function will not inject the `resource`
+Unlike [google-beta.google_dns_response_policy.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -92,9 +92,9 @@ injecting into a complete block.
   - `description` (`string`): The description of the response policy, such as &#39;My new response policy&#39;. When `null`, the `description` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `response_policy_name` (`string`): The user assigned name for this Response Policy, such as &#39;myresponsepolicy&#39;.
-  - `gke_clusters` (`list[obj]`): The list of Google Kubernetes Engine clusters that can see this zone. When `null`, the `gke_clusters` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.gke_clusters.new](#fn-google_dns_response_policygke_clustersnew) constructor.
-  - `networks` (`list[obj]`): The list of network names specifying networks to which this policy is applied. When `null`, the `networks` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.networks.new](#fn-google_dns_response_policynetworksnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.timeouts.new](#fn-google_dns_response_policytimeoutsnew) constructor.
+  - `gke_clusters` (`list[obj]`): The list of Google Kubernetes Engine clusters that can see this zone. When `null`, the `gke_clusters` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.gke_clusters.new](#fn-gke_clustersnew) constructor.
+  - `networks` (`list[obj]`): The list of network names specifying networks to which this policy is applied. When `null`, the `networks` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.networks.new](#fn-networksnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_dns_response_policy` resource into the root Terraform configuration.

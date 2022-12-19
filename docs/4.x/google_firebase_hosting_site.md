@@ -58,7 +58,7 @@ associated with the Hosting site. When `null`, the `app_id` field will be omitte
   - `site_id` (`string`): Required. Immutable. A globally unique identifier for the Hosting site. This identifier is
 used to construct the Firebase-provisioned subdomains for the site, so it must also be a valid
 domain name label. When `null`, the `site_id` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_hosting_site.timeouts.new](#fn-google_firebase_hosting_sitetimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_hosting_site.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -74,7 +74,7 @@ newAttrs()
 `google-beta.google_firebase_hosting_site.newAttrs` constructs a new object with attributes and blocks configured for the `google_firebase_hosting_site`
 Terraform resource.
 
-Unlike [google-beta.google_firebase_hosting_site.new](#fn-google_firebase_hosting_sitenew), this function will not inject the `resource`
+Unlike [google-beta.google_firebase_hosting_site.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -88,7 +88,7 @@ associated with the Hosting site. When `null`, the `app_id` field will be omitte
   - `site_id` (`string`): Required. Immutable. A globally unique identifier for the Hosting site. This identifier is
 used to construct the Firebase-provisioned subdomains for the site, so it must also be a valid
 domain name label. When `null`, the `site_id` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_hosting_site.timeouts.new](#fn-google_firebase_hosting_sitetimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_hosting_site.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_firebase_hosting_site` resource into the root Terraform configuration.

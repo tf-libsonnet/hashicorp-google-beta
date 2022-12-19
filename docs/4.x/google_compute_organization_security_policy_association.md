@@ -55,7 +55,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `attachment_id` (`string`): The resource that the security policy is attached to.
   - `name` (`string`): The name for an association.
   - `policy_id` (`string`): The security policy ID of the association.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_association.timeouts.new](#fn-google_compute_organization_security_policy_associationtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_association.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -71,7 +71,7 @@ newAttrs()
 `google-beta.google_compute_organization_security_policy_association.newAttrs` constructs a new object with attributes and blocks configured for the `google_compute_organization_security_policy_association`
 Terraform resource.
 
-Unlike [google-beta.google_compute_organization_security_policy_association.new](#fn-google_compute_organization_security_policy_associationnew), this function will not inject the `resource`
+Unlike [google-beta.google_compute_organization_security_policy_association.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -82,7 +82,7 @@ injecting into a complete block.
   - `attachment_id` (`string`): The resource that the security policy is attached to.
   - `name` (`string`): The name for an association.
   - `policy_id` (`string`): The security policy ID of the association.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_association.timeouts.new](#fn-google_compute_organization_security_policy_associationtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_association.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_compute_organization_security_policy_association` resource into the root Terraform configuration.

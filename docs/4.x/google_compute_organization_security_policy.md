@@ -60,7 +60,7 @@ Format: organizations/{organization_id} or folders/{folder_id}
   - `type` (`string`): The type indicates the intended use of the security policy.
 For organization security policies, the only supported type
 is &#34;FIREWALL&#34;. Default value: &#34;FIREWALL&#34; Possible values: [&#34;FIREWALL&#34;] When `null`, the `type` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy.timeouts.new](#fn-google_compute_organization_security_policytimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -76,7 +76,7 @@ newAttrs()
 `google-beta.google_compute_organization_security_policy.newAttrs` constructs a new object with attributes and blocks configured for the `google_compute_organization_security_policy`
 Terraform resource.
 
-Unlike [google-beta.google_compute_organization_security_policy.new](#fn-google_compute_organization_security_policynew), this function will not inject the `resource`
+Unlike [google-beta.google_compute_organization_security_policy.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -91,7 +91,7 @@ Format: organizations/{organization_id} or folders/{folder_id}
   - `type` (`string`): The type indicates the intended use of the security policy.
 For organization security policies, the only supported type
 is &#34;FIREWALL&#34;. Default value: &#34;FIREWALL&#34; Possible values: [&#34;FIREWALL&#34;] When `null`, the `type` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy.timeouts.new](#fn-google_compute_organization_security_policytimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_compute_organization_security_policy` resource into the root Terraform configuration.

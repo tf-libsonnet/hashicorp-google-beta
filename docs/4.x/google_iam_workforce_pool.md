@@ -70,7 +70,7 @@ A duration in seconds with up to nine fractional digits, ending with &#39;&#39;s
   - `workforce_pool_id` (`string`): The name of the pool. The ID must be a globally unique string of 6 to 63 lowercase letters,
 digits, or hyphens. It must start with a letter, and cannot have a trailing hyphen.
 The prefix &#39;gcp-&#39; is reserved for use by Google, and may not be specified.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool.timeouts.new](#fn-google_iam_workforce_pooltimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -86,7 +86,7 @@ newAttrs()
 `google-beta.google_iam_workforce_pool.newAttrs` constructs a new object with attributes and blocks configured for the `google_iam_workforce_pool`
 Terraform resource.
 
-Unlike [google-beta.google_iam_workforce_pool.new](#fn-google_iam_workforce_poolnew), this function will not inject the `resource`
+Unlike [google-beta.google_iam_workforce_pool.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -108,7 +108,7 @@ A duration in seconds with up to nine fractional digits, ending with &#39;&#39;s
   - `workforce_pool_id` (`string`): The name of the pool. The ID must be a globally unique string of 6 to 63 lowercase letters,
 digits, or hyphens. It must start with a letter, and cannot have a trailing hyphen.
 The prefix &#39;gcp-&#39; is reserved for use by Google, and may not be specified.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool.timeouts.new](#fn-google_iam_workforce_pooltimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_iam_workforce_pool` resource into the root Terraform configuration.

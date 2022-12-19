@@ -88,8 +88,8 @@ define one or more of the policies for an autoscaler: cpuUtilization,
 customMetricUtilizations, and loadBalancingUtilization.
 
 If none of these are specified, the default will be to autoscale based
-on cpuUtilization to 0.6 or 60%. When `null`, the `autoscaling_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.new](#fn-google_compute_region_autoscalerautoscaling_policynew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.timeouts.new](#fn-google_compute_region_autoscalertimeoutsnew) constructor.
+on cpuUtilization to 0.6 or 60%. When `null`, the `autoscaling_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.new](#fn-autoscaling_policynew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -105,7 +105,7 @@ newAttrs()
 `google-beta.google_compute_region_autoscaler.newAttrs` constructs a new object with attributes and blocks configured for the `google_compute_region_autoscaler`
 Terraform resource.
 
-Unlike [google-beta.google_compute_region_autoscaler.new](#fn-google_compute_region_autoscalernew), this function will not inject the `resource`
+Unlike [google-beta.google_compute_region_autoscaler.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -127,8 +127,8 @@ define one or more of the policies for an autoscaler: cpuUtilization,
 customMetricUtilizations, and loadBalancingUtilization.
 
 If none of these are specified, the default will be to autoscale based
-on cpuUtilization to 0.6 or 60%. When `null`, the `autoscaling_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.new](#fn-google_compute_region_autoscalerautoscaling_policynew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.timeouts.new](#fn-google_compute_region_autoscalertimeoutsnew) constructor.
+on cpuUtilization to 0.6 or 60%. When `null`, the `autoscaling_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.new](#fn-autoscaling_policynew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_compute_region_autoscaler` resource into the root Terraform configuration.
@@ -325,14 +325,14 @@ allowed.
   - `mode` (`string`): Defines operating mode for this policy. Default value: &#34;ON&#34; Possible values: [&#34;OFF&#34;, &#34;ONLY_UP&#34;, &#34;ON&#34;] When `null`, the `mode` field will be omitted from the resulting object.
   - `cpu_utilization` (`list[obj]`): Defines the CPU utilization policy that allows the autoscaler to
 scale based on the average CPU utilization of a managed instance
-group. When `null`, the `cpu_utilization` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.cpu_utilization.new](#fn-autoscaling_policycpu_utilizationnew) constructor.
-  - `load_balancing_utilization` (`list[obj]`): Configuration parameters of autoscaling based on a load balancer. When `null`, the `load_balancing_utilization` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.load_balancing_utilization.new](#fn-autoscaling_policyload_balancing_utilizationnew) constructor.
-  - `metric` (`list[obj]`): Configuration parameters of autoscaling based on a custom metric. When `null`, the `metric` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.metric.new](#fn-autoscaling_policymetricnew) constructor.
+group. When `null`, the `cpu_utilization` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.cpu_utilization.new](#fn-cpu_utilizationnew) constructor.
+  - `load_balancing_utilization` (`list[obj]`): Configuration parameters of autoscaling based on a load balancer. When `null`, the `load_balancing_utilization` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.load_balancing_utilization.new](#fn-load_balancing_utilizationnew) constructor.
+  - `metric` (`list[obj]`): Configuration parameters of autoscaling based on a custom metric. When `null`, the `metric` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.metric.new](#fn-metricnew) constructor.
   - `scale_down_control` (`list[obj]`): Defines scale down controls to reduce the risk of response latency
-and outages due to abrupt scale-in events When `null`, the `scale_down_control` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.scale_down_control.new](#fn-autoscaling_policyscale_down_controlnew) constructor.
+and outages due to abrupt scale-in events When `null`, the `scale_down_control` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.scale_down_control.new](#fn-scale_down_controlnew) constructor.
   - `scale_in_control` (`list[obj]`): Defines scale in controls to reduce the risk of response latency
-and outages due to abrupt scale-in events When `null`, the `scale_in_control` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.scale_in_control.new](#fn-autoscaling_policyscale_in_controlnew) constructor.
-  - `scaling_schedules` (`list[obj]`): Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler and they can overlap. When `null`, the `scaling_schedules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.scaling_schedules.new](#fn-autoscaling_policyscaling_schedulesnew) constructor.
+and outages due to abrupt scale-in events When `null`, the `scale_in_control` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.scale_in_control.new](#fn-scale_in_controlnew) constructor.
+  - `scaling_schedules` (`list[obj]`): Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler and they can overlap. When `null`, the `scaling_schedules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.scaling_schedules.new](#fn-scaling_schedulesnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `autoscaling_policy` sub block.
@@ -507,7 +507,7 @@ Terraform sub block.
 **Args**:
   - `time_window_sec` (`number`): How long back autoscaling should look when computing recommendations
 to include directives regarding slower scale down, as described above. When `null`, the `time_window_sec` field will be omitted from the resulting object.
-  - `max_scaled_down_replicas` (`list[obj]`): A nested object resource When `null`, the `max_scaled_down_replicas` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.scale_down_control.max_scaled_down_replicas.new](#fn-scale_down_controlmax_scaled_down_replicasnew) constructor.
+  - `max_scaled_down_replicas` (`list[obj]`): A nested object resource When `null`, the `max_scaled_down_replicas` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.scale_down_control.max_scaled_down_replicas.new](#fn-autoscaling_policymax_scaled_down_replicasnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `scale_down_control` sub block.
@@ -558,7 +558,7 @@ Terraform sub block.
 **Args**:
   - `time_window_sec` (`number`): How long back autoscaling should look when computing recommendations
 to include directives regarding slower scale down, as described above. When `null`, the `time_window_sec` field will be omitted from the resulting object.
-  - `max_scaled_in_replicas` (`list[obj]`): A nested object resource When `null`, the `max_scaled_in_replicas` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.scale_in_control.max_scaled_in_replicas.new](#fn-scale_in_controlmax_scaled_in_replicasnew) constructor.
+  - `max_scaled_in_replicas` (`list[obj]`): A nested object resource When `null`, the `max_scaled_in_replicas` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_autoscaler.autoscaling_policy.scale_in_control.max_scaled_in_replicas.new](#fn-autoscaling_policymax_scaled_in_replicasnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `scale_in_control` sub block.

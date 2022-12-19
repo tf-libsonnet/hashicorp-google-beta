@@ -76,9 +76,9 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `instance_id` (`string`): The ID of the alloydb instance.
   - `instance_type` (`string`): The type of the instance. Possible values: [&#34;PRIMARY&#34;, &#34;READ_POOL&#34;]
   - `labels` (`obj`): User-defined labels for the alloydb instance. When `null`, the `labels` field will be omitted from the resulting object.
-  - `machine_config` (`list[obj]`): Configurations for the machines that host the underlying database engine. When `null`, the `machine_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.machine_config.new](#fn-google_alloydb_instancemachine_confignew) constructor.
-  - `read_pool_config` (`list[obj]`): Read pool specific config. When `null`, the `read_pool_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.read_pool_config.new](#fn-google_alloydb_instanceread_pool_confignew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.timeouts.new](#fn-google_alloydb_instancetimeoutsnew) constructor.
+  - `machine_config` (`list[obj]`): Configurations for the machines that host the underlying database engine. When `null`, the `machine_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.machine_config.new](#fn-machine_confignew) constructor.
+  - `read_pool_config` (`list[obj]`): Read pool specific config. When `null`, the `read_pool_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.read_pool_config.new](#fn-read_pool_confignew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -94,7 +94,7 @@ newAttrs()
 `google-beta.google_alloydb_instance.newAttrs` constructs a new object with attributes and blocks configured for the `google_alloydb_instance`
 Terraform resource.
 
-Unlike [google-beta.google_alloydb_instance.new](#fn-google_alloydb_instancenew), this function will not inject the `resource`
+Unlike [google-beta.google_alloydb_instance.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -112,9 +112,9 @@ injecting into a complete block.
   - `instance_id` (`string`): The ID of the alloydb instance.
   - `instance_type` (`string`): The type of the instance. Possible values: [&#34;PRIMARY&#34;, &#34;READ_POOL&#34;]
   - `labels` (`obj`): User-defined labels for the alloydb instance. When `null`, the `labels` field will be omitted from the resulting object.
-  - `machine_config` (`list[obj]`): Configurations for the machines that host the underlying database engine. When `null`, the `machine_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.machine_config.new](#fn-google_alloydb_instancemachine_confignew) constructor.
-  - `read_pool_config` (`list[obj]`): Read pool specific config. When `null`, the `read_pool_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.read_pool_config.new](#fn-google_alloydb_instanceread_pool_confignew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.timeouts.new](#fn-google_alloydb_instancetimeoutsnew) constructor.
+  - `machine_config` (`list[obj]`): Configurations for the machines that host the underlying database engine. When `null`, the `machine_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.machine_config.new](#fn-machine_confignew) constructor.
+  - `read_pool_config` (`list[obj]`): Read pool specific config. When `null`, the `read_pool_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.read_pool_config.new](#fn-read_pool_confignew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_alloydb_instance.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_alloydb_instance` resource into the root Terraform configuration.

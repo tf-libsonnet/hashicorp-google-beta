@@ -80,9 +80,9 @@ Defaults to 15. When `null`, the `max_qps` field will be omitted from the result
   - `target_platforms` (`list`): Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be used as a default. Possible values: [&#34;APP_ENGINE&#34;, &#34;COMPUTE&#34;] When `null`, the `target_platforms` field will be omitted from the resulting object.
   - `user_agent` (`string`): Type of the user agents used for scanning Default value: &#34;CHROME_LINUX&#34; Possible values: [&#34;USER_AGENT_UNSPECIFIED&#34;, &#34;CHROME_LINUX&#34;, &#34;CHROME_ANDROID&#34;, &#34;SAFARI_IPHONE&#34;] When `null`, the `user_agent` field will be omitted from the resulting object.
   - `authentication` (`list[obj]`): The authentication configuration.
-If specified, service will use the authentication configuration during scanning. When `null`, the `authentication` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.new](#fn-google_security_scanner_scan_configauthenticationnew) constructor.
-  - `schedule` (`list[obj]`): The schedule of the ScanConfig When `null`, the `schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.schedule.new](#fn-google_security_scanner_scan_configschedulenew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.timeouts.new](#fn-google_security_scanner_scan_configtimeoutsnew) constructor.
+If specified, service will use the authentication configuration during scanning. When `null`, the `authentication` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.new](#fn-authenticationnew) constructor.
+  - `schedule` (`list[obj]`): The schedule of the ScanConfig When `null`, the `schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.schedule.new](#fn-schedulenew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -98,7 +98,7 @@ newAttrs()
 `google-beta.google_security_scanner_scan_config.newAttrs` constructs a new object with attributes and blocks configured for the `google_security_scanner_scan_config`
 Terraform resource.
 
-Unlike [google-beta.google_security_scanner_scan_config.new](#fn-google_security_scanner_scan_confignew), this function will not inject the `resource`
+Unlike [google-beta.google_security_scanner_scan_config.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -117,9 +117,9 @@ Defaults to 15. When `null`, the `max_qps` field will be omitted from the result
   - `target_platforms` (`list`): Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be used as a default. Possible values: [&#34;APP_ENGINE&#34;, &#34;COMPUTE&#34;] When `null`, the `target_platforms` field will be omitted from the resulting object.
   - `user_agent` (`string`): Type of the user agents used for scanning Default value: &#34;CHROME_LINUX&#34; Possible values: [&#34;USER_AGENT_UNSPECIFIED&#34;, &#34;CHROME_LINUX&#34;, &#34;CHROME_ANDROID&#34;, &#34;SAFARI_IPHONE&#34;] When `null`, the `user_agent` field will be omitted from the resulting object.
   - `authentication` (`list[obj]`): The authentication configuration.
-If specified, service will use the authentication configuration during scanning. When `null`, the `authentication` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.new](#fn-google_security_scanner_scan_configauthenticationnew) constructor.
-  - `schedule` (`list[obj]`): The schedule of the ScanConfig When `null`, the `schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.schedule.new](#fn-google_security_scanner_scan_configschedulenew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.timeouts.new](#fn-google_security_scanner_scan_configtimeoutsnew) constructor.
+If specified, service will use the authentication configuration during scanning. When `null`, the `authentication` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.new](#fn-authenticationnew) constructor.
+  - `schedule` (`list[obj]`): The schedule of the ScanConfig When `null`, the `schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.schedule.new](#fn-schedulenew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_security_scanner_scan_config` resource into the root Terraform configuration.
@@ -380,8 +380,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `custom_account` (`list[obj]`): Describes authentication configuration that uses a custom account. When `null`, the `custom_account` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.custom_account.new](#fn-authenticationcustom_accountnew) constructor.
-  - `google_account` (`list[obj]`): Describes authentication configuration that uses a Google account. When `null`, the `google_account` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.google_account.new](#fn-authenticationgoogle_accountnew) constructor.
+  - `custom_account` (`list[obj]`): Describes authentication configuration that uses a custom account. When `null`, the `custom_account` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.custom_account.new](#fn-custom_accountnew) constructor.
+  - `google_account` (`list[obj]`): Describes authentication configuration that uses a Google account. When `null`, the `google_account` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.google_account.new](#fn-google_accountnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `authentication` sub block.

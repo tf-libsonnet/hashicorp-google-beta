@@ -88,10 +88,10 @@ Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#
   - `location` (`string`): The region of the Backup Plan.
   - `name` (`string`): The full name of the BackupPlan Resource.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
-  - `backup_config` (`list[obj]`): Defines the configuration of Backups created via this BackupPlan. When `null`, the `backup_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.new](#fn-google_gke_backup_backup_planbackup_confignew) constructor.
-  - `backup_schedule` (`list[obj]`): Defines a schedule for automatic Backup creation via this BackupPlan. When `null`, the `backup_schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_schedule.new](#fn-google_gke_backup_backup_planbackup_schedulenew) constructor.
-  - `retention_policy` (`list[obj]`): RetentionPolicy governs lifecycle of Backups created under this plan. When `null`, the `retention_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.retention_policy.new](#fn-google_gke_backup_backup_planretention_policynew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.timeouts.new](#fn-google_gke_backup_backup_plantimeoutsnew) constructor.
+  - `backup_config` (`list[obj]`): Defines the configuration of Backups created via this BackupPlan. When `null`, the `backup_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.new](#fn-backup_confignew) constructor.
+  - `backup_schedule` (`list[obj]`): Defines a schedule for automatic Backup creation via this BackupPlan. When `null`, the `backup_schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_schedule.new](#fn-backup_schedulenew) constructor.
+  - `retention_policy` (`list[obj]`): RetentionPolicy governs lifecycle of Backups created under this plan. When `null`, the `retention_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.retention_policy.new](#fn-retention_policynew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -107,7 +107,7 @@ newAttrs()
 `google-beta.google_gke_backup_backup_plan.newAttrs` constructs a new object with attributes and blocks configured for the `google_gke_backup_backup_plan`
 Terraform resource.
 
-Unlike [google-beta.google_gke_backup_backup_plan.new](#fn-google_gke_backup_backup_plannew), this function will not inject the `resource`
+Unlike [google-beta.google_gke_backup_backup_plan.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -127,10 +127,10 @@ Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#
   - `location` (`string`): The region of the Backup Plan.
   - `name` (`string`): The full name of the BackupPlan Resource.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
-  - `backup_config` (`list[obj]`): Defines the configuration of Backups created via this BackupPlan. When `null`, the `backup_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.new](#fn-google_gke_backup_backup_planbackup_confignew) constructor.
-  - `backup_schedule` (`list[obj]`): Defines a schedule for automatic Backup creation via this BackupPlan. When `null`, the `backup_schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_schedule.new](#fn-google_gke_backup_backup_planbackup_schedulenew) constructor.
-  - `retention_policy` (`list[obj]`): RetentionPolicy governs lifecycle of Backups created under this plan. When `null`, the `retention_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.retention_policy.new](#fn-google_gke_backup_backup_planretention_policynew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.timeouts.new](#fn-google_gke_backup_backup_plantimeoutsnew) constructor.
+  - `backup_config` (`list[obj]`): Defines the configuration of Backups created via this BackupPlan. When `null`, the `backup_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.new](#fn-backup_confignew) constructor.
+  - `backup_schedule` (`list[obj]`): Defines a schedule for automatic Backup creation via this BackupPlan. When `null`, the `backup_schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_schedule.new](#fn-backup_schedulenew) constructor.
+  - `retention_policy` (`list[obj]`): RetentionPolicy governs lifecycle of Backups created under this plan. When `null`, the `retention_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.retention_policy.new](#fn-retention_policynew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_gke_backup_backup_plan` resource into the root Terraform configuration.
@@ -418,9 +418,9 @@ when they fall into the scope of Backups. When `null`, the `include_secrets` fie
   - `include_volume_data` (`bool`): This flag specifies whether volume data should be backed up when PVCs are
 included in the scope of a Backup. When `null`, the `include_volume_data` field will be omitted from the resulting object.
   - `encryption_key` (`list[obj]`): This defines a customer managed encryption key that will be used to encrypt the &#34;config&#34;
-portion (the Kubernetes resources) of Backups created via this plan. When `null`, the `encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.encryption_key.new](#fn-backup_configencryption_keynew) constructor.
-  - `selected_applications` (`list[obj]`): A list of namespaced Kubernetes Resources. When `null`, the `selected_applications` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_applications.new](#fn-backup_configselected_applicationsnew) constructor.
-  - `selected_namespaces` (`list[obj]`): If set, include just the resources in the listed namespaces. When `null`, the `selected_namespaces` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_namespaces.new](#fn-backup_configselected_namespacesnew) constructor.
+portion (the Kubernetes resources) of Backups created via this plan. When `null`, the `encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.encryption_key.new](#fn-encryption_keynew) constructor.
+  - `selected_applications` (`list[obj]`): A list of namespaced Kubernetes Resources. When `null`, the `selected_applications` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_applications.new](#fn-selected_applicationsnew) constructor.
+  - `selected_namespaces` (`list[obj]`): If set, include just the resources in the listed namespaces. When `null`, the `selected_namespaces` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_namespaces.new](#fn-selected_namespacesnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `backup_config` sub block.
@@ -466,7 +466,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `namespaced_names` (`list[obj]`): A list of namespaced Kubernetes resources. When `null`, the `namespaced_names` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_applications.namespaced_names.new](#fn-selected_applicationsnamespaced_namesnew) constructor.
+  - `namespaced_names` (`list[obj]`): A list of namespaced Kubernetes resources. When `null`, the `namespaced_names` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_applications.namespaced_names.new](#fn-backup_confignamespaced_namesnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `selected_applications` sub block.

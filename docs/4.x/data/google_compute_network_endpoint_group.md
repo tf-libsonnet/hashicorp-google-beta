@@ -74,7 +74,7 @@ newAttrs()
 `google-beta.data.google_compute_network_endpoint_group.newAttrs` constructs a new object with attributes and blocks configured for the `google_compute_network_endpoint_group`
 Terraform data source.
 
-Unlike [google-beta.data.google_compute_network_endpoint_group.new](#fn-google_compute_network_endpoint_groupnew), this function will not inject the `data source`
+Unlike [google-beta.data.google_compute_network_endpoint_group.new](#fn-new), this function will not inject the `data source`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
 

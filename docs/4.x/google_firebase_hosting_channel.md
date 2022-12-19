@@ -66,7 +66,7 @@ purposes. Must be a number between 1-100. Defaults to 10 for new channels. When 
   - `ttl` (`string`): Input only. A time-to-live for this channel. Sets &#39;expire_time&#39; to the provided
 duration past the time of the request. A duration in seconds with up to nine fractional
 digits, terminated by &#39;s&#39;. Example: &#34;86400s&#34; (one day). When `null`, the `ttl` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_hosting_channel.timeouts.new](#fn-google_firebase_hosting_channeltimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_hosting_channel.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -82,7 +82,7 @@ newAttrs()
 `google-beta.google_firebase_hosting_channel.newAttrs` constructs a new object with attributes and blocks configured for the `google_firebase_hosting_channel`
 Terraform resource.
 
-Unlike [google-beta.google_firebase_hosting_channel.new](#fn-google_firebase_hosting_channelnew), this function will not inject the `resource`
+Unlike [google-beta.google_firebase_hosting_channel.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -101,7 +101,7 @@ purposes. Must be a number between 1-100. Defaults to 10 for new channels. When 
   - `ttl` (`string`): Input only. A time-to-live for this channel. Sets &#39;expire_time&#39; to the provided
 duration past the time of the request. A duration in seconds with up to nine fractional
 digits, terminated by &#39;s&#39;. Example: &#34;86400s&#34; (one day). When `null`, the `ttl` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_hosting_channel.timeouts.new](#fn-google_firebase_hosting_channeltimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_hosting_channel.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_firebase_hosting_channel` resource into the root Terraform configuration.

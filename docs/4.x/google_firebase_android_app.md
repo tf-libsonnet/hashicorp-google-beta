@@ -60,7 +60,7 @@ serving traffic. Set to &#39;DELETE&#39; to delete the AndroidApp. Default to &#
   - `package_name` (`string`): Immutable. The canonical package name of the Android app as would appear in the Google Play
 Developer Console. When `null`, the `package_name` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_android_app.timeouts.new](#fn-google_firebase_android_apptimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_android_app.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -76,7 +76,7 @@ newAttrs()
 `google-beta.google_firebase_android_app.newAttrs` constructs a new object with attributes and blocks configured for the `google_firebase_android_app`
 Terraform resource.
 
-Unlike [google-beta.google_firebase_android_app.new](#fn-google_firebase_android_appnew), this function will not inject the `resource`
+Unlike [google-beta.google_firebase_android_app.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -91,7 +91,7 @@ serving traffic. Set to &#39;DELETE&#39; to delete the AndroidApp. Default to &#
   - `package_name` (`string`): Immutable. The canonical package name of the Android app as would appear in the Google Play
 Developer Console. When `null`, the `package_name` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_android_app.timeouts.new](#fn-google_firebase_android_apptimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_android_app.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_firebase_android_app` resource into the root Terraform configuration.
