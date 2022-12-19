@@ -127,7 +127,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 * Must be between 1-63 characters.
 * Must end with a number or a letter.
 * Must be unique within the project.
-  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `assignment` (`list[obj]`): Specifies the VM instances that are assigned to this policy. This allows you to target sets
 or groups of VM instances by different parameters such as labels, names, OS, or zones.
 If left empty, all VM instances underneath this policy are targeted.
@@ -140,7 +140,7 @@ This is done before any other configs are applied so they can use these repos.
 Package repositories are only configured if the corresponding package manager(s) are available. When `null`, the `package_repositories` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_os_config_guest_policies.package_repositories.new](#fn-package_repositoriesnew) constructor.
   - `packages` (`list[obj]`): The software packages to be managed by this policy. When `null`, the `packages` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_os_config_guest_policies.packages.new](#fn-packagesnew) constructor.
   - `recipes` (`list[obj]`): A list of Recipes to install on the VM instance. When `null`, the `recipes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_os_config_guest_policies.recipes.new](#fn-recipesnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_os_config_guest_policies.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_os_config_guest_policies.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -172,7 +172,7 @@ injecting into a complete block.
 * Must be between 1-63 characters.
 * Must end with a number or a letter.
 * Must be unique within the project.
-  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `assignment` (`list[obj]`): Specifies the VM instances that are assigned to this policy. This allows you to target sets
 or groups of VM instances by different parameters such as labels, names, OS, or zones.
 If left empty, all VM instances underneath this policy are targeted.
@@ -185,7 +185,7 @@ This is done before any other configs are applied so they can use these repos.
 Package repositories are only configured if the corresponding package manager(s) are available. When `null`, the `package_repositories` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_os_config_guest_policies.package_repositories.new](#fn-package_repositoriesnew) constructor.
   - `packages` (`list[obj]`): The software packages to be managed by this policy. When `null`, the `packages` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_os_config_guest_policies.packages.new](#fn-packagesnew) constructor.
   - `recipes` (`list[obj]`): A list of Recipes to install on the VM instance. When `null`, the `recipes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_os_config_guest_policies.recipes.new](#fn-recipesnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_os_config_guest_policies.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_os_config_guest_policies.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_os_config_guest_policies` resource into the root Terraform configuration.
@@ -1238,9 +1238,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `create` (`string`):  When `null`, the `create` field will be omitted from the resulting object.
-  - `delete` (`string`):  When `null`, the `delete` field will be omitted from the resulting object.
-  - `update` (`string`):  When `null`, the `update` field will be omitted from the resulting object.
+  - `create` (`string`): Set the `create` field on the resulting object. When `null`, the `create` field will be omitted from the resulting object.
+  - `delete` (`string`): Set the `delete` field on the resulting object. When `null`, the `delete` field will be omitted from the resulting object.
+  - `update` (`string`): Set the `update` field on the resulting object. When `null`, the `update` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.

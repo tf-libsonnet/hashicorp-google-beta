@@ -53,8 +53,8 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `name` (`string`): The name of the variable to manage. Note that variable names can be hierarchical using slashes (e.g. &#34;prod-variables/hostname&#34;).
   - `parent` (`string`): The name of the RuntimeConfig resource containing this variable.
   - `project` (`string`): The ID of the project in which the resource belongs. If it is not provided, the provider project is used. When `null`, the `project` field will be omitted from the resulting object.
-  - `text` (`string`):  When `null`, the `text` field will be omitted from the resulting object.
-  - `value` (`string`):  When `null`, the `value` field will be omitted from the resulting object.
+  - `text` (`string`): Set the `text` field on the resulting resource block. When `null`, the `text` field will be omitted from the resulting object.
+  - `value` (`string`): Set the `value` field on the resulting resource block. When `null`, the `value` field will be omitted from the resulting object.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -81,8 +81,8 @@ injecting into a complete block.
   - `name` (`string`): The name of the variable to manage. Note that variable names can be hierarchical using slashes (e.g. &#34;prod-variables/hostname&#34;).
   - `parent` (`string`): The name of the RuntimeConfig resource containing this variable.
   - `project` (`string`): The ID of the project in which the resource belongs. If it is not provided, the provider project is used. When `null`, the `project` field will be omitted from the resulting object.
-  - `text` (`string`):  When `null`, the `text` field will be omitted from the resulting object.
-  - `value` (`string`):  When `null`, the `value` field will be omitted from the resulting object.
+  - `text` (`string`): Set the `text` field on the resulting object. When `null`, the `text` field will be omitted from the resulting object.
+  - `value` (`string`): Set the `value` field on the resulting object. When `null`, the `value` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_runtimeconfig_variable` resource into the root Terraform configuration.

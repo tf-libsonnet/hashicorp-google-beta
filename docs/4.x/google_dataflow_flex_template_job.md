@@ -53,12 +53,12 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
-  - `container_spec_gcs_path` (`string`): 
-  - `labels` (`obj`):  When `null`, the `labels` field will be omitted from the resulting object.
-  - `name` (`string`): 
-  - `on_delete` (`string`):  When `null`, the `on_delete` field will be omitted from the resulting object.
-  - `parameters` (`obj`):  When `null`, the `parameters` field will be omitted from the resulting object.
-  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
+  - `container_spec_gcs_path` (`string`): Set the `container_spec_gcs_path` field on the resulting resource block.
+  - `labels` (`obj`): Set the `labels` field on the resulting resource block. When `null`, the `labels` field will be omitted from the resulting object.
+  - `name` (`string`): Set the `name` field on the resulting resource block.
+  - `on_delete` (`string`): Set the `on_delete` field on the resulting resource block. When `null`, the `on_delete` field will be omitted from the resulting object.
+  - `parameters` (`obj`): Set the `parameters` field on the resulting resource block. When `null`, the `parameters` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): The region in which the created job should run. When `null`, the `region` field will be omitted from the resulting object.
   - `skip_wait_on_job_termination` (`bool`): If true, treat DRAINING and CANCELLING as terminal job states and do not wait for further changes before removing from terraform state and moving on. WARNING: this will lead to job name conflicts if you do not ensure that the job names are different, e.g. by embedding a release ID or by using a random_id. When `null`, the `skip_wait_on_job_termination` field will be omitted from the resulting object.
 
@@ -84,12 +84,12 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `container_spec_gcs_path` (`string`): 
-  - `labels` (`obj`):  When `null`, the `labels` field will be omitted from the resulting object.
-  - `name` (`string`): 
-  - `on_delete` (`string`):  When `null`, the `on_delete` field will be omitted from the resulting object.
-  - `parameters` (`obj`):  When `null`, the `parameters` field will be omitted from the resulting object.
-  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
+  - `container_spec_gcs_path` (`string`): Set the `container_spec_gcs_path` field on the resulting object.
+  - `labels` (`obj`): Set the `labels` field on the resulting object. When `null`, the `labels` field will be omitted from the resulting object.
+  - `name` (`string`): Set the `name` field on the resulting object.
+  - `on_delete` (`string`): Set the `on_delete` field on the resulting object. When `null`, the `on_delete` field will be omitted from the resulting object.
+  - `parameters` (`obj`): Set the `parameters` field on the resulting object. When `null`, the `parameters` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): The region in which the created job should run. When `null`, the `region` field will be omitted from the resulting object.
   - `skip_wait_on_job_termination` (`bool`): If true, treat DRAINING and CANCELLING as terminal job states and do not wait for further changes before removing from terraform state and moving on. WARNING: this will lead to job name conflicts if you do not ensure that the job names are different, e.g. by embedding a release ID or by using a random_id. When `null`, the `skip_wait_on_job_termination` field will be omitted from the resulting object.
 

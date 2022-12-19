@@ -48,7 +48,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `dataSrcLabel` (`string`): The name label of the block.
-  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting data source block. When `null`, the `project` field will be omitted from the resulting object.
   - `workload_identity_pool_id` (`string`): The ID used for the pool, which is the final component of the pool resource name. This
 value should be 4-32 characters, and may contain the characters [a-z0-9-]. The prefix
 &#39;gcp-&#39; is reserved for use by Google, and may not be specified.
@@ -78,7 +78,7 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `workload_identity_pool_id` (`string`): The ID used for the pool, which is the final component of the pool resource name. This
 value should be 4-32 characters, and may contain the characters [a-z0-9-]. The prefix
 &#39;gcp-&#39; is reserved for use by Google, and may not be specified.

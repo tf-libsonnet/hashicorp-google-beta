@@ -75,14 +75,14 @@ https://cloud.google.com/security-scanner/docs/excluded-urls When `null`, the `b
   - `export_to_security_command_center` (`string`): Controls export of scan configurations and results to Cloud Security Command Center. Default value: &#34;ENABLED&#34; Possible values: [&#34;ENABLED&#34;, &#34;DISABLED&#34;] When `null`, the `export_to_security_command_center` field will be omitted from the resulting object.
   - `max_qps` (`number`): The maximum QPS during scanning. A valid value ranges from 5 to 20 inclusively.
 Defaults to 15. When `null`, the `max_qps` field will be omitted from the resulting object.
-  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `starting_urls` (`list`): The starting URLs from which the scanner finds site pages.
   - `target_platforms` (`list`): Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be used as a default. Possible values: [&#34;APP_ENGINE&#34;, &#34;COMPUTE&#34;] When `null`, the `target_platforms` field will be omitted from the resulting object.
   - `user_agent` (`string`): Type of the user agents used for scanning Default value: &#34;CHROME_LINUX&#34; Possible values: [&#34;USER_AGENT_UNSPECIFIED&#34;, &#34;CHROME_LINUX&#34;, &#34;CHROME_ANDROID&#34;, &#34;SAFARI_IPHONE&#34;] When `null`, the `user_agent` field will be omitted from the resulting object.
   - `authentication` (`list[obj]`): The authentication configuration.
 If specified, service will use the authentication configuration during scanning. When `null`, the `authentication` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.new](#fn-authenticationnew) constructor.
   - `schedule` (`list[obj]`): The schedule of the ScanConfig When `null`, the `schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.schedule.new](#fn-schedulenew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -112,14 +112,14 @@ https://cloud.google.com/security-scanner/docs/excluded-urls When `null`, the `b
   - `export_to_security_command_center` (`string`): Controls export of scan configurations and results to Cloud Security Command Center. Default value: &#34;ENABLED&#34; Possible values: [&#34;ENABLED&#34;, &#34;DISABLED&#34;] When `null`, the `export_to_security_command_center` field will be omitted from the resulting object.
   - `max_qps` (`number`): The maximum QPS during scanning. A valid value ranges from 5 to 20 inclusively.
 Defaults to 15. When `null`, the `max_qps` field will be omitted from the resulting object.
-  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `starting_urls` (`list`): The starting URLs from which the scanner finds site pages.
   - `target_platforms` (`list`): Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be used as a default. Possible values: [&#34;APP_ENGINE&#34;, &#34;COMPUTE&#34;] When `null`, the `target_platforms` field will be omitted from the resulting object.
   - `user_agent` (`string`): Type of the user agents used for scanning Default value: &#34;CHROME_LINUX&#34; Possible values: [&#34;USER_AGENT_UNSPECIFIED&#34;, &#34;CHROME_LINUX&#34;, &#34;CHROME_ANDROID&#34;, &#34;SAFARI_IPHONE&#34;] When `null`, the `user_agent` field will be omitted from the resulting object.
   - `authentication` (`list[obj]`): The authentication configuration.
 If specified, service will use the authentication configuration during scanning. When `null`, the `authentication` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.new](#fn-authenticationnew) constructor.
   - `schedule` (`list[obj]`): The schedule of the ScanConfig When `null`, the `schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.schedule.new](#fn-schedulenew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_security_scanner_scan_config` resource into the root Terraform configuration.
@@ -481,9 +481,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `create` (`string`):  When `null`, the `create` field will be omitted from the resulting object.
-  - `delete` (`string`):  When `null`, the `delete` field will be omitted from the resulting object.
-  - `update` (`string`):  When `null`, the `update` field will be omitted from the resulting object.
+  - `create` (`string`): Set the `create` field on the resulting object. When `null`, the `create` field will be omitted from the resulting object.
+  - `delete` (`string`): Set the `delete` field on the resulting object. When `null`, the `delete` field will be omitted from the resulting object.
+  - `update` (`string`): Set the `update` field on the resulting object. When `null`, the `update` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.
