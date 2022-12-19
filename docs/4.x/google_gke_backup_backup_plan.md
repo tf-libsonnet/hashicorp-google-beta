@@ -418,9 +418,9 @@ when they fall into the scope of Backups. When `null`, the `include_secrets` fie
   - `include_volume_data` (`bool`): This flag specifies whether volume data should be backed up when PVCs are
 included in the scope of a Backup. When `null`, the `include_volume_data` field will be omitted from the resulting object.
   - `encryption_key` (`list[obj]`): This defines a customer managed encryption key that will be used to encrypt the &#34;config&#34;
-portion (the Kubernetes resources) of Backups created via this plan. When `null`, the `encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.encryption_key.new](#fn-google_gke_backup_backup_planencryption_keynew) constructor.
-  - `selected_applications` (`list[obj]`): A list of namespaced Kubernetes Resources. When `null`, the `selected_applications` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_applications.new](#fn-google_gke_backup_backup_planselected_applicationsnew) constructor.
-  - `selected_namespaces` (`list[obj]`): If set, include just the resources in the listed namespaces. When `null`, the `selected_namespaces` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_namespaces.new](#fn-google_gke_backup_backup_planselected_namespacesnew) constructor.
+portion (the Kubernetes resources) of Backups created via this plan. When `null`, the `encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.encryption_key.new](#fn-backup_configencryption_keynew) constructor.
+  - `selected_applications` (`list[obj]`): A list of namespaced Kubernetes Resources. When `null`, the `selected_applications` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_applications.new](#fn-backup_configselected_applicationsnew) constructor.
+  - `selected_namespaces` (`list[obj]`): If set, include just the resources in the listed namespaces. When `null`, the `selected_namespaces` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_namespaces.new](#fn-backup_configselected_namespacesnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `backup_config` sub block.
@@ -466,7 +466,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `namespaced_names` (`list[obj]`): A list of namespaced Kubernetes resources. When `null`, the `namespaced_names` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_applications.namespaced_names.new](#fn-google_gke_backup_backup_planbackup_confignamespaced_namesnew) constructor.
+  - `namespaced_names` (`list[obj]`): A list of namespaced Kubernetes resources. When `null`, the `namespaced_names` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.selected_applications.namespaced_names.new](#fn-backup_configbackup_confignamespaced_namesnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `selected_applications` sub block.

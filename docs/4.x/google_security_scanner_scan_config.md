@@ -380,8 +380,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `custom_account` (`list[obj]`): Describes authentication configuration that uses a custom account. When `null`, the `custom_account` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.custom_account.new](#fn-google_security_scanner_scan_configcustom_accountnew) constructor.
-  - `google_account` (`list[obj]`): Describes authentication configuration that uses a Google account. When `null`, the `google_account` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.google_account.new](#fn-google_security_scanner_scan_configgoogle_accountnew) constructor.
+  - `custom_account` (`list[obj]`): Describes authentication configuration that uses a custom account. When `null`, the `custom_account` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.custom_account.new](#fn-authenticationcustom_accountnew) constructor.
+  - `google_account` (`list[obj]`): Describes authentication configuration that uses a Google account. When `null`, the `google_account` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_security_scanner_scan_config.authentication.google_account.new](#fn-authenticationgoogle_accountnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `authentication` sub block.
