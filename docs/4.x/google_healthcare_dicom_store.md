@@ -335,7 +335,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `bigquery_destination` (`list[obj]`): BigQueryDestination to include a fully qualified BigQuery table URI where DICOM instance metadata will be streamed. When `null`, the `bigquery_destination` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_dicom_store.stream_configs.bigquery_destination.new](#fn-bigquery_destinationnew) constructor.
+  - `bigquery_destination` (`list[obj]`): BigQueryDestination to include a fully qualified BigQuery table URI where DICOM instance metadata will be streamed. When `null`, the `bigquery_destination` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_dicom_store.stream_configs.bigquery_destination.new](#fn-google_healthcare_dicom_storebigquery_destinationnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `stream_configs` sub block.

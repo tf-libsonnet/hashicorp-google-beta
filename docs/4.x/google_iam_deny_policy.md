@@ -237,7 +237,7 @@ Terraform sub block.
 
 **Args**:
   - `description` (`string`): The description of the rule. When `null`, the `description` field will be omitted from the resulting object.
-  - `deny_rule` (`list[obj]`): A deny rule in an IAM deny policy. When `null`, the `deny_rule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.deny_rule.new](#fn-deny_rulenew) constructor.
+  - `deny_rule` (`list[obj]`): A deny rule in an IAM deny policy. When `null`, the `deny_rule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.deny_rule.new](#fn-google_iam_deny_policydeny_rulenew) constructor.
 
 **Returns**:
   - An attribute object that represents the `rules` sub block.
@@ -268,7 +268,7 @@ If a permission appears in deniedPermissions and in exceptionPermissions then it
 The excluded permissions can be specified using the same syntax as deniedPermissions. When `null`, the `exception_permissions` field will be omitted from the resulting object.
   - `exception_principals` (`list`): The identities that are excluded from the deny rule, even if they are listed in the deniedPrincipals.
 For example, you could add a Google group to the deniedPrincipals, then exclude specific users who belong to that group. When `null`, the `exception_principals` field will be omitted from the resulting object.
-  - `denial_condition` (`list[obj]`): User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. When `null`, the `denial_condition` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.deny_rule.denial_condition.new](#fn-rulesdenial_conditionnew) constructor.
+  - `denial_condition` (`list[obj]`): User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. When `null`, the `denial_condition` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.deny_rule.denial_condition.new](#fn-google_iam_deny_policyrulesdenial_conditionnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `deny_rule` sub block.

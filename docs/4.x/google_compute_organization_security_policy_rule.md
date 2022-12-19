@@ -371,7 +371,7 @@ Terraform sub block.
   - `description` (`string`): A description of the rule. When `null`, the `description` field will be omitted from the resulting object.
   - `versioned_expr` (`string`): Preconfigured versioned expression. For organization security policy rules,
 the only supported type is &#34;FIREWALL&#34;. Default value: &#34;FIREWALL&#34; Possible values: [&#34;FIREWALL&#34;] When `null`, the `versioned_expr` field will be omitted from the resulting object.
-  - `config` (`list[obj]`): The configuration options for matching the rule. When `null`, the `config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.match.config.new](#fn-confignew) constructor.
+  - `config` (`list[obj]`): The configuration options for matching the rule. When `null`, the `config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.match.config.new](#fn-google_compute_organization_security_policy_ruleconfignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `match` sub block.
@@ -398,7 +398,7 @@ Terraform sub block.
 EGRESS rules. When `null`, the `dest_ip_ranges` field will be omitted from the resulting object.
   - `src_ip_ranges` (`list`): Source IP address range in CIDR format. Required for
 INGRESS rules. When `null`, the `src_ip_ranges` field will be omitted from the resulting object.
-  - `layer4_config` (`list[obj]`): Pairs of IP protocols and ports that the rule should match. When `null`, the `layer4_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.match.config.layer4_config.new](#fn-matchlayer4_confignew) constructor.
+  - `layer4_config` (`list[obj]`): Pairs of IP protocols and ports that the rule should match. When `null`, the `layer4_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.match.config.layer4_config.new](#fn-google_compute_organization_security_policy_rulematchlayer4_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `config` sub block.

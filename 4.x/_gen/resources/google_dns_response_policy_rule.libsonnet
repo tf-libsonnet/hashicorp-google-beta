@@ -17,7 +17,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
         type: type,
       }),
     },
-    '#new':: d.fn(help='\n`google-beta.google_dns_response_policy_rule.local_data.new` constructs a new object with attributes and blocks configured for the `local_data`\nTerraform sub block.\n\n\n\n**Args**:\n  - `local_datas` (`list[obj]`): All resource record sets for this selector, one per resource record type. The name must match the dns_name. When `null`, the `local_datas` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.local_data.local_datas.new](#fn-local_datasnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `local_data` sub block.\n', args=[]),
+    '#new':: d.fn(help='\n`google-beta.google_dns_response_policy_rule.local_data.new` constructs a new object with attributes and blocks configured for the `local_data`\nTerraform sub block.\n\n\n\n**Args**:\n  - `local_datas` (`list[obj]`): All resource record sets for this selector, one per resource record type. The name must match the dns_name. When `null`, the `local_datas` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.local_data.local_datas.new](#fn-google_dns_response_policy_rulelocal_datasnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `local_data` sub block.\n', args=[]),
     new(
       local_datas=null
     ):: std.prune(a={

@@ -253,7 +253,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `multiclusteringress` (`list[obj]`): Multicluster Ingress-specific spec. When `null`, the `multiclusteringress` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.spec.multiclusteringress.new](#fn-multiclusteringressnew) constructor.
+  - `multiclusteringress` (`list[obj]`): Multicluster Ingress-specific spec. When `null`, the `multiclusteringress` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.spec.multiclusteringress.new](#fn-google_gke_hub_featuremulticlusteringressnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `spec` sub block.
