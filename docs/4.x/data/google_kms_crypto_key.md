@@ -65,7 +65,7 @@ newAttrs()
 `google-beta.data.google_kms_crypto_key.newAttrs` constructs a new object with attributes and blocks configured for the `google_kms_crypto_key`
 Terraform data source.
 
-Unlike [google-beta.data.google_kms_crypto_key.new](#fn-googlekmscryptokeynew), this function will not inject the `data source`
+Unlike [google-beta.data.google_kms_crypto_key.new](#fn-new), this function will not inject the `data source`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
 

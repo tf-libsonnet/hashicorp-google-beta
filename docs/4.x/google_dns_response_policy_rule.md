@@ -66,8 +66,8 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `response_policy` (`string`): Identifies the response policy addressed by this request.
   - `rule_name` (`string`): An identifier for this rule. Must be unique with the ResponsePolicy.
   - `local_data` (`list[obj]`): Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name;
-in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed. When `null`, the `local_data` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.local_data.new](#fn-googlednsresponsepolicyrulelocaldatanew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.timeouts.new](#fn-googlednsresponsepolicyruletimeoutsnew) constructor.
+in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed. When `null`, the `local_data` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.local_data.new](#fn-local_datanew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -83,7 +83,7 @@ newAttrs()
 `google-beta.google_dns_response_policy_rule.newAttrs` constructs a new object with attributes and blocks configured for the `google_dns_response_policy_rule`
 Terraform resource.
 
-Unlike [google-beta.google_dns_response_policy_rule.new](#fn-googlednsresponsepolicyrulenew), this function will not inject the `resource`
+Unlike [google-beta.google_dns_response_policy_rule.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -97,8 +97,8 @@ injecting into a complete block.
   - `response_policy` (`string`): Identifies the response policy addressed by this request.
   - `rule_name` (`string`): An identifier for this rule. Must be unique with the ResponsePolicy.
   - `local_data` (`list[obj]`): Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name;
-in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed. When `null`, the `local_data` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.local_data.new](#fn-googlednsresponsepolicyrulelocaldatanew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.timeouts.new](#fn-googlednsresponsepolicyruletimeoutsnew) constructor.
+in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed. When `null`, the `local_data` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.local_data.new](#fn-local_datanew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_dns_response_policy_rule` resource into the root Terraform configuration.
@@ -274,7 +274,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `local_datas` (`list[obj]`): All resource record sets for this selector, one per resource record type. The name must match the dns_name. When `null`, the `local_datas` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.local_data.local_datas.new](#fn-localdatalocaldatasnew) constructor.
+  - `local_datas` (`list[obj]`): All resource record sets for this selector, one per resource record type. The name must match the dns_name. When `null`, the `local_datas` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_response_policy_rule.local_data.local_datas.new](#fn-local_datalocal_datasnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `local_data` sub block.

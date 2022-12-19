@@ -65,7 +65,7 @@ and spaces; not start or end with spaces; and be at most 200 bytes
 long when encoded in UTF-8.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): Taxonomy location region. When `null`, the `region` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_taxonomy.timeouts.new](#fn-googledatacatalogtaxonomytimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_taxonomy.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -81,7 +81,7 @@ newAttrs()
 `google-beta.google_data_catalog_taxonomy.newAttrs` constructs a new object with attributes and blocks configured for the `google_data_catalog_taxonomy`
 Terraform resource.
 
-Unlike [google-beta.google_data_catalog_taxonomy.new](#fn-googledatacatalogtaxonomynew), this function will not inject the `resource`
+Unlike [google-beta.google_data_catalog_taxonomy.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -100,7 +100,7 @@ and spaces; not start or end with spaces; and be at most 200 bytes
 long when encoded in UTF-8.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): Taxonomy location region. When `null`, the `region` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_taxonomy.timeouts.new](#fn-googledatacatalogtaxonomytimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_taxonomy.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_data_catalog_taxonomy` resource into the root Terraform configuration.

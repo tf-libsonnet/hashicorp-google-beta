@@ -59,7 +59,7 @@ Metadata that goes beyond any these limits will be rejected. When `null`, the `m
   - `namespace` (`string`): The resource name of the namespace this service will belong to.
   - `service_id` (`string`): The Resource ID must be 1-63 characters long, including digits,
 lowercase letters or the hyphen character.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_directory_service.timeouts.new](#fn-googleservicedirectoryservicetimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_directory_service.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -75,7 +75,7 @@ newAttrs()
 `google-beta.google_service_directory_service.newAttrs` constructs a new object with attributes and blocks configured for the `google_service_directory_service`
 Terraform resource.
 
-Unlike [google-beta.google_service_directory_service.new](#fn-googleservicedirectoryservicenew), this function will not inject the `resource`
+Unlike [google-beta.google_service_directory_service.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -90,7 +90,7 @@ Metadata that goes beyond any these limits will be rejected. When `null`, the `m
   - `namespace` (`string`): The resource name of the namespace this service will belong to.
   - `service_id` (`string`): The Resource ID must be 1-63 characters long, including digits,
 lowercase letters or the hyphen character.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_directory_service.timeouts.new](#fn-googleservicedirectoryservicetimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_directory_service.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_service_directory_service` resource into the root Terraform configuration.

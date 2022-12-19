@@ -76,10 +76,10 @@ will also enable ERROR logging. Default value: &#34;NONE&#34; Possible values: [
   - `region` (`string`): The region in which the created registry should reside.
 If it is not provided, the provider region is used. When `null`, the `region` field will be omitted from the resulting object.
   - `state_notification_config` (`obj`): A PubSub topic to publish device state updates. When `null`, the `state_notification_config` field will be omitted from the resulting object.
-  - `credentials` (`list[obj]`): List of public key certificates to authenticate devices. When `null`, the `credentials` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.credentials.new](#fn-googlecloudiotregistrycredentialsnew) constructor.
+  - `credentials` (`list[obj]`): List of public key certificates to authenticate devices. When `null`, the `credentials` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.credentials.new](#fn-credentialsnew) constructor.
   - `event_notification_configs` (`list[obj]`): List of configurations for event notifications, such as PubSub topics
-to publish device events to. When `null`, the `event_notification_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.event_notification_configs.new](#fn-googlecloudiotregistryeventnotificationconfigsnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.timeouts.new](#fn-googlecloudiotregistrytimeoutsnew) constructor.
+to publish device events to. When `null`, the `event_notification_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.event_notification_configs.new](#fn-event_notification_configsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -95,7 +95,7 @@ newAttrs()
 `google-beta.google_cloudiot_registry.newAttrs` constructs a new object with attributes and blocks configured for the `google_cloudiot_registry`
 Terraform resource.
 
-Unlike [google-beta.google_cloudiot_registry.new](#fn-googlecloudiotregistrynew), this function will not inject the `resource`
+Unlike [google-beta.google_cloudiot_registry.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -115,10 +115,10 @@ will also enable ERROR logging. Default value: &#34;NONE&#34; Possible values: [
   - `region` (`string`): The region in which the created registry should reside.
 If it is not provided, the provider region is used. When `null`, the `region` field will be omitted from the resulting object.
   - `state_notification_config` (`obj`): A PubSub topic to publish device state updates. When `null`, the `state_notification_config` field will be omitted from the resulting object.
-  - `credentials` (`list[obj]`): List of public key certificates to authenticate devices. When `null`, the `credentials` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.credentials.new](#fn-googlecloudiotregistrycredentialsnew) constructor.
+  - `credentials` (`list[obj]`): List of public key certificates to authenticate devices. When `null`, the `credentials` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.credentials.new](#fn-credentialsnew) constructor.
   - `event_notification_configs` (`list[obj]`): List of configurations for event notifications, such as PubSub topics
-to publish device events to. When `null`, the `event_notification_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.event_notification_configs.new](#fn-googlecloudiotregistryeventnotificationconfigsnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.timeouts.new](#fn-googlecloudiotregistrytimeoutsnew) constructor.
+to publish device events to. When `null`, the `event_notification_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.event_notification_configs.new](#fn-event_notification_configsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudiot_registry.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_cloudiot_registry` resource into the root Terraform configuration.

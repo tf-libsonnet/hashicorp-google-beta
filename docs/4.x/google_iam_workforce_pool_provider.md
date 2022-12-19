@@ -147,9 +147,9 @@ The prefix &#39;gcp-&#39; is reserved for use by Google, and may not be specifie
 The IDs must be a globally unique string of 6 to 63 lowercase letters, digits, or hyphens.
 It must start with a letter, and cannot have a trailing hyphen.
 The prefix &#39;gcp-&#39; is reserved for use by Google, and may not be specified.
-  - `oidc` (`list[obj]`): Represents an OpenId Connect 1.0 identity provider. When `null`, the `oidc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.oidc.new](#fn-googleiamworkforcepoolprovideroidcnew) constructor.
-  - `saml` (`list[obj]`): Represents a SAML identity provider. When `null`, the `saml` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.saml.new](#fn-googleiamworkforcepoolprovidersamlnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.timeouts.new](#fn-googleiamworkforcepoolprovidertimeoutsnew) constructor.
+  - `oidc` (`list[obj]`): Represents an OpenId Connect 1.0 identity provider. When `null`, the `oidc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.oidc.new](#fn-oidcnew) constructor.
+  - `saml` (`list[obj]`): Represents a SAML identity provider. When `null`, the `saml` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.saml.new](#fn-samlnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -165,7 +165,7 @@ newAttrs()
 `google-beta.google_iam_workforce_pool_provider.newAttrs` constructs a new object with attributes and blocks configured for the `google_iam_workforce_pool_provider`
 Terraform resource.
 
-Unlike [google-beta.google_iam_workforce_pool_provider.new](#fn-googleiamworkforcepoolprovidernew), this function will not inject the `resource`
+Unlike [google-beta.google_iam_workforce_pool_provider.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -255,9 +255,9 @@ The prefix &#39;gcp-&#39; is reserved for use by Google, and may not be specifie
 The IDs must be a globally unique string of 6 to 63 lowercase letters, digits, or hyphens.
 It must start with a letter, and cannot have a trailing hyphen.
 The prefix &#39;gcp-&#39; is reserved for use by Google, and may not be specified.
-  - `oidc` (`list[obj]`): Represents an OpenId Connect 1.0 identity provider. When `null`, the `oidc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.oidc.new](#fn-googleiamworkforcepoolprovideroidcnew) constructor.
-  - `saml` (`list[obj]`): Represents a SAML identity provider. When `null`, the `saml` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.saml.new](#fn-googleiamworkforcepoolprovidersamlnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.timeouts.new](#fn-googleiamworkforcepoolprovidertimeoutsnew) constructor.
+  - `oidc` (`list[obj]`): Represents an OpenId Connect 1.0 identity provider. When `null`, the `oidc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.oidc.new](#fn-oidcnew) constructor.
+  - `saml` (`list[obj]`): Represents a SAML identity provider. When `null`, the `saml` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.saml.new](#fn-samlnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_workforce_pool_provider.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_iam_workforce_pool_provider` resource into the root Terraform configuration.

@@ -63,8 +63,8 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `display_name` (`string`): The display name of the rule. When `null`, the `display_name` field will be omitted from the resulting object.
   - `name` (`string`): The name of the policy.
   - `parent` (`string`): The attachment point is identified by its URL-encoded full resource name.
-  - `rules` (`list[obj]`): Rules to be applied. When `null`, the `rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.new](#fn-googleiamdenypolicyrulesnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.timeouts.new](#fn-googleiamdenypolicytimeoutsnew) constructor.
+  - `rules` (`list[obj]`): Rules to be applied. When `null`, the `rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.new](#fn-rulesnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -80,7 +80,7 @@ newAttrs()
 `google-beta.google_iam_deny_policy.newAttrs` constructs a new object with attributes and blocks configured for the `google_iam_deny_policy`
 Terraform resource.
 
-Unlike [google-beta.google_iam_deny_policy.new](#fn-googleiamdenypolicynew), this function will not inject the `resource`
+Unlike [google-beta.google_iam_deny_policy.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -91,8 +91,8 @@ injecting into a complete block.
   - `display_name` (`string`): The display name of the rule. When `null`, the `display_name` field will be omitted from the resulting object.
   - `name` (`string`): The name of the policy.
   - `parent` (`string`): The attachment point is identified by its URL-encoded full resource name.
-  - `rules` (`list[obj]`): Rules to be applied. When `null`, the `rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.new](#fn-googleiamdenypolicyrulesnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.timeouts.new](#fn-googleiamdenypolicytimeoutsnew) constructor.
+  - `rules` (`list[obj]`): Rules to be applied. When `null`, the `rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.new](#fn-rulesnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_iam_deny_policy` resource into the root Terraform configuration.
@@ -237,7 +237,7 @@ Terraform sub block.
 
 **Args**:
   - `description` (`string`): The description of the rule. When `null`, the `description` field will be omitted from the resulting object.
-  - `deny_rule` (`list[obj]`): A deny rule in an IAM deny policy. When `null`, the `deny_rule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.deny_rule.new](#fn-rulesdenyrulenew) constructor.
+  - `deny_rule` (`list[obj]`): A deny rule in an IAM deny policy. When `null`, the `deny_rule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.deny_rule.new](#fn-rulesdeny_rulenew) constructor.
 
 **Returns**:
   - An attribute object that represents the `rules` sub block.
@@ -268,7 +268,7 @@ If a permission appears in deniedPermissions and in exceptionPermissions then it
 The excluded permissions can be specified using the same syntax as deniedPermissions. When `null`, the `exception_permissions` field will be omitted from the resulting object.
   - `exception_principals` (`list`): The identities that are excluded from the deny rule, even if they are listed in the deniedPrincipals.
 For example, you could add a Google group to the deniedPrincipals, then exclude specific users who belong to that group. When `null`, the `exception_principals` field will be omitted from the resulting object.
-  - `denial_condition` (`list[obj]`): User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. When `null`, the `denial_condition` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.deny_rule.denial_condition.new](#fn-denyruledenialconditionnew) constructor.
+  - `denial_condition` (`list[obj]`): User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. When `null`, the `denial_condition` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_deny_policy.rules.deny_rule.denial_condition.new](#fn-rulesrulesdenial_conditionnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `deny_rule` sub block.

@@ -64,7 +64,7 @@ not start or end with spaces; and be at most 200 bytes long when encoded in UTF-
 If empty, it means this policy tag is a top level policy tag.
 If not set, defaults to an empty string. When `null`, the `parent_policy_tag` field will be omitted from the resulting object.
   - `taxonomy` (`string`): Taxonomy the policy tag is associated with
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_policy_tag.timeouts.new](#fn-googledatacatalogpolicytagtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_policy_tag.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -80,7 +80,7 @@ newAttrs()
 `google-beta.google_data_catalog_policy_tag.newAttrs` constructs a new object with attributes and blocks configured for the `google_data_catalog_policy_tag`
 Terraform resource.
 
-Unlike [google-beta.google_data_catalog_policy_tag.new](#fn-googledatacatalogpolicytagnew), this function will not inject the `resource`
+Unlike [google-beta.google_data_catalog_policy_tag.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -99,7 +99,7 @@ not start or end with spaces; and be at most 200 bytes long when encoded in UTF-
 If empty, it means this policy tag is a top level policy tag.
 If not set, defaults to an empty string. When `null`, the `parent_policy_tag` field will be omitted from the resulting object.
   - `taxonomy` (`string`): Taxonomy the policy tag is associated with
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_policy_tag.timeouts.new](#fn-googledatacatalogpolicytagtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_policy_tag.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_data_catalog_policy_tag` resource into the root Terraform configuration.

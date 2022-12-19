@@ -66,7 +66,7 @@ newAttrs()
 `google-beta.data.google_vpc_access_connector.newAttrs` constructs a new object with attributes and blocks configured for the `google_vpc_access_connector`
 Terraform data source.
 
-Unlike [google-beta.data.google_vpc_access_connector.new](#fn-googlevpcaccessconnectornew), this function will not inject the `data source`
+Unlike [google-beta.data.google_vpc_access_connector.new](#fn-new), this function will not inject the `data source`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
 
