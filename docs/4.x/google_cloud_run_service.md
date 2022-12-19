@@ -129,7 +129,7 @@ for creation idempotence and configuration definition. Cannot be updated.
 More info: http://kubernetes.io/docs/user-guide/identifiers#names
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `metadata` (`list[obj]`): Metadata associated with this Service, including name, namespace, labels,
-and annotations. When `null`, the `metadata` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.metadata.new](#fn-googlecloudrunservicemetadatanew) constructor.
+and annotations. When `null`, the `metadata` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.metadata.new](#fn-google_cloud_run_servicemetadatanew) constructor.
   - `template` (`list[obj]`): template holds the latest specification for the Revision to
 be stamped out. The template references the container image, and may also
 include labels and annotations that should be attached to the Revision.
@@ -139,10 +139,10 @@ template metadata. For more details, see:
 https://github.com/knative/serving/blob/main/docs/client-conventions.md#associate-modifications-with-revisions
 
 Cloud Run does not currently support referencing a build that is
-responsible for materializing the container image from source. When `null`, the `template` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.new](#fn-googlecloudrunservicetemplatenew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.timeouts.new](#fn-googlecloudrunservicetimeoutsnew) constructor.
+responsible for materializing the container image from source. When `null`, the `template` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.new](#fn-google_cloud_run_servicetemplatenew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.timeouts.new](#fn-google_cloud_run_servicetimeoutsnew) constructor.
   - `traffic` (`list[obj]`): Traffic specifies how to distribute traffic over a collection of Knative Revisions
-and Configurations When `null`, the `traffic` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.traffic.new](#fn-googlecloudrunservicetrafficnew) constructor.
+and Configurations When `null`, the `traffic` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.traffic.new](#fn-google_cloud_run_servicetrafficnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -158,7 +158,7 @@ newAttrs()
 `google-beta.google_cloud_run_service.newAttrs` constructs a new object with attributes and blocks configured for the `google_cloud_run_service`
 Terraform resource.
 
-Unlike [google-beta.google_cloud_run_service.new](#fn-googlecloudrunservicenew), this function will not inject the `resource`
+Unlike [google-beta.google_cloud_run_service.new](#fn-google_cloud_run_servicenew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -178,7 +178,7 @@ for creation idempotence and configuration definition. Cannot be updated.
 More info: http://kubernetes.io/docs/user-guide/identifiers#names
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `metadata` (`list[obj]`): Metadata associated with this Service, including name, namespace, labels,
-and annotations. When `null`, the `metadata` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.metadata.new](#fn-googlecloudrunservicemetadatanew) constructor.
+and annotations. When `null`, the `metadata` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.metadata.new](#fn-google_cloud_run_servicemetadatanew) constructor.
   - `template` (`list[obj]`): template holds the latest specification for the Revision to
 be stamped out. The template references the container image, and may also
 include labels and annotations that should be attached to the Revision.
@@ -188,10 +188,10 @@ template metadata. For more details, see:
 https://github.com/knative/serving/blob/main/docs/client-conventions.md#associate-modifications-with-revisions
 
 Cloud Run does not currently support referencing a build that is
-responsible for materializing the container image from source. When `null`, the `template` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.new](#fn-googlecloudrunservicetemplatenew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.timeouts.new](#fn-googlecloudrunservicetimeoutsnew) constructor.
+responsible for materializing the container image from source. When `null`, the `template` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.new](#fn-google_cloud_run_servicetemplatenew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.timeouts.new](#fn-google_cloud_run_servicetimeoutsnew) constructor.
   - `traffic` (`list[obj]`): Traffic specifies how to distribute traffic over a collection of Knative Revisions
-and Configurations When `null`, the `traffic` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.traffic.new](#fn-googlecloudrunservicetrafficnew) constructor.
+and Configurations When `null`, the `traffic` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.traffic.new](#fn-google_cloud_run_servicetrafficnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_cloud_run_service` resource into the root Terraform configuration.
@@ -602,9 +602,9 @@ might be configured in the container image. When `null`, the `working_dir` field
 All invalid keys will be reported as an event when the container is starting.
 When a key exists in multiple sources, the value associated with the last source will
 take precedence. Values defined by an Env with a duplicate key will take
-precedence. When `null`, the `env_from` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env_from.new](#fn-containersenvfromnew) constructor.
+precedence. When `null`, the `env_from` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env_from.new](#fn-containersenv_fromnew) constructor.
   - `liveness_probe` (`list[obj]`): Periodic probe of container liveness. Container will be restarted if the probe fails. More info:
-https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes When `null`, the `liveness_probe` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.liveness_probe.new](#fn-containerslivenessprobenew) constructor.
+https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes When `null`, the `liveness_probe` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.liveness_probe.new](#fn-containersliveness_probenew) constructor.
   - `ports` (`list[obj]`): List of open ports in the container.
 More Info:
 https://cloud.google.com/run/docs/reference/rest/v1/RevisionSpec#ContainerPort When `null`, the `ports` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.ports.new](#fn-containersportsnew) constructor.
@@ -615,9 +615,9 @@ https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#r
 All other probes are disabled if a startup probe is provided, until it
 succeeds. Container will not be added to service endpoints if the probe fails.
 More info:
-https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes When `null`, the `startup_probe` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.new](#fn-containersstartupprobenew) constructor.
+https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes When `null`, the `startup_probe` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.new](#fn-containersstartup_probenew) constructor.
   - `volume_mounts` (`list[obj]`): Volume to mount into the container&#39;s filesystem.
-Only supports SecretVolumeSources. When `null`, the `volume_mounts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.volume_mounts.new](#fn-containersvolumemountsnew) constructor.
+Only supports SecretVolumeSources. When `null`, the `volume_mounts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.volume_mounts.new](#fn-containersvolume_mountsnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `containers` sub block.
@@ -649,7 +649,7 @@ syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped
 references will never be expanded, regardless of whether the variable
 exists or not.
 Defaults to &#34;&#34;. When `null`, the `value` field will be omitted from the resulting object.
-  - `value_from` (`list[obj]`): Source for the environment variable&#39;s value. Only supports secret_key_ref. When `null`, the `value_from` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env.value_from.new](#fn-envvaluefromnew) constructor.
+  - `value_from` (`list[obj]`): Source for the environment variable&#39;s value. Only supports secret_key_ref. When `null`, the `value_from` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env.value_from.new](#fn-envvalue_fromnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `env` sub block.
@@ -672,7 +672,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `secret_key_ref` (`list[obj]`): Selects a key (version) of a secret in Secret Manager. When `null`, the `secret_key_ref` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env.value_from.secret_key_ref.new](#fn-valuefromsecretkeyrefnew) constructor.
+  - `secret_key_ref` (`list[obj]`): Selects a key (version) of a secret in Secret Manager. When `null`, the `secret_key_ref` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env.value_from.secret_key_ref.new](#fn-value_fromsecret_key_refnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `value_from` sub block.
@@ -725,8 +725,8 @@ Terraform sub block.
 
 **Args**:
   - `prefix` (`string`): An optional identifier to prepend to each key in the ConfigMap. When `null`, the `prefix` field will be omitted from the resulting object.
-  - `config_map_ref` (`list[obj]`): The ConfigMap to select from. When `null`, the `config_map_ref` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env_from.config_map_ref.new](#fn-envfromconfigmaprefnew) constructor.
-  - `secret_ref` (`list[obj]`): The Secret to select from. When `null`, the `secret_ref` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env_from.secret_ref.new](#fn-envfromsecretrefnew) constructor.
+  - `config_map_ref` (`list[obj]`): The ConfigMap to select from. When `null`, the `config_map_ref` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env_from.config_map_ref.new](#fn-env_fromconfig_map_refnew) constructor.
+  - `secret_ref` (`list[obj]`): The Secret to select from. When `null`, the `secret_ref` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env_from.secret_ref.new](#fn-env_fromsecret_refnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `env_from` sub block.
@@ -750,7 +750,7 @@ Terraform sub block.
 
 **Args**:
   - `optional` (`bool`): Specify whether the ConfigMap must be defined When `null`, the `optional` field will be omitted from the resulting object.
-  - `local_object_reference` (`list[obj]`): The ConfigMap to select from. When `null`, the `local_object_reference` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env_from.config_map_ref.local_object_reference.new](#fn-configmapreflocalobjectreferencenew) constructor.
+  - `local_object_reference` (`list[obj]`): The ConfigMap to select from. When `null`, the `local_object_reference` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env_from.config_map_ref.local_object_reference.new](#fn-config_map_reflocal_object_referencenew) constructor.
 
 **Returns**:
   - An attribute object that represents the `config_map_ref` sub block.
@@ -799,7 +799,7 @@ Terraform sub block.
 
 **Args**:
   - `optional` (`bool`): Specify whether the Secret must be defined When `null`, the `optional` field will be omitted from the resulting object.
-  - `local_object_reference` (`list[obj]`): The Secret to select from. When `null`, the `local_object_reference` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env_from.secret_ref.local_object_reference.new](#fn-secretreflocalobjectreferencenew) constructor.
+  - `local_object_reference` (`list[obj]`): The Secret to select from. When `null`, the `local_object_reference` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.env_from.secret_ref.local_object_reference.new](#fn-secret_reflocal_object_referencenew) constructor.
 
 **Returns**:
   - An attribute object that represents the `secret_ref` sub block.
@@ -857,8 +857,8 @@ Default to 10 seconds. Minimum value is 1. Maximum value is 3600. When `null`, t
   - `timeout_seconds` (`number`): Number of seconds after which the probe times out.
 Defaults to 1 second. Minimum value is 1. Maximum value is 3600.
 Must be smaller than period_seconds. When `null`, the `timeout_seconds` field will be omitted from the resulting object.
-  - `grpc` (`list[obj]`): GRPC specifies an action involving a GRPC port. When `null`, the `grpc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.liveness_probe.grpc.new](#fn-livenessprobegrpcnew) constructor.
-  - `http_get` (`list[obj]`): HttpGet specifies the http request to perform. When `null`, the `http_get` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.liveness_probe.http_get.new](#fn-livenessprobehttpgetnew) constructor.
+  - `grpc` (`list[obj]`): GRPC specifies an action involving a GRPC port. When `null`, the `grpc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.liveness_probe.grpc.new](#fn-liveness_probegrpcnew) constructor.
+  - `http_get` (`list[obj]`): HttpGet specifies the http request to perform. When `null`, the `http_get` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.liveness_probe.http_get.new](#fn-liveness_probehttp_getnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `liveness_probe` sub block.
@@ -908,7 +908,7 @@ Terraform sub block.
 
 **Args**:
   - `path` (`string`): Path to access on the HTTP server. If set, it should not be empty string. When `null`, the `path` field will be omitted from the resulting object.
-  - `http_headers` (`list[obj]`): Custom headers to set in the request. HTTP allows repeated headers. When `null`, the `http_headers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.liveness_probe.http_get.http_headers.new](#fn-httpgethttpheadersnew) constructor.
+  - `http_headers` (`list[obj]`): Custom headers to set in the request. HTTP allows repeated headers. When `null`, the `http_headers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.liveness_probe.http_get.http_headers.new](#fn-http_gethttp_headersnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `http_get` sub block.
@@ -1020,9 +1020,9 @@ Default to 10 seconds. Minimum value is 1. Maximum value is 240. When `null`, th
   - `timeout_seconds` (`number`): Number of seconds after which the probe times out.
 Defaults to 1 second. Minimum value is 1. Maximum value is 3600.
 Must be smaller than periodSeconds. When `null`, the `timeout_seconds` field will be omitted from the resulting object.
-  - `grpc` (`list[obj]`): GRPC specifies an action involving a GRPC port. When `null`, the `grpc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.grpc.new](#fn-startupprobegrpcnew) constructor.
-  - `http_get` (`list[obj]`): HttpGet specifies the http request to perform. When `null`, the `http_get` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.http_get.new](#fn-startupprobehttpgetnew) constructor.
-  - `tcp_socket` (`list[obj]`): TcpSocket specifies an action involving a TCP port. When `null`, the `tcp_socket` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.tcp_socket.new](#fn-startupprobetcpsocketnew) constructor.
+  - `grpc` (`list[obj]`): GRPC specifies an action involving a GRPC port. When `null`, the `grpc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.grpc.new](#fn-startup_probegrpcnew) constructor.
+  - `http_get` (`list[obj]`): HttpGet specifies the http request to perform. When `null`, the `http_get` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.http_get.new](#fn-startup_probehttp_getnew) constructor.
+  - `tcp_socket` (`list[obj]`): TcpSocket specifies an action involving a TCP port. When `null`, the `tcp_socket` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.tcp_socket.new](#fn-startup_probetcp_socketnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `startup_probe` sub block.
@@ -1072,7 +1072,7 @@ Terraform sub block.
 
 **Args**:
   - `path` (`string`): Path to access on the HTTP server. If set, it should not be empty string. When `null`, the `path` field will be omitted from the resulting object.
-  - `http_headers` (`list[obj]`): Custom headers to set in the request. HTTP allows repeated headers. When `null`, the `http_headers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.http_get.http_headers.new](#fn-httpgethttpheadersnew) constructor.
+  - `http_headers` (`list[obj]`): Custom headers to set in the request. HTTP allows repeated headers. When `null`, the `http_headers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.http_get.http_headers.new](#fn-http_gethttp_headersnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `http_get` sub block.

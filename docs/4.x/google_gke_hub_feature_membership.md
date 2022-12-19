@@ -77,9 +77,9 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `location` (`string`): The location of the feature
   - `membership` (`string`): The name of the membership
   - `project` (`string`): The project of the feature When `null`, the `project` field will be omitted from the resulting object.
-  - `configmanagement` (`list[obj]`): Config Management-specific spec. When `null`, the `configmanagement` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.new](#fn-googlegkehubfeaturemembershipconfigmanagementnew) constructor.
-  - `mesh` (`list[obj]`): Manage Mesh Features When `null`, the `mesh` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.mesh.new](#fn-googlegkehubfeaturemembershipmeshnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.timeouts.new](#fn-googlegkehubfeaturemembershiptimeoutsnew) constructor.
+  - `configmanagement` (`list[obj]`): Config Management-specific spec. When `null`, the `configmanagement` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.new](#fn-google_gke_hub_feature_membershipconfigmanagementnew) constructor.
+  - `mesh` (`list[obj]`): Manage Mesh Features When `null`, the `mesh` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.mesh.new](#fn-google_gke_hub_feature_membershipmeshnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.timeouts.new](#fn-google_gke_hub_feature_membershiptimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -95,7 +95,7 @@ newAttrs()
 `google-beta.google_gke_hub_feature_membership.newAttrs` constructs a new object with attributes and blocks configured for the `google_gke_hub_feature_membership`
 Terraform resource.
 
-Unlike [google-beta.google_gke_hub_feature_membership.new](#fn-googlegkehubfeaturemembershipnew), this function will not inject the `resource`
+Unlike [google-beta.google_gke_hub_feature_membership.new](#fn-google_gke_hub_feature_membershipnew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -107,9 +107,9 @@ injecting into a complete block.
   - `location` (`string`): The location of the feature
   - `membership` (`string`): The name of the membership
   - `project` (`string`): The project of the feature When `null`, the `project` field will be omitted from the resulting object.
-  - `configmanagement` (`list[obj]`): Config Management-specific spec. When `null`, the `configmanagement` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.new](#fn-googlegkehubfeaturemembershipconfigmanagementnew) constructor.
-  - `mesh` (`list[obj]`): Manage Mesh Features When `null`, the `mesh` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.mesh.new](#fn-googlegkehubfeaturemembershipmeshnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.timeouts.new](#fn-googlegkehubfeaturemembershiptimeoutsnew) constructor.
+  - `configmanagement` (`list[obj]`): Config Management-specific spec. When `null`, the `configmanagement` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.new](#fn-google_gke_hub_feature_membershipconfigmanagementnew) constructor.
+  - `mesh` (`list[obj]`): Manage Mesh Features When `null`, the `mesh` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.mesh.new](#fn-google_gke_hub_feature_membershipmeshnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.timeouts.new](#fn-google_gke_hub_feature_membershiptimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_gke_hub_feature_membership` resource into the root Terraform configuration.
@@ -308,9 +308,9 @@ Terraform sub block.
 **Args**:
   - `version` (`string`): Optional. Version of ACM to install. Defaults to the latest version. When `null`, the `version` field will be omitted from the resulting object.
   - `binauthz` (`list[obj]`): Binauthz configuration for the cluster. When `null`, the `binauthz` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.binauthz.new](#fn-configmanagementbinauthznew) constructor.
-  - `config_sync` (`list[obj]`): Config Sync configuration for the cluster. When `null`, the `config_sync` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.new](#fn-configmanagementconfigsyncnew) constructor.
-  - `hierarchy_controller` (`list[obj]`): Hierarchy Controller configuration for the cluster. When `null`, the `hierarchy_controller` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.hierarchy_controller.new](#fn-configmanagementhierarchycontrollernew) constructor.
-  - `policy_controller` (`list[obj]`): Policy Controller configuration for the cluster. When `null`, the `policy_controller` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.policy_controller.new](#fn-configmanagementpolicycontrollernew) constructor.
+  - `config_sync` (`list[obj]`): Config Sync configuration for the cluster. When `null`, the `config_sync` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.new](#fn-configmanagementconfig_syncnew) constructor.
+  - `hierarchy_controller` (`list[obj]`): Hierarchy Controller configuration for the cluster. When `null`, the `hierarchy_controller` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.hierarchy_controller.new](#fn-configmanagementhierarchy_controllernew) constructor.
+  - `policy_controller` (`list[obj]`): Policy Controller configuration for the cluster. When `null`, the `policy_controller` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.policy_controller.new](#fn-configmanagementpolicy_controllernew) constructor.
 
 **Returns**:
   - An attribute object that represents the `configmanagement` sub block.
@@ -358,7 +358,7 @@ Terraform sub block.
 **Args**:
   - `prevent_drift` (`bool`): Set to true to enable the Config Sync admission webhook to prevent drifts. If set to `false`, disables the Config Sync admission webhook and does not prevent drifts. When `null`, the `prevent_drift` field will be omitted from the resulting object.
   - `source_format` (`string`): Specifies whether the Config Sync Repo is in &#34;hierarchical&#34; or &#34;unstructured&#34; mode. When `null`, the `source_format` field will be omitted from the resulting object.
-  - `git` (`list[obj]`):  When `null`, the `git` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.git.new](#fn-configsyncgitnew) constructor.
+  - `git` (`list[obj]`):  When `null`, the `git` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.git.new](#fn-config_syncgitnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `config_sync` sub block.
@@ -443,7 +443,7 @@ Terraform sub block.
   - `mutation_enabled` (`bool`): Enable or disable mutation in policy controller. If true, mutation CRDs, webhook and controller deployment will be deployed to the cluster. When `null`, the `mutation_enabled` field will be omitted from the resulting object.
   - `referential_rules_enabled` (`bool`): Enables the ability to use Constraint Templates that reference to objects other than the object currently being evaluated. When `null`, the `referential_rules_enabled` field will be omitted from the resulting object.
   - `template_library_installed` (`bool`): Installs the default template library along with Policy Controller. When `null`, the `template_library_installed` field will be omitted from the resulting object.
-  - `monitoring` (`list[obj]`): Specifies the backends Policy Controller should export metrics to. For example, to specify metrics should be exported to Cloud Monitoring and Prometheus, specify backends: [&#34;cloudmonitoring&#34;, &#34;prometheus&#34;]. Default: [&#34;cloudmonitoring&#34;, &#34;prometheus&#34;] When `null`, the `monitoring` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.policy_controller.monitoring.new](#fn-policycontrollermonitoringnew) constructor.
+  - `monitoring` (`list[obj]`): Specifies the backends Policy Controller should export metrics to. For example, to specify metrics should be exported to Cloud Monitoring and Prometheus, specify backends: [&#34;cloudmonitoring&#34;, &#34;prometheus&#34;]. Default: [&#34;cloudmonitoring&#34;, &#34;prometheus&#34;] When `null`, the `monitoring` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.policy_controller.monitoring.new](#fn-policy_controllermonitoringnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `policy_controller` sub block.

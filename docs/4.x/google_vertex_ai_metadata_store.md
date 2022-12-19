@@ -61,8 +61,8 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `name` (`string`): The name of the MetadataStore. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number. When `null`, the `name` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): The region of the Metadata Store. eg us-central1 When `null`, the `region` field will be omitted from the resulting object.
-  - `encryption_spec` (`list[obj]`): Customer-managed encryption key spec for a MetadataStore. If set, this MetadataStore and all sub-resources of this MetadataStore will be secured by this key. When `null`, the `encryption_spec` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_metadata_store.encryption_spec.new](#fn-googlevertexaimetadatastoreencryptionspecnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_metadata_store.timeouts.new](#fn-googlevertexaimetadatastoretimeoutsnew) constructor.
+  - `encryption_spec` (`list[obj]`): Customer-managed encryption key spec for a MetadataStore. If set, this MetadataStore and all sub-resources of this MetadataStore will be secured by this key. When `null`, the `encryption_spec` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_metadata_store.encryption_spec.new](#fn-google_vertex_ai_metadata_storeencryption_specnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_metadata_store.timeouts.new](#fn-google_vertex_ai_metadata_storetimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -78,7 +78,7 @@ newAttrs()
 `google-beta.google_vertex_ai_metadata_store.newAttrs` constructs a new object with attributes and blocks configured for the `google_vertex_ai_metadata_store`
 Terraform resource.
 
-Unlike [google-beta.google_vertex_ai_metadata_store.new](#fn-googlevertexaimetadatastorenew), this function will not inject the `resource`
+Unlike [google-beta.google_vertex_ai_metadata_store.new](#fn-google_vertex_ai_metadata_storenew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -90,8 +90,8 @@ injecting into a complete block.
   - `name` (`string`): The name of the MetadataStore. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number. When `null`, the `name` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): The region of the Metadata Store. eg us-central1 When `null`, the `region` field will be omitted from the resulting object.
-  - `encryption_spec` (`list[obj]`): Customer-managed encryption key spec for a MetadataStore. If set, this MetadataStore and all sub-resources of this MetadataStore will be secured by this key. When `null`, the `encryption_spec` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_metadata_store.encryption_spec.new](#fn-googlevertexaimetadatastoreencryptionspecnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_metadata_store.timeouts.new](#fn-googlevertexaimetadatastoretimeoutsnew) constructor.
+  - `encryption_spec` (`list[obj]`): Customer-managed encryption key spec for a MetadataStore. If set, this MetadataStore and all sub-resources of this MetadataStore will be secured by this key. When `null`, the `encryption_spec` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_metadata_store.encryption_spec.new](#fn-google_vertex_ai_metadata_storeencryption_specnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_metadata_store.timeouts.new](#fn-google_vertex_ai_metadata_storetimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_vertex_ai_metadata_store` resource into the root Terraform configuration.

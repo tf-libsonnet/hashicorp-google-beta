@@ -84,8 +84,8 @@ this rule. If this field is left blank, all VMs
 within the organization will receive the rule. When `null`, the `target_resources` field will be omitted from the resulting object.
   - `target_service_accounts` (`list`): A list of service accounts indicating the sets of
 instances that are applied with this rule. When `null`, the `target_service_accounts` field will be omitted from the resulting object.
-  - `match` (`list[obj]`): A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding &#39;action&#39; is enforced. When `null`, the `match` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.match.new](#fn-googlecomputeorganizationsecuritypolicyrulematchnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.timeouts.new](#fn-googlecomputeorganizationsecuritypolicyruletimeoutsnew) constructor.
+  - `match` (`list[obj]`): A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding &#39;action&#39; is enforced. When `null`, the `match` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.match.new](#fn-google_compute_organization_security_policy_rulematchnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.timeouts.new](#fn-google_compute_organization_security_policy_ruletimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -101,7 +101,7 @@ newAttrs()
 `google-beta.google_compute_organization_security_policy_rule.newAttrs` constructs a new object with attributes and blocks configured for the `google_compute_organization_security_policy_rule`
 Terraform resource.
 
-Unlike [google-beta.google_compute_organization_security_policy_rule.new](#fn-googlecomputeorganizationsecuritypolicyrulenew), this function will not inject the `resource`
+Unlike [google-beta.google_compute_organization_security_policy_rule.new](#fn-google_compute_organization_security_policy_rulenew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -127,8 +127,8 @@ this rule. If this field is left blank, all VMs
 within the organization will receive the rule. When `null`, the `target_resources` field will be omitted from the resulting object.
   - `target_service_accounts` (`list`): A list of service accounts indicating the sets of
 instances that are applied with this rule. When `null`, the `target_service_accounts` field will be omitted from the resulting object.
-  - `match` (`list[obj]`): A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding &#39;action&#39; is enforced. When `null`, the `match` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.match.new](#fn-googlecomputeorganizationsecuritypolicyrulematchnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.timeouts.new](#fn-googlecomputeorganizationsecuritypolicyruletimeoutsnew) constructor.
+  - `match` (`list[obj]`): A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding &#39;action&#39; is enforced. When `null`, the `match` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.match.new](#fn-google_compute_organization_security_policy_rulematchnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.timeouts.new](#fn-google_compute_organization_security_policy_ruletimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_compute_organization_security_policy_rule` resource into the root Terraform configuration.
@@ -398,7 +398,7 @@ Terraform sub block.
 EGRESS rules. When `null`, the `dest_ip_ranges` field will be omitted from the resulting object.
   - `src_ip_ranges` (`list`): Source IP address range in CIDR format. Required for
 INGRESS rules. When `null`, the `src_ip_ranges` field will be omitted from the resulting object.
-  - `layer4_config` (`list[obj]`): Pairs of IP protocols and ports that the rule should match. When `null`, the `layer4_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.match.config.layer4_config.new](#fn-configlayer4confignew) constructor.
+  - `layer4_config` (`list[obj]`): Pairs of IP protocols and ports that the rule should match. When `null`, the `layer4_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_organization_security_policy_rule.match.config.layer4_config.new](#fn-configlayer4_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `config` sub block.

@@ -67,7 +67,7 @@ E.g. use &#39;/project/user&#39; instead of &#39;1/{project}/{user}&#39;.
   - `override_value` (`string`): The overriding quota limit value. Can be any nonnegative integer, or -1 (unlimited quota).
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `service` (`string`): The service that the metrics belong to, e.g. &#39;compute.googleapis.com&#39;.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_usage_consumer_quota_override.timeouts.new](#fn-googleserviceusageconsumerquotaoverridetimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_usage_consumer_quota_override.timeouts.new](#fn-google_service_usage_consumer_quota_overridetimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -83,7 +83,7 @@ newAttrs()
 `google-beta.google_service_usage_consumer_quota_override.newAttrs` constructs a new object with attributes and blocks configured for the `google_service_usage_consumer_quota_override`
 Terraform resource.
 
-Unlike [google-beta.google_service_usage_consumer_quota_override.new](#fn-googleserviceusageconsumerquotaoverridenew), this function will not inject the `resource`
+Unlike [google-beta.google_service_usage_consumer_quota_override.new](#fn-google_service_usage_consumer_quota_overridenew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -102,7 +102,7 @@ E.g. use &#39;/project/user&#39; instead of &#39;1/{project}/{user}&#39;.
   - `override_value` (`string`): The overriding quota limit value. Can be any nonnegative integer, or -1 (unlimited quota).
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `service` (`string`): The service that the metrics belong to, e.g. &#39;compute.googleapis.com&#39;.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_usage_consumer_quota_override.timeouts.new](#fn-googleserviceusageconsumerquotaoverridetimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_usage_consumer_quota_override.timeouts.new](#fn-google_service_usage_consumer_quota_overridetimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_service_usage_consumer_quota_override` resource into the root Terraform configuration.

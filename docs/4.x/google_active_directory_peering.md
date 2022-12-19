@@ -63,7 +63,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `status` (`string`): The current state of this Peering. When `null`, the `status` field will be omitted from the resulting object.
   - `status_message` (`string`): Additional information about the current status of this peering, if available. When `null`, the `status_message` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_active_directory_peering.timeouts.new](#fn-googleactivedirectorypeeringtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_active_directory_peering.timeouts.new](#fn-google_active_directory_peeringtimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -79,7 +79,7 @@ newAttrs()
 `google-beta.google_active_directory_peering.newAttrs` constructs a new object with attributes and blocks configured for the `google_active_directory_peering`
 Terraform resource.
 
-Unlike [google-beta.google_active_directory_peering.new](#fn-googleactivedirectorypeeringnew), this function will not inject the `resource`
+Unlike [google-beta.google_active_directory_peering.new](#fn-google_active_directory_peeringnew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -94,7 +94,7 @@ injecting into a complete block.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `status` (`string`): The current state of this Peering. When `null`, the `status` field will be omitted from the resulting object.
   - `status_message` (`string`): Additional information about the current status of this peering, if available. When `null`, the `status_message` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_active_directory_peering.timeouts.new](#fn-googleactivedirectorypeeringtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_active_directory_peering.timeouts.new](#fn-google_active_directory_peeringtimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_active_directory_peering` resource into the root Terraform configuration.

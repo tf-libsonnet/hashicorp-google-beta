@@ -55,8 +55,8 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
-  - `dispatch_rules` (`list[obj]`): Rules to match an HTTP request and dispatch that request to a service. When `null`, the `dispatch_rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_app_engine_application_url_dispatch_rules.dispatch_rules.new](#fn-googleappengineapplicationurldispatchrulesdispatchrulesnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_app_engine_application_url_dispatch_rules.timeouts.new](#fn-googleappengineapplicationurldispatchrulestimeoutsnew) constructor.
+  - `dispatch_rules` (`list[obj]`): Rules to match an HTTP request and dispatch that request to a service. When `null`, the `dispatch_rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_app_engine_application_url_dispatch_rules.dispatch_rules.new](#fn-google_app_engine_application_url_dispatch_rulesdispatch_rulesnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_app_engine_application_url_dispatch_rules.timeouts.new](#fn-google_app_engine_application_url_dispatch_rulestimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -72,7 +72,7 @@ newAttrs()
 `google-beta.google_app_engine_application_url_dispatch_rules.newAttrs` constructs a new object with attributes and blocks configured for the `google_app_engine_application_url_dispatch_rules`
 Terraform resource.
 
-Unlike [google-beta.google_app_engine_application_url_dispatch_rules.new](#fn-googleappengineapplicationurldispatchrulesnew), this function will not inject the `resource`
+Unlike [google-beta.google_app_engine_application_url_dispatch_rules.new](#fn-google_app_engine_application_url_dispatch_rulesnew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -81,8 +81,8 @@ injecting into a complete block.
 
 **Args**:
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
-  - `dispatch_rules` (`list[obj]`): Rules to match an HTTP request and dispatch that request to a service. When `null`, the `dispatch_rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_app_engine_application_url_dispatch_rules.dispatch_rules.new](#fn-googleappengineapplicationurldispatchrulesdispatchrulesnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_app_engine_application_url_dispatch_rules.timeouts.new](#fn-googleappengineapplicationurldispatchrulestimeoutsnew) constructor.
+  - `dispatch_rules` (`list[obj]`): Rules to match an HTTP request and dispatch that request to a service. When `null`, the `dispatch_rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_app_engine_application_url_dispatch_rules.dispatch_rules.new](#fn-google_app_engine_application_url_dispatch_rulesdispatch_rulesnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_app_engine_application_url_dispatch_rules.timeouts.new](#fn-google_app_engine_application_url_dispatch_rulestimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_app_engine_application_url_dispatch_rules` resource into the root Terraform configuration.

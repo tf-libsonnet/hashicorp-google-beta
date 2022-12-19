@@ -62,7 +62,7 @@ When changing api configs please ensure the new config is a new resource and the
   - `labels` (`obj`): Resource labels to represent user-provided metadata. When `null`, the `labels` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): The region of the gateway for the API. When `null`, the `region` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_gateway.timeouts.new](#fn-googleapigatewaygatewaytimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_gateway.timeouts.new](#fn-google_api_gateway_gatewaytimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -78,7 +78,7 @@ newAttrs()
 `google-beta.google_api_gateway_gateway.newAttrs` constructs a new object with attributes and blocks configured for the `google_api_gateway_gateway`
 Terraform resource.
 
-Unlike [google-beta.google_api_gateway_gateway.new](#fn-googleapigatewaygatewaynew), this function will not inject the `resource`
+Unlike [google-beta.google_api_gateway_gateway.new](#fn-google_api_gateway_gatewaynew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -93,7 +93,7 @@ When changing api configs please ensure the new config is a new resource and the
   - `labels` (`obj`): Resource labels to represent user-provided metadata. When `null`, the `labels` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): The region of the gateway for the API. When `null`, the `region` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_gateway.timeouts.new](#fn-googleapigatewaygatewaytimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_gateway.timeouts.new](#fn-google_api_gateway_gatewaytimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_api_gateway_gateway` resource into the root Terraform configuration.

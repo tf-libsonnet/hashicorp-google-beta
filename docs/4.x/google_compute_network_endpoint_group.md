@@ -82,7 +82,7 @@ Possible values include: GCE_VM_IP, GCE_VM_IP_PORT, and NON_GCP_PRIVATE_IP_PORT.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `subnetwork` (`string`): Optional subnetwork to which all network endpoints in the NEG belong. When `null`, the `subnetwork` field will be omitted from the resulting object.
   - `zone` (`string`): Zone where the network endpoint group is located. When `null`, the `zone` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_network_endpoint_group.timeouts.new](#fn-googlecomputenetworkendpointgrouptimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_network_endpoint_group.timeouts.new](#fn-google_compute_network_endpoint_grouptimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -98,7 +98,7 @@ newAttrs()
 `google-beta.google_compute_network_endpoint_group.newAttrs` constructs a new object with attributes and blocks configured for the `google_compute_network_endpoint_group`
 Terraform resource.
 
-Unlike [google-beta.google_compute_network_endpoint_group.new](#fn-googlecomputenetworkendpointgroupnew), this function will not inject the `resource`
+Unlike [google-beta.google_compute_network_endpoint_group.new](#fn-google_compute_network_endpoint_groupnew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -131,7 +131,7 @@ Possible values include: GCE_VM_IP, GCE_VM_IP_PORT, and NON_GCP_PRIVATE_IP_PORT.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `subnetwork` (`string`): Optional subnetwork to which all network endpoints in the NEG belong. When `null`, the `subnetwork` field will be omitted from the resulting object.
   - `zone` (`string`): Zone where the network endpoint group is located. When `null`, the `zone` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_network_endpoint_group.timeouts.new](#fn-googlecomputenetworkendpointgrouptimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_network_endpoint_group.timeouts.new](#fn-google_compute_network_endpoint_grouptimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_compute_network_endpoint_group` resource into the root Terraform configuration.

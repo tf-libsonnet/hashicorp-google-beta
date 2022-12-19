@@ -67,8 +67,8 @@ all entries in that group. When `null`, the `parent` field will be omitted from 
 projects/{project_id}/locations/{location}/tagTemplates/{tagTemplateId}
 This field cannot be modified after creation.
   - `fields` (`list[obj]`): This maps the ID of a tag field to the value of and additional information about that field.
-Valid field IDs are defined by the tag&#39;s template. A tag must have at least 1 field and at most 500 fields. When `null`, the `fields` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_tag.fields.new](#fn-googledatacatalogtagfieldsnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_tag.timeouts.new](#fn-googledatacatalogtagtimeoutsnew) constructor.
+Valid field IDs are defined by the tag&#39;s template. A tag must have at least 1 field and at most 500 fields. When `null`, the `fields` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_tag.fields.new](#fn-google_data_catalog_tagfieldsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_tag.timeouts.new](#fn-google_data_catalog_tagtimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -84,7 +84,7 @@ newAttrs()
 `google-beta.google_data_catalog_tag.newAttrs` constructs a new object with attributes and blocks configured for the `google_data_catalog_tag`
 Terraform resource.
 
-Unlike [google-beta.google_data_catalog_tag.new](#fn-googledatacatalogtagnew), this function will not inject the `resource`
+Unlike [google-beta.google_data_catalog_tag.new](#fn-google_data_catalog_tagnew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -103,8 +103,8 @@ all entries in that group. When `null`, the `parent` field will be omitted from 
 projects/{project_id}/locations/{location}/tagTemplates/{tagTemplateId}
 This field cannot be modified after creation.
   - `fields` (`list[obj]`): This maps the ID of a tag field to the value of and additional information about that field.
-Valid field IDs are defined by the tag&#39;s template. A tag must have at least 1 field and at most 500 fields. When `null`, the `fields` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_tag.fields.new](#fn-googledatacatalogtagfieldsnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_tag.timeouts.new](#fn-googledatacatalogtagtimeoutsnew) constructor.
+Valid field IDs are defined by the tag&#39;s template. A tag must have at least 1 field and at most 500 fields. When `null`, the `fields` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_tag.fields.new](#fn-google_data_catalog_tagfieldsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_data_catalog_tag.timeouts.new](#fn-google_data_catalog_tagtimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_data_catalog_tag` resource into the root Terraform configuration.

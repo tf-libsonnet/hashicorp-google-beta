@@ -68,7 +68,7 @@ newAttrs()
 `google-beta.data.google_dns_record_set.newAttrs` constructs a new object with attributes and blocks configured for the `google_dns_record_set`
 Terraform data source.
 
-Unlike [google-beta.data.google_dns_record_set.new](#fn-googlednsrecordsetnew), this function will not inject the `data source`
+Unlike [google-beta.data.google_dns_record_set.new](#fn-google_dns_record_setnew), this function will not inject the `data source`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
 

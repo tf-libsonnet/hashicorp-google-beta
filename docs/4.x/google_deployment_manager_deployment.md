@@ -89,10 +89,10 @@ of a deployment in preview (unless updating to preview=false). Thus,
 Terraform will force-recreate deployments if either preview is updated
 to true or if other fields are updated while preview is true. When `null`, the `preview` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
-  - `labels` (`list[obj]`): Key-value pairs to apply to this labels. When `null`, the `labels` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.labels.new](#fn-googledeploymentmanagerdeploymentlabelsnew) constructor.
+  - `labels` (`list[obj]`): Key-value pairs to apply to this labels. When `null`, the `labels` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.labels.new](#fn-google_deployment_manager_deploymentlabelsnew) constructor.
   - `target` (`list[obj]`): Parameters that define your deployment, including the deployment
-configuration and relevant templates. When `null`, the `target` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.target.new](#fn-googledeploymentmanagerdeploymenttargetnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.timeouts.new](#fn-googledeploymentmanagerdeploymenttimeoutsnew) constructor.
+configuration and relevant templates. When `null`, the `target` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.target.new](#fn-google_deployment_manager_deploymenttargetnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.timeouts.new](#fn-google_deployment_manager_deploymenttimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -108,7 +108,7 @@ newAttrs()
 `google-beta.google_deployment_manager_deployment.newAttrs` constructs a new object with attributes and blocks configured for the `google_deployment_manager_deployment`
 Terraform resource.
 
-Unlike [google-beta.google_deployment_manager_deployment.new](#fn-googledeploymentmanagerdeploymentnew), this function will not inject the `resource`
+Unlike [google-beta.google_deployment_manager_deployment.new](#fn-google_deployment_manager_deploymentnew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -138,10 +138,10 @@ of a deployment in preview (unless updating to preview=false). Thus,
 Terraform will force-recreate deployments if either preview is updated
 to true or if other fields are updated while preview is true. When `null`, the `preview` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
-  - `labels` (`list[obj]`): Key-value pairs to apply to this labels. When `null`, the `labels` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.labels.new](#fn-googledeploymentmanagerdeploymentlabelsnew) constructor.
+  - `labels` (`list[obj]`): Key-value pairs to apply to this labels. When `null`, the `labels` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.labels.new](#fn-google_deployment_manager_deploymentlabelsnew) constructor.
   - `target` (`list[obj]`): Parameters that define your deployment, including the deployment
-configuration and relevant templates. When `null`, the `target` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.target.new](#fn-googledeploymentmanagerdeploymenttargetnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.timeouts.new](#fn-googledeploymentmanagerdeploymenttimeoutsnew) constructor.
+configuration and relevant templates. When `null`, the `target` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.target.new](#fn-google_deployment_manager_deploymenttargetnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_deployment_manager_deployment.timeouts.new](#fn-google_deployment_manager_deploymenttimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_deployment_manager_deployment` resource into the root Terraform configuration.

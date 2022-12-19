@@ -148,12 +148,12 @@ If no targetTags are specified, the firewall rule applies to all
 instances on the specified network. When `null`, the `target_tags` field will be omitted from the resulting object.
   - `allow` (`list[obj]`): The list of ALLOW rules specified by this firewall. Each rule
 specifies a protocol and port-range tuple that describes a permitted
-connection. When `null`, the `allow` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.allow.new](#fn-googlecomputefirewallallownew) constructor.
+connection. When `null`, the `allow` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.allow.new](#fn-google_compute_firewallallownew) constructor.
   - `deny` (`list[obj]`): The list of DENY rules specified by this firewall. Each rule specifies
-a protocol and port-range tuple that describes a denied connection. When `null`, the `deny` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.deny.new](#fn-googlecomputefirewalldenynew) constructor.
+a protocol and port-range tuple that describes a denied connection. When `null`, the `deny` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.deny.new](#fn-google_compute_firewalldenynew) constructor.
   - `log_config` (`list[obj]`): This field denotes the logging options for a particular firewall rule.
-If defined, logging is enabled, and logs will be exported to Cloud Logging. When `null`, the `log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.log_config.new](#fn-googlecomputefirewalllogconfignew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.timeouts.new](#fn-googlecomputefirewalltimeoutsnew) constructor.
+If defined, logging is enabled, and logs will be exported to Cloud Logging. When `null`, the `log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.log_config.new](#fn-google_compute_firewalllog_confignew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.timeouts.new](#fn-google_compute_firewalltimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -169,7 +169,7 @@ newAttrs()
 `google-beta.google_compute_firewall.newAttrs` constructs a new object with attributes and blocks configured for the `google_compute_firewall`
 Terraform resource.
 
-Unlike [google-beta.google_compute_firewall.new](#fn-googlecomputefirewallnew), this function will not inject the `resource`
+Unlike [google-beta.google_compute_firewall.new](#fn-google_compute_firewallnew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -250,12 +250,12 @@ If no targetTags are specified, the firewall rule applies to all
 instances on the specified network. When `null`, the `target_tags` field will be omitted from the resulting object.
   - `allow` (`list[obj]`): The list of ALLOW rules specified by this firewall. Each rule
 specifies a protocol and port-range tuple that describes a permitted
-connection. When `null`, the `allow` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.allow.new](#fn-googlecomputefirewallallownew) constructor.
+connection. When `null`, the `allow` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.allow.new](#fn-google_compute_firewallallownew) constructor.
   - `deny` (`list[obj]`): The list of DENY rules specified by this firewall. Each rule specifies
-a protocol and port-range tuple that describes a denied connection. When `null`, the `deny` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.deny.new](#fn-googlecomputefirewalldenynew) constructor.
+a protocol and port-range tuple that describes a denied connection. When `null`, the `deny` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.deny.new](#fn-google_compute_firewalldenynew) constructor.
   - `log_config` (`list[obj]`): This field denotes the logging options for a particular firewall rule.
-If defined, logging is enabled, and logs will be exported to Cloud Logging. When `null`, the `log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.log_config.new](#fn-googlecomputefirewalllogconfignew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.timeouts.new](#fn-googlecomputefirewalltimeoutsnew) constructor.
+If defined, logging is enabled, and logs will be exported to Cloud Logging. When `null`, the `log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.log_config.new](#fn-google_compute_firewalllog_confignew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_firewall.timeouts.new](#fn-google_compute_firewalltimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_compute_firewall` resource into the root Terraform configuration.

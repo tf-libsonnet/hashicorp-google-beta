@@ -53,7 +53,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `bucket_id` (`string`): Required. Immutable. The ID of the underlying Google Cloud Storage bucket When `null`, the `bucket_id` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_storage_bucket.timeouts.new](#fn-googlefirebasestoragebuckettimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_storage_bucket.timeouts.new](#fn-google_firebase_storage_buckettimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -69,7 +69,7 @@ newAttrs()
 `google-beta.google_firebase_storage_bucket.newAttrs` constructs a new object with attributes and blocks configured for the `google_firebase_storage_bucket`
 Terraform resource.
 
-Unlike [google-beta.google_firebase_storage_bucket.new](#fn-googlefirebasestoragebucketnew), this function will not inject the `resource`
+Unlike [google-beta.google_firebase_storage_bucket.new](#fn-google_firebase_storage_bucketnew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -79,7 +79,7 @@ injecting into a complete block.
 **Args**:
   - `bucket_id` (`string`): Required. Immutable. The ID of the underlying Google Cloud Storage bucket When `null`, the `bucket_id` field will be omitted from the resulting object.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_storage_bucket.timeouts.new](#fn-googlefirebasestoragebuckettimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_storage_bucket.timeouts.new](#fn-google_firebase_storage_buckettimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_firebase_storage_bucket` resource into the root Terraform configuration.

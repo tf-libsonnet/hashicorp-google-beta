@@ -103,14 +103,14 @@ and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of 
 3 and 63 characters.
   - `tier` (`string`): The tier of the service. Possible values: [&#34;DEVELOPER&#34;, &#34;ENTERPRISE&#34;] When `null`, the `tier` field will be omitted from the resulting object.
   - `encryption_config` (`list[obj]`): Information used to configure the Dataproc Metastore service to encrypt
-customer data at rest. When `null`, the `encryption_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.encryption_config.new](#fn-googledataprocmetastoreserviceencryptionconfignew) constructor.
-  - `hive_metastore_config` (`list[obj]`): Configuration information specific to running Hive metastore software as the metastore service. When `null`, the `hive_metastore_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.hive_metastore_config.new](#fn-googledataprocmetastoreservicehivemetastoreconfignew) constructor.
+customer data at rest. When `null`, the `encryption_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.encryption_config.new](#fn-google_dataproc_metastore_serviceencryption_confignew) constructor.
+  - `hive_metastore_config` (`list[obj]`): Configuration information specific to running Hive metastore software as the metastore service. When `null`, the `hive_metastore_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.hive_metastore_config.new](#fn-google_dataproc_metastore_servicehive_metastore_confignew) constructor.
   - `maintenance_window` (`list[obj]`): The one hour maintenance window of the metastore service.
 This specifies when the service can be restarted for maintenance purposes in UTC time.
-Maintenance window is not needed for services with the &#39;SPANNER&#39; database type. When `null`, the `maintenance_window` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.maintenance_window.new](#fn-googledataprocmetastoreservicemaintenancewindownew) constructor.
-  - `metadata_integration` (`list[obj]`): The setting that defines how metastore metadata should be integrated with external services and systems. When `null`, the `metadata_integration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.metadata_integration.new](#fn-googledataprocmetastoreservicemetadataintegrationnew) constructor.
-  - `network_config` (`list[obj]`): The configuration specifying the network settings for the Dataproc Metastore service. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.network_config.new](#fn-googledataprocmetastoreservicenetworkconfignew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.timeouts.new](#fn-googledataprocmetastoreservicetimeoutsnew) constructor.
+Maintenance window is not needed for services with the &#39;SPANNER&#39; database type. When `null`, the `maintenance_window` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.maintenance_window.new](#fn-google_dataproc_metastore_servicemaintenance_windownew) constructor.
+  - `metadata_integration` (`list[obj]`): The setting that defines how metastore metadata should be integrated with external services and systems. When `null`, the `metadata_integration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.metadata_integration.new](#fn-google_dataproc_metastore_servicemetadata_integrationnew) constructor.
+  - `network_config` (`list[obj]`): The configuration specifying the network settings for the Dataproc Metastore service. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.network_config.new](#fn-google_dataproc_metastore_servicenetwork_confignew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.timeouts.new](#fn-google_dataproc_metastore_servicetimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -126,7 +126,7 @@ newAttrs()
 `google-beta.google_dataproc_metastore_service.newAttrs` constructs a new object with attributes and blocks configured for the `google_dataproc_metastore_service`
 Terraform resource.
 
-Unlike [google-beta.google_dataproc_metastore_service.new](#fn-googledataprocmetastoreservicenew), this function will not inject the `resource`
+Unlike [google-beta.google_dataproc_metastore_service.new](#fn-google_dataproc_metastore_servicenew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -149,14 +149,14 @@ and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of 
 3 and 63 characters.
   - `tier` (`string`): The tier of the service. Possible values: [&#34;DEVELOPER&#34;, &#34;ENTERPRISE&#34;] When `null`, the `tier` field will be omitted from the resulting object.
   - `encryption_config` (`list[obj]`): Information used to configure the Dataproc Metastore service to encrypt
-customer data at rest. When `null`, the `encryption_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.encryption_config.new](#fn-googledataprocmetastoreserviceencryptionconfignew) constructor.
-  - `hive_metastore_config` (`list[obj]`): Configuration information specific to running Hive metastore software as the metastore service. When `null`, the `hive_metastore_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.hive_metastore_config.new](#fn-googledataprocmetastoreservicehivemetastoreconfignew) constructor.
+customer data at rest. When `null`, the `encryption_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.encryption_config.new](#fn-google_dataproc_metastore_serviceencryption_confignew) constructor.
+  - `hive_metastore_config` (`list[obj]`): Configuration information specific to running Hive metastore software as the metastore service. When `null`, the `hive_metastore_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.hive_metastore_config.new](#fn-google_dataproc_metastore_servicehive_metastore_confignew) constructor.
   - `maintenance_window` (`list[obj]`): The one hour maintenance window of the metastore service.
 This specifies when the service can be restarted for maintenance purposes in UTC time.
-Maintenance window is not needed for services with the &#39;SPANNER&#39; database type. When `null`, the `maintenance_window` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.maintenance_window.new](#fn-googledataprocmetastoreservicemaintenancewindownew) constructor.
-  - `metadata_integration` (`list[obj]`): The setting that defines how metastore metadata should be integrated with external services and systems. When `null`, the `metadata_integration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.metadata_integration.new](#fn-googledataprocmetastoreservicemetadataintegrationnew) constructor.
-  - `network_config` (`list[obj]`): The configuration specifying the network settings for the Dataproc Metastore service. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.network_config.new](#fn-googledataprocmetastoreservicenetworkconfignew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.timeouts.new](#fn-googledataprocmetastoreservicetimeoutsnew) constructor.
+Maintenance window is not needed for services with the &#39;SPANNER&#39; database type. When `null`, the `maintenance_window` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.maintenance_window.new](#fn-google_dataproc_metastore_servicemaintenance_windownew) constructor.
+  - `metadata_integration` (`list[obj]`): The setting that defines how metastore metadata should be integrated with external services and systems. When `null`, the `metadata_integration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.metadata_integration.new](#fn-google_dataproc_metastore_servicemetadata_integrationnew) constructor.
+  - `network_config` (`list[obj]`): The configuration specifying the network settings for the Dataproc Metastore service. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.network_config.new](#fn-google_dataproc_metastore_servicenetwork_confignew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.timeouts.new](#fn-google_dataproc_metastore_servicetimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_dataproc_metastore_service` resource into the root Terraform configuration.
@@ -576,8 +576,8 @@ The mappings override system defaults (some keys cannot be overridden) When `nul
 When specified, a secondary Hive metastore service is created along with the primary service.
 All auxiliary versions must be less than the service&#39;s primary version.
 The key is the auxiliary service name and it must match the regular expression a-z?.
-This means that the first character must be a lowercase letter, and all the following characters must be hyphens, lowercase letters, or digits, except the last character, which cannot be a hyphen. When `null`, the `auxiliary_versions` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.hive_metastore_config.auxiliary_versions.new](#fn-hivemetastoreconfigauxiliaryversionsnew) constructor.
-  - `kerberos_config` (`list[obj]`): Information used to configure the Hive metastore service as a service principal in a Kerberos realm. When `null`, the `kerberos_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.hive_metastore_config.kerberos_config.new](#fn-hivemetastoreconfigkerberosconfignew) constructor.
+This means that the first character must be a lowercase letter, and all the following characters must be hyphens, lowercase letters, or digits, except the last character, which cannot be a hyphen. When `null`, the `auxiliary_versions` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.hive_metastore_config.auxiliary_versions.new](#fn-hive_metastore_configauxiliary_versionsnew) constructor.
+  - `kerberos_config` (`list[obj]`): Information used to configure the Hive metastore service as a service principal in a Kerberos realm. When `null`, the `kerberos_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.hive_metastore_config.kerberos_config.new](#fn-hive_metastore_configkerberos_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `hive_metastore_config` sub block.
@@ -628,7 +628,7 @@ Terraform sub block.
 **Args**:
   - `krb5_config_gcs_uri` (`string`): A Cloud Storage URI that specifies the path to a krb5.conf file. It is of the form gs://{bucket_name}/path/to/krb5.conf, although the file does not need to be named krb5.conf explicitly.
   - `principal` (`string`): A Kerberos principal that exists in the both the keytab the KDC to authenticate as. A typical principal is of the form &#34;primary/instance@REALM&#34;, but there is no exact format.
-  - `keytab` (`list[obj]`): A Kerberos keytab file that can be used to authenticate a service principal with a Kerberos Key Distribution Center (KDC). When `null`, the `keytab` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.hive_metastore_config.kerberos_config.keytab.new](#fn-kerberosconfigkeytabnew) constructor.
+  - `keytab` (`list[obj]`): A Kerberos keytab file that can be used to authenticate a service principal with a Kerberos Key Distribution Center (KDC). When `null`, the `keytab` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.hive_metastore_config.kerberos_config.keytab.new](#fn-kerberos_configkeytabnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `kerberos_config` sub block.
@@ -700,7 +700,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `data_catalog_config` (`list[obj]`): The integration config for the Data Catalog service. When `null`, the `data_catalog_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.metadata_integration.data_catalog_config.new](#fn-metadataintegrationdatacatalogconfignew) constructor.
+  - `data_catalog_config` (`list[obj]`): The integration config for the Data Catalog service. When `null`, the `data_catalog_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.metadata_integration.data_catalog_config.new](#fn-metadata_integrationdata_catalog_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `metadata_integration` sub block.
@@ -746,7 +746,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `consumers` (`list[obj]`): The consumer-side network configuration for the Dataproc Metastore instance. When `null`, the `consumers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.network_config.consumers.new](#fn-networkconfigconsumersnew) constructor.
+  - `consumers` (`list[obj]`): The consumer-side network configuration for the Dataproc Metastore instance. When `null`, the `consumers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.network_config.consumers.new](#fn-network_configconsumersnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `network_config` sub block.

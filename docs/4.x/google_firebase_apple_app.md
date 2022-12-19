@@ -63,7 +63,7 @@ serving traffic. Set to &#39;DELETE&#39; to delete the AppleApp. Default to &#39
   - `display_name` (`string`): The user-assigned display name of the App.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `team_id` (`string`): The Apple Developer Team ID associated with the App in the App Store. When `null`, the `team_id` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_apple_app.timeouts.new](#fn-googlefirebaseappleapptimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_apple_app.timeouts.new](#fn-google_firebase_apple_apptimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -79,7 +79,7 @@ newAttrs()
 `google-beta.google_firebase_apple_app.newAttrs` constructs a new object with attributes and blocks configured for the `google_firebase_apple_app`
 Terraform resource.
 
-Unlike [google-beta.google_firebase_apple_app.new](#fn-googlefirebaseappleappnew), this function will not inject the `resource`
+Unlike [google-beta.google_firebase_apple_app.new](#fn-google_firebase_apple_appnew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -95,7 +95,7 @@ serving traffic. Set to &#39;DELETE&#39; to delete the AppleApp. Default to &#39
   - `display_name` (`string`): The user-assigned display name of the App.
   - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `team_id` (`string`): The Apple Developer Team ID associated with the App in the App Store. When `null`, the `team_id` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_apple_app.timeouts.new](#fn-googlefirebaseappleapptimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_apple_app.timeouts.new](#fn-google_firebase_apple_apptimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_firebase_apple_app` resource into the root Terraform configuration.

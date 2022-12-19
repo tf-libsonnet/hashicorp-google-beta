@@ -119,15 +119,15 @@ Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#
 
 ** Changing this property may recreate the FHIR store (removing all data) **
   - `version` (`string`): The FHIR specification version. Default value: &#34;STU3&#34; Possible values: [&#34;DSTU2&#34;, &#34;STU3&#34;, &#34;R4&#34;] When `null`, the `version` field will be omitted from the resulting object.
-  - `notification_config` (`list[obj]`): A nested object resource When `null`, the `notification_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.notification_config.new](#fn-googlehealthcarefhirstorenotificationconfignew) constructor.
-  - `notification_configs` (`list[obj]`): A list of notifcation configs that configure the notification for every resource mutation in this FHIR store. When `null`, the `notification_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.notification_configs.new](#fn-googlehealthcarefhirstorenotificationconfigsnew) constructor.
+  - `notification_config` (`list[obj]`): A nested object resource When `null`, the `notification_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.notification_config.new](#fn-google_healthcare_fhir_storenotification_confignew) constructor.
+  - `notification_configs` (`list[obj]`): A list of notifcation configs that configure the notification for every resource mutation in this FHIR store. When `null`, the `notification_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.notification_configs.new](#fn-google_healthcare_fhir_storenotification_configsnew) constructor.
   - `stream_configs` (`list[obj]`): A list of streaming configs that configure the destinations of streaming export for every resource mutation in
 this FHIR store. Each store is allowed to have up to 10 streaming configs. After a new config is added, the next
 resource mutation is streamed to the new location in addition to the existing ones. When a location is removed
 from the list, the server stops streaming to that location. Before adding a new config, you must add the required
 bigquery.dataEditor role to your project&#39;s Cloud Healthcare Service Agent service account. Some lag (typically on
-the order of dozens of seconds) is expected before the results show up in the streaming destination. When `null`, the `stream_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.stream_configs.new](#fn-googlehealthcarefhirstorestreamconfigsnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.timeouts.new](#fn-googlehealthcarefhirstoretimeoutsnew) constructor.
+the order of dozens of seconds) is expected before the results show up in the streaming destination. When `null`, the `stream_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.stream_configs.new](#fn-google_healthcare_fhir_storestream_configsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.timeouts.new](#fn-google_healthcare_fhir_storetimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -143,7 +143,7 @@ newAttrs()
 `google-beta.google_healthcare_fhir_store.newAttrs` constructs a new object with attributes and blocks configured for the `google_healthcare_fhir_store`
 Terraform resource.
 
-Unlike [google-beta.google_healthcare_fhir_store.new](#fn-googlehealthcarefhirstorenew), this function will not inject the `resource`
+Unlike [google-beta.google_healthcare_fhir_store.new](#fn-google_healthcare_fhir_storenew), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -197,15 +197,15 @@ Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#
 
 ** Changing this property may recreate the FHIR store (removing all data) **
   - `version` (`string`): The FHIR specification version. Default value: &#34;STU3&#34; Possible values: [&#34;DSTU2&#34;, &#34;STU3&#34;, &#34;R4&#34;] When `null`, the `version` field will be omitted from the resulting object.
-  - `notification_config` (`list[obj]`): A nested object resource When `null`, the `notification_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.notification_config.new](#fn-googlehealthcarefhirstorenotificationconfignew) constructor.
-  - `notification_configs` (`list[obj]`): A list of notifcation configs that configure the notification for every resource mutation in this FHIR store. When `null`, the `notification_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.notification_configs.new](#fn-googlehealthcarefhirstorenotificationconfigsnew) constructor.
+  - `notification_config` (`list[obj]`): A nested object resource When `null`, the `notification_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.notification_config.new](#fn-google_healthcare_fhir_storenotification_confignew) constructor.
+  - `notification_configs` (`list[obj]`): A list of notifcation configs that configure the notification for every resource mutation in this FHIR store. When `null`, the `notification_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.notification_configs.new](#fn-google_healthcare_fhir_storenotification_configsnew) constructor.
   - `stream_configs` (`list[obj]`): A list of streaming configs that configure the destinations of streaming export for every resource mutation in
 this FHIR store. Each store is allowed to have up to 10 streaming configs. After a new config is added, the next
 resource mutation is streamed to the new location in addition to the existing ones. When a location is removed
 from the list, the server stops streaming to that location. Before adding a new config, you must add the required
 bigquery.dataEditor role to your project&#39;s Cloud Healthcare Service Agent service account. Some lag (typically on
-the order of dozens of seconds) is expected before the results show up in the streaming destination. When `null`, the `stream_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.stream_configs.new](#fn-googlehealthcarefhirstorestreamconfigsnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.timeouts.new](#fn-googlehealthcarefhirstoretimeoutsnew) constructor.
+the order of dozens of seconds) is expected before the results show up in the streaming destination. When `null`, the `stream_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.stream_configs.new](#fn-google_healthcare_fhir_storestream_configsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.timeouts.new](#fn-google_healthcare_fhir_storetimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_healthcare_fhir_store` resource into the root Terraform configuration.
@@ -571,7 +571,7 @@ an empty list as an intent to stream all the supported resource types in this FH
 The output is organized in one table per resource type. The server reuses the existing tables (if any) that
 are named after the resource types, e.g. &#34;Patient&#34;, &#34;Observation&#34;. When there is no existing table for a given
 resource type, the server attempts to create one.
-See the [streaming config reference](https://cloud.google.com/healthcare/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores#streamconfig) for more details. When `null`, the `bigquery_destination` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.stream_configs.bigquery_destination.new](#fn-streamconfigsbigquerydestinationnew) constructor.
+See the [streaming config reference](https://cloud.google.com/healthcare/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores#streamconfig) for more details. When `null`, the `bigquery_destination` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.stream_configs.bigquery_destination.new](#fn-stream_configsbigquery_destinationnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `stream_configs` sub block.
@@ -595,7 +595,7 @@ Terraform sub block.
 
 **Args**:
   - `dataset_uri` (`string`): BigQuery URI to a dataset, up to 2000 characters long, in the format bq://projectId.bqDatasetId
-  - `schema_config` (`list[obj]`): The configuration for the exported BigQuery schema. When `null`, the `schema_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.stream_configs.bigquery_destination.schema_config.new](#fn-bigquerydestinationschemaconfignew) constructor.
+  - `schema_config` (`list[obj]`): The configuration for the exported BigQuery schema. When `null`, the `schema_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_healthcare_fhir_store.stream_configs.bigquery_destination.schema_config.new](#fn-bigquery_destinationschema_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `bigquery_destination` sub block.
