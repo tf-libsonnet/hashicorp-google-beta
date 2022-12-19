@@ -1,0 +1,261 @@
+---
+permalink: /data/google_iam_policy/
+---
+
+# data.google_iam_policy
+
+`google_iam_policy` represents the `google-beta_google_iam_policy` Terraform data source.
+
+
+
+This package contains functions and utilities for setting up the data source using Jsonnet code.
+
+
+## Index
+
+* [`fn new()`](#fn-new)
+* [`fn newAttrs()`](#fn-newattrs)
+* [`fn withAuditConfig()`](#fn-withauditconfig)
+* [`fn withAuditConfigMixin()`](#fn-withauditconfigmixin)
+* [`fn withBinding()`](#fn-withbinding)
+* [`fn withBindingMixin()`](#fn-withbindingmixin)
+* [`obj audit_config`](#obj-audit_config)
+  * [`fn new()`](#fn-audit_confignew)
+  * [`obj audit_config.audit_log_configs`](#obj-audit_configaudit_log_configs)
+    * [`fn new()`](#fn-audit_configaudit_log_configsnew)
+* [`obj binding`](#obj-binding)
+  * [`fn new()`](#fn-bindingnew)
+  * [`obj binding.condition`](#obj-bindingcondition)
+    * [`fn new()`](#fn-bindingconditionnew)
+
+## Fields
+
+### fn new
+
+```ts
+new()
+```
+
+
+`google-beta.data.google_iam_policy.new` injects a new `data_google-beta_google_iam_policy` Terraform `data source`
+block into the root module document.
+
+Additionally, this inserts a private function into the `_ref` attribute that generates references to attributes of the
+resource. For example, if you added a new instance to the root using:
+
+    # arguments omitted for brevity
+    google-beta.data.google_iam_policy.new('some_id')
+
+You can get the reference to the `id` field of the created `google-beta.data.google_iam_policy` using the reference:
+
+    $._ref.data_google-beta_google_iam_policy.some_id.get('id')
+
+This is the same as directly entering `"${ data_google-beta_google_iam_policy.some_id.id }"` as the value.
+
+NOTE: if you are chaining multiple resources together in a merge operation, you may not be able to use `super`, `self`,
+or `$` to refer to the root object. Instead, make an explicit outer object using `local`.
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block.
+  - `audit_config` (`list[obj]`):  When `null`, the `audit_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.data.google_iam_policy.audit_config.new](#fn-googleiampolicyauditconfignew) constructor.
+  - `binding` (`list[obj]`):  When `null`, the `binding` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.data.google_iam_policy.binding.new](#fn-googleiampolicybindingnew) constructor.
+
+**Returns**:
+- A mixin object that injects the new data source into the root Terraform configuration.
+
+
+### fn newAttrs
+
+```ts
+newAttrs()
+```
+
+
+`google-beta.data.google_iam_policy.newAttrs` constructs a new object with attributes and blocks configured for the `google_iam_policy`
+Terraform data source.
+
+Unlike [google-beta.data.google_iam_policy.new](#fn-googleiampolicynew), this function will not inject the `data source`
+block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
+[tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
+
+This is most useful when you need to preprocess the attributes with functions, conditional, or looping logic prior to
+injecting into a complete block.
+
+**Args**:
+  - `audit_config` (`list[obj]`):  When `null`, the `audit_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.data.google_iam_policy.audit_config.new](#fn-googleiampolicyauditconfignew) constructor.
+  - `binding` (`list[obj]`):  When `null`, the `binding` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.data.google_iam_policy.binding.new](#fn-googleiampolicybindingnew) constructor.
+
+**Returns**:
+  - An attribute object that can be used with [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) to construct a new `google_iam_policy` data source into the root Terraform configuration.
+
+
+### fn withAuditConfig
+
+```ts
+withAuditConfig()
+```
+
+`google-beta.list[obj].withAuditConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform data source block to set or update the audit_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withAuditConfigMixin](TODO) function.
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `audit_config` field.
+
+
+### fn withAuditConfigMixin
+
+```ts
+withAuditConfigMixin()
+```
+
+`google-beta.list[obj].withAuditConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform data source block to set or update the audit_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withAuditConfig](TODO)
+function.
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `audit_config` field.
+
+
+### fn withBinding
+
+```ts
+withBinding()
+```
+
+`google-beta.list[obj].withBinding` constructs a mixin object that can be merged into the `list[obj]`
+Terraform data source block to set or update the binding field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withBindingMixin](TODO) function.
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `binding` field.
+
+
+### fn withBindingMixin
+
+```ts
+withBindingMixin()
+```
+
+`google-beta.list[obj].withBindingMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform data source block to set or update the binding field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withBinding](TODO)
+function.
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `binding` field.
+
+
+## obj audit_config
+
+
+
+### fn audit_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_iam_policy.audit_config.new` constructs a new object with attributes and blocks configured for the `audit_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `service` (`string`): 
+  - `audit_log_configs` (`list[obj]`):  When `null`, the `audit_log_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_policy.audit_config.audit_log_configs.new](#fn-auditconfigauditlogconfigsnew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `audit_config` sub block.
+
+
+## obj audit_config.audit_log_configs
+
+
+
+### fn audit_config.audit_log_configs.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_iam_policy.audit_config.audit_log_configs.new` constructs a new object with attributes and blocks configured for the `audit_log_configs`
+Terraform sub block.
+
+
+
+**Args**:
+  - `exempted_members` (`list`):  When `null`, the `exempted_members` field will be omitted from the resulting object.
+  - `log_type` (`string`): 
+
+**Returns**:
+  - An attribute object that represents the `audit_log_configs` sub block.
+
+
+## obj binding
+
+
+
+### fn binding.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_iam_policy.binding.new` constructs a new object with attributes and blocks configured for the `binding`
+Terraform sub block.
+
+
+
+**Args**:
+  - `members` (`list`): 
+  - `role` (`string`): 
+  - `condition` (`list[obj]`):  When `null`, the `condition` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_iam_policy.binding.condition.new](#fn-bindingconditionnew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `binding` sub block.
+
+
+## obj binding.condition
+
+
+
+### fn binding.condition.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_iam_policy.binding.condition.new` constructs a new object with attributes and blocks configured for the `condition`
+Terraform sub block.
+
+
+
+**Args**:
+  - `description` (`string`):  When `null`, the `description` field will be omitted from the resulting object.
+  - `expression` (`string`): 
+  - `title` (`string`): 
+
+**Returns**:
+  - An attribute object that represents the `condition` sub block.
