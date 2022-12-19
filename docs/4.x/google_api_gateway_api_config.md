@@ -84,14 +84,14 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `api_config_id_prefix` (`string`): Creates a unique name beginning with the specified prefix. If this and api_config_id are unspecified, a random value is chosen for the name. When `null`, the `api_config_id_prefix` field will be omitted from the resulting object.
   - `display_name` (`string`): A user-visible name for the API. When `null`, the `display_name` field will be omitted from the resulting object.
   - `labels` (`obj`): Resource labels to represent user-provided metadata. When `null`, the `labels` field will be omitted from the resulting object.
-  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `gateway_config` (`list[obj]`): Immutable. Gateway specific configuration.
 If not specified, backend authentication will be set to use OIDC authentication using the default compute service account When `null`, the `gateway_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.gateway_config.new](#fn-gateway_confignew) constructor.
   - `grpc_services` (`list[obj]`): gRPC service definition files. If specified, openapiDocuments must not be included. When `null`, the `grpc_services` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.grpc_services.new](#fn-grpc_servicesnew) constructor.
   - `managed_service_configs` (`list[obj]`): Optional. Service Configuration files. At least one must be included when using gRPC service definitions. See https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview for the expected file contents.
 If multiple files are specified, the files are merged with the following rules: * All singular scalar fields are merged using &#34;last one wins&#34; semantics in the order of the files uploaded. * Repeated fields are concatenated. * Singular embedded messages are merged using these rules for nested fields. When `null`, the `managed_service_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.managed_service_configs.new](#fn-managed_service_configsnew) constructor.
   - `openapi_documents` (`list[obj]`): OpenAPI specification documents. If specified, grpcServices and managedServiceConfigs must not be included. When `null`, the `openapi_documents` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.openapi_documents.new](#fn-openapi_documentsnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -120,14 +120,14 @@ injecting into a complete block.
   - `api_config_id_prefix` (`string`): Creates a unique name beginning with the specified prefix. If this and api_config_id are unspecified, a random value is chosen for the name. When `null`, the `api_config_id_prefix` field will be omitted from the resulting object.
   - `display_name` (`string`): A user-visible name for the API. When `null`, the `display_name` field will be omitted from the resulting object.
   - `labels` (`obj`): Resource labels to represent user-provided metadata. When `null`, the `labels` field will be omitted from the resulting object.
-  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `gateway_config` (`list[obj]`): Immutable. Gateway specific configuration.
 If not specified, backend authentication will be set to use OIDC authentication using the default compute service account When `null`, the `gateway_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.gateway_config.new](#fn-gateway_confignew) constructor.
   - `grpc_services` (`list[obj]`): gRPC service definition files. If specified, openapiDocuments must not be included. When `null`, the `grpc_services` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.grpc_services.new](#fn-grpc_servicesnew) constructor.
   - `managed_service_configs` (`list[obj]`): Optional. Service Configuration files. At least one must be included when using gRPC service definitions. See https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview for the expected file contents.
 If multiple files are specified, the files are merged with the following rules: * All singular scalar fields are merged using &#34;last one wins&#34; semantics in the order of the files uploaded. * Repeated fields are concatenated. * Singular embedded messages are merged using these rules for nested fields. When `null`, the `managed_service_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.managed_service_configs.new](#fn-managed_service_configsnew) constructor.
   - `openapi_documents` (`list[obj]`): OpenAPI specification documents. If specified, grpcServices and managedServiceConfigs must not be included. When `null`, the `openapi_documents` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.openapi_documents.new](#fn-openapi_documentsnew) constructor.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_api_gateway_api_config` resource into the root Terraform configuration.
@@ -623,9 +623,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `create` (`string`):  When `null`, the `create` field will be omitted from the resulting object.
-  - `delete` (`string`):  When `null`, the `delete` field will be omitted from the resulting object.
-  - `update` (`string`):  When `null`, the `update` field will be omitted from the resulting object.
+  - `create` (`string`): Set the `create` field on the resulting object. When `null`, the `create` field will be omitted from the resulting object.
+  - `delete` (`string`): Set the `delete` field on the resulting object. When `null`, the `delete` field will be omitted from the resulting object.
+  - `update` (`string`): Set the `update` field on the resulting object. When `null`, the `update` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.
