@@ -65,9 +65,9 @@ If &#39;force&#39; is &#39;true&#39;, that safety check is ignored. When `null`,
 E.g. use &#39;/project/user&#39; instead of &#39;1/{project}/{user}&#39;.
   - `metric` (`string`): The metric that should be limited, e.g. &#39;compute.googleapis.com/cpus&#39;.
   - `override_value` (`string`): The overriding quota limit value. Can be any nonnegative integer, or -1 (unlimited quota).
-  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `service` (`string`): The service that the metrics belong to, e.g. &#39;compute.googleapis.com&#39;.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_usage_consumer_quota_override.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_usage_consumer_quota_override.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -100,9 +100,9 @@ If &#39;force&#39; is &#39;true&#39;, that safety check is ignored. When `null`,
 E.g. use &#39;/project/user&#39; instead of &#39;1/{project}/{user}&#39;.
   - `metric` (`string`): The metric that should be limited, e.g. &#39;compute.googleapis.com/cpus&#39;.
   - `override_value` (`string`): The overriding quota limit value. Can be any nonnegative integer, or -1 (unlimited quota).
-  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `service` (`string`): The service that the metrics belong to, e.g. &#39;compute.googleapis.com&#39;.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_usage_consumer_quota_override.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_service_usage_consumer_quota_override.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_service_usage_consumer_quota_override` resource into the root Terraform configuration.
@@ -273,9 +273,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `create` (`string`): Set the `create` field on the resulting object. When `null`, the `create` field will be omitted from the resulting object.
-  - `delete` (`string`): Set the `delete` field on the resulting object. When `null`, the `delete` field will be omitted from the resulting object.
-  - `update` (`string`): Set the `update` field on the resulting object. When `null`, the `update` field will be omitted from the resulting object.
+  - `create` (`string`):  When `null`, the `create` field will be omitted from the resulting object.
+  - `delete` (`string`):  When `null`, the `delete` field will be omitted from the resulting object.
+  - `update` (`string`):  When `null`, the `update` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.

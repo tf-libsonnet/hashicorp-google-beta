@@ -87,11 +87,11 @@ A list of key-&gt;value pairs.
 Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#34;count&#34;: &#34;3&#34; }. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The region of the Backup Plan.
   - `name` (`string`): The full name of the BackupPlan Resource.
-  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `backup_config` (`list[obj]`): Defines the configuration of Backups created via this BackupPlan. When `null`, the `backup_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.new](#fn-backup_confignew) constructor.
   - `backup_schedule` (`list[obj]`): Defines a schedule for automatic Backup creation via this BackupPlan. When `null`, the `backup_schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_schedule.new](#fn-backup_schedulenew) constructor.
   - `retention_policy` (`list[obj]`): RetentionPolicy governs lifecycle of Backups created under this plan. When `null`, the `retention_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.retention_policy.new](#fn-retention_policynew) constructor.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -126,11 +126,11 @@ A list of key-&gt;value pairs.
 Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#34;count&#34;: &#34;3&#34; }. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The region of the Backup Plan.
   - `name` (`string`): The full name of the BackupPlan Resource.
-  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `backup_config` (`list[obj]`): Defines the configuration of Backups created via this BackupPlan. When `null`, the `backup_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_config.new](#fn-backup_confignew) constructor.
   - `backup_schedule` (`list[obj]`): Defines a schedule for automatic Backup creation via this BackupPlan. When `null`, the `backup_schedule` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.backup_schedule.new](#fn-backup_schedulenew) constructor.
   - `retention_policy` (`list[obj]`): RetentionPolicy governs lifecycle of Backups created under this plan. When `null`, the `retention_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.retention_policy.new](#fn-retention_policynew) constructor.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_backup_backup_plan.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_gke_backup_backup_plan` resource into the root Terraform configuration.
@@ -603,9 +603,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `create` (`string`): Set the `create` field on the resulting object. When `null`, the `create` field will be omitted from the resulting object.
-  - `delete` (`string`): Set the `delete` field on the resulting object. When `null`, the `delete` field will be omitted from the resulting object.
-  - `update` (`string`): Set the `update` field on the resulting object. When `null`, the `update` field will be omitted from the resulting object.
+  - `create` (`string`):  When `null`, the `create` field will be omitted from the resulting object.
+  - `delete` (`string`):  When `null`, the `delete` field will be omitted from the resulting object.
+  - `update` (`string`):  When `null`, the `update` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.

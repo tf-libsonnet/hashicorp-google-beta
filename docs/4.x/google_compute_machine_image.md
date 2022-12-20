@@ -62,14 +62,14 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `guest_flush` (`bool`): Specify this to create an application consistent machine image by informing the OS to prepare for the snapshot process.
 Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS). When `null`, the `guest_flush` field will be omitted from the resulting object.
   - `name` (`string`): Name of the resource.
-  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `source_instance` (`string`): The source instance used to create the machine image. You can provide this as a partial or full URL to the resource.
   - `machine_image_encryption_key` (`list[obj]`): Encrypts the machine image using a customer-supplied encryption key.
 
 After you encrypt a machine image with a customer-supplied key, you must
 provide the same key if you use the machine image later (e.g. to create a
 instance from the image) When `null`, the `machine_image_encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_machine_image.machine_image_encryption_key.new](#fn-machine_image_encryption_keynew) constructor.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_machine_image.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_machine_image.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -97,14 +97,14 @@ injecting into a complete block.
   - `guest_flush` (`bool`): Specify this to create an application consistent machine image by informing the OS to prepare for the snapshot process.
 Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS). When `null`, the `guest_flush` field will be omitted from the resulting object.
   - `name` (`string`): Name of the resource.
-  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `source_instance` (`string`): The source instance used to create the machine image. You can provide this as a partial or full URL to the resource.
   - `machine_image_encryption_key` (`list[obj]`): Encrypts the machine image using a customer-supplied encryption key.
 
 After you encrypt a machine image with a customer-supplied key, you must
 provide the same key if you use the machine image later (e.g. to create a
 instance from the image) When `null`, the `machine_image_encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_machine_image.machine_image_encryption_key.new](#fn-machine_image_encryption_keynew) constructor.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_machine_image.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_machine_image.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_compute_machine_image` resource into the root Terraform configuration.
@@ -307,8 +307,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `create` (`string`): Set the `create` field on the resulting object. When `null`, the `create` field will be omitted from the resulting object.
-  - `delete` (`string`): Set the `delete` field on the resulting object. When `null`, the `delete` field will be omitted from the resulting object.
+  - `create` (`string`):  When `null`, the `create` field will be omitted from the resulting object.
+  - `delete` (`string`):  When `null`, the `delete` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.

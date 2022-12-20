@@ -66,12 +66,12 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `description` (`string`): The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API. When `null`, the `description` field will be omitted from the resulting object.
   - `labels` (`obj`): Labels to apply to this membership. When `null`, the `labels` field will be omitted from the resulting object.
   - `membership_id` (`string`): The client-provided identifier of the membership.
-  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `authority` (`list[obj]`): Authority encodes how Google will recognize identities from this Membership.
 See the workload identity documentation for more details:
 https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity When `null`, the `authority` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_membership.authority.new](#fn-authoritynew) constructor.
   - `endpoint` (`list[obj]`): If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource. When `null`, the `endpoint` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_membership.endpoint.new](#fn-endpointnew) constructor.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_membership.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_membership.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -98,12 +98,12 @@ injecting into a complete block.
   - `description` (`string`): The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API. When `null`, the `description` field will be omitted from the resulting object.
   - `labels` (`obj`): Labels to apply to this membership. When `null`, the `labels` field will be omitted from the resulting object.
   - `membership_id` (`string`): The client-provided identifier of the membership.
-  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `authority` (`list[obj]`): Authority encodes how Google will recognize identities from this Membership.
 See the workload identity documentation for more details:
 https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity When `null`, the `authority` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_membership.authority.new](#fn-authoritynew) constructor.
   - `endpoint` (`list[obj]`): If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource. When `null`, the `endpoint` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_membership.endpoint.new](#fn-endpointnew) constructor.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_membership.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_membership.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_gke_hub_membership` resource into the root Terraform configuration.
@@ -374,9 +374,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `create` (`string`): Set the `create` field on the resulting object. When `null`, the `create` field will be omitted from the resulting object.
-  - `delete` (`string`): Set the `delete` field on the resulting object. When `null`, the `delete` field will be omitted from the resulting object.
-  - `update` (`string`): Set the `update` field on the resulting object. When `null`, the `update` field will be omitted from the resulting object.
+  - `create` (`string`):  When `null`, the `create` field will be omitted from the resulting object.
+  - `delete` (`string`):  When `null`, the `delete` field will be omitted from the resulting object.
+  - `update` (`string`):  When `null`, the `update` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.

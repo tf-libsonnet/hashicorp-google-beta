@@ -99,7 +99,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `labels` (`obj`): A set of key/value label pairs to assign to this ManagedZone. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): User assigned name for this resource.
 Must be unique within the project.
-  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `reverse_lookup` (`bool`): Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse
 lookup queries using automatically configured records for VPC resources. This only applies
 to networks listed under &#39;private_visibility_config&#39;. When `null`, the `reverse_lookup` field will be omitted from the resulting object.
@@ -115,7 +115,7 @@ zone. The value of this field contains the network to peer with. When `null`, th
   - `private_visibility_config` (`list[obj]`): For privately visible zones, the set of Virtual Private Cloud
 resources that the zone is visible from. When `null`, the `private_visibility_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_managed_zone.private_visibility_config.new](#fn-private_visibility_confignew) constructor.
   - `service_directory_config` (`list[obj]`): The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone. When `null`, the `service_directory_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_managed_zone.service_directory_config.new](#fn-service_directory_confignew) constructor.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_managed_zone.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_managed_zone.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -145,7 +145,7 @@ injecting into a complete block.
   - `labels` (`obj`): A set of key/value label pairs to assign to this ManagedZone. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): User assigned name for this resource.
 Must be unique within the project.
-  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`):  When `null`, the `project` field will be omitted from the resulting object.
   - `reverse_lookup` (`bool`): Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse
 lookup queries using automatically configured records for VPC resources. This only applies
 to networks listed under &#39;private_visibility_config&#39;. When `null`, the `reverse_lookup` field will be omitted from the resulting object.
@@ -161,7 +161,7 @@ zone. The value of this field contains the network to peer with. When `null`, th
   - `private_visibility_config` (`list[obj]`): For privately visible zones, the set of Virtual Private Cloud
 resources that the zone is visible from. When `null`, the `private_visibility_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_managed_zone.private_visibility_config.new](#fn-private_visibility_confignew) constructor.
   - `service_directory_config` (`list[obj]`): The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone. When `null`, the `service_directory_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_managed_zone.service_directory_config.new](#fn-service_directory_confignew) constructor.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_managed_zone.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dns_managed_zone.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_dns_managed_zone` resource into the root Terraform configuration.
@@ -881,9 +881,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `create` (`string`): Set the `create` field on the resulting object. When `null`, the `create` field will be omitted from the resulting object.
-  - `delete` (`string`): Set the `delete` field on the resulting object. When `null`, the `delete` field will be omitted from the resulting object.
-  - `update` (`string`): Set the `update` field on the resulting object. When `null`, the `update` field will be omitted from the resulting object.
+  - `create` (`string`):  When `null`, the `create` field will be omitted from the resulting object.
+  - `delete` (`string`):  When `null`, the `delete` field will be omitted from the resulting object.
+  - `update` (`string`):  When `null`, the `update` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.
