@@ -47,6 +47,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withEnableLegacyAbac()`](#fn-withenablelegacyabac)
 * [`fn withEnableShieldedNodes()`](#fn-withenableshieldednodes)
 * [`fn withEnableTpu()`](#fn-withenabletpu)
+* [`fn withGatewayApiConfig()`](#fn-withgatewayapiconfig)
+* [`fn withGatewayApiConfigMixin()`](#fn-withgatewayapiconfigmixin)
 * [`fn withIdentityServiceConfig()`](#fn-withidentityserviceconfig)
 * [`fn withIdentityServiceConfigMixin()`](#fn-withidentityserviceconfigmixin)
 * [`fn withInitialNodeCount()`](#fn-withinitialnodecount)
@@ -144,6 +146,12 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-cluster_autoscalingauto_provisioning_defaultsmanagementnew)
     * [`obj cluster_autoscaling.auto_provisioning_defaults.shielded_instance_config`](#obj-cluster_autoscalingauto_provisioning_defaultsshielded_instance_config)
       * [`fn new()`](#fn-cluster_autoscalingauto_provisioning_defaultsshielded_instance_confignew)
+    * [`obj cluster_autoscaling.auto_provisioning_defaults.upgrade_settings`](#obj-cluster_autoscalingauto_provisioning_defaultsupgrade_settings)
+      * [`fn new()`](#fn-cluster_autoscalingauto_provisioning_defaultsupgrade_settingsnew)
+      * [`obj cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.blue_green_settings`](#obj-cluster_autoscalingauto_provisioning_defaultsupgrade_settingsblue_green_settings)
+        * [`fn new()`](#fn-cluster_autoscalingauto_provisioning_defaultsupgrade_settingsblue_green_settingsnew)
+        * [`obj cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.blue_green_settings.standard_rollout_policy`](#obj-cluster_autoscalingauto_provisioning_defaultsupgrade_settingsblue_green_settingsstandard_rollout_policy)
+          * [`fn new()`](#fn-cluster_autoscalingauto_provisioning_defaultsupgrade_settingsblue_green_settingsstandard_rollout_policynew)
   * [`obj cluster_autoscaling.resource_limits`](#obj-cluster_autoscalingresource_limits)
     * [`fn new()`](#fn-cluster_autoscalingresource_limitsnew)
 * [`obj cluster_telemetry`](#obj-cluster_telemetry)
@@ -158,6 +166,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-default_snat_statusnew)
 * [`obj dns_config`](#obj-dns_config)
   * [`fn new()`](#fn-dns_confignew)
+* [`obj gateway_api_config`](#obj-gateway_api_config)
+  * [`fn new()`](#fn-gateway_api_confignew)
 * [`obj identity_service_config`](#obj-identity_service_config)
   * [`fn new()`](#fn-identity_service_confignew)
 * [`obj ip_allocation_policy`](#obj-ip_allocation_policy)
@@ -351,6 +361,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `database_encryption` (`list[obj]`): Application-layer Secrets Encryption settings. The object format is {state = string, key_name = string}. Valid values of state are: &#34;ENCRYPTED&#34;; &#34;DECRYPTED&#34;. key_name is the name of a CloudKMS key. When `null`, the `database_encryption` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.database_encryption.new](#fn-database_encryptionnew) constructor.
   - `default_snat_status` (`list[obj]`): Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when defaultSnatStatus is disabled. When `null`, the `default_snat_status` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.default_snat_status.new](#fn-default_snat_statusnew) constructor.
   - `dns_config` (`list[obj]`): Configuration for Cloud DNS for Kubernetes Engine. When `null`, the `dns_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.dns_config.new](#fn-dns_confignew) constructor.
+  - `gateway_api_config` (`list[obj]`): Configuration for GKE Gateway API controller. When `null`, the `gateway_api_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.gateway_api_config.new](#fn-gateway_api_confignew) constructor.
   - `identity_service_config` (`list[obj]`): Configuration for Identity Service which allows customers to use external identity providers with the K8S API. When `null`, the `identity_service_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.identity_service_config.new](#fn-identity_service_confignew) constructor.
   - `ip_allocation_policy` (`list[obj]`): Configuration of cluster IP allocation for VPC-native clusters. Adding this block enables IP aliasing, making the cluster VPC-native instead of routes-based. When `null`, the `ip_allocation_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.ip_allocation_policy.new](#fn-ip_allocation_policynew) constructor.
   - `logging_config` (`list[obj]`): Logging configuration for the cluster. When `null`, the `logging_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.logging_config.new](#fn-logging_confignew) constructor.
@@ -434,6 +445,7 @@ injecting into a complete block.
   - `database_encryption` (`list[obj]`): Application-layer Secrets Encryption settings. The object format is {state = string, key_name = string}. Valid values of state are: &#34;ENCRYPTED&#34;; &#34;DECRYPTED&#34;. key_name is the name of a CloudKMS key. When `null`, the `database_encryption` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.database_encryption.new](#fn-database_encryptionnew) constructor.
   - `default_snat_status` (`list[obj]`): Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when defaultSnatStatus is disabled. When `null`, the `default_snat_status` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.default_snat_status.new](#fn-default_snat_statusnew) constructor.
   - `dns_config` (`list[obj]`): Configuration for Cloud DNS for Kubernetes Engine. When `null`, the `dns_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.dns_config.new](#fn-dns_confignew) constructor.
+  - `gateway_api_config` (`list[obj]`): Configuration for GKE Gateway API controller. When `null`, the `gateway_api_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.gateway_api_config.new](#fn-gateway_api_confignew) constructor.
   - `identity_service_config` (`list[obj]`): Configuration for Identity Service which allows customers to use external identity providers with the K8S API. When `null`, the `identity_service_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.identity_service_config.new](#fn-identity_service_confignew) constructor.
   - `ip_allocation_policy` (`list[obj]`): Configuration of cluster IP allocation for VPC-native clusters. Adding this block enables IP aliasing, making the cluster VPC-native instead of routes-based. When `null`, the `ip_allocation_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.ip_allocation_policy.new](#fn-ip_allocation_policynew) constructor.
   - `logging_config` (`list[obj]`): Logging configuration for the cluster. When `null`, the `logging_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.logging_config.new](#fn-logging_confignew) constructor.
@@ -1022,6 +1034,43 @@ Terraform resource block to set or update the enable_tpu field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`bool`): The value to set for the `enable_tpu` field.
+
+
+### fn withGatewayApiConfig
+
+```ts
+withGatewayApiConfig()
+```
+
+`google-beta.list[obj].withGatewayApiConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the gateway_api_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withGatewayApiConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `gateway_api_config` field.
+
+
+### fn withGatewayApiConfigMixin
+
+```ts
+withGatewayApiConfigMixin()
+```
+
+`google-beta.list[obj].withGatewayApiConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the gateway_api_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withGatewayApiConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `gateway_api_config` field.
 
 
 ### fn withIdentityServiceConfig
@@ -2501,6 +2550,7 @@ Terraform sub block.
   - `service_account` (`string`): The Google Cloud Platform Service Account to be used by the node VMs. When `null`, the `service_account` field will be omitted from the resulting object.
   - `management` (`list[obj]`): NodeManagement configuration for this NodePool. When `null`, the `management` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.cluster_autoscaling.auto_provisioning_defaults.management.new](#fn-cluster_autoscalingcluster_autoscalingmanagementnew) constructor.
   - `shielded_instance_config` (`list[obj]`): Shielded Instance options. When `null`, the `shielded_instance_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.cluster_autoscaling.auto_provisioning_defaults.shielded_instance_config.new](#fn-cluster_autoscalingcluster_autoscalingshielded_instance_confignew) constructor.
+  - `upgrade_settings` (`list[obj]`): Specifies the upgrade settings for NAP created node pools When `null`, the `upgrade_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.new](#fn-cluster_autoscalingcluster_autoscalingupgrade_settingsnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `auto_provisioning_defaults` sub block.
@@ -2552,6 +2602,85 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `shielded_instance_config` sub block.
+
+
+## obj cluster_autoscaling.auto_provisioning_defaults.upgrade_settings
+
+
+
+### fn cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.new` constructs a new object with attributes and blocks configured for the `upgrade_settings`
+Terraform sub block.
+
+
+
+**Args**:
+  - `max_surge` (`number`): The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process. When `null`, the `max_surge` field will be omitted from the resulting object.
+  - `max_unavailable` (`number`): The maximum number of nodes that can be simultaneously unavailable during the upgrade process. When `null`, the `max_unavailable` field will be omitted from the resulting object.
+  - `strategy` (`string`): Update strategy of the node pool. When `null`, the `strategy` field will be omitted from the resulting object.
+  - `blue_green_settings` (`list[obj]`): Settings for blue-green upgrade strategy. When `null`, the `blue_green_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.blue_green_settings.new](#fn-cluster_autoscalingcluster_autoscalingauto_provisioning_defaultsblue_green_settingsnew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `upgrade_settings` sub block.
+
+
+## obj cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.blue_green_settings
+
+
+
+### fn cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.blue_green_settings.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.blue_green_settings.new` constructs a new object with attributes and blocks configured for the `blue_green_settings`
+Terraform sub block.
+
+
+
+**Args**:
+  - `node_pool_soak_duration` (`string`): Time needed after draining entire blue pool. After this period, blue pool will be cleaned up.
+
+																A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `node_pool_soak_duration` field will be omitted from the resulting object.
+  - `standard_rollout_policy` (`list[obj]`): Standard policy for the blue-green upgrade. When `null`, the `standard_rollout_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.blue_green_settings.standard_rollout_policy.new](#fn-cluster_autoscalingcluster_autoscalingauto_provisioning_defaultsupgrade_settingsstandard_rollout_policynew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `blue_green_settings` sub block.
+
+
+## obj cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.blue_green_settings.standard_rollout_policy
+
+
+
+### fn cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.blue_green_settings.standard_rollout_policy.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.cluster_autoscaling.auto_provisioning_defaults.upgrade_settings.blue_green_settings.standard_rollout_policy.new` constructs a new object with attributes and blocks configured for the `standard_rollout_policy`
+Terraform sub block.
+
+
+
+**Args**:
+  - `batch_node_count` (`number`): Number of blue nodes to drain in a batch. When `null`, the `batch_node_count` field will be omitted from the resulting object.
+  - `batch_percentage` (`number`): Percentage of the bool pool nodes to drain in a batch. The range of this field should be (0.0, 1.0]. When `null`, the `batch_percentage` field will be omitted from the resulting object.
+  - `batch_soak_duration` (`string`): Soak time after each batch gets drained.
+
+																			A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `batch_soak_duration` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `standard_rollout_policy` sub block.
 
 
 ## obj cluster_autoscaling.resource_limits
@@ -2718,6 +2847,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `dns_config` sub block.
+
+
+## obj gateway_api_config
+
+
+
+### fn gateway_api_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.gateway_api_config.new` constructs a new object with attributes and blocks configured for the `gateway_api_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `channel` (`string`): The Gateway API release channel to use for Gateway API.
+
+**Returns**:
+  - An attribute object that represents the `gateway_api_config` sub block.
 
 
 ## obj identity_service_config
