@@ -24,6 +24,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withRegion()`](#fn-withregion)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`fn withVirtualClusterConfig()`](#fn-withvirtualclusterconfig)
+* [`fn withVirtualClusterConfigMixin()`](#fn-withvirtualclusterconfigmixin)
 * [`obj cluster_config`](#obj-cluster_config)
   * [`fn new()`](#fn-cluster_confignew)
   * [`obj cluster_config.autoscaling_config`](#obj-cluster_configautoscaling_config)
@@ -66,6 +68,28 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-cluster_configworker_configdisk_confignew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
+* [`obj virtual_cluster_config`](#obj-virtual_cluster_config)
+  * [`fn new()`](#fn-virtual_cluster_confignew)
+  * [`obj virtual_cluster_config.auxiliary_services_config`](#obj-virtual_cluster_configauxiliary_services_config)
+    * [`fn new()`](#fn-virtual_cluster_configauxiliary_services_confignew)
+    * [`obj virtual_cluster_config.auxiliary_services_config.metastore_config`](#obj-virtual_cluster_configauxiliary_services_configmetastore_config)
+      * [`fn new()`](#fn-virtual_cluster_configauxiliary_services_configmetastore_confignew)
+    * [`obj virtual_cluster_config.auxiliary_services_config.spark_history_server_config`](#obj-virtual_cluster_configauxiliary_services_configspark_history_server_config)
+      * [`fn new()`](#fn-virtual_cluster_configauxiliary_services_configspark_history_server_confignew)
+  * [`obj virtual_cluster_config.kubernetes_cluster_config`](#obj-virtual_cluster_configkubernetes_cluster_config)
+    * [`fn new()`](#fn-virtual_cluster_configkubernetes_cluster_confignew)
+    * [`obj virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config`](#obj-virtual_cluster_configkubernetes_cluster_configgke_cluster_config)
+      * [`fn new()`](#fn-virtual_cluster_configkubernetes_cluster_configgke_cluster_confignew)
+      * [`obj virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target`](#obj-virtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_target)
+        * [`fn new()`](#fn-virtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_targetnew)
+        * [`obj virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config`](#obj-virtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_targetnode_pool_config)
+          * [`fn new()`](#fn-virtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_targetnode_pool_confignew)
+          * [`obj virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.autoscaling`](#obj-virtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_targetnode_pool_configautoscaling)
+            * [`fn new()`](#fn-virtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_targetnode_pool_configautoscalingnew)
+          * [`obj virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.config`](#obj-virtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_targetnode_pool_configconfig)
+            * [`fn new()`](#fn-virtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_targetnode_pool_configconfignew)
+    * [`obj virtual_cluster_config.kubernetes_cluster_config.kubernetes_software_config`](#obj-virtual_cluster_configkubernetes_cluster_configkubernetes_software_config)
+      * [`fn new()`](#fn-virtual_cluster_configkubernetes_cluster_configkubernetes_software_confignew)
 
 ## Fields
 
@@ -103,6 +127,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `region` (`string`): The region in which the cluster and associated nodes will be created in. Defaults to global. When `null`, the `region` field will be omitted from the resulting object.
   - `cluster_config` (`list[obj]`): Allows you to configure various aspects of the cluster. When `null`, the `cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.cluster_config.new](#fn-cluster_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.timeouts.new](#fn-timeoutsnew) constructor.
+  - `virtual_cluster_config` (`list[obj]`): The virtual cluster config is used when creating a Dataproc cluster that does not directly control the underlying compute resources, for example, when creating a Dataproc-on-GKE cluster. Dataproc may set default values, and values may change when clusters are updated. Exactly one of config or virtualClusterConfig must be specified. When `null`, the `virtual_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.new](#fn-virtual_cluster_confignew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -133,6 +158,7 @@ injecting into a complete block.
   - `region` (`string`): The region in which the cluster and associated nodes will be created in. Defaults to global. When `null`, the `region` field will be omitted from the resulting object.
   - `cluster_config` (`list[obj]`): Allows you to configure various aspects of the cluster. When `null`, the `cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.cluster_config.new](#fn-cluster_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.timeouts.new](#fn-timeoutsnew) constructor.
+  - `virtual_cluster_config` (`list[obj]`): The virtual cluster config is used when creating a Dataproc cluster that does not directly control the underlying compute resources, for example, when creating a Dataproc-on-GKE cluster. Dataproc may set default values, and values may change when clusters are updated. Exactly one of config or virtualClusterConfig must be specified. When `null`, the `virtual_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.new](#fn-virtual_cluster_confignew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_dataproc_cluster` resource into the root Terraform configuration.
@@ -289,6 +315,43 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `timeouts` field.
+
+
+### fn withVirtualClusterConfig
+
+```ts
+withVirtualClusterConfig()
+```
+
+`google-beta.list[obj].withVirtualClusterConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the virtual_cluster_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withVirtualClusterConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `virtual_cluster_config` field.
+
+
+### fn withVirtualClusterConfigMixin
+
+```ts
+withVirtualClusterConfigMixin()
+```
+
+`google-beta.list[obj].withVirtualClusterConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the virtual_cluster_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withVirtualClusterConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `virtual_cluster_config` field.
 
 
 ## obj cluster_config
@@ -838,3 +901,272 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.
+
+
+## obj virtual_cluster_config
+
+
+
+### fn virtual_cluster_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.new` constructs a new object with attributes and blocks configured for the `virtual_cluster_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `staging_bucket` (`string`): A Cloud Storage bucket used to stage job dependencies, config files, and job driver console output. If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster&#39;s staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket. When `null`, the `staging_bucket` field will be omitted from the resulting object.
+  - `auxiliary_services_config` (`list[obj]`): Auxiliary services configuration for a Cluster. When `null`, the `auxiliary_services_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.auxiliary_services_config.new](#fn-virtual_cluster_configauxiliary_services_confignew) constructor.
+  - `kubernetes_cluster_config` (`list[obj]`): The configuration for running the Dataproc cluster on Kubernetes. When `null`, the `kubernetes_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.new](#fn-virtual_cluster_configkubernetes_cluster_confignew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `virtual_cluster_config` sub block.
+
+
+## obj virtual_cluster_config.auxiliary_services_config
+
+
+
+### fn virtual_cluster_config.auxiliary_services_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.auxiliary_services_config.new` constructs a new object with attributes and blocks configured for the `auxiliary_services_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `metastore_config` (`list[obj]`): The Hive Metastore configuration for this workload. When `null`, the `metastore_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.auxiliary_services_config.metastore_config.new](#fn-virtual_cluster_configvirtual_cluster_configmetastore_confignew) constructor.
+  - `spark_history_server_config` (`list[obj]`): The Spark History Server configuration for the workload. When `null`, the `spark_history_server_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.auxiliary_services_config.spark_history_server_config.new](#fn-virtual_cluster_configvirtual_cluster_configspark_history_server_confignew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `auxiliary_services_config` sub block.
+
+
+## obj virtual_cluster_config.auxiliary_services_config.metastore_config
+
+
+
+### fn virtual_cluster_config.auxiliary_services_config.metastore_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.auxiliary_services_config.metastore_config.new` constructs a new object with attributes and blocks configured for the `metastore_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `dataproc_metastore_service` (`string`): The Hive Metastore configuration for this workload. When `null`, the `dataproc_metastore_service` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `metastore_config` sub block.
+
+
+## obj virtual_cluster_config.auxiliary_services_config.spark_history_server_config
+
+
+
+### fn virtual_cluster_config.auxiliary_services_config.spark_history_server_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.auxiliary_services_config.spark_history_server_config.new` constructs a new object with attributes and blocks configured for the `spark_history_server_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `dataproc_cluster` (`string`): Resource name of an existing Dataproc Cluster to act as a Spark History Server for the workload. When `null`, the `dataproc_cluster` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `spark_history_server_config` sub block.
+
+
+## obj virtual_cluster_config.kubernetes_cluster_config
+
+
+
+### fn virtual_cluster_config.kubernetes_cluster_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.new` constructs a new object with attributes and blocks configured for the `kubernetes_cluster_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `kubernetes_namespace` (`string`): A namespace within the Kubernetes cluster to deploy into. If this namespace does not exist, it is created. If it exists, Dataproc verifies that another Dataproc VirtualCluster is not installed into it. If not specified, the name of the Dataproc Cluster is used. When `null`, the `kubernetes_namespace` field will be omitted from the resulting object.
+  - `gke_cluster_config` (`list[obj]`): The configuration for running the Dataproc cluster on GKE. When `null`, the `gke_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.new](#fn-virtual_cluster_configvirtual_cluster_configgke_cluster_confignew) constructor.
+  - `kubernetes_software_config` (`list[obj]`): The software configuration for this Dataproc cluster running on Kubernetes. When `null`, the `kubernetes_software_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.kubernetes_software_config.new](#fn-virtual_cluster_configvirtual_cluster_configkubernetes_software_confignew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `kubernetes_cluster_config` sub block.
+
+
+## obj virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config
+
+
+
+### fn virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.new` constructs a new object with attributes and blocks configured for the `gke_cluster_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `gke_cluster_target` (`string`): A target GKE cluster to deploy to. It must be in the same project and region as the Dataproc cluster (the GKE cluster can be zonal or regional). Format: &#39;projects/{project}/locations/{location}/clusters/{cluster_id}&#39; When `null`, the `gke_cluster_target` field will be omitted from the resulting object.
+  - `node_pool_target` (`list[obj]`): GKE node pools where workloads will be scheduled. At least one node pool must be assigned the DEFAULT GkeNodePoolTarget.Role. If a GkeNodePoolTarget is not specified, Dataproc constructs a DEFAULT GkeNodePoolTarget. When `null`, the `node_pool_target` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.new](#fn-virtual_cluster_configvirtual_cluster_configkubernetes_cluster_confignode_pool_targetnew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `gke_cluster_config` sub block.
+
+
+## obj virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target
+
+
+
+### fn virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.new` constructs a new object with attributes and blocks configured for the `node_pool_target`
+Terraform sub block.
+
+
+
+**Args**:
+  - `node_pool` (`string`): The target GKE node pool. Format: &#39;projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{nodePool}&#39;
+  - `roles` (`list`): The roles associated with the GKE node pool.
+  - `node_pool_config` (`list[obj]`): Input only. The configuration for the GKE node pool. When `null`, the `node_pool_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.new](#fn-virtual_cluster_configvirtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_confignew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `node_pool_target` sub block.
+
+
+## obj virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config
+
+
+
+### fn virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.new` constructs a new object with attributes and blocks configured for the `node_pool_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `locations` (`list`): The list of Compute Engine zones where node pool nodes associated with a Dataproc on GKE virtual cluster will be located.
+  - `autoscaling` (`list[obj]`): The autoscaler configuration for this node pool. The autoscaler is enabled only when a valid configuration is present. When `null`, the `autoscaling` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.autoscaling.new](#fn-virtual_cluster_configvirtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_targetautoscalingnew) constructor.
+  - `config` (`list[obj]`): The node pool configuration. When `null`, the `config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.config.new](#fn-virtual_cluster_configvirtual_cluster_configkubernetes_cluster_configgke_cluster_confignode_pool_targetconfignew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `node_pool_config` sub block.
+
+
+## obj virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.autoscaling
+
+
+
+### fn virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.autoscaling.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.autoscaling.new` constructs a new object with attributes and blocks configured for the `autoscaling`
+Terraform sub block.
+
+
+
+**Args**:
+  - `max_node_count` (`number`): The maximum number of nodes in the node pool. Must be &gt;= minNodeCount, and must be &gt; 0. When `null`, the `max_node_count` field will be omitted from the resulting object.
+  - `min_node_count` (`number`): The minimum number of nodes in the node pool. Must be &gt;= 0 and &lt;= maxNodeCount. When `null`, the `min_node_count` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `autoscaling` sub block.
+
+
+## obj virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.config
+
+
+
+### fn virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.gke_cluster_config.node_pool_target.node_pool_config.config.new` constructs a new object with attributes and blocks configured for the `config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `local_ssd_count` (`number`): The minimum number of nodes in the node pool. Must be &gt;= 0 and &lt;= maxNodeCount. When `null`, the `local_ssd_count` field will be omitted from the resulting object.
+  - `machine_type` (`string`): The name of a Compute Engine machine type. When `null`, the `machine_type` field will be omitted from the resulting object.
+  - `min_cpu_platform` (`string`): Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or a newer CPU platform. Specify the friendly names of CPU platforms, such as &#34;Intel Haswell&#34; or &#34;Intel Sandy Bridge&#34;. When `null`, the `min_cpu_platform` field will be omitted from the resulting object.
+  - `preemptible` (`bool`): Whether the nodes are created as preemptible VM instances. Preemptible nodes cannot be used in a node pool with the CONTROLLER role or in the DEFAULT node pool if the CONTROLLER role is not assigned (the DEFAULT node pool will assume the CONTROLLER role). When `null`, the `preemptible` field will be omitted from the resulting object.
+  - `spot` (`bool`): Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag. When `null`, the `spot` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `config` sub block.
+
+
+## obj virtual_cluster_config.kubernetes_cluster_config.kubernetes_software_config
+
+
+
+### fn virtual_cluster_config.kubernetes_cluster_config.kubernetes_software_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_cluster.virtual_cluster_config.kubernetes_cluster_config.kubernetes_software_config.new` constructs a new object with attributes and blocks configured for the `kubernetes_software_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `component_version` (`obj`): The components that should be installed in this Dataproc cluster. The key must be a string from the KubernetesComponent enumeration. The value is the version of the software to be installed.
+  - `properties` (`obj`): The properties to set on daemon config files. Property keys are specified in prefix:property format, for example spark:spark.kubernetes.container.image. When `null`, the `properties` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `kubernetes_software_config` sub block.
