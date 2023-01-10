@@ -33,6 +33,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-configmanagementconfig_syncnew)
     * [`obj configmanagement.config_sync.git`](#obj-configmanagementconfig_syncgit)
       * [`fn new()`](#fn-configmanagementconfig_syncgitnew)
+    * [`obj configmanagement.config_sync.oci`](#obj-configmanagementconfig_syncoci)
+      * [`fn new()`](#fn-configmanagementconfig_syncocinew)
   * [`obj configmanagement.hierarchy_controller`](#obj-configmanagementhierarchy_controller)
     * [`fn new()`](#fn-configmanagementhierarchy_controllernew)
   * [`obj configmanagement.policy_controller`](#obj-configmanagementpolicy_controller)
@@ -359,6 +361,7 @@ Terraform sub block.
   - `prevent_drift` (`bool`): Set to true to enable the Config Sync admission webhook to prevent drifts. If set to `false`, disables the Config Sync admission webhook and does not prevent drifts. When `null`, the `prevent_drift` field will be omitted from the resulting object.
   - `source_format` (`string`): Specifies whether the Config Sync Repo is in &#34;hierarchical&#34; or &#34;unstructured&#34; mode. When `null`, the `source_format` field will be omitted from the resulting object.
   - `git` (`list[obj]`): Set the `git` field on the resulting object. When `null`, the `git` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.git.new](#fn-configmanagementconfigmanagementgitnew) constructor.
+  - `oci` (`list[obj]`): Set the `oci` field on the resulting object. When `null`, the `oci` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.oci.new](#fn-configmanagementconfigmanagementocinew) constructor.
 
 **Returns**:
   - An attribute object that represents the `config_sync` sub block.
@@ -392,6 +395,33 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `git` sub block.
+
+
+## obj configmanagement.config_sync.oci
+
+
+
+### fn configmanagement.config_sync.oci.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.oci.new` constructs a new object with attributes and blocks configured for the `oci`
+Terraform sub block.
+
+
+
+**Args**:
+  - `gcp_service_account_email` (`string`): The GCP Service Account Email used for auth when secret_type is gcpserviceaccount.  When `null`, the `gcp_service_account_email` field will be omitted from the resulting object.
+  - `policy_dir` (`string`): The absolute path of the directory that contains the local resources. Default: the root directory of the image. When `null`, the `policy_dir` field will be omitted from the resulting object.
+  - `secret_type` (`string`): Type of secret configured for access to the OCI Image. Must be one of gcenode, gcpserviceaccount or none. The validation of this is case-sensitive. When `null`, the `secret_type` field will be omitted from the resulting object.
+  - `sync_repo` (`string`): The OCI image repository URL for the package to sync from. e.g. LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY_NAME/PACKAGE_NAME. When `null`, the `sync_repo` field will be omitted from the resulting object.
+  - `sync_wait_secs` (`string`): Period in seconds(int64 format) between consecutive syncs. Default: 15. When `null`, the `sync_wait_secs` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `oci` sub block.
 
 
 ## obj configmanagement.hierarchy_controller

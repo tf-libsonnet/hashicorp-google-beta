@@ -34,16 +34,34 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
           sync_wait_secs: sync_wait_secs,
         }),
       },
-      '#new':: d.fn(help='\n`google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.new` constructs a new object with attributes and blocks configured for the `config_sync`\nTerraform sub block.\n\n\n\n**Args**:\n  - `prevent_drift` (`bool`): Set to true to enable the Config Sync admission webhook to prevent drifts. If set to `false`, disables the Config Sync admission webhook and does not prevent drifts. When `null`, the `prevent_drift` field will be omitted from the resulting object.\n  - `source_format` (`string`): Specifies whether the Config Sync Repo is in &#34;hierarchical&#34; or &#34;unstructured&#34; mode. When `null`, the `source_format` field will be omitted from the resulting object.\n  - `git` (`list[obj]`): Set the `git` field on the resulting object. When `null`, the `git` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.git.new](#fn-configmanagementconfigmanagementgitnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `config_sync` sub block.\n', args=[]),
+      '#new':: d.fn(help='\n`google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.new` constructs a new object with attributes and blocks configured for the `config_sync`\nTerraform sub block.\n\n\n\n**Args**:\n  - `prevent_drift` (`bool`): Set to true to enable the Config Sync admission webhook to prevent drifts. If set to `false`, disables the Config Sync admission webhook and does not prevent drifts. When `null`, the `prevent_drift` field will be omitted from the resulting object.\n  - `source_format` (`string`): Specifies whether the Config Sync Repo is in &#34;hierarchical&#34; or &#34;unstructured&#34; mode. When `null`, the `source_format` field will be omitted from the resulting object.\n  - `git` (`list[obj]`): Set the `git` field on the resulting object. When `null`, the `git` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.git.new](#fn-configmanagementconfigmanagementgitnew) constructor.\n  - `oci` (`list[obj]`): Set the `oci` field on the resulting object. When `null`, the `oci` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.oci.new](#fn-configmanagementconfigmanagementocinew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `config_sync` sub block.\n', args=[]),
       new(
         git=null,
+        oci=null,
         prevent_drift=null,
         source_format=null
       ):: std.prune(a={
         git: git,
+        oci: oci,
         prevent_drift: prevent_drift,
         source_format: source_format,
       }),
+      oci:: {
+        '#new':: d.fn(help='\n`google-beta.google_gke_hub_feature_membership.configmanagement.config_sync.oci.new` constructs a new object with attributes and blocks configured for the `oci`\nTerraform sub block.\n\n\n\n**Args**:\n  - `gcp_service_account_email` (`string`): The GCP Service Account Email used for auth when secret_type is gcpserviceaccount.  When `null`, the `gcp_service_account_email` field will be omitted from the resulting object.\n  - `policy_dir` (`string`): The absolute path of the directory that contains the local resources. Default: the root directory of the image. When `null`, the `policy_dir` field will be omitted from the resulting object.\n  - `secret_type` (`string`): Type of secret configured for access to the OCI Image. Must be one of gcenode, gcpserviceaccount or none. The validation of this is case-sensitive. When `null`, the `secret_type` field will be omitted from the resulting object.\n  - `sync_repo` (`string`): The OCI image repository URL for the package to sync from. e.g. LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY_NAME/PACKAGE_NAME. When `null`, the `sync_repo` field will be omitted from the resulting object.\n  - `sync_wait_secs` (`string`): Period in seconds(int64 format) between consecutive syncs. Default: 15. When `null`, the `sync_wait_secs` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `oci` sub block.\n', args=[]),
+        new(
+          gcp_service_account_email=null,
+          policy_dir=null,
+          secret_type=null,
+          sync_repo=null,
+          sync_wait_secs=null
+        ):: std.prune(a={
+          gcp_service_account_email: gcp_service_account_email,
+          policy_dir: policy_dir,
+          secret_type: secret_type,
+          sync_repo: sync_repo,
+          sync_wait_secs: sync_wait_secs,
+        }),
+      },
     },
     hierarchy_controller:: {
       '#new':: d.fn(help='\n`google-beta.google_gke_hub_feature_membership.configmanagement.hierarchy_controller.new` constructs a new object with attributes and blocks configured for the `hierarchy_controller`\nTerraform sub block.\n\n\n\n**Args**:\n  - `enable_hierarchical_resource_quota` (`bool`): Whether hierarchical resource quota is enabled in this cluster. When `null`, the `enable_hierarchical_resource_quota` field will be omitted from the resulting object.\n  - `enable_pod_tree_labels` (`bool`): Whether pod tree labels are enabled in this cluster. When `null`, the `enable_pod_tree_labels` field will be omitted from the resulting object.\n  - `enabled` (`bool`): Whether Hierarchy Controller is enabled in this cluster. When `null`, the `enabled` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `hierarchy_controller` sub block.\n', args=[]),
