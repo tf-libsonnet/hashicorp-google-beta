@@ -172,13 +172,15 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
       }),
     },
     workloads_config:: {
-      '#new':: d.fn(help='\n`google-beta.google_composer_environment.config.workloads_config.new` constructs a new object with attributes and blocks configured for the `workloads_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `scheduler` (`list[obj]`): Configuration for resources used by Airflow schedulers. When `null`, the `scheduler` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.scheduler.new](#fn-configconfigschedulernew) constructor.\n  - `web_server` (`list[obj]`): Configuration for resources used by Airflow web server. When `null`, the `web_server` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.web_server.new](#fn-configconfigweb_servernew) constructor.\n  - `worker` (`list[obj]`): Configuration for resources used by Airflow workers. When `null`, the `worker` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.worker.new](#fn-configconfigworkernew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `workloads_config` sub block.\n', args=[]),
+      '#new':: d.fn(help='\n`google-beta.google_composer_environment.config.workloads_config.new` constructs a new object with attributes and blocks configured for the `workloads_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `scheduler` (`list[obj]`): Configuration for resources used by Airflow schedulers. When `null`, the `scheduler` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.scheduler.new](#fn-configconfigschedulernew) constructor.\n  - `triggerer` (`list[obj]`): Configuration for resources used by Airflow triggerers. When `null`, the `triggerer` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.triggerer.new](#fn-configconfigtriggerernew) constructor.\n  - `web_server` (`list[obj]`): Configuration for resources used by Airflow web server. When `null`, the `web_server` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.web_server.new](#fn-configconfigweb_servernew) constructor.\n  - `worker` (`list[obj]`): Configuration for resources used by Airflow workers. When `null`, the `worker` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.worker.new](#fn-configconfigworkernew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `workloads_config` sub block.\n', args=[]),
       new(
         scheduler=null,
+        triggerer=null,
         web_server=null,
         worker=null
       ):: std.prune(a={
         scheduler: scheduler,
+        triggerer: triggerer,
         web_server: web_server,
         worker: worker,
       }),
@@ -194,6 +196,18 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
           cpu: cpu,
           memory_gb: memory_gb,
           storage_gb: storage_gb,
+        }),
+      },
+      triggerer:: {
+        '#new':: d.fn(help='\n`google-beta.google_composer_environment.config.workloads_config.triggerer.new` constructs a new object with attributes and blocks configured for the `triggerer`\nTerraform sub block.\n\n\n\n**Args**:\n  - `count` (`number`): The number of triggerers.\n  - `cpu` (`number`): CPU request and limit for a single Airflow triggerer replica.\n  - `memory_gb` (`number`): Memory (GB) request and limit for a single Airflow triggerer replica.\n\n**Returns**:\n  - An attribute object that represents the `triggerer` sub block.\n', args=[]),
+        new(
+          count,
+          cpu,
+          memory_gb
+        ):: std.prune(a={
+          count: count,
+          cpu: cpu,
+          memory_gb: memory_gb,
         }),
       },
       web_server:: {

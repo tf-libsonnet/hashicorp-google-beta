@@ -19,6 +19,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDisplayName()`](#fn-withdisplayname)
 * [`fn withPackageName()`](#fn-withpackagename)
 * [`fn withProject()`](#fn-withproject)
+* [`fn withSha1Hashes()`](#fn-withsha1hashes)
+* [`fn withSha256Hashes()`](#fn-withsha256hashes)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`obj timeouts`](#obj-timeouts)
@@ -56,10 +58,12 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the AndroidApp to be untracked from terraform state
 rather than deleted upon &#39;terraform destroy&#39;. This is useful because the AndroidApp may be
 serving traffic. Set to &#39;DELETE&#39; to delete the AndroidApp. Default to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.
-  - `display_name` (`string`): The user-assigned display name of the App.
+  - `display_name` (`string`): The user-assigned display name of the AndroidApp.
   - `package_name` (`string`): Immutable. The canonical package name of the Android app as would appear in the Google Play
 Developer Console. When `null`, the `package_name` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
+  - `sha1_hashes` (`list`): The SHA1 certificate hashes for the AndroidApp. When `null`, the `sha1_hashes` field will be omitted from the resulting object.
+  - `sha256_hashes` (`list`): The SHA256 certificate hashes for the AndroidApp. When `null`, the `sha256_hashes` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_android_app.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -87,10 +91,12 @@ injecting into a complete block.
   - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the AndroidApp to be untracked from terraform state
 rather than deleted upon &#39;terraform destroy&#39;. This is useful because the AndroidApp may be
 serving traffic. Set to &#39;DELETE&#39; to delete the AndroidApp. Default to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.
-  - `display_name` (`string`): The user-assigned display name of the App.
+  - `display_name` (`string`): The user-assigned display name of the AndroidApp.
   - `package_name` (`string`): Immutable. The canonical package name of the Android app as would appear in the Google Play
 Developer Console. When `null`, the `package_name` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
+  - `sha1_hashes` (`list`): The SHA1 certificate hashes for the AndroidApp. When `null`, the `sha1_hashes` field will be omitted from the resulting object.
+  - `sha256_hashes` (`list`): The SHA256 certificate hashes for the AndroidApp. When `null`, the `sha256_hashes` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_android_app.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -159,6 +165,38 @@ Terraform resource block to set or update the project field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `project` field.
+
+
+### fn withSha1Hashes
+
+```ts
+withSha1Hashes()
+```
+
+`google-beta.list.withSha1Hashes` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the sha1_hashes field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `sha1_hashes` field.
+
+
+### fn withSha256Hashes
+
+```ts
+withSha256Hashes()
+```
+
+`google-beta.list.withSha256Hashes` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the sha256_hashes field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `sha256_hashes` field.
 
 
 ### fn withTimeouts

@@ -51,6 +51,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-configworkloads_confignew)
     * [`obj config.workloads_config.scheduler`](#obj-configworkloads_configscheduler)
       * [`fn new()`](#fn-configworkloads_configschedulernew)
+    * [`obj config.workloads_config.triggerer`](#obj-configworkloads_configtriggerer)
+      * [`fn new()`](#fn-configworkloads_configtriggerernew)
     * [`obj config.workloads_config.web_server`](#obj-configworkloads_configweb_server)
       * [`fn new()`](#fn-configworkloads_configweb_servernew)
     * [`obj config.workloads_config.worker`](#obj-configworkloads_configworker)
@@ -595,6 +597,7 @@ Terraform sub block.
 
 **Args**:
   - `scheduler` (`list[obj]`): Configuration for resources used by Airflow schedulers. When `null`, the `scheduler` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.scheduler.new](#fn-configconfigschedulernew) constructor.
+  - `triggerer` (`list[obj]`): Configuration for resources used by Airflow triggerers. When `null`, the `triggerer` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.triggerer.new](#fn-configconfigtriggerernew) constructor.
   - `web_server` (`list[obj]`): Configuration for resources used by Airflow web server. When `null`, the `web_server` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.web_server.new](#fn-configconfigweb_servernew) constructor.
   - `worker` (`list[obj]`): Configuration for resources used by Airflow workers. When `null`, the `worker` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.worker.new](#fn-configconfigworkernew) constructor.
 
@@ -626,6 +629,31 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `scheduler` sub block.
+
+
+## obj config.workloads_config.triggerer
+
+
+
+### fn config.workloads_config.triggerer.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_composer_environment.config.workloads_config.triggerer.new` constructs a new object with attributes and blocks configured for the `triggerer`
+Terraform sub block.
+
+
+
+**Args**:
+  - `count` (`number`): The number of triggerers.
+  - `cpu` (`number`): CPU request and limit for a single Airflow triggerer replica.
+  - `memory_gb` (`number`): Memory (GB) request and limit for a single Airflow triggerer replica.
+
+**Returns**:
+  - An attribute object that represents the `triggerer` sub block.
 
 
 ## obj config.workloads_config.web_server

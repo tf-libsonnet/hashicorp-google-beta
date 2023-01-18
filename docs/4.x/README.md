@@ -351,6 +351,7 @@ project.
 * [google_datastore_index](google_datastore_index.md)
 * [google_datastream_connection_profile](google_datastream_connection_profile.md)
 * [google_datastream_private_connection](google_datastream_private_connection.md)
+* [google_datastream_stream](google_datastream_stream.md)
 * [google_deployment_manager_deployment](google_deployment_manager_deployment.md)
 * [google_dialogflow_agent](google_dialogflow_agent.md)
 * [google_dialogflow_cx_agent](google_dialogflow_cx_agent.md)
