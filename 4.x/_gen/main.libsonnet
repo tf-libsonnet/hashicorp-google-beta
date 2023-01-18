@@ -341,6 +341,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   google_datastore_index: (import 'resources/google_datastore_index.libsonnet'),
   google_datastream_connection_profile: (import 'resources/google_datastream_connection_profile.libsonnet'),
   google_datastream_private_connection: (import 'resources/google_datastream_private_connection.libsonnet'),
+  google_datastream_stream: (import 'resources/google_datastream_stream.libsonnet'),
   google_deployment_manager_deployment: (import 'resources/google_deployment_manager_deployment.libsonnet'),
   google_dialogflow_agent: (import 'resources/google_dialogflow_agent.libsonnet'),
   google_dialogflow_cx_agent: (import 'resources/google_dialogflow_cx_agent.libsonnet'),

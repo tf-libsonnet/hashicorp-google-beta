@@ -2,13 +2,15 @@ local tf = (import 'github.com/tf-libsonnet/core/main.libsonnet');
 local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
 {
   '#':: d.pkg(name='google_firebase_android_app', url='', help='`google_firebase_android_app` represents the `google-beta_google_firebase_android_app` Terraform resource.\n\n\n\nThis package contains functions and utilities for setting up the resource using Jsonnet code.\n'),
-  '#new':: d.fn(help="\n`google-beta.google_firebase_android_app.new` injects a new `google-beta_google_firebase_android_app` Terraform `resource`\nblock into the root module document.\n\nAdditionally, this inserts a private function into the `_ref` attribute that generates references to attributes of the\nresource. For example, if you added a new instance to the root using:\n\n    # arguments omitted for brevity\n    google-beta.google_firebase_android_app.new('some_id')\n\nYou can get the reference to the `id` field of the created `google-beta.google_firebase_android_app` using the reference:\n\n    $._ref.google-beta_google_firebase_android_app.some_id.get('id')\n\nThis is the same as directly entering `\"${ google-beta_google_firebase_android_app.some_id.id }\"` as the value.\n\nNOTE: if you are chaining multiple resources together in a merge operation, you may not be able to use `super`, `self`,\nor `$` to refer to the root object. Instead, make an explicit outer object using `local`.\n\n**Args**:\n  - `resourceLabel` (`string`): The name label of the block.\n  - `deletion_policy` (`string`): (Optional) Set to \u0026#39;ABANDON\u0026#39; to allow the AndroidApp to be untracked from terraform state\nrather than deleted upon \u0026#39;terraform destroy\u0026#39;. This is useful because the AndroidApp may be\nserving traffic. Set to \u0026#39;DELETE\u0026#39; to delete the AndroidApp. Default to \u0026#39;DELETE\u0026#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.\n  - `display_name` (`string`): The user-assigned display name of the App.\n  - `package_name` (`string`): Immutable. The canonical package name of the Android app as would appear in the Google Play\nDeveloper Console. When `null`, the `package_name` field will be omitted from the resulting object.\n  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.\n  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_android_app.timeouts.new](#fn-timeoutsnew) constructor.\n\n**Returns**:\n- A mixin object that injects the new resource into the root Terraform configuration.\n", args=[]),
+  '#new':: d.fn(help="\n`google-beta.google_firebase_android_app.new` injects a new `google-beta_google_firebase_android_app` Terraform `resource`\nblock into the root module document.\n\nAdditionally, this inserts a private function into the `_ref` attribute that generates references to attributes of the\nresource. For example, if you added a new instance to the root using:\n\n    # arguments omitted for brevity\n    google-beta.google_firebase_android_app.new('some_id')\n\nYou can get the reference to the `id` field of the created `google-beta.google_firebase_android_app` using the reference:\n\n    $._ref.google-beta_google_firebase_android_app.some_id.get('id')\n\nThis is the same as directly entering `\"${ google-beta_google_firebase_android_app.some_id.id }\"` as the value.\n\nNOTE: if you are chaining multiple resources together in a merge operation, you may not be able to use `super`, `self`,\nor `$` to refer to the root object. Instead, make an explicit outer object using `local`.\n\n**Args**:\n  - `resourceLabel` (`string`): The name label of the block.\n  - `deletion_policy` (`string`): (Optional) Set to \u0026#39;ABANDON\u0026#39; to allow the AndroidApp to be untracked from terraform state\nrather than deleted upon \u0026#39;terraform destroy\u0026#39;. This is useful because the AndroidApp may be\nserving traffic. Set to \u0026#39;DELETE\u0026#39; to delete the AndroidApp. Default to \u0026#39;DELETE\u0026#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.\n  - `display_name` (`string`): The user-assigned display name of the AndroidApp.\n  - `package_name` (`string`): Immutable. The canonical package name of the Android app as would appear in the Google Play\nDeveloper Console. When `null`, the `package_name` field will be omitted from the resulting object.\n  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.\n  - `sha1_hashes` (`list`): The SHA1 certificate hashes for the AndroidApp. When `null`, the `sha1_hashes` field will be omitted from the resulting object.\n  - `sha256_hashes` (`list`): The SHA256 certificate hashes for the AndroidApp. When `null`, the `sha256_hashes` field will be omitted from the resulting object.\n  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_android_app.timeouts.new](#fn-timeoutsnew) constructor.\n\n**Returns**:\n- A mixin object that injects the new resource into the root Terraform configuration.\n", args=[]),
   new(
     resourceLabel,
     display_name,
     deletion_policy=null,
     package_name=null,
     project=null,
+    sha1_hashes=null,
+    sha256_hashes=null,
     timeouts=null,
     _meta={}
   ):: tf.withResource(
@@ -19,22 +21,28 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
       display_name=display_name,
       package_name=package_name,
       project=project,
+      sha1_hashes=sha1_hashes,
+      sha256_hashes=sha256_hashes,
       timeouts=timeouts
     ),
     _meta=_meta
   ),
-  '#newAttrs':: d.fn(help='\n`google-beta.google_firebase_android_app.newAttrs` constructs a new object with attributes and blocks configured for the `google_firebase_android_app`\nTerraform resource.\n\nUnlike [google-beta.google_firebase_android_app.new](#fn-new), this function will not inject the `resource`\nblock into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the\n[tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.\n\nThis is most useful when you need to preprocess the attributes with functions, conditional, or looping logic prior to\ninjecting into a complete block.\n\n**Args**:\n  - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the AndroidApp to be untracked from terraform state\nrather than deleted upon &#39;terraform destroy&#39;. This is useful because the AndroidApp may be\nserving traffic. Set to &#39;DELETE&#39; to delete the AndroidApp. Default to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.\n  - `display_name` (`string`): The user-assigned display name of the App.\n  - `package_name` (`string`): Immutable. The canonical package name of the Android app as would appear in the Google Play\nDeveloper Console. When `null`, the `package_name` field will be omitted from the resulting object.\n  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.\n  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_android_app.timeouts.new](#fn-timeoutsnew) constructor.\n\n**Returns**:\n  - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_firebase_android_app` resource into the root Terraform configuration.\n', args=[]),
+  '#newAttrs':: d.fn(help='\n`google-beta.google_firebase_android_app.newAttrs` constructs a new object with attributes and blocks configured for the `google_firebase_android_app`\nTerraform resource.\n\nUnlike [google-beta.google_firebase_android_app.new](#fn-new), this function will not inject the `resource`\nblock into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the\n[tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.\n\nThis is most useful when you need to preprocess the attributes with functions, conditional, or looping logic prior to\ninjecting into a complete block.\n\n**Args**:\n  - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the AndroidApp to be untracked from terraform state\nrather than deleted upon &#39;terraform destroy&#39;. This is useful because the AndroidApp may be\nserving traffic. Set to &#39;DELETE&#39; to delete the AndroidApp. Default to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.\n  - `display_name` (`string`): The user-assigned display name of the AndroidApp.\n  - `package_name` (`string`): Immutable. The canonical package name of the Android app as would appear in the Google Play\nDeveloper Console. When `null`, the `package_name` field will be omitted from the resulting object.\n  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.\n  - `sha1_hashes` (`list`): The SHA1 certificate hashes for the AndroidApp. When `null`, the `sha1_hashes` field will be omitted from the resulting object.\n  - `sha256_hashes` (`list`): The SHA256 certificate hashes for the AndroidApp. When `null`, the `sha256_hashes` field will be omitted from the resulting object.\n  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_android_app.timeouts.new](#fn-timeoutsnew) constructor.\n\n**Returns**:\n  - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_firebase_android_app` resource into the root Terraform configuration.\n', args=[]),
   newAttrs(
     display_name,
     deletion_policy=null,
     package_name=null,
     project=null,
+    sha1_hashes=null,
+    sha256_hashes=null,
     timeouts=null
   ):: std.prune(a={
     deletion_policy: deletion_policy,
     display_name: display_name,
     package_name: package_name,
     project: project,
+    sha1_hashes: sha1_hashes,
+    sha256_hashes: sha256_hashes,
     timeouts: timeouts,
   }),
   timeouts:: {
@@ -85,6 +93,26 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
       google_firebase_android_app+: {
         [resourceLabel]+: {
           project: value,
+        },
+      },
+    },
+  },
+  '#withSha1Hashes':: d.fn(help='`google-beta.list.withSha1Hashes` constructs a mixin object that can be merged into the `list`\nTerraform resource block to set or update the sha1_hashes field.\n\n\n\n**Args**:\n  - `resourceLabel` (`string`): The name label of the block to update.\n  - `value` (`list`): The value to set for the `sha1_hashes` field.\n', args=[]),
+  withSha1Hashes(resourceLabel, value): {
+    resource+: {
+      google_firebase_android_app+: {
+        [resourceLabel]+: {
+          sha1_hashes: value,
+        },
+      },
+    },
+  },
+  '#withSha256Hashes':: d.fn(help='`google-beta.list.withSha256Hashes` constructs a mixin object that can be merged into the `list`\nTerraform resource block to set or update the sha256_hashes field.\n\n\n\n**Args**:\n  - `resourceLabel` (`string`): The name label of the block to update.\n  - `value` (`list`): The value to set for the `sha256_hashes` field.\n', args=[]),
+  withSha256Hashes(resourceLabel, value): {
+    resource+: {
+      google_firebase_android_app+: {
+        [resourceLabel]+: {
+          sha256_hashes: value,
         },
       },
     },
