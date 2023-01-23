@@ -59,6 +59,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 Instance IDs cannot be reused after deletion.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): A reference to the region where the Firebase Realtime database resides.
+Check all [available regions](https://firebase.google.com/docs/projects/locations#rtdb-locations)
   - `type` (`string`): The database type.
 Each project can create one default Firebase Realtime Database, which cannot be deleted once created.
 Creating user Databases is only available for projects on the Blaze plan.
@@ -92,6 +93,7 @@ injecting into a complete block.
 Instance IDs cannot be reused after deletion.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): A reference to the region where the Firebase Realtime database resides.
+Check all [available regions](https://firebase.google.com/docs/projects/locations#rtdb-locations)
   - `type` (`string`): The database type.
 Each project can create one default Firebase Realtime Database, which cannot be deleted once created.
 Creating user Databases is only available for projects on the Blaze plan.

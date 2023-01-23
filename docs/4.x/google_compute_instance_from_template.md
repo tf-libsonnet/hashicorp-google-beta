@@ -75,6 +75,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-reservation_affinityspecific_reservationnew)
 * [`obj scheduling`](#obj-scheduling)
   * [`fn new()`](#fn-schedulingnew)
+  * [`obj scheduling.max_run_duration`](#obj-schedulingmax_run_duration)
+    * [`fn new()`](#fn-schedulingmax_run_durationnew)
   * [`obj scheduling.node_affinities`](#obj-schedulingnode_affinities)
     * [`fn new()`](#fn-schedulingnode_affinitiesnew)
 * [`obj shielded_instance_config`](#obj-shielded_instance_config)
@@ -1138,10 +1140,39 @@ Terraform sub block.
   - `on_host_maintenance` (`string`): Describes maintenance behavior for the instance. One of MIGRATE or TERMINATE, When `null`, the `on_host_maintenance` field will be omitted from the resulting object.
   - `preemptible` (`bool`): Whether the instance is preemptible. When `null`, the `preemptible` field will be omitted from the resulting object.
   - `provisioning_model` (`string`): Whether the instance is spot. If this is set as SPOT. When `null`, the `provisioning_model` field will be omitted from the resulting object.
+  - `max_run_duration` (`list[obj]`): The timeout for new network connections to hosts. When `null`, the `max_run_duration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_from_template.scheduling.max_run_duration.new](#fn-schedulingmax_run_durationnew) constructor.
   - `node_affinities` (`list[obj]`): Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems. When `null`, the `node_affinities` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_from_template.scheduling.node_affinities.new](#fn-schedulingnode_affinitiesnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `scheduling` sub block.
+
+
+## obj scheduling.max_run_duration
+
+
+
+### fn scheduling.max_run_duration.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_compute_instance_from_template.scheduling.max_run_duration.new` constructs a new object with attributes and blocks configured for the `max_run_duration`
+Terraform sub block.
+
+
+
+**Args**:
+  - `nanos` (`number`): Span of time that&#39;s a fraction of a second at nanosecond
+resolution. Durations less than one second are represented
+with a 0 seconds field and a positive nanos field. Must
+be from 0 to 999,999,999 inclusive. When `null`, the `nanos` field will be omitted from the resulting object.
+  - `seconds` (`number`): Span of time at a resolution of a second.
+Must be from 0 to 315,576,000,000 inclusive.
+
+**Returns**:
+  - An attribute object that represents the `max_run_duration` sub block.
 
 
 ## obj scheduling.node_affinities
