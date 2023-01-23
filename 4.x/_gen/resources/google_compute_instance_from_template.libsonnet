@@ -260,10 +260,21 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
     },
   },
   scheduling:: {
-    '#new':: d.fn(help='\n`google-beta.google_compute_instance_from_template.scheduling.new` constructs a new object with attributes and blocks configured for the `scheduling`\nTerraform sub block.\n\n\n\n**Args**:\n  - `automatic_restart` (`bool`): Specifies if the instance should be restarted if it was terminated by Compute Engine (not a user). When `null`, the `automatic_restart` field will be omitted from the resulting object.\n  - `instance_termination_action` (`string`): Specifies the action GCE should take when SPOT VM is preempted. When `null`, the `instance_termination_action` field will be omitted from the resulting object.\n  - `min_node_cpus` (`number`): Set the `min_node_cpus` field on the resulting object. When `null`, the `min_node_cpus` field will be omitted from the resulting object.\n  - `on_host_maintenance` (`string`): Describes maintenance behavior for the instance. One of MIGRATE or TERMINATE, When `null`, the `on_host_maintenance` field will be omitted from the resulting object.\n  - `preemptible` (`bool`): Whether the instance is preemptible. When `null`, the `preemptible` field will be omitted from the resulting object.\n  - `provisioning_model` (`string`): Whether the instance is spot. If this is set as SPOT. When `null`, the `provisioning_model` field will be omitted from the resulting object.\n  - `node_affinities` (`list[obj]`): Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems. When `null`, the `node_affinities` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_from_template.scheduling.node_affinities.new](#fn-schedulingnode_affinitiesnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `scheduling` sub block.\n', args=[]),
+    max_run_duration:: {
+      '#new':: d.fn(help='\n`google-beta.google_compute_instance_from_template.scheduling.max_run_duration.new` constructs a new object with attributes and blocks configured for the `max_run_duration`\nTerraform sub block.\n\n\n\n**Args**:\n  - `nanos` (`number`): Span of time that&#39;s a fraction of a second at nanosecond\nresolution. Durations less than one second are represented\nwith a 0 seconds field and a positive nanos field. Must\nbe from 0 to 999,999,999 inclusive. When `null`, the `nanos` field will be omitted from the resulting object.\n  - `seconds` (`number`): Span of time at a resolution of a second.\nMust be from 0 to 315,576,000,000 inclusive.\n\n**Returns**:\n  - An attribute object that represents the `max_run_duration` sub block.\n', args=[]),
+      new(
+        seconds,
+        nanos=null
+      ):: std.prune(a={
+        nanos: nanos,
+        seconds: seconds,
+      }),
+    },
+    '#new':: d.fn(help='\n`google-beta.google_compute_instance_from_template.scheduling.new` constructs a new object with attributes and blocks configured for the `scheduling`\nTerraform sub block.\n\n\n\n**Args**:\n  - `automatic_restart` (`bool`): Specifies if the instance should be restarted if it was terminated by Compute Engine (not a user). When `null`, the `automatic_restart` field will be omitted from the resulting object.\n  - `instance_termination_action` (`string`): Specifies the action GCE should take when SPOT VM is preempted. When `null`, the `instance_termination_action` field will be omitted from the resulting object.\n  - `min_node_cpus` (`number`): Set the `min_node_cpus` field on the resulting object. When `null`, the `min_node_cpus` field will be omitted from the resulting object.\n  - `on_host_maintenance` (`string`): Describes maintenance behavior for the instance. One of MIGRATE or TERMINATE, When `null`, the `on_host_maintenance` field will be omitted from the resulting object.\n  - `preemptible` (`bool`): Whether the instance is preemptible. When `null`, the `preemptible` field will be omitted from the resulting object.\n  - `provisioning_model` (`string`): Whether the instance is spot. If this is set as SPOT. When `null`, the `provisioning_model` field will be omitted from the resulting object.\n  - `max_run_duration` (`list[obj]`): The timeout for new network connections to hosts. When `null`, the `max_run_duration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_from_template.scheduling.max_run_duration.new](#fn-schedulingmax_run_durationnew) constructor.\n  - `node_affinities` (`list[obj]`): Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems. When `null`, the `node_affinities` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_from_template.scheduling.node_affinities.new](#fn-schedulingnode_affinitiesnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `scheduling` sub block.\n', args=[]),
     new(
       automatic_restart=null,
       instance_termination_action=null,
+      max_run_duration=null,
       min_node_cpus=null,
       node_affinities=null,
       on_host_maintenance=null,
@@ -272,6 +283,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
     ):: std.prune(a={
       automatic_restart: automatic_restart,
       instance_termination_action: instance_termination_action,
+      max_run_duration: max_run_duration,
       min_node_cpus: min_node_cpus,
       node_affinities: node_affinities,
       on_host_maintenance: on_host_maintenance,
