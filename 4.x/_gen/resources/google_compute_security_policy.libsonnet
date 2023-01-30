@@ -3,6 +3,20 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
 {
   '#':: d.pkg(name='google_compute_security_policy', url='', help='`google_compute_security_policy` represents the `google-beta_google_compute_security_policy` Terraform resource.\n\n\n\nThis package contains functions and utilities for setting up the resource using Jsonnet code.\n'),
   adaptive_protection_config:: {
+    auto_deploy_config:: {
+      '#new':: d.fn(help='\n`google-beta.google_compute_security_policy.adaptive_protection_config.auto_deploy_config.new` constructs a new object with attributes and blocks configured for the `auto_deploy_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `confidence_threshold` (`number`): Rules are only automatically deployed for alerts on potential attacks with confidence scores greater than this threshold. When `null`, the `confidence_threshold` field will be omitted from the resulting object.\n  - `expiration_sec` (`number`): Google Cloud Armor stops applying the action in the automatically deployed rule to an identified attacker after this duration. The rule continues to operate against new requests. When `null`, the `expiration_sec` field will be omitted from the resulting object.\n  - `impacted_baseline_threshold` (`number`): Rules are only automatically deployed when the estimated impact to baseline traffic from the suggested mitigation is below this threshold. When `null`, the `impacted_baseline_threshold` field will be omitted from the resulting object.\n  - `load_threshold` (`number`): Identifies new attackers only when the load to the backend service that is under attack exceeds this threshold. When `null`, the `load_threshold` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `auto_deploy_config` sub block.\n', args=[]),
+      new(
+        confidence_threshold=null,
+        expiration_sec=null,
+        impacted_baseline_threshold=null,
+        load_threshold=null
+      ):: std.prune(a={
+        confidence_threshold: confidence_threshold,
+        expiration_sec: expiration_sec,
+        impacted_baseline_threshold: impacted_baseline_threshold,
+        load_threshold: load_threshold,
+      }),
+    },
     layer_7_ddos_defense_config:: {
       '#new':: d.fn(help='\n`google-beta.google_compute_security_policy.adaptive_protection_config.layer_7_ddos_defense_config.new` constructs a new object with attributes and blocks configured for the `layer_7_ddos_defense_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `enable` (`bool`): If set to true, enables CAAP for L7 DDoS detection. When `null`, the `enable` field will be omitted from the resulting object.\n  - `rule_visibility` (`string`): Rule visibility. Supported values include: &#34;STANDARD&#34;, &#34;PREMIUM&#34;. When `null`, the `rule_visibility` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `layer_7_ddos_defense_config` sub block.\n', args=[]),
       new(
@@ -13,10 +27,12 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
         rule_visibility: rule_visibility,
       }),
     },
-    '#new':: d.fn(help='\n`google-beta.google_compute_security_policy.adaptive_protection_config.new` constructs a new object with attributes and blocks configured for the `adaptive_protection_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `layer_7_ddos_defense_config` (`list[obj]`): Layer 7 DDoS Defense Config of this security policy When `null`, the `layer_7_ddos_defense_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_security_policy.adaptive_protection_config.layer_7_ddos_defense_config.new](#fn-adaptive_protection_configlayer_7_ddos_defense_confignew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `adaptive_protection_config` sub block.\n', args=[]),
+    '#new':: d.fn(help='\n`google-beta.google_compute_security_policy.adaptive_protection_config.new` constructs a new object with attributes and blocks configured for the `adaptive_protection_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `auto_deploy_config` (`list[obj]`): Auto Deploy Config of this security policy When `null`, the `auto_deploy_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_security_policy.adaptive_protection_config.auto_deploy_config.new](#fn-adaptive_protection_configauto_deploy_confignew) constructor.\n  - `layer_7_ddos_defense_config` (`list[obj]`): Layer 7 DDoS Defense Config of this security policy When `null`, the `layer_7_ddos_defense_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_security_policy.adaptive_protection_config.layer_7_ddos_defense_config.new](#fn-adaptive_protection_configlayer_7_ddos_defense_confignew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `adaptive_protection_config` sub block.\n', args=[]),
     new(
+      auto_deploy_config=null,
       layer_7_ddos_defense_config=null
     ):: std.prune(a={
+      auto_deploy_config: auto_deploy_config,
       layer_7_ddos_defense_config: layer_7_ddos_defense_config,
     }),
   },

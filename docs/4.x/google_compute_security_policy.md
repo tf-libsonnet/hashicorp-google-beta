@@ -31,6 +31,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withType()`](#fn-withtype)
 * [`obj adaptive_protection_config`](#obj-adaptive_protection_config)
   * [`fn new()`](#fn-adaptive_protection_confignew)
+  * [`obj adaptive_protection_config.auto_deploy_config`](#obj-adaptive_protection_configauto_deploy_config)
+    * [`fn new()`](#fn-adaptive_protection_configauto_deploy_confignew)
   * [`obj adaptive_protection_config.layer_7_ddos_defense_config`](#obj-adaptive_protection_configlayer_7_ddos_defense_config)
     * [`fn new()`](#fn-adaptive_protection_configlayer_7_ddos_defense_confignew)
 * [`obj advanced_options_config`](#obj-advanced_options_config)
@@ -416,10 +418,37 @@ Terraform sub block.
 
 
 **Args**:
+  - `auto_deploy_config` (`list[obj]`): Auto Deploy Config of this security policy When `null`, the `auto_deploy_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_security_policy.adaptive_protection_config.auto_deploy_config.new](#fn-adaptive_protection_configauto_deploy_confignew) constructor.
   - `layer_7_ddos_defense_config` (`list[obj]`): Layer 7 DDoS Defense Config of this security policy When `null`, the `layer_7_ddos_defense_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_security_policy.adaptive_protection_config.layer_7_ddos_defense_config.new](#fn-adaptive_protection_configlayer_7_ddos_defense_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `adaptive_protection_config` sub block.
+
+
+## obj adaptive_protection_config.auto_deploy_config
+
+
+
+### fn adaptive_protection_config.auto_deploy_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_compute_security_policy.adaptive_protection_config.auto_deploy_config.new` constructs a new object with attributes and blocks configured for the `auto_deploy_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `confidence_threshold` (`number`): Rules are only automatically deployed for alerts on potential attacks with confidence scores greater than this threshold. When `null`, the `confidence_threshold` field will be omitted from the resulting object.
+  - `expiration_sec` (`number`): Google Cloud Armor stops applying the action in the automatically deployed rule to an identified attacker after this duration. The rule continues to operate against new requests. When `null`, the `expiration_sec` field will be omitted from the resulting object.
+  - `impacted_baseline_threshold` (`number`): Rules are only automatically deployed when the estimated impact to baseline traffic from the suggested mitigation is below this threshold. When `null`, the `impacted_baseline_threshold` field will be omitted from the resulting object.
+  - `load_threshold` (`number`): Identifies new attackers only when the load to the backend service that is under attack exceeds this threshold. When `null`, the `load_threshold` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `auto_deploy_config` sub block.
 
 
 ## obj adaptive_protection_config.layer_7_ddos_defense_config
