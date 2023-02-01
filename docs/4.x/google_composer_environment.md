@@ -45,6 +45,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-configrecovery_configscheduled_snapshots_confignew)
   * [`obj config.software_config`](#obj-configsoftware_config)
     * [`fn new()`](#fn-configsoftware_confignew)
+    * [`obj config.software_config.cloud_data_lineage_integration`](#obj-configsoftware_configcloud_data_lineage_integration)
+      * [`fn new()`](#fn-configsoftware_configcloud_data_lineage_integrationnew)
   * [`obj config.web_server_config`](#obj-configweb_server_config)
     * [`fn new()`](#fn-configweb_server_confignew)
   * [`obj config.web_server_network_access_control`](#obj-configweb_server_network_access_control)
@@ -450,7 +452,7 @@ Terraform sub block.
   - `oauth_scopes` (`list`): The set of Google API scopes to be made available on all node VMs. Cannot be updated. If empty, defaults to [&#34;https://www.googleapis.com/auth/cloud-platform&#34;]. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. When `null`, the `oauth_scopes` field will be omitted from the resulting object.
   - `service_account` (`string`): The Google Cloud Platform Service Account to be used by the node VMs. If a service account is not specified, the &#34;default&#34; Compute Engine service account is used. Cannot be updated. If given, note that the service account must have roles/composer.worker for any GCP resources created under the Cloud Composer Environment. When `null`, the `service_account` field will be omitted from the resulting object.
   - `subnetwork` (`string`): The Compute Engine subnetwork to be used for machine communications, , specified as a self-link, relative resource name (e.g. &#34;projects/{project}/regions/{region}/subnetworks/{subnetwork}&#34;), or by name. If subnetwork is provided, network must also be provided and the subnetwork must belong to the enclosing environment&#39;s project and region. When `null`, the `subnetwork` field will be omitted from the resulting object.
-  - `tags` (`list`): The list of instance tags applied to all node VMs. Tags are used to identify valid sources or targets for network firewalls. Each tag within the list must comply with RFC1035. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. When `null`, the `tags` field will be omitted from the resulting object.
+  - `tags` (`list`): The list of instance tags applied to all node VMs. Tags are used to identify valid sources or targets for network firewalls. Each tag within the list must comply with RFC1035. Cannot be updated. When `null`, the `tags` field will be omitted from the resulting object.
   - `zone` (`string`): The Compute Engine zone in which to deploy the VMs running the Apache Airflow software, specified as the zone name or relative resource name (e.g. &#34;projects/{project}/zones/{zone}&#34;). Must belong to the enclosing environment&#39;s project and region. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. When `null`, the `zone` field will be omitted from the resulting object.
 
 **Returns**:
@@ -558,9 +560,33 @@ Terraform sub block.
   - `pypi_packages` (`obj`): Custom Python Package Index (PyPI) packages to be installed in the environment. Keys refer to the lowercase package name (e.g. &#34;numpy&#34;). Values are the lowercase extras and version specifier (e.g. &#34;==1.12.0&#34;, &#34;[devel,gcp_api]&#34;, &#34;[devel]&gt;=1.8.2, &lt;1.9.2&#34;). To specify a package without pinning it to a version specifier, use the empty string as the value. When `null`, the `pypi_packages` field will be omitted from the resulting object.
   - `python_version` (`string`): The major version of Python used to run the Apache Airflow scheduler, worker, and webserver processes. Can be set to &#39;2&#39; or &#39;3&#39;. If not specified, the default is &#39;2&#39;. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. Environments in newer versions always use Python major version 3. When `null`, the `python_version` field will be omitted from the resulting object.
   - `scheduler_count` (`number`): The number of schedulers for Airflow. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-2.*.*. When `null`, the `scheduler_count` field will be omitted from the resulting object.
+  - `cloud_data_lineage_integration` (`list[obj]`): The configuration for Cloud Data Lineage integration. Supported for Cloud Composer environments in versions composer-2.1.2-airflow-*.*.* and newer When `null`, the `cloud_data_lineage_integration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.software_config.cloud_data_lineage_integration.new](#fn-configconfigcloud_data_lineage_integrationnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `software_config` sub block.
+
+
+## obj config.software_config.cloud_data_lineage_integration
+
+
+
+### fn config.software_config.cloud_data_lineage_integration.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_composer_environment.config.software_config.cloud_data_lineage_integration.new` constructs a new object with attributes and blocks configured for the `cloud_data_lineage_integration`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enabled` (`bool`): Whether or not Cloud Data Lineage integration is enabled.
+
+**Returns**:
+  - An attribute object that represents the `cloud_data_lineage_integration` sub block.
 
 
 ## obj config.web_server_config
