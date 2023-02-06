@@ -71,6 +71,7 @@ the `src` and/or `version` parameters are set.
   - `cloud_run_v2_custom_endpoint` (`string`): Set the `cloud_run_v2_custom_endpoint` field on the resulting provider block. When `null`, the `cloud_run_v2_custom_endpoint` field will be omitted from the resulting object.
   - `cloud_scheduler_custom_endpoint` (`string`): Set the `cloud_scheduler_custom_endpoint` field on the resulting provider block. When `null`, the `cloud_scheduler_custom_endpoint` field will be omitted from the resulting object.
   - `cloud_tasks_custom_endpoint` (`string`): Set the `cloud_tasks_custom_endpoint` field on the resulting provider block. When `null`, the `cloud_tasks_custom_endpoint` field will be omitted from the resulting object.
+  - `cloudbuildv2_custom_endpoint` (`string`): Set the `cloudbuildv2_custom_endpoint` field on the resulting provider block. When `null`, the `cloudbuildv2_custom_endpoint` field will be omitted from the resulting object.
   - `clouddeploy_custom_endpoint` (`string`): Set the `clouddeploy_custom_endpoint` field on the resulting provider block. When `null`, the `clouddeploy_custom_endpoint` field will be omitted from the resulting object.
   - `cloudfunctions2_custom_endpoint` (`string`): Set the `cloudfunctions2_custom_endpoint` field on the resulting provider block. When `null`, the `cloudfunctions2_custom_endpoint` field will be omitted from the resulting object.
   - `composer_custom_endpoint` (`string`): Set the `composer_custom_endpoint` field on the resulting provider block. When `null`, the `composer_custom_endpoint` field will be omitted from the resulting object.
@@ -164,6 +165,7 @@ the `src` and/or `version` parameters are set.
   - `vertex_ai_custom_endpoint` (`string`): Set the `vertex_ai_custom_endpoint` field on the resulting provider block. When `null`, the `vertex_ai_custom_endpoint` field will be omitted from the resulting object.
   - `vpc_access_custom_endpoint` (`string`): Set the `vpc_access_custom_endpoint` field on the resulting provider block. When `null`, the `vpc_access_custom_endpoint` field will be omitted from the resulting object.
   - `workflows_custom_endpoint` (`string`): Set the `workflows_custom_endpoint` field on the resulting provider block. When `null`, the `workflows_custom_endpoint` field will be omitted from the resulting object.
+  - `workstations_custom_endpoint` (`string`): Set the `workstations_custom_endpoint` field on the resulting provider block. When `null`, the `workstations_custom_endpoint` field will be omitted from the resulting object.
   - `zone` (`string`): Set the `zone` field on the resulting provider block. When `null`, the `zone` field will be omitted from the resulting object.
   - `batching` (`list[obj]`): Set the `batching` field on the resulting provider block. When `null`, the `batching` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.provider.batching.new](#fn-googlebetabatchingnew) constructor.
   - `alias` (`string`): The provider `alias` to set for this instance of the provider block. When `null`, the `alias`
@@ -233,6 +235,7 @@ injecting into a complete block.
   - `cloud_run_v2_custom_endpoint` (`string`): Set the `cloud_run_v2_custom_endpoint` field on the resulting object. When `null`, the `cloud_run_v2_custom_endpoint` field will be omitted from the resulting object.
   - `cloud_scheduler_custom_endpoint` (`string`): Set the `cloud_scheduler_custom_endpoint` field on the resulting object. When `null`, the `cloud_scheduler_custom_endpoint` field will be omitted from the resulting object.
   - `cloud_tasks_custom_endpoint` (`string`): Set the `cloud_tasks_custom_endpoint` field on the resulting object. When `null`, the `cloud_tasks_custom_endpoint` field will be omitted from the resulting object.
+  - `cloudbuildv2_custom_endpoint` (`string`): Set the `cloudbuildv2_custom_endpoint` field on the resulting object. When `null`, the `cloudbuildv2_custom_endpoint` field will be omitted from the resulting object.
   - `clouddeploy_custom_endpoint` (`string`): Set the `clouddeploy_custom_endpoint` field on the resulting object. When `null`, the `clouddeploy_custom_endpoint` field will be omitted from the resulting object.
   - `cloudfunctions2_custom_endpoint` (`string`): Set the `cloudfunctions2_custom_endpoint` field on the resulting object. When `null`, the `cloudfunctions2_custom_endpoint` field will be omitted from the resulting object.
   - `composer_custom_endpoint` (`string`): Set the `composer_custom_endpoint` field on the resulting object. When `null`, the `composer_custom_endpoint` field will be omitted from the resulting object.
@@ -326,6 +329,7 @@ injecting into a complete block.
   - `vertex_ai_custom_endpoint` (`string`): Set the `vertex_ai_custom_endpoint` field on the resulting object. When `null`, the `vertex_ai_custom_endpoint` field will be omitted from the resulting object.
   - `vpc_access_custom_endpoint` (`string`): Set the `vpc_access_custom_endpoint` field on the resulting object. When `null`, the `vpc_access_custom_endpoint` field will be omitted from the resulting object.
   - `workflows_custom_endpoint` (`string`): Set the `workflows_custom_endpoint` field on the resulting object. When `null`, the `workflows_custom_endpoint` field will be omitted from the resulting object.
+  - `workstations_custom_endpoint` (`string`): Set the `workstations_custom_endpoint` field on the resulting object. When `null`, the `workstations_custom_endpoint` field will be omitted from the resulting object.
   - `zone` (`string`): Set the `zone` field on the resulting object. When `null`, the `zone` field will be omitted from the resulting object.
   - `batching` (`list[obj]`): Set the `batching` field on the resulting object. When `null`, the `batching` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.provider.batching.new](#fn-googlebetabatchingnew) constructor.
 

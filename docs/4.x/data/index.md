@@ -119,6 +119,7 @@ permalink: /data/
 * [google_runtimeconfig_variable](google_runtimeconfig_variable.md)
 * [google_secret_manager_secret](google_secret_manager_secret.md)
 * [google_secret_manager_secret_version](google_secret_manager_secret_version.md)
+* [google_secret_manager_secret_version_access](google_secret_manager_secret_version_access.md)
 * [google_service_account](google_service_account.md)
 * [google_service_account_access_token](google_service_account_access_token.md)
 * [google_service_account_id_token](google_service_account_id_token.md)
