@@ -114,6 +114,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   google_runtimeconfig_variable: (import 'google_runtimeconfig_variable.libsonnet'),
   google_secret_manager_secret: (import 'google_secret_manager_secret.libsonnet'),
   google_secret_manager_secret_version: (import 'google_secret_manager_secret_version.libsonnet'),
+  google_secret_manager_secret_version_access: (import 'google_secret_manager_secret_version_access.libsonnet'),
   google_service_account: (import 'google_service_account.libsonnet'),
   google_service_account_access_token: (import 'google_service_account_access_token.libsonnet'),
   google_service_account_id_token: (import 'google_service_account_id_token.libsonnet'),

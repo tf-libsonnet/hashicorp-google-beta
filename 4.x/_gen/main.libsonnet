@@ -140,6 +140,8 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   google_cloud_tasks_queue_iam_policy: (import 'resources/google_cloud_tasks_queue_iam_policy.libsonnet'),
   google_cloudbuild_trigger: (import 'resources/google_cloudbuild_trigger.libsonnet'),
   google_cloudbuild_worker_pool: (import 'resources/google_cloudbuild_worker_pool.libsonnet'),
+  google_cloudbuildv2_connection: (import 'resources/google_cloudbuildv2_connection.libsonnet'),
+  google_cloudbuildv2_repository: (import 'resources/google_cloudbuildv2_repository.libsonnet'),
   google_clouddeploy_delivery_pipeline: (import 'resources/google_clouddeploy_delivery_pipeline.libsonnet'),
   google_clouddeploy_target: (import 'resources/google_clouddeploy_target.libsonnet'),
   google_cloudfunctions2_function: (import 'resources/google_cloudfunctions2_function.libsonnet'),
@@ -676,5 +678,6 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   google_vertex_ai_tensorboard: (import 'resources/google_vertex_ai_tensorboard.libsonnet'),
   google_vpc_access_connector: (import 'resources/google_vpc_access_connector.libsonnet'),
   google_workflows_workflow: (import 'resources/google_workflows_workflow.libsonnet'),
+  google_workstations_workstation_cluster: (import 'resources/google_workstations_workstation_cluster.libsonnet'),
   data: (import 'data/main.libsonnet'),
 }
