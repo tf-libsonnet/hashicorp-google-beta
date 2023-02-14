@@ -57,9 +57,9 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `app_store_id` (`string`): The automatically generated Apple ID assigned to the Apple app by Apple in the Apple App Store. When `null`, the `app_store_id` field will be omitted from the resulting object.
   - `bundle_id` (`string`): The canonical bundle ID of the Apple app as it would appear in the Apple AppStore. When `null`, the `bundle_id` field will be omitted from the resulting object.
-  - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the AppleApp to be untracked from terraform state
-rather than deleted upon &#39;terraform destroy&#39;. This is useful because the AppleApp may be
-serving traffic. Set to &#39;DELETE&#39; to delete the AppleApp. Default to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.
+  - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the Apple to be untracked from terraform state
+rather than deleted upon &#39;terraform destroy&#39;. This is useful because the Apple may be
+serving traffic. Set to &#39;DELETE&#39; to delete the Apple. Defaults to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.
   - `display_name` (`string`): The user-assigned display name of the App.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `team_id` (`string`): The Apple Developer Team ID associated with the App in the App Store. When `null`, the `team_id` field will be omitted from the resulting object.
@@ -89,9 +89,9 @@ injecting into a complete block.
 **Args**:
   - `app_store_id` (`string`): The automatically generated Apple ID assigned to the Apple app by Apple in the Apple App Store. When `null`, the `app_store_id` field will be omitted from the resulting object.
   - `bundle_id` (`string`): The canonical bundle ID of the Apple app as it would appear in the Apple AppStore. When `null`, the `bundle_id` field will be omitted from the resulting object.
-  - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the AppleApp to be untracked from terraform state
-rather than deleted upon &#39;terraform destroy&#39;. This is useful because the AppleApp may be
-serving traffic. Set to &#39;DELETE&#39; to delete the AppleApp. Default to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.
+  - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the Apple to be untracked from terraform state
+rather than deleted upon &#39;terraform destroy&#39;. This is useful because the Apple may be
+serving traffic. Set to &#39;DELETE&#39; to delete the Apple. Defaults to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.
   - `display_name` (`string`): The user-assigned display name of the App.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `team_id` (`string`): The Apple Developer Team ID associated with the App in the App Store. When `null`, the `team_id` field will be omitted from the resulting object.

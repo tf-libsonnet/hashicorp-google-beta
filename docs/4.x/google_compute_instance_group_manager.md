@@ -21,6 +21,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withAutoHealingPoliciesMixin()`](#fn-withautohealingpoliciesmixin)
 * [`fn withBaseInstanceName()`](#fn-withbaseinstancename)
 * [`fn withDescription()`](#fn-withdescription)
+* [`fn withInstanceLifecyclePolicy()`](#fn-withinstancelifecyclepolicy)
+* [`fn withInstanceLifecyclePolicyMixin()`](#fn-withinstancelifecyclepolicymixin)
 * [`fn withListManagedInstancesResults()`](#fn-withlistmanagedinstancesresults)
 * [`fn withName()`](#fn-withname)
 * [`fn withNamedPort()`](#fn-withnamedport)
@@ -47,6 +49,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-all_instances_confignew)
 * [`obj auto_healing_policies`](#obj-auto_healing_policies)
   * [`fn new()`](#fn-auto_healing_policiesnew)
+* [`obj instance_lifecycle_policy`](#obj-instance_lifecycle_policy)
+  * [`fn new()`](#fn-instance_lifecycle_policynew)
 * [`obj named_port`](#obj-named_port)
   * [`fn new()`](#fn-named_portnew)
 * [`obj stateful_disk`](#obj-stateful_disk)
@@ -105,6 +109,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `zone` (`string`): The zone that instances in this group should be created in. When `null`, the `zone` field will be omitted from the resulting object.
   - `all_instances_config` (`list[obj]`): Specifies configuration that overrides the instance template configuration for the group. When `null`, the `all_instances_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.all_instances_config.new](#fn-all_instances_confignew) constructor.
   - `auto_healing_policies` (`list[obj]`): The autohealing policies for this managed instance group. You can specify only one value. When `null`, the `auto_healing_policies` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.auto_healing_policies.new](#fn-auto_healing_policiesnew) constructor.
+  - `instance_lifecycle_policy` (`list[obj]`): The instance lifecycle policy for this managed instance group. When `null`, the `instance_lifecycle_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.instance_lifecycle_policy.new](#fn-instance_lifecycle_policynew) constructor.
   - `named_port` (`list[obj]`): The named port configuration. When `null`, the `named_port` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.named_port.new](#fn-named_portnew) constructor.
   - `stateful_disk` (`list[obj]`): Disks created on the instances that will be preserved on instance delete, update, etc. When `null`, the `stateful_disk` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.stateful_disk.new](#fn-stateful_disknew) constructor.
   - `stateful_external_ip` (`list[obj]`): External IPs considered stateful by the instance group.  When `null`, the `stateful_external_ip` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.stateful_external_ip.new](#fn-stateful_external_ipnew) constructor.
@@ -147,6 +152,7 @@ injecting into a complete block.
   - `zone` (`string`): The zone that instances in this group should be created in. When `null`, the `zone` field will be omitted from the resulting object.
   - `all_instances_config` (`list[obj]`): Specifies configuration that overrides the instance template configuration for the group. When `null`, the `all_instances_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.all_instances_config.new](#fn-all_instances_confignew) constructor.
   - `auto_healing_policies` (`list[obj]`): The autohealing policies for this managed instance group. You can specify only one value. When `null`, the `auto_healing_policies` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.auto_healing_policies.new](#fn-auto_healing_policiesnew) constructor.
+  - `instance_lifecycle_policy` (`list[obj]`): The instance lifecycle policy for this managed instance group. When `null`, the `instance_lifecycle_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.instance_lifecycle_policy.new](#fn-instance_lifecycle_policynew) constructor.
   - `named_port` (`list[obj]`): The named port configuration. When `null`, the `named_port` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.named_port.new](#fn-named_portnew) constructor.
   - `stateful_disk` (`list[obj]`): Disks created on the instances that will be preserved on instance delete, update, etc. When `null`, the `stateful_disk` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.stateful_disk.new](#fn-stateful_disknew) constructor.
   - `stateful_external_ip` (`list[obj]`): External IPs considered stateful by the instance group.  When `null`, the `stateful_external_ip` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_instance_group_manager.stateful_external_ip.new](#fn-stateful_external_ipnew) constructor.
@@ -263,6 +269,43 @@ Terraform resource block to set or update the description field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `description` field.
+
+
+### fn withInstanceLifecyclePolicy
+
+```ts
+withInstanceLifecyclePolicy()
+```
+
+`google-beta.list[obj].withInstanceLifecyclePolicy` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the instance_lifecycle_policy field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withInstanceLifecyclePolicyMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `instance_lifecycle_policy` field.
+
+
+### fn withInstanceLifecyclePolicyMixin
+
+```ts
+withInstanceLifecyclePolicyMixin()
+```
+
+`google-beta.list[obj].withInstanceLifecyclePolicyMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the instance_lifecycle_policy field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withInstanceLifecyclePolicy](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `instance_lifecycle_policy` field.
 
 
 ### fn withListManagedInstancesResults
@@ -697,6 +740,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `auto_healing_policies` sub block.
+
+
+## obj instance_lifecycle_policy
+
+
+
+### fn instance_lifecycle_policy.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_compute_instance_group_manager.instance_lifecycle_policy.new` constructs a new object with attributes and blocks configured for the `instance_lifecycle_policy`
+Terraform sub block.
+
+
+
+**Args**:
+  - `force_update_on_repair` (`string`): Specifies whether to apply the group&#39;s latest configuration when repairing a VM. Valid options are: YES, NO. If YES and you updated the group&#39;s instance template or per-instance configurations after the VM was created, then these changes are applied when VM is repaired. If NO (default), then updates are applied in accordance with the group&#39;s update policy type. When `null`, the `force_update_on_repair` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `instance_lifecycle_policy` sub block.
 
 
 ## obj named_port

@@ -15,11 +15,13 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withDescription()`](#fn-withdescription)
 * [`fn withFeaturestore()`](#fn-withfeaturestore)
 * [`fn withLabels()`](#fn-withlabels)
 * [`fn withMonitoringConfig()`](#fn-withmonitoringconfig)
 * [`fn withMonitoringConfigMixin()`](#fn-withmonitoringconfigmixin)
 * [`fn withName()`](#fn-withname)
+* [`fn withOfflineStorageTtlDays()`](#fn-withofflinestoragettldays)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`obj monitoring_config`](#obj-monitoring_config)
@@ -64,9 +66,11 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
+  - `description` (`string`): Optional. Description of the EntityType. When `null`, the `description` field will be omitted from the resulting object.
   - `featurestore` (`string`): The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}.
   - `labels` (`obj`): A set of key/value label pairs to assign to this EntityType. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): The name of the EntityType. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number. When `null`, the `name` field will be omitted from the resulting object.
+  - `offline_storage_ttl_days` (`number`): Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than offlineStorageTtlDays since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL. When `null`, the `offline_storage_ttl_days` field will be omitted from the resulting object.
   - `monitoring_config` (`list[obj]`): The default monitoring configuration for all Features under this EntityType.
 
 If this is populated with [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is disabled. When `null`, the `monitoring_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_featurestore_entitytype.monitoring_config.new](#fn-monitoring_confignew) constructor.
@@ -94,9 +98,11 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
+  - `description` (`string`): Optional. Description of the EntityType. When `null`, the `description` field will be omitted from the resulting object.
   - `featurestore` (`string`): The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}.
   - `labels` (`obj`): A set of key/value label pairs to assign to this EntityType. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): The name of the EntityType. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number. When `null`, the `name` field will be omitted from the resulting object.
+  - `offline_storage_ttl_days` (`number`): Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than offlineStorageTtlDays since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL. When `null`, the `offline_storage_ttl_days` field will be omitted from the resulting object.
   - `monitoring_config` (`list[obj]`): The default monitoring configuration for all Features under this EntityType.
 
 If this is populated with [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is disabled. When `null`, the `monitoring_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_featurestore_entitytype.monitoring_config.new](#fn-monitoring_confignew) constructor.
@@ -104,6 +110,22 @@ If this is populated with [FeaturestoreMonitoringConfig.monitoring_interval] spe
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_vertex_ai_featurestore_entitytype` resource into the root Terraform configuration.
+
+
+### fn withDescription
+
+```ts
+withDescription()
+```
+
+`google-beta.string.withDescription` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the description field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `description` field.
 
 
 ### fn withFeaturestore
@@ -189,6 +211,22 @@ Terraform resource block to set or update the name field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `name` field.
+
+
+### fn withOfflineStorageTtlDays
+
+```ts
+withOfflineStorageTtlDays()
+```
+
+`google-beta.number.withOfflineStorageTtlDays` constructs a mixin object that can be merged into the `number`
+Terraform resource block to set or update the offline_storage_ttl_days field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`number`): The value to set for the `offline_storage_ttl_days` field.
 
 
 ### fn withTimeouts

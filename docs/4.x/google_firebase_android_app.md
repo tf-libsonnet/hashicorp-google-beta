@@ -57,7 +57,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the AndroidApp to be untracked from terraform state
 rather than deleted upon &#39;terraform destroy&#39;. This is useful because the AndroidApp may be
-serving traffic. Set to &#39;DELETE&#39; to delete the AndroidApp. Default to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.
+serving traffic. Set to &#39;DELETE&#39; to delete the AndroidApp. Defaults to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.
   - `display_name` (`string`): The user-assigned display name of the AndroidApp.
   - `package_name` (`string`): Immutable. The canonical package name of the Android app as would appear in the Google Play
 Developer Console. When `null`, the `package_name` field will be omitted from the resulting object.
@@ -90,7 +90,7 @@ injecting into a complete block.
 **Args**:
   - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the AndroidApp to be untracked from terraform state
 rather than deleted upon &#39;terraform destroy&#39;. This is useful because the AndroidApp may be
-serving traffic. Set to &#39;DELETE&#39; to delete the AndroidApp. Default to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.
+serving traffic. Set to &#39;DELETE&#39; to delete the AndroidApp. Defaults to &#39;DELETE&#39;. When `null`, the `deletion_policy` field will be omitted from the resulting object.
   - `display_name` (`string`): The user-assigned display name of the AndroidApp.
   - `package_name` (`string`): Immutable. The canonical package name of the Android app as would appear in the Google Play
 Developer Console. When `null`, the `package_name` field will be omitted from the resulting object.
