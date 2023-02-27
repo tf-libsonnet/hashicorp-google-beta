@@ -15,7 +15,6 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
-* [`fn withEmail()`](#fn-withemail)
 * [`fn withProject()`](#fn-withproject)
 * [`fn withService()`](#fn-withservice)
 * [`fn withTimeouts()`](#fn-withtimeouts)
@@ -52,7 +51,6 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
-  - `email` (`string`): Set the `email` field on the resulting resource block. When `null`, the `email` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `service` (`string`): Set the `service` field on the resulting resource block.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_project_service_identity.timeouts.new](#fn-timeoutsnew) constructor.
@@ -79,29 +77,12 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `email` (`string`): Set the `email` field on the resulting object. When `null`, the `email` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `service` (`string`): Set the `service` field on the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_project_service_identity.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_project_service_identity` resource into the root Terraform configuration.
-
-
-### fn withEmail
-
-```ts
-withEmail()
-```
-
-`google-beta.string.withEmail` constructs a mixin object that can be merged into the `string`
-Terraform resource block to set or update the email field.
-
-
-
-**Args**:
-  - `resourceLabel` (`string`): The name label of the block to update.
-  - `value` (`string`): The value to set for the `email` field.
 
 
 ### fn withProject
