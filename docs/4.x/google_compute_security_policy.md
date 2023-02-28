@@ -69,6 +69,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-rulerate_limit_optionsnew)
     * [`obj rule.rate_limit_options.ban_threshold`](#obj-rulerate_limit_optionsban_threshold)
       * [`fn new()`](#fn-rulerate_limit_optionsban_thresholdnew)
+    * [`obj rule.rate_limit_options.enforce_on_key_configs`](#obj-rulerate_limit_optionsenforce_on_key_configs)
+      * [`fn new()`](#fn-rulerate_limit_optionsenforce_on_key_configsnew)
     * [`obj rule.rate_limit_options.exceed_redirect_options`](#obj-rulerate_limit_optionsexceed_redirect_options)
       * [`fn new()`](#fn-rulerate_limit_optionsexceed_redirect_optionsnew)
     * [`obj rule.rate_limit_options.rate_limit_threshold`](#obj-rulerate_limit_optionsrate_limit_threshold)
@@ -865,6 +867,7 @@ Terraform sub block.
   - `enforce_on_key_name` (`string`): Rate limit key name applicable only for the following key types: HTTP_HEADER -- Name of the HTTP header whose value is taken as the key value. HTTP_COOKIE -- Name of the HTTP cookie whose value is taken as the key value. When `null`, the `enforce_on_key_name` field will be omitted from the resulting object.
   - `exceed_action` (`string`): Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are &#34;deny()&#34; where valid values for status are 403, 404, 429, and 502, and &#34;redirect&#34; where the redirect parameters come from exceedRedirectOptions below.
   - `ban_threshold` (`list[obj]`): Can only be specified if the action for the rule is &#34;rate_based_ban&#34;. If specified, the key will be banned for the configured &#39;banDurationSec&#39; when the number of requests that exceed the &#39;rateLimitThreshold&#39; also exceed this &#39;banThreshold&#39;. When `null`, the `ban_threshold` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_security_policy.rule.rate_limit_options.ban_threshold.new](#fn-ruleruleban_thresholdnew) constructor.
+  - `enforce_on_key_configs` (`list[obj]`): Enforce On Key Config of this security policy When `null`, the `enforce_on_key_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_security_policy.rule.rate_limit_options.enforce_on_key_configs.new](#fn-ruleruleenforce_on_key_configsnew) constructor.
   - `exceed_redirect_options` (`list[obj]`): Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. When `null`, the `exceed_redirect_options` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_security_policy.rule.rate_limit_options.exceed_redirect_options.new](#fn-ruleruleexceed_redirect_optionsnew) constructor.
   - `rate_limit_threshold` (`list[obj]`): Threshold at which to begin ratelimiting. When `null`, the `rate_limit_threshold` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_security_policy.rule.rate_limit_options.rate_limit_threshold.new](#fn-rulerulerate_limit_thresholdnew) constructor.
 
@@ -894,6 +897,30 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `ban_threshold` sub block.
+
+
+## obj rule.rate_limit_options.enforce_on_key_configs
+
+
+
+### fn rule.rate_limit_options.enforce_on_key_configs.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_compute_security_policy.rule.rate_limit_options.enforce_on_key_configs.new` constructs a new object with attributes and blocks configured for the `enforce_on_key_configs`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enforce_on_key_name` (`string`): Rate limit key name applicable only for the following key types: HTTP_HEADER -- Name of the HTTP header whose value is taken as the key value. HTTP_COOKIE -- Name of the HTTP cookie whose value is taken as the key value. When `null`, the `enforce_on_key_name` field will be omitted from the resulting object.
+  - `enforce_on_key_type` (`string`): Determines the key to enforce the rate_limit_threshold on When `null`, the `enforce_on_key_type` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `enforce_on_key_configs` sub block.
 
 
 ## obj rule.rate_limit_options.exceed_redirect_options
