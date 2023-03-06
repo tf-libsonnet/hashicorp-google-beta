@@ -519,7 +519,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `control_plane` (`string`): Whether to automatically manage Service Mesh control planes. Possible values: CONTROL_PLANE_MANAGEMENT_UNSPECIFIED, AUTOMATIC, MANUAL When `null`, the `control_plane` field will be omitted from the resulting object.
+  - `control_plane` (`string`): **DEPRECATED** Whether to automatically manage Service Mesh control planes. Possible values: CONTROL_PLANE_MANAGEMENT_UNSPECIFIED, AUTOMATIC, MANUAL When `null`, the `control_plane` field will be omitted from the resulting object.
   - `management` (`string`): Whether to automatically manage Service Mesh. Possible values: MANAGEMENT_UNSPECIFIED, MANAGEMENT_AUTOMATIC, MANAGEMENT_MANUAL When `null`, the `management` field will be omitted from the resulting object.
 
 **Returns**:

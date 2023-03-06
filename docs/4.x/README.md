@@ -609,6 +609,7 @@ project.
 * [google_runtimeconfig_config_iam_member](google_runtimeconfig_config_iam_member.md)
 * [google_runtimeconfig_config_iam_policy](google_runtimeconfig_config_iam_policy.md)
 * [google_runtimeconfig_variable](google_runtimeconfig_variable.md)
+* [google_scc_mute_config](google_scc_mute_config.md)
 * [google_scc_notification_config](google_scc_notification_config.md)
 * [google_scc_source](google_scc_source.md)
 * [google_scc_source_iam_binding](google_scc_source_iam_binding.md)
@@ -697,4 +698,5 @@ project.
 * [google_vpc_access_connector](google_vpc_access_connector.md)
 * [google_workflows_workflow](google_workflows_workflow.md)
 * [google_workstations_workstation_cluster](google_workstations_workstation_cluster.md)
+* [google_workstations_workstation_config](google_workstations_workstation_config.md)
 * [provider](provider.md)

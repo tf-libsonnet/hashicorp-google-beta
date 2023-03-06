@@ -121,7 +121,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
     },
   },
   mesh:: {
-    '#new':: d.fn(help='\n`google-beta.google_gke_hub_feature_membership.mesh.new` constructs a new object with attributes and blocks configured for the `mesh`\nTerraform sub block.\n\n\n\n**Args**:\n  - `control_plane` (`string`): Whether to automatically manage Service Mesh control planes. Possible values: CONTROL_PLANE_MANAGEMENT_UNSPECIFIED, AUTOMATIC, MANUAL When `null`, the `control_plane` field will be omitted from the resulting object.\n  - `management` (`string`): Whether to automatically manage Service Mesh. Possible values: MANAGEMENT_UNSPECIFIED, MANAGEMENT_AUTOMATIC, MANAGEMENT_MANUAL When `null`, the `management` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `mesh` sub block.\n', args=[]),
+    '#new':: d.fn(help='\n`google-beta.google_gke_hub_feature_membership.mesh.new` constructs a new object with attributes and blocks configured for the `mesh`\nTerraform sub block.\n\n\n\n**Args**:\n  - `control_plane` (`string`): **DEPRECATED** Whether to automatically manage Service Mesh control planes. Possible values: CONTROL_PLANE_MANAGEMENT_UNSPECIFIED, AUTOMATIC, MANUAL When `null`, the `control_plane` field will be omitted from the resulting object.\n  - `management` (`string`): Whether to automatically manage Service Mesh. Possible values: MANAGEMENT_UNSPECIFIED, MANAGEMENT_AUTOMATIC, MANAGEMENT_MANUAL When `null`, the `management` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `mesh` sub block.\n', args=[]),
     new(
       control_plane=null,
       management=null

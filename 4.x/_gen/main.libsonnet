@@ -599,6 +599,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   google_runtimeconfig_config_iam_member: (import 'resources/google_runtimeconfig_config_iam_member.libsonnet'),
   google_runtimeconfig_config_iam_policy: (import 'resources/google_runtimeconfig_config_iam_policy.libsonnet'),
   google_runtimeconfig_variable: (import 'resources/google_runtimeconfig_variable.libsonnet'),
+  google_scc_mute_config: (import 'resources/google_scc_mute_config.libsonnet'),
   google_scc_notification_config: (import 'resources/google_scc_notification_config.libsonnet'),
   google_scc_source: (import 'resources/google_scc_source.libsonnet'),
   google_scc_source_iam_binding: (import 'resources/google_scc_source_iam_binding.libsonnet'),
@@ -687,5 +688,6 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   google_vpc_access_connector: (import 'resources/google_vpc_access_connector.libsonnet'),
   google_workflows_workflow: (import 'resources/google_workflows_workflow.libsonnet'),
   google_workstations_workstation_cluster: (import 'resources/google_workstations_workstation_cluster.libsonnet'),
+  google_workstations_workstation_config: (import 'resources/google_workstations_workstation_config.libsonnet'),
   data: (import 'data/main.libsonnet'),
 }
