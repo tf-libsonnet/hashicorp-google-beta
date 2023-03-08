@@ -373,6 +373,7 @@ availability domain, they will not be put in the same low latency network When `
 Specify &#39;COLLOCATED&#39; to enable collocation. Can only be specified with &#39;vm_count&#39;. If compute instances are created
 with a COLLOCATED policy, then exactly &#39;vm_count&#39; instances must be created at the same time with the resource policy
 attached. Possible values: [&#34;COLLOCATED&#34;] When `null`, the `collocation` field will be omitted from the resulting object.
+  - `max_distance` (`number`): Specifies the number of max logical switches. When `null`, the `max_distance` field will be omitted from the resulting object.
   - `vm_count` (`number`): Number of VMs in this placement group. Google does not recommend that you use this field
 unless you use a compact policy and you want your policy to work only if it contains this
 exact number of VMs. When `null`, the `vm_count` field will be omitted from the resulting object.

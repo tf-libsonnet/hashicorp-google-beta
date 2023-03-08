@@ -93,6 +93,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withPrivateClusterConfigMixin()`](#fn-withprivateclusterconfigmixin)
 * [`fn withPrivateIpv6GoogleAccess()`](#fn-withprivateipv6googleaccess)
 * [`fn withProject()`](#fn-withproject)
+* [`fn withProtectConfig()`](#fn-withprotectconfig)
+* [`fn withProtectConfigMixin()`](#fn-withprotectconfigmixin)
 * [`fn withReleaseChannel()`](#fn-withreleasechannel)
 * [`fn withReleaseChannelMixin()`](#fn-withreleasechannelmixin)
 * [`fn withRemoveDefaultNodePool()`](#fn-withremovedefaultnodepool)
@@ -278,6 +280,10 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-private_cluster_confignew)
   * [`obj private_cluster_config.master_global_access_config`](#obj-private_cluster_configmaster_global_access_config)
     * [`fn new()`](#fn-private_cluster_configmaster_global_access_confignew)
+* [`obj protect_config`](#obj-protect_config)
+  * [`fn new()`](#fn-protect_confignew)
+  * [`obj protect_config.workload_config`](#obj-protect_configworkload_config)
+    * [`fn new()`](#fn-protect_configworkload_confignew)
 * [`obj release_channel`](#obj-release_channel)
   * [`fn new()`](#fn-release_channelnew)
 * [`obj resource_usage_export_config`](#obj-resource_usage_export_config)
@@ -378,6 +384,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `notification_config` (`list[obj]`): The notification config for sending cluster upgrade notifications When `null`, the `notification_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.notification_config.new](#fn-notification_confignew) constructor.
   - `pod_security_policy_config` (`list[obj]`): Configuration for the PodSecurityPolicy feature. When `null`, the `pod_security_policy_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.pod_security_policy_config.new](#fn-pod_security_policy_confignew) constructor.
   - `private_cluster_config` (`list[obj]`): Configuration for private clusters, clusters with private nodes. When `null`, the `private_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.private_cluster_config.new](#fn-private_cluster_confignew) constructor.
+  - `protect_config` (`list[obj]`): The notification config for sending cluster upgrade notifications When `null`, the `protect_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.protect_config.new](#fn-protect_confignew) constructor.
   - `release_channel` (`list[obj]`): Configuration options for the Release channel feature, which provide more control over automatic upgrades of your GKE clusters. Note that removing this field from your config will not unenroll it. Instead, use the &#34;UNSPECIFIED&#34; channel. When `null`, the `release_channel` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.release_channel.new](#fn-release_channelnew) constructor.
   - `resource_usage_export_config` (`list[obj]`): Configuration for the ResourceUsageExportConfig feature. When `null`, the `resource_usage_export_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.resource_usage_export_config.new](#fn-resource_usage_export_confignew) constructor.
   - `service_external_ips_config` (`list[obj]`): If set, and enabled=true, services with external ips field will not be blocked When `null`, the `service_external_ips_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.service_external_ips_config.new](#fn-service_external_ips_confignew) constructor.
@@ -462,6 +469,7 @@ injecting into a complete block.
   - `notification_config` (`list[obj]`): The notification config for sending cluster upgrade notifications When `null`, the `notification_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.notification_config.new](#fn-notification_confignew) constructor.
   - `pod_security_policy_config` (`list[obj]`): Configuration for the PodSecurityPolicy feature. When `null`, the `pod_security_policy_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.pod_security_policy_config.new](#fn-pod_security_policy_confignew) constructor.
   - `private_cluster_config` (`list[obj]`): Configuration for private clusters, clusters with private nodes. When `null`, the `private_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.private_cluster_config.new](#fn-private_cluster_confignew) constructor.
+  - `protect_config` (`list[obj]`): The notification config for sending cluster upgrade notifications When `null`, the `protect_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.protect_config.new](#fn-protect_confignew) constructor.
   - `release_channel` (`list[obj]`): Configuration options for the Release channel feature, which provide more control over automatic upgrades of your GKE clusters. Note that removing this field from your config will not unenroll it. Instead, use the &#34;UNSPECIFIED&#34; channel. When `null`, the `release_channel` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.release_channel.new](#fn-release_channelnew) constructor.
   - `resource_usage_export_config` (`list[obj]`): Configuration for the ResourceUsageExportConfig feature. When `null`, the `resource_usage_export_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.resource_usage_export_config.new](#fn-resource_usage_export_confignew) constructor.
   - `service_external_ips_config` (`list[obj]`): If set, and enabled=true, services with external ips field will not be blocked When `null`, the `service_external_ips_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.service_external_ips_config.new](#fn-service_external_ips_confignew) constructor.
@@ -1855,6 +1863,43 @@ Terraform resource block to set or update the project field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `project` field.
+
+
+### fn withProtectConfig
+
+```ts
+withProtectConfig()
+```
+
+`google-beta.list[obj].withProtectConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the protect_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withProtectConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `protect_config` field.
+
+
+### fn withProtectConfigMixin
+
+```ts
+withProtectConfigMixin()
+```
+
+`google-beta.list[obj].withProtectConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the protect_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withProtectConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `protect_config` field.
 
 
 ### fn withReleaseChannel
@@ -4248,6 +4293,53 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `master_global_access_config` sub block.
+
+
+## obj protect_config
+
+
+
+### fn protect_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.protect_config.new` constructs a new object with attributes and blocks configured for the `protect_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `workload_vulnerability_mode` (`string`): WorkloadVulnerabilityMode defines mode to perform vulnerability scanning. Accepted values are WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED, DISABLED, BASIC. When `null`, the `workload_vulnerability_mode` field will be omitted from the resulting object.
+  - `workload_config` (`list[obj]`): WorkloadConfig defines the flags to enable or disable the workload configurations for the cluster. When `null`, the `workload_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.protect_config.workload_config.new](#fn-protect_configworkload_confignew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `protect_config` sub block.
+
+
+## obj protect_config.workload_config
+
+
+
+### fn protect_config.workload_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.protect_config.workload_config.new` constructs a new object with attributes and blocks configured for the `workload_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `audit_mode` (`string`): Mode defines how to audit the workload configs. Accepted values are MODE_UNSPECIFIED, DISABLED, BASIC.
+
+**Returns**:
+  - An attribute object that represents the `workload_config` sub block.
 
 
 ## obj release_channel
