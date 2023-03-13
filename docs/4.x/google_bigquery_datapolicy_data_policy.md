@@ -270,7 +270,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `predefined_expression` (`string`): The available masking rules. Learn more here: https://cloud.google.com/bigquery/docs/column-data-masking-intro#masking_options. Possible values: [&#34;SHA256&#34;, &#34;ALWAYS_NULL&#34;, &#34;DEFAULT_MASKING_VALUE&#34;]
+  - `predefined_expression` (`string`): The available masking rules. Learn more here: https://cloud.google.com/bigquery/docs/column-data-masking-intro#masking_options. Possible values: [&#34;SHA256&#34;, &#34;ALWAYS_NULL&#34;, &#34;DEFAULT_MASKING_VALUE&#34;, &#34;LAST_FOUR_CHARACTERS&#34;, &#34;FIRST_FOUR_CHARACTERS&#34;, &#34;EMAIL_MASK&#34;, &#34;DATE_YEAR_MASK&#34;]
 
 **Returns**:
   - An attribute object that represents the `data_masking_policy` sub block.
