@@ -16,6 +16,7 @@ This package contains functions and utilities for setting up the data source usi
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withAppId()`](#fn-withappid)
+* [`fn withProject()`](#fn-withproject)
 
 ## Fields
 
@@ -48,6 +49,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `dataSrcLabel` (`string`): The name label of the block.
   - `app_id` (`string`): The globally unique, Firebase-assigned identifier of the App.
 This identifier should be treated as an opaque token, as the data format is not specified.
+  - `project` (`string`): Set the `project` field on the resulting data source block. When `null`, the `project` field will be omitted from the resulting object.
 
 **Returns**:
 - A mixin object that injects the new data source into the root Terraform configuration.
@@ -73,6 +75,7 @@ injecting into a complete block.
 **Args**:
   - `app_id` (`string`): The globally unique, Firebase-assigned identifier of the App.
 This identifier should be treated as an opaque token, as the data format is not specified.
+  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) to construct a new `google_firebase_web_app` data source into the root Terraform configuration.
@@ -92,3 +95,19 @@ Terraform data source block to set or update the app_id field.
 **Args**:
   - `dataSrcLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `app_id` field.
+
+
+### fn withProject
+
+```ts
+withProject()
+```
+
+`google-beta.string.withProject` constructs a mixin object that can be merged into the `string`
+Terraform data source block to set or update the project field.
+
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project` field.

@@ -1239,6 +1239,7 @@ Terraform sub block.
 **Args**:
   - `automatic_restart` (`bool`): Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). This defaults to true. When `null`, the `automatic_restart` field will be omitted from the resulting object.
   - `instance_termination_action` (`string`): Specifies the action GCE should take when SPOT VM is preempted. When `null`, the `instance_termination_action` field will be omitted from the resulting object.
+  - `maintenance_interval` (`string`): Specifies the frequency of planned maintenance events. The accepted values are: PERIODIC When `null`, the `maintenance_interval` field will be omitted from the resulting object.
   - `min_node_cpus` (`number`): Minimum number of cpus for the instance. When `null`, the `min_node_cpus` field will be omitted from the resulting object.
   - `on_host_maintenance` (`string`): Defines the maintenance behavior for this instance. When `null`, the `on_host_maintenance` field will be omitted from the resulting object.
   - `preemptible` (`bool`): Allows instance to be preempted. This defaults to false. When `null`, the `preemptible` field will be omitted from the resulting object.
