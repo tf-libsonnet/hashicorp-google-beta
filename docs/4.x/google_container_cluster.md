@@ -214,6 +214,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-node_configkubelet_confignew)
   * [`obj node_config.linux_node_config`](#obj-node_configlinux_node_config)
     * [`fn new()`](#fn-node_configlinux_node_confignew)
+  * [`obj node_config.local_nvme_ssd_block_config`](#obj-node_configlocal_nvme_ssd_block_config)
+    * [`fn new()`](#fn-node_configlocal_nvme_ssd_block_confignew)
   * [`obj node_config.reservation_affinity`](#obj-node_configreservation_affinity)
     * [`fn new()`](#fn-node_configreservation_affinitynew)
   * [`obj node_config.sandbox_config`](#obj-node_configsandbox_config)
@@ -242,6 +244,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-node_poolnode_configkubelet_confignew)
     * [`obj node_pool.node_config.linux_node_config`](#obj-node_poolnode_configlinux_node_config)
       * [`fn new()`](#fn-node_poolnode_configlinux_node_confignew)
+    * [`obj node_pool.node_config.local_nvme_ssd_block_config`](#obj-node_poolnode_configlocal_nvme_ssd_block_config)
+      * [`fn new()`](#fn-node_poolnode_configlocal_nvme_ssd_block_confignew)
     * [`obj node_pool.node_config.reservation_affinity`](#obj-node_poolnode_configreservation_affinity)
       * [`fn new()`](#fn-node_poolnode_configreservation_affinitynew)
     * [`obj node_pool.node_config.sandbox_config`](#obj-node_poolnode_configsandbox_config)
@@ -3340,6 +3344,7 @@ Terraform sub block.
   - `gvnic` (`list[obj]`): Enable or disable gvnic in the node pool. When `null`, the `gvnic` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.gvnic.new](#fn-node_configgvnicnew) constructor.
   - `kubelet_config` (`list[obj]`): Node kubelet configs. When `null`, the `kubelet_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.kubelet_config.new](#fn-node_configkubelet_confignew) constructor.
   - `linux_node_config` (`list[obj]`): Parameters that can be configured on Linux nodes. When `null`, the `linux_node_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.linux_node_config.new](#fn-node_configlinux_node_confignew) constructor.
+  - `local_nvme_ssd_block_config` (`list[obj]`): Parameters for raw-block local NVMe SSDs. When `null`, the `local_nvme_ssd_block_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.local_nvme_ssd_block_config.new](#fn-node_configlocal_nvme_ssd_block_confignew) constructor.
   - `reservation_affinity` (`list[obj]`): The reservation affinity configuration for the node pool. When `null`, the `reservation_affinity` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.reservation_affinity.new](#fn-node_configreservation_affinitynew) constructor.
   - `sandbox_config` (`list[obj]`): Sandbox configuration for this node. When `null`, the `sandbox_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.sandbox_config.new](#fn-node_configsandbox_confignew) constructor.
   - `shielded_instance_config` (`list[obj]`): Shielded Instance options. When `null`, the `shielded_instance_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.shielded_instance_config.new](#fn-node_configshielded_instance_confignew) constructor.
@@ -3366,7 +3371,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `local_ssd_count` (`number`): Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. Each local SSD is 375 GB in size.
+  - `local_ssd_count` (`number`): Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. Each local SSD must be 375 or 3000 GB in size, and all local SSDs must share the same size.
 
 **Returns**:
   - An attribute object that represents the `ephemeral_storage_config` sub block.
@@ -3465,6 +3470,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `linux_node_config` sub block.
+
+
+## obj node_config.local_nvme_ssd_block_config
+
+
+
+### fn node_config.local_nvme_ssd_block_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_config.local_nvme_ssd_block_config.new` constructs a new object with attributes and blocks configured for the `local_nvme_ssd_block_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `local_ssd_count` (`number`): Number of raw-block local NVMe SSD disks to be attached to the node. Each local SSD is 375 GB in size.
+
+**Returns**:
+  - An attribute object that represents the `local_nvme_ssd_block_config` sub block.
 
 
 ## obj node_config.reservation_affinity
@@ -3715,6 +3743,7 @@ Terraform sub block.
   - `gvnic` (`list[obj]`): Enable or disable gvnic in the node pool. When `null`, the `gvnic` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.gvnic.new](#fn-node_poolnode_poolgvnicnew) constructor.
   - `kubelet_config` (`list[obj]`): Node kubelet configs. When `null`, the `kubelet_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.kubelet_config.new](#fn-node_poolnode_poolkubelet_confignew) constructor.
   - `linux_node_config` (`list[obj]`): Parameters that can be configured on Linux nodes. When `null`, the `linux_node_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.linux_node_config.new](#fn-node_poolnode_poollinux_node_confignew) constructor.
+  - `local_nvme_ssd_block_config` (`list[obj]`): Parameters for raw-block local NVMe SSDs. When `null`, the `local_nvme_ssd_block_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.local_nvme_ssd_block_config.new](#fn-node_poolnode_poollocal_nvme_ssd_block_confignew) constructor.
   - `reservation_affinity` (`list[obj]`): The reservation affinity configuration for the node pool. When `null`, the `reservation_affinity` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.reservation_affinity.new](#fn-node_poolnode_poolreservation_affinitynew) constructor.
   - `sandbox_config` (`list[obj]`): Sandbox configuration for this node. When `null`, the `sandbox_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.sandbox_config.new](#fn-node_poolnode_poolsandbox_confignew) constructor.
   - `shielded_instance_config` (`list[obj]`): Shielded Instance options. When `null`, the `shielded_instance_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.shielded_instance_config.new](#fn-node_poolnode_poolshielded_instance_confignew) constructor.
@@ -3741,7 +3770,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `local_ssd_count` (`number`): Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. Each local SSD is 375 GB in size.
+  - `local_ssd_count` (`number`): Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. Each local SSD must be 375 or 3000 GB in size, and all local SSDs must share the same size.
 
 **Returns**:
   - An attribute object that represents the `ephemeral_storage_config` sub block.
@@ -3840,6 +3869,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `linux_node_config` sub block.
+
+
+## obj node_pool.node_config.local_nvme_ssd_block_config
+
+
+
+### fn node_pool.node_config.local_nvme_ssd_block_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_pool.node_config.local_nvme_ssd_block_config.new` constructs a new object with attributes and blocks configured for the `local_nvme_ssd_block_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `local_ssd_count` (`number`): Number of raw-block local NVMe SSD disks to be attached to the node. Each local SSD is 375 GB in size.
+
+**Returns**:
+  - An attribute object that represents the `local_nvme_ssd_block_config` sub block.
 
 
 ## obj node_pool.node_config.reservation_affinity
