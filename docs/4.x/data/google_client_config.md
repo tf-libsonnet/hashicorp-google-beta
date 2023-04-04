@@ -6,7 +6,7 @@ permalink: /data/google_client_config/
 
 `google_client_config` represents the `google-beta_google_client_config` Terraform data source.
 
-
+Use this data source to access the configuration of the Google Cloud provider.
 
 This package contains functions and utilities for setting up the data source using Jsonnet code.
 

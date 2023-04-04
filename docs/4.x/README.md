@@ -55,6 +55,7 @@ project.
 * [google_apigee_flowhook](google_apigee_flowhook.md)
 * [google_apigee_instance](google_apigee_instance.md)
 * [google_apigee_instance_attachment](google_apigee_instance_attachment.md)
+* [google_apigee_keystores_aliases_key_cert_file](google_apigee_keystores_aliases_key_cert_file.md)
 * [google_apigee_nat_address](google_apigee_nat_address.md)
 * [google_apigee_organization](google_apigee_organization.md)
 * [google_apigee_sharedflow](google_apigee_sharedflow.md)
