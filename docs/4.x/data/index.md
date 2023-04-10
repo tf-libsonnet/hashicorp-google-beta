@@ -78,6 +78,7 @@ permalink: /data/
 * [google_dns_managed_zone](google_dns_managed_zone.md)
 * [google_dns_record_set](google_dns_record_set.md)
 * [google_firebase_android_app](google_firebase_android_app.md)
+* [google_firebase_android_app_config](google_firebase_android_app_config.md)
 * [google_firebase_apple_app](google_firebase_apple_app.md)
 * [google_firebase_apple_app_config](google_firebase_apple_app_config.md)
 * [google_firebase_hosting_channel](google_firebase_hosting_channel.md)

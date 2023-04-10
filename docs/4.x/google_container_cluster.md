@@ -208,6 +208,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-node_configadvanced_machine_featuresnew)
   * [`obj node_config.ephemeral_storage_config`](#obj-node_configephemeral_storage_config)
     * [`fn new()`](#fn-node_configephemeral_storage_confignew)
+  * [`obj node_config.ephemeral_storage_local_ssd_config`](#obj-node_configephemeral_storage_local_ssd_config)
+    * [`fn new()`](#fn-node_configephemeral_storage_local_ssd_confignew)
   * [`obj node_config.gcfs_config`](#obj-node_configgcfs_config)
     * [`fn new()`](#fn-node_configgcfs_confignew)
   * [`obj node_config.gvnic`](#obj-node_configgvnic)
@@ -240,6 +242,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-node_poolnode_configadvanced_machine_featuresnew)
     * [`obj node_pool.node_config.ephemeral_storage_config`](#obj-node_poolnode_configephemeral_storage_config)
       * [`fn new()`](#fn-node_poolnode_configephemeral_storage_confignew)
+    * [`obj node_pool.node_config.ephemeral_storage_local_ssd_config`](#obj-node_poolnode_configephemeral_storage_local_ssd_config)
+      * [`fn new()`](#fn-node_poolnode_configephemeral_storage_local_ssd_confignew)
     * [`obj node_pool.node_config.gcfs_config`](#obj-node_poolnode_configgcfs_config)
       * [`fn new()`](#fn-node_poolnode_configgcfs_confignew)
     * [`obj node_pool.node_config.gvnic`](#obj-node_poolnode_configgvnic)
@@ -392,7 +396,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `notification_config` (`list[obj]`): The notification config for sending cluster upgrade notifications When `null`, the `notification_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.notification_config.new](#fn-notification_confignew) constructor.
   - `pod_security_policy_config` (`list[obj]`): Configuration for the PodSecurityPolicy feature. When `null`, the `pod_security_policy_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.pod_security_policy_config.new](#fn-pod_security_policy_confignew) constructor.
   - `private_cluster_config` (`list[obj]`): Configuration for private clusters, clusters with private nodes. When `null`, the `private_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.private_cluster_config.new](#fn-private_cluster_confignew) constructor.
-  - `protect_config` (`list[obj]`): The notification config for sending cluster upgrade notifications When `null`, the `protect_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.protect_config.new](#fn-protect_confignew) constructor.
+  - `protect_config` (`list[obj]`): Enable/Disable Protect API features for the cluster. When `null`, the `protect_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.protect_config.new](#fn-protect_confignew) constructor.
   - `release_channel` (`list[obj]`): Configuration options for the Release channel feature, which provide more control over automatic upgrades of your GKE clusters. Note that removing this field from your config will not unenroll it. Instead, use the &#34;UNSPECIFIED&#34; channel. When `null`, the `release_channel` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.release_channel.new](#fn-release_channelnew) constructor.
   - `resource_usage_export_config` (`list[obj]`): Configuration for the ResourceUsageExportConfig feature. When `null`, the `resource_usage_export_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.resource_usage_export_config.new](#fn-resource_usage_export_confignew) constructor.
   - `service_external_ips_config` (`list[obj]`): If set, and enabled=true, services with external ips field will not be blocked When `null`, the `service_external_ips_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.service_external_ips_config.new](#fn-service_external_ips_confignew) constructor.
@@ -477,7 +481,7 @@ injecting into a complete block.
   - `notification_config` (`list[obj]`): The notification config for sending cluster upgrade notifications When `null`, the `notification_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.notification_config.new](#fn-notification_confignew) constructor.
   - `pod_security_policy_config` (`list[obj]`): Configuration for the PodSecurityPolicy feature. When `null`, the `pod_security_policy_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.pod_security_policy_config.new](#fn-pod_security_policy_confignew) constructor.
   - `private_cluster_config` (`list[obj]`): Configuration for private clusters, clusters with private nodes. When `null`, the `private_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.private_cluster_config.new](#fn-private_cluster_confignew) constructor.
-  - `protect_config` (`list[obj]`): The notification config for sending cluster upgrade notifications When `null`, the `protect_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.protect_config.new](#fn-protect_confignew) constructor.
+  - `protect_config` (`list[obj]`): Enable/Disable Protect API features for the cluster. When `null`, the `protect_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.protect_config.new](#fn-protect_confignew) constructor.
   - `release_channel` (`list[obj]`): Configuration options for the Release channel feature, which provide more control over automatic upgrades of your GKE clusters. Note that removing this field from your config will not unenroll it. Instead, use the &#34;UNSPECIFIED&#34; channel. When `null`, the `release_channel` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.release_channel.new](#fn-release_channelnew) constructor.
   - `resource_usage_export_config` (`list[obj]`): Configuration for the ResourceUsageExportConfig feature. When `null`, the `resource_usage_export_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.resource_usage_export_config.new](#fn-resource_usage_export_confignew) constructor.
   - `service_external_ips_config` (`list[obj]`): If set, and enabled=true, services with external ips field will not be blocked When `null`, the `service_external_ips_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.service_external_ips_config.new](#fn-service_external_ips_confignew) constructor.
@@ -3345,7 +3349,8 @@ Terraform sub block.
   - `tags` (`list`): The list of instance tags applied to all nodes. When `null`, the `tags` field will be omitted from the resulting object.
   - `taint` (`list`): List of Kubernetes taints to be applied to each node. When `null`, the `taint` field will be omitted from the resulting object.
   - `advanced_machine_features` (`list[obj]`): Specifies options for controlling advanced machine features. When `null`, the `advanced_machine_features` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.advanced_machine_features.new](#fn-node_configadvanced_machine_featuresnew) constructor.
-  - `ephemeral_storage_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. When `null`, the `ephemeral_storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.ephemeral_storage_config.new](#fn-node_configephemeral_storage_confignew) constructor.
+  - `ephemeral_storage_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.ephemeral_storage_config.new](#fn-node_configephemeral_storage_confignew) constructor.
+  - `ephemeral_storage_local_ssd_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_local_ssd_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.ephemeral_storage_local_ssd_config.new](#fn-node_configephemeral_storage_local_ssd_confignew) constructor.
   - `gcfs_config` (`list[obj]`): GCFS configuration for this node. When `null`, the `gcfs_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.gcfs_config.new](#fn-node_configgcfs_confignew) constructor.
   - `gvnic` (`list[obj]`): Enable or disable gvnic in the node pool. When `null`, the `gvnic` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.gvnic.new](#fn-node_configgvnicnew) constructor.
   - `kubelet_config` (`list[obj]`): Node kubelet configs. When `null`, the `kubelet_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.kubelet_config.new](#fn-node_configkubelet_confignew) constructor.
@@ -3404,6 +3409,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `ephemeral_storage_config` sub block.
+
+
+## obj node_config.ephemeral_storage_local_ssd_config
+
+
+
+### fn node_config.ephemeral_storage_local_ssd_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_config.ephemeral_storage_local_ssd_config.new` constructs a new object with attributes and blocks configured for the `ephemeral_storage_local_ssd_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `local_ssd_count` (`number`): Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. Each local SSD must be 375 or 3000 GB in size, and all local SSDs must share the same size.
+
+**Returns**:
+  - An attribute object that represents the `ephemeral_storage_local_ssd_config` sub block.
 
 
 ## obj node_config.gcfs_config
@@ -3768,7 +3796,8 @@ Terraform sub block.
   - `tags` (`list`): The list of instance tags applied to all nodes. When `null`, the `tags` field will be omitted from the resulting object.
   - `taint` (`list`): List of Kubernetes taints to be applied to each node. When `null`, the `taint` field will be omitted from the resulting object.
   - `advanced_machine_features` (`list[obj]`): Specifies options for controlling advanced machine features. When `null`, the `advanced_machine_features` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.advanced_machine_features.new](#fn-node_poolnode_pooladvanced_machine_featuresnew) constructor.
-  - `ephemeral_storage_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. When `null`, the `ephemeral_storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.ephemeral_storage_config.new](#fn-node_poolnode_poolephemeral_storage_confignew) constructor.
+  - `ephemeral_storage_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.ephemeral_storage_config.new](#fn-node_poolnode_poolephemeral_storage_confignew) constructor.
+  - `ephemeral_storage_local_ssd_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_local_ssd_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.ephemeral_storage_local_ssd_config.new](#fn-node_poolnode_poolephemeral_storage_local_ssd_confignew) constructor.
   - `gcfs_config` (`list[obj]`): GCFS configuration for this node. When `null`, the `gcfs_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.gcfs_config.new](#fn-node_poolnode_poolgcfs_confignew) constructor.
   - `gvnic` (`list[obj]`): Enable or disable gvnic in the node pool. When `null`, the `gvnic` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.gvnic.new](#fn-node_poolnode_poolgvnicnew) constructor.
   - `kubelet_config` (`list[obj]`): Node kubelet configs. When `null`, the `kubelet_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.kubelet_config.new](#fn-node_poolnode_poolkubelet_confignew) constructor.
@@ -3827,6 +3856,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `ephemeral_storage_config` sub block.
+
+
+## obj node_pool.node_config.ephemeral_storage_local_ssd_config
+
+
+
+### fn node_pool.node_config.ephemeral_storage_local_ssd_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_pool.node_config.ephemeral_storage_local_ssd_config.new` constructs a new object with attributes and blocks configured for the `ephemeral_storage_local_ssd_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `local_ssd_count` (`number`): Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. Each local SSD must be 375 or 3000 GB in size, and all local SSDs must share the same size.
+
+**Returns**:
+  - An attribute object that represents the `ephemeral_storage_local_ssd_config` sub block.
 
 
 ## obj node_pool.node_config.gcfs_config
@@ -4417,8 +4469,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `workload_vulnerability_mode` (`string`): WorkloadVulnerabilityMode defines mode to perform vulnerability scanning. Accepted values are WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED, DISABLED, BASIC. When `null`, the `workload_vulnerability_mode` field will be omitted from the resulting object.
-  - `workload_config` (`list[obj]`): WorkloadConfig defines the flags to enable or disable the workload configurations for the cluster. When `null`, the `workload_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.protect_config.workload_config.new](#fn-protect_configworkload_confignew) constructor.
+  - `workload_vulnerability_mode` (`string`): Sets which mode to use for Protect workload vulnerability scanning feature. Accepted values are DISABLED, BASIC. When `null`, the `workload_vulnerability_mode` field will be omitted from the resulting object.
+  - `workload_config` (`list[obj]`): WorkloadConfig defines which actions are enabled for a cluster&#39;s workload configurations. When `null`, the `workload_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.protect_config.workload_config.new](#fn-protect_configworkload_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `protect_config` sub block.
@@ -4441,7 +4493,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `audit_mode` (`string`): Mode defines how to audit the workload configs. Accepted values are MODE_UNSPECIFIED, DISABLED, BASIC.
+  - `audit_mode` (`string`): Sets which mode of auditing should be used for the cluster&#39;s workloads. Accepted values are DISABLED, BASIC.
 
 **Returns**:
   - An attribute object that represents the `workload_config` sub block.

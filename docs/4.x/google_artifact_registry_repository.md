@@ -16,6 +16,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withDescription()`](#fn-withdescription)
+* [`fn withDockerConfig()`](#fn-withdockerconfig)
+* [`fn withDockerConfigMixin()`](#fn-withdockerconfigmixin)
 * [`fn withFormat()`](#fn-withformat)
 * [`fn withKmsKeyName()`](#fn-withkmskeyname)
 * [`fn withLabels()`](#fn-withlabels)
@@ -31,6 +33,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withVirtualRepositoryConfig()`](#fn-withvirtualrepositoryconfig)
 * [`fn withVirtualRepositoryConfigMixin()`](#fn-withvirtualrepositoryconfigmixin)
+* [`obj docker_config`](#obj-docker_config)
+  * [`fn new()`](#fn-docker_confignew)
 * [`obj maven_config`](#obj-maven_config)
   * [`fn new()`](#fn-maven_confignew)
 * [`obj remote_repository_config`](#obj-remote_repository_config)
@@ -98,6 +102,7 @@ and dashes. When `null`, the `labels` field will be omitted from the resulting o
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `repository_id` (`string`): The last part of the repository name, for example:
 &#34;repo1&#34;
+  - `docker_config` (`list[obj]`): Docker repository config contains repository level configuration for the repositories of docker type. When `null`, the `docker_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_artifact_registry_repository.docker_config.new](#fn-docker_confignew) constructor.
   - `maven_config` (`list[obj]`): MavenRepositoryConfig is maven related repository details.
 Provides additional configuration details for repositories of the maven
 format type. When `null`, the `maven_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_artifact_registry_repository.maven_config.new](#fn-maven_confignew) constructor.
@@ -146,6 +151,7 @@ and dashes. When `null`, the `labels` field will be omitted from the resulting o
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `repository_id` (`string`): The last part of the repository name, for example:
 &#34;repo1&#34;
+  - `docker_config` (`list[obj]`): Docker repository config contains repository level configuration for the repositories of docker type. When `null`, the `docker_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_artifact_registry_repository.docker_config.new](#fn-docker_confignew) constructor.
   - `maven_config` (`list[obj]`): MavenRepositoryConfig is maven related repository details.
 Provides additional configuration details for repositories of the maven
 format type. When `null`, the `maven_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_artifact_registry_repository.maven_config.new](#fn-maven_confignew) constructor.
@@ -171,6 +177,43 @@ Terraform resource block to set or update the description field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `description` field.
+
+
+### fn withDockerConfig
+
+```ts
+withDockerConfig()
+```
+
+`google-beta.list[obj].withDockerConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the docker_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withDockerConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `docker_config` field.
+
+
+### fn withDockerConfigMixin
+
+```ts
+withDockerConfigMixin()
+```
+
+`google-beta.list[obj].withDockerConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the docker_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withDockerConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `docker_config` field.
 
 
 ### fn withFormat
@@ -430,6 +473,29 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list[obj]`): The value to set for the `virtual_repository_config` field.
+
+
+## obj docker_config
+
+
+
+### fn docker_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_artifact_registry_repository.docker_config.new` constructs a new object with attributes and blocks configured for the `docker_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `immutable_tags` (`bool`): The repository which enabled this flag prevents all tags from being modified, moved or deleted. This does not prevent tags from being created. When `null`, the `immutable_tags` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `docker_config` sub block.
 
 
 ## obj maven_config
