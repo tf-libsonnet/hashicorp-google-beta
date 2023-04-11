@@ -73,6 +73,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   google_dns_managed_zone: (import 'google_dns_managed_zone.libsonnet'),
   google_dns_record_set: (import 'google_dns_record_set.libsonnet'),
   google_firebase_android_app: (import 'google_firebase_android_app.libsonnet'),
+  google_firebase_android_app_config: (import 'google_firebase_android_app_config.libsonnet'),
   google_firebase_apple_app: (import 'google_firebase_apple_app.libsonnet'),
   google_firebase_apple_app_config: (import 'google_firebase_apple_app_config.libsonnet'),
   google_firebase_hosting_channel: (import 'google_firebase_hosting_channel.libsonnet'),

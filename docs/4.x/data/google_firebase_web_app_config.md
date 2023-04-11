@@ -6,7 +6,7 @@ permalink: /data/google_firebase_web_app_config/
 
 `google_firebase_web_app_config` represents the `google-beta_google_firebase_web_app_config` Terraform data source.
 
-
+A Google Cloud Firebase web application configuration
 
 This package contains functions and utilities for setting up the data source using Jsonnet code.
 
