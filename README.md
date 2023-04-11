@@ -49,7 +49,7 @@ local google_beta = import 'github.com/tf-libsonnet/hashicorp-google-beta/main.l
 local google = import 'github.com/tf-libsonnet/hashicorp-google/main.libsonnet';
 
 google.provider.new(region='us-central1', src='hashicorp/google-beta')
-+ google_beta.google_service_account.new(
++ google_beta.service_account.new(
   'default',
   account_id='service_account_id',
   display_name='Service Account',
