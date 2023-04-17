@@ -72,10 +72,106 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
         target_id: target_id,
       }),
       strategy:: {
-        '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.new` constructs a new object with attributes and blocks configured for the `strategy`\nTerraform sub block.\n\n\n\n**Args**:\n  - `standard` (`list[obj]`): Standard deployment strategy executes a single deploy and allows verifying the deployment. When `null`, the `standard` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.standard.new](#fn-serial_pipelineserial_pipelinestagesstandardnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `strategy` sub block.\n', args=[]),
+        canary:: {
+          canary_deployment:: {
+            '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.canary_deployment.new` constructs a new object with attributes and blocks configured for the `canary_deployment`\nTerraform sub block.\n\n\n\n**Args**:\n  - `percentages` (`list`): Required. The percentage based deployments that will occur as a part of a `Rollout`. List is expected in ascending order and each integer n is 0 &lt;= n &lt; 100.\n  - `verify` (`bool`): Whether to run verify tests after each percentage deployment. When `null`, the `verify` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `canary_deployment` sub block.\n', args=[]),
+            new(
+              percentages,
+              verify=null
+            ):: std.prune(a={
+              percentages: percentages,
+              verify: verify,
+            }),
+          },
+          custom_canary_deployment:: {
+            '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.custom_canary_deployment.new` constructs a new object with attributes and blocks configured for the `custom_canary_deployment`\nTerraform sub block.\n\n\n\n**Args**:\n  - `phase_configs` (`list[obj]`): Required. Configuration for each phase in the canary deployment in the order executed. When `null`, the `phase_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.custom_canary_deployment.phase_configs.new](#fn-serial_pipelineserial_pipelinestagesstrategycanaryphase_configsnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `custom_canary_deployment` sub block.\n', args=[]),
+            new(
+              phase_configs=null
+            ):: std.prune(a={
+              phase_configs: phase_configs,
+            }),
+            phase_configs:: {
+              '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.custom_canary_deployment.phase_configs.new` constructs a new object with attributes and blocks configured for the `phase_configs`\nTerraform sub block.\n\n\n\n**Args**:\n  - `percentage` (`number`): Required. Percentage deployment for the phase.\n  - `phase_id` (`string`): Required. The ID to assign to the `Rollout` phase. This value must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.\n  - `profiles` (`list`): Skaffold profiles to use when rendering the manifest for this phase. These are in addition to the profiles list specified in the `DeliveryPipeline` stage. When `null`, the `profiles` field will be omitted from the resulting object.\n  - `verify` (`bool`): Whether to run verify tests after the deployment. When `null`, the `verify` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `phase_configs` sub block.\n', args=[]),
+              new(
+                percentage,
+                phase_id,
+                profiles=null,
+                verify=null
+              ):: std.prune(a={
+                percentage: percentage,
+                phase_id: phase_id,
+                profiles: profiles,
+                verify: verify,
+              }),
+            },
+          },
+          '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.new` constructs a new object with attributes and blocks configured for the `canary`\nTerraform sub block.\n\n\n\n**Args**:\n  - `canary_deployment` (`list[obj]`): Configures the progressive based deployment for a Target. When `null`, the `canary_deployment` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.canary_deployment.new](#fn-serial_pipelineserial_pipelinestagesstrategycanary_deploymentnew) constructor.\n  - `custom_canary_deployment` (`list[obj]`): Configures the progressive based deployment for a Target, but allows customizing at the phase level where a phase represents each of the percentage deployments. When `null`, the `custom_canary_deployment` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.custom_canary_deployment.new](#fn-serial_pipelineserial_pipelinestagesstrategycustom_canary_deploymentnew) constructor.\n  - `runtime_config` (`list[obj]`): Optional. Runtime specific configurations for the deployment strategy. The runtime configuration is used to determine how Cloud Deploy will split traffic to enable a progressive deployment. When `null`, the `runtime_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.new](#fn-serial_pipelineserial_pipelinestagesstrategyruntime_confignew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `canary` sub block.\n', args=[]),
+          new(
+            canary_deployment=null,
+            custom_canary_deployment=null,
+            runtime_config=null
+          ):: std.prune(a={
+            canary_deployment: canary_deployment,
+            custom_canary_deployment: custom_canary_deployment,
+            runtime_config: runtime_config,
+          }),
+          runtime_config:: {
+            cloud_run:: {
+              '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.cloud_run.new` constructs a new object with attributes and blocks configured for the `cloud_run`\nTerraform sub block.\n\n\n\n**Args**:\n  - `automatic_traffic_control` (`bool`): Whether Cloud Deploy should update the traffic stanza in a Cloud Run Service on the user&#39;s behalf to facilitate traffic splitting. This is required to be true for CanaryDeployments, but optional for CustomCanaryDeployments. When `null`, the `automatic_traffic_control` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `cloud_run` sub block.\n', args=[]),
+              new(
+                automatic_traffic_control=null
+              ):: std.prune(a={
+                automatic_traffic_control: automatic_traffic_control,
+              }),
+            },
+            kubernetes:: {
+              gateway_service_mesh:: {
+                '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.kubernetes.gateway_service_mesh.new` constructs a new object with attributes and blocks configured for the `gateway_service_mesh`\nTerraform sub block.\n\n\n\n**Args**:\n  - `deployment` (`string`): Required. Name of the Kubernetes Deployment whose traffic is managed by the specified HTTPRoute and Service.\n  - `http_route` (`string`): Required. Name of the Gateway API HTTPRoute.\n  - `service` (`string`): Required. Name of the Kubernetes Service.\n\n**Returns**:\n  - An attribute object that represents the `gateway_service_mesh` sub block.\n', args=[]),
+                new(
+                  deployment,
+                  http_route,
+                  service
+                ):: std.prune(a={
+                  deployment: deployment,
+                  http_route: http_route,
+                  service: service,
+                }),
+              },
+              '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.kubernetes.new` constructs a new object with attributes and blocks configured for the `kubernetes`\nTerraform sub block.\n\n\n\n**Args**:\n  - `gateway_service_mesh` (`list[obj]`): Kubernetes Gateway API service mesh configuration. When `null`, the `gateway_service_mesh` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.kubernetes.gateway_service_mesh.new](#fn-serial_pipelineserial_pipelinestagesstrategycanaryruntime_configgateway_service_meshnew) constructor.\n  - `service_networking` (`list[obj]`): Kubernetes Service networking configuration. When `null`, the `service_networking` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.kubernetes.service_networking.new](#fn-serial_pipelineserial_pipelinestagesstrategycanaryruntime_configservice_networkingnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `kubernetes` sub block.\n', args=[]),
+              new(
+                gateway_service_mesh=null,
+                service_networking=null
+              ):: std.prune(a={
+                gateway_service_mesh: gateway_service_mesh,
+                service_networking: service_networking,
+              }),
+              service_networking:: {
+                '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.kubernetes.service_networking.new` constructs a new object with attributes and blocks configured for the `service_networking`\nTerraform sub block.\n\n\n\n**Args**:\n  - `deployment` (`string`): Required. Name of the Kubernetes Deployment whose traffic is managed by the specified Service.\n  - `service` (`string`): Required. Name of the Kubernetes Service.\n\n**Returns**:\n  - An attribute object that represents the `service_networking` sub block.\n', args=[]),
+                new(
+                  deployment,
+                  service
+                ):: std.prune(a={
+                  deployment: deployment,
+                  service: service,
+                }),
+              },
+            },
+            '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.new` constructs a new object with attributes and blocks configured for the `runtime_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `cloud_run` (`list[obj]`): Cloud Run runtime configuration. When `null`, the `cloud_run` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.cloud_run.new](#fn-serial_pipelineserial_pipelinestagesstrategycanarycloud_runnew) constructor.\n  - `kubernetes` (`list[obj]`): Kubernetes runtime configuration. When `null`, the `kubernetes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.kubernetes.new](#fn-serial_pipelineserial_pipelinestagesstrategycanarykubernetesnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `runtime_config` sub block.\n', args=[]),
+            new(
+              cloud_run=null,
+              kubernetes=null
+            ):: std.prune(a={
+              cloud_run: cloud_run,
+              kubernetes: kubernetes,
+            }),
+          },
+        },
+        '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.new` constructs a new object with attributes and blocks configured for the `strategy`\nTerraform sub block.\n\n\n\n**Args**:\n  - `canary` (`list[obj]`): Canary deployment strategy provides progressive percentage based deployments to a Target. When `null`, the `canary` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.new](#fn-serial_pipelineserial_pipelinestagescanarynew) constructor.\n  - `standard` (`list[obj]`): Standard deployment strategy executes a single deploy and allows verifying the deployment. When `null`, the `standard` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.standard.new](#fn-serial_pipelineserial_pipelinestagesstandardnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `strategy` sub block.\n', args=[]),
         new(
+          canary=null,
           standard=null
         ):: std.prune(a={
+          canary: canary,
           standard: standard,
         }),
         standard:: {
