@@ -52,6 +52,7 @@ permalink: /data/
 * [google_compute_network_peering](google_compute_network_peering.md)
 * [google_compute_node_types](google_compute_node_types.md)
 * [google_compute_region_instance_group](google_compute_region_instance_group.md)
+* [google_compute_region_instance_template](google_compute_region_instance_template.md)
 * [google_compute_region_network_endpoint_group](google_compute_region_network_endpoint_group.md)
 * [google_compute_region_ssl_certificate](google_compute_region_ssl_certificate.md)
 * [google_compute_regions](google_compute_regions.md)
