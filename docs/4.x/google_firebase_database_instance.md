@@ -55,7 +55,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
   - `desired_state` (`string`): The intended database state. When `null`, the `desired_state` field will be omitted from the resulting object.
-  - `instance_id` (`string`): The globally unique identifier of the Firebase Realtime Database instance. 
+  - `instance_id` (`string`): The globally unique identifier of the Firebase Realtime Database instance.
 Instance IDs cannot be reused after deletion.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): A reference to the region where the Firebase Realtime database resides.
@@ -89,7 +89,7 @@ injecting into a complete block.
 
 **Args**:
   - `desired_state` (`string`): The intended database state. When `null`, the `desired_state` field will be omitted from the resulting object.
-  - `instance_id` (`string`): The globally unique identifier of the Firebase Realtime Database instance. 
+  - `instance_id` (`string`): The globally unique identifier of the Firebase Realtime Database instance.
 Instance IDs cannot be reused after deletion.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): A reference to the region where the Firebase Realtime database resides.

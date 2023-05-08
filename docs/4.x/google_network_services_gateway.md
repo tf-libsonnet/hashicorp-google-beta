@@ -64,12 +64,12 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `name` (`string`): Short name of the Gateway resource to be created.
   - `ports` (`list`): One or more port numbers (1-65535), on which the Gateway will receive traffic.
-The proxy binds to the specified ports. Gateways of type &#39;SECURE_WEB_GATEWAY&#39; are 
+The proxy binds to the specified ports. Gateways of type &#39;SECURE_WEB_GATEWAY&#39; are
 limited to 1 port. Gateways of type &#39;OPEN_MESH&#39; listen on 0.0.0.0 and support multiple ports.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `scope` (`string`): Immutable. Scope determines how configuration across multiple Gateway instances are merged.
 The configuration for multiple Gateway instances with the same scope will be merged as presented as
-a single coniguration to the proxy/load balancer. 
+a single coniguration to the proxy/load balancer.
 Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
   - `server_tls_policy` (`string`): A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated.
 If empty, TLS termination is disabled. When `null`, the `server_tls_policy` field will be omitted from the resulting object.
@@ -104,12 +104,12 @@ injecting into a complete block.
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `name` (`string`): Short name of the Gateway resource to be created.
   - `ports` (`list`): One or more port numbers (1-65535), on which the Gateway will receive traffic.
-The proxy binds to the specified ports. Gateways of type &#39;SECURE_WEB_GATEWAY&#39; are 
+The proxy binds to the specified ports. Gateways of type &#39;SECURE_WEB_GATEWAY&#39; are
 limited to 1 port. Gateways of type &#39;OPEN_MESH&#39; listen on 0.0.0.0 and support multiple ports.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `scope` (`string`): Immutable. Scope determines how configuration across multiple Gateway instances are merged.
 The configuration for multiple Gateway instances with the same scope will be merged as presented as
-a single coniguration to the proxy/load balancer. 
+a single coniguration to the proxy/load balancer.
 Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
   - `server_tls_policy` (`string`): A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated.
 If empty, TLS termination is disabled. When `null`, the `server_tls_policy` field will be omitted from the resulting object.

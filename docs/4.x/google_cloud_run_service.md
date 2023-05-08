@@ -705,10 +705,10 @@ Terraform sub block.
 **Args**:
   - `key` (`string`): A Cloud Secret Manager secret version. Must be &#39;latest&#39; for the latest
 version or an integer for a specific version.
-  - `name` (`string`): The name of the secret in Cloud Secret Manager. By default, the secret is assumed to be in the same project. 
-If the secret is in another project, you must define an alias. 
-An alias definition has the form: :projects/{project-id|project-number}/secrets/. 
-If multiple alias definitions are needed, they must be separated by commas. 
+  - `name` (`string`): The name of the secret in Cloud Secret Manager. By default, the secret is assumed to be in the same project.
+If the secret is in another project, you must define an alias.
+An alias definition has the form: :projects/{project-id|project-number}/secrets/.
+If multiple alias definitions are needed, they must be separated by commas.
 The alias definitions must be set on the run.googleapis.com/secrets annotation.
 
 **Returns**:
@@ -885,7 +885,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `port` (`number`): Port number to access on the container. Number must be in the range 1 to 65535. When `null`, the `port` field will be omitted from the resulting object.
+  - `port` (`number`): Port number to access on the container. Number must be in the range 1 to 65535.
+If not specified, defaults to the same value as container.ports[0].containerPort. When `null`, the `port` field will be omitted from the resulting object.
   - `service` (`string`): The name of the service to place in the gRPC HealthCheckRequest
 (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
 If this is not specified, the default behavior is defined by gRPC. When `null`, the `service` field will be omitted from the resulting object.
@@ -912,6 +913,8 @@ Terraform sub block.
 
 **Args**:
   - `path` (`string`): Path to access on the HTTP server. If set, it should not be empty string. When `null`, the `path` field will be omitted from the resulting object.
+  - `port` (`number`): Port number to access on the container. Number must be in the range 1 to 65535.
+If not specified, defaults to the same value as container.ports[0].containerPort. When `null`, the `port` field will be omitted from the resulting object.
   - `http_headers` (`list[obj]`): Custom headers to set in the request. HTTP allows repeated headers. When `null`, the `http_headers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.liveness_probe.http_get.http_headers.new](#fn-templatetemplatespeccontainersliveness_probehttp_headersnew) constructor.
 
 **Returns**:
@@ -1049,7 +1052,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `port` (`number`): Port number to access on the container. Number must be in the range 1 to 65535. When `null`, the `port` field will be omitted from the resulting object.
+  - `port` (`number`): Port number to access on the container. Number must be in the range 1 to 65535.
+If not specified, defaults to the same value as container.ports[0].containerPort. When `null`, the `port` field will be omitted from the resulting object.
   - `service` (`string`): The name of the service to place in the gRPC HealthCheckRequest
 (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
 If this is not specified, the default behavior is defined by gRPC. When `null`, the `service` field will be omitted from the resulting object.
@@ -1076,6 +1080,8 @@ Terraform sub block.
 
 **Args**:
   - `path` (`string`): Path to access on the HTTP server. If set, it should not be empty string. When `null`, the `path` field will be omitted from the resulting object.
+  - `port` (`number`): Port number to access on the container. Number must be in the range 1 to 65535.
+If not specified, defaults to the same value as container.ports[0].containerPort. When `null`, the `port` field will be omitted from the resulting object.
   - `http_headers` (`list[obj]`): Custom headers to set in the request. HTTP allows repeated headers. When `null`, the `http_headers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.startup_probe.http_get.http_headers.new](#fn-templatetemplatespeccontainersstartup_probehttp_headersnew) constructor.
 
 **Returns**:
@@ -1123,7 +1129,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `port` (`number`): Port number to access on the container. Number must be in the range 1 to 65535. When `null`, the `port` field will be omitted from the resulting object.
+  - `port` (`number`): Port number to access on the container. Number must be in the range 1 to 65535.
+If not specified, defaults to the same value as container.ports[0].containerPort. When `null`, the `port` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `tcp_socket` sub block.
