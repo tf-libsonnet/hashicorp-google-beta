@@ -77,6 +77,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-templatevolumesnew)
     * [`obj template.volumes.cloud_sql_instance`](#obj-templatevolumescloud_sql_instance)
       * [`fn new()`](#fn-templatevolumescloud_sql_instancenew)
+    * [`obj template.volumes.empty_dir`](#obj-templatevolumesempty_dir)
+      * [`fn new()`](#fn-templatevolumesempty_dirnew)
     * [`obj template.volumes.secret`](#obj-templatevolumessecret)
       * [`fn new()`](#fn-templatevolumessecretnew)
       * [`obj template.volumes.secret.items`](#obj-templatevolumessecretitems)
@@ -538,7 +540,7 @@ Terraform sub block.
   - `timeout` (`string`): Max allowed time for an instance to respond to a request.
 
 A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `timeout` field will be omitted from the resulting object.
-  - `containers` (`list[obj]`): Holds the single container that defines the unit of execution for this task. When `null`, the `containers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.containers.new](#fn-templatecontainersnew) constructor.
+  - `containers` (`list[obj]`): Holds the containers that define the unit of execution for this Service. When `null`, the `containers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.containers.new](#fn-templatecontainersnew) constructor.
   - `scaling` (`list[obj]`): Scaling settings for this Revision. When `null`, the `scaling` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.scaling.new](#fn-templatescalingnew) constructor.
   - `volumes` (`list[obj]`): A list of Volumes to make available to containers. When `null`, the `volumes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.new](#fn-templatevolumesnew) constructor.
   - `vpc_access` (`list[obj]`): VPC Access configuration to use for this Task. For more information, visit https://cloud.google.com/run/docs/configuring/connecting-vpc. When `null`, the `vpc_access` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.vpc_access.new](#fn-templatevpc_accessnew) constructor.
@@ -566,6 +568,7 @@ Terraform sub block.
 **Args**:
   - `args` (`list`): Arguments to the entrypoint. The docker image&#39;s CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container&#39;s environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell When `null`, the `args` field will be omitted from the resulting object.
   - `command` (`list`): Entrypoint array. Not executed within a shell. The docker image&#39;s ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container&#39;s environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell When `null`, the `command` field will be omitted from the resulting object.
+  - `depends_on` (`list`): Containers which should be started before this container. If specified the container will wait to start until all containers with the listed names are healthy. When `null`, the `depends_on` field will be omitted from the resulting object.
   - `image` (`string`): URL of the Container image in Google Container Registry or Google Artifact Registry. More info: https://kubernetes.io/docs/concepts/containers/images
   - `name` (`string`): Name of the container specified as a DNS_LABEL. When `null`, the `name` field will be omitted from the resulting object.
   - `working_dir` (`string`): Container&#39;s working directory. If not specified, the container runtime&#39;s default will be used, which might be configured in the container image. When `null`, the `working_dir` field will be omitted from the resulting object.
@@ -1029,6 +1032,7 @@ Terraform sub block.
 **Args**:
   - `name` (`string`): Volume&#39;s name.
   - `cloud_sql_instance` (`list[obj]`): For Cloud SQL volumes, contains the specific instances that should be mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run. When `null`, the `cloud_sql_instance` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.cloud_sql_instance.new](#fn-templatetemplatecloud_sql_instancenew) constructor.
+  - `empty_dir` (`list[obj]`): Ephemeral storage used as a shared volume. When `null`, the `empty_dir` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.empty_dir.new](#fn-templatetemplateempty_dirnew) constructor.
   - `secret` (`list[obj]`): Secret represents a secret that should populate this volume. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret When `null`, the `secret` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.secret.new](#fn-templatetemplatesecretnew) constructor.
 
 **Returns**:
@@ -1056,6 +1060,30 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `cloud_sql_instance` sub block.
+
+
+## obj template.volumes.empty_dir
+
+
+
+### fn template.volumes.empty_dir.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloud_run_v2_service.template.volumes.empty_dir.new` constructs a new object with attributes and blocks configured for the `empty_dir`
+Terraform sub block.
+
+
+
+**Args**:
+  - `medium` (`string`): The different types of medium supported for EmptyDir. Default value: &#34;MEMORY&#34; Possible values: [&#34;MEMORY&#34;] When `null`, the `medium` field will be omitted from the resulting object.
+  - `size_limit` (`string`): Limit on the storage usable by this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. This field&#39;s values are of the &#39;Quantity&#39; k8s type: https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/. The default is nil which means that the limit is undefined. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir. When `null`, the `size_limit` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `empty_dir` sub block.
 
 
 ## obj template.volumes.secret

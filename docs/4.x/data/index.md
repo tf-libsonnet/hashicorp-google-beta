@@ -77,6 +77,7 @@ permalink: /data/
 * [google_container_registry_image](google_container_registry_image.md)
 * [google_container_registry_repository](google_container_registry_repository.md)
 * [google_dataproc_metastore_service](google_dataproc_metastore_service.md)
+* [google_datastream_static_ips](google_datastream_static_ips.md)
 * [google_dns_keys](google_dns_keys.md)
 * [google_dns_managed_zone](google_dns_managed_zone.md)
 * [google_dns_record_set](google_dns_record_set.md)

@@ -1411,6 +1411,16 @@ Terraform sub block.
 
 
 **Args**:
+  - `allow_exit_codes` (`list`): Allow this build step to fail without failing the entire build if and
+only if the exit code is one of the specified codes.
+
+If &#39;allowFailure&#39; is also specified, this field will take precedence. When `null`, the `allow_exit_codes` field will be omitted from the resulting object.
+  - `allow_failure` (`bool`): Allow this build step to fail without failing the entire build.
+If false, the entire build will fail if this step fails. Otherwise, the
+build will succeed, but this step will still have a failure status.
+Error information will be reported in the &#39;failureDetail&#39; field.
+
+&#39;allowExitCodes&#39; takes precedence over this field. When `null`, the `allow_failure` field will be omitted from the resulting object.
   - `args` (`list`): A list of arguments that will be presented to the step when it is started.
 
 If the image used to run the step&#39;s container has an entrypoint, the args
@@ -1535,6 +1545,8 @@ Format: projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}. pr
   - `path` (`string`): The path of the file, with the repo root as the root of the path.
   - `repo_type` (`string`): The type of the repo, since it may not be explicit from the repo field (e.g from a URL).
 Values can be UNKNOWN, CLOUD_SOURCE_REPOSITORIES, GITHUB, BITBUCKET_SERVER Possible values: [&#34;UNKNOWN&#34;, &#34;CLOUD_SOURCE_REPOSITORIES&#34;, &#34;GITHUB&#34;, &#34;BITBUCKET_SERVER&#34;]
+  - `repository` (`string`): The fully qualified resource name of the Repo API repository. The fully qualified resource name of the Repo API repository.
+If unspecified, the repo from which the trigger invocation originated is assumed to be the repo from which to read the specified path. When `null`, the `repository` field will be omitted from the resulting object.
   - `revision` (`string`): The branch, tag, arbitrary ref, or SHA version of the repo to use when resolving the
 filename (optional). This field respects the same syntax/resolution as described here: https://git-scm.com/docs/gitrevisions
 If unspecified, the revision from which the trigger invocation originated is assumed to be the revision from which to read the specified path. When `null`, the `revision` field will be omitted from the resulting object.
@@ -1755,7 +1767,9 @@ Format: projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}. pr
   - `ref` (`string`): The branch or tag to use. Must start with &#34;refs/&#34; (required).
   - `repo_type` (`string`): The type of the repo, since it may not be explicit from the repo field (e.g from a URL).
 Values can be UNKNOWN, CLOUD_SOURCE_REPOSITORIES, GITHUB, BITBUCKET_SERVER Possible values: [&#34;UNKNOWN&#34;, &#34;CLOUD_SOURCE_REPOSITORIES&#34;, &#34;GITHUB&#34;, &#34;BITBUCKET_SERVER&#34;]
-  - `uri` (`string`): The URI of the repo (required).
+  - `repository` (`string`): The qualified resource name of the Repo API repository. 
+Either uri or repository can be specified and is required. When `null`, the `repository` field will be omitted from the resulting object.
+  - `uri` (`string`): The URI of the repo. When `null`, the `uri` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `source_to_build` sub block.
