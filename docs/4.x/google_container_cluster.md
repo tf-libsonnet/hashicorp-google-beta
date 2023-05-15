@@ -124,6 +124,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-addons_configgce_persistent_disk_csi_driver_confignew)
   * [`obj addons_config.gcp_filestore_csi_driver_config`](#obj-addons_configgcp_filestore_csi_driver_config)
     * [`fn new()`](#fn-addons_configgcp_filestore_csi_driver_confignew)
+  * [`obj addons_config.gcs_fuse_csi_driver_config`](#obj-addons_configgcs_fuse_csi_driver_config)
+    * [`fn new()`](#fn-addons_configgcs_fuse_csi_driver_confignew)
   * [`obj addons_config.gke_backup_agent_config`](#obj-addons_configgke_backup_agent_config)
     * [`fn new()`](#fn-addons_configgke_backup_agent_confignew)
   * [`obj addons_config.horizontal_pod_autoscaling`](#obj-addons_confighorizontal_pod_autoscaling)
@@ -2246,6 +2248,7 @@ Terraform sub block.
   - `dns_cache_config` (`list[obj]`): The status of the NodeLocal DNSCache addon. It is disabled by default. Set enabled = true to enable. When `null`, the `dns_cache_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.dns_cache_config.new](#fn-addons_configdns_cache_confignew) constructor.
   - `gce_persistent_disk_csi_driver_config` (`list[obj]`): Whether this cluster should enable the Google Compute Engine Persistent Disk Container Storage Interface (CSI) Driver. Defaults to enabled; set disabled = true to disable. When `null`, the `gce_persistent_disk_csi_driver_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.gce_persistent_disk_csi_driver_config.new](#fn-addons_configgce_persistent_disk_csi_driver_confignew) constructor.
   - `gcp_filestore_csi_driver_config` (`list[obj]`): The status of the Filestore CSI driver addon, which allows the usage of filestore instance as volumes. Defaults to disabled; set enabled = true to enable. When `null`, the `gcp_filestore_csi_driver_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.gcp_filestore_csi_driver_config.new](#fn-addons_configgcp_filestore_csi_driver_confignew) constructor.
+  - `gcs_fuse_csi_driver_config` (`list[obj]`): The status of the GCS Fuse CSI driver addon, which allows the usage of gcs bucket as volumes. Defaults to disabled; set enabled = true to enable. When `null`, the `gcs_fuse_csi_driver_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.gcs_fuse_csi_driver_config.new](#fn-addons_configgcs_fuse_csi_driver_confignew) constructor.
   - `gke_backup_agent_config` (`list[obj]`): The status of the Backup for GKE Agent addon. It is disabled by default. Set enabled = true to enable. When `null`, the `gke_backup_agent_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.gke_backup_agent_config.new](#fn-addons_configgke_backup_agent_confignew) constructor.
   - `horizontal_pod_autoscaling` (`list[obj]`): The status of the Horizontal Pod Autoscaling addon, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. It ensures that a Heapster pod is running in the cluster, which is also used by the Cloud Monitoring service. It is enabled by default; set disabled = true to disable. When `null`, the `horizontal_pod_autoscaling` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.horizontal_pod_autoscaling.new](#fn-addons_confighorizontal_pod_autoscalingnew) constructor.
   - `http_load_balancing` (`list[obj]`): The status of the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. It is enabled by default; set disabled = true to disable. When `null`, the `http_load_balancing` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.http_load_balancing.new](#fn-addons_confighttp_load_balancingnew) constructor.
@@ -2371,6 +2374,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `gcp_filestore_csi_driver_config` sub block.
+
+
+## obj addons_config.gcs_fuse_csi_driver_config
+
+
+
+### fn addons_config.gcs_fuse_csi_driver_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.addons_config.gcs_fuse_csi_driver_config.new` constructs a new object with attributes and blocks configured for the `gcs_fuse_csi_driver_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enabled` (`bool`): Set the `enabled` field on the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `gcs_fuse_csi_driver_config` sub block.
 
 
 ## obj addons_config.gke_backup_agent_config
