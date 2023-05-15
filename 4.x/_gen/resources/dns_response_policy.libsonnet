@@ -3,7 +3,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
 {
   '#':: d.pkg(name='google_dns_response_policy', url='', help='`google_dns_response_policy` represents the `google-beta_google_dns_response_policy` Terraform resource.\n\n\n\nThis package contains functions and utilities for setting up the resource using Jsonnet code.\n'),
   gke_clusters:: {
-    '#new':: d.fn(help='\n`google-beta.google_dns_response_policy.gke_clusters.new` constructs a new object with attributes and blocks configured for the `gke_clusters`\nTerraform sub block.\n\n\n\n**Args**:\n  - `gke_cluster_name` (`string`): The resource name of the cluster to bind this ManagedZone to.  \nThis should be specified in the format like  \n&#39;projects/*/locations/*/clusters/*&#39;\n\n**Returns**:\n  - An attribute object that represents the `gke_clusters` sub block.\n', args=[]),
+    '#new':: d.fn(help='\n`google-beta.google_dns_response_policy.gke_clusters.new` constructs a new object with attributes and blocks configured for the `gke_clusters`\nTerraform sub block.\n\n\n\n**Args**:\n  - `gke_cluster_name` (`string`): The resource name of the cluster to bind this ManagedZone to.\nThis should be specified in the format like\n&#39;projects/*/locations/*/clusters/*&#39;\n\n**Returns**:\n  - An attribute object that represents the `gke_clusters` sub block.\n', args=[]),
     new(
       gke_cluster_name
     ):: std.prune(a={

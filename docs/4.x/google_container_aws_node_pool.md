@@ -44,6 +44,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-configproxy_confignew)
   * [`obj config.root_volume`](#obj-configroot_volume)
     * [`fn new()`](#fn-configroot_volumenew)
+  * [`obj config.spot_config`](#obj-configspot_config)
+    * [`fn new()`](#fn-configspot_confignew)
   * [`obj config.ssh_config`](#obj-configssh_config)
     * [`fn new()`](#fn-configssh_confignew)
   * [`obj config.taints`](#obj-configtaints)
@@ -443,6 +445,7 @@ Terraform sub block.
   - `instance_placement` (`list[obj]`): Details of placement information for an instance. When `null`, the `instance_placement` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_aws_node_pool.config.instance_placement.new](#fn-configinstance_placementnew) constructor.
   - `proxy_config` (`list[obj]`): Proxy configuration for outbound HTTP(S) traffic. When `null`, the `proxy_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_aws_node_pool.config.proxy_config.new](#fn-configproxy_confignew) constructor.
   - `root_volume` (`list[obj]`): Optional. Template for the root volume provisioned for node pool nodes. Volumes will be provisioned in the availability zone assigned to the node pool subnet. When unspecified, it defaults to 32 GiB with the GP2 volume type. When `null`, the `root_volume` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_aws_node_pool.config.root_volume.new](#fn-configroot_volumenew) constructor.
+  - `spot_config` (`list[obj]`): Optional. When specified, the node pool will provision Spot instances from the set of spot_config.instance_types. This field is mutually exclusive with `instance_type` When `null`, the `spot_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_aws_node_pool.config.spot_config.new](#fn-configspot_confignew) constructor.
   - `ssh_config` (`list[obj]`): Optional. The SSH configuration. When `null`, the `ssh_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_aws_node_pool.config.ssh_config.new](#fn-configssh_confignew) constructor.
   - `taints` (`list[obj]`): Optional. The initial taints assigned to nodes of this node pool. When `null`, the `taints` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_aws_node_pool.config.taints.new](#fn-configtaintsnew) constructor.
 
@@ -568,6 +571,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `root_volume` sub block.
+
+
+## obj config.spot_config
+
+
+
+### fn config.spot_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_aws_node_pool.config.spot_config.new` constructs a new object with attributes and blocks configured for the `spot_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `instance_types` (`list`): List of AWS EC2 instance types for creating a spot node pool&#39;s nodes. The specified instance types must have the same number of CPUs and memory. You can use the Amazon EC2 Instance Selector tool (https://github.com/aws/amazon-ec2-instance-selector) to choose instance types with matching CPU and memory
+
+**Returns**:
+  - An attribute object that represents the `spot_config` sub block.
 
 
 ## obj config.ssh_config

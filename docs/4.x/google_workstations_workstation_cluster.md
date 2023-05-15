@@ -65,12 +65,12 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
   - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation cluster should reside. When `null`, the `location` field will be omitted from the resulting object.
-  - `network` (`string`): The relative resource name of the VPC network on which the instance can be accessed. 
+  - `network` (`string`): The relative resource name of the VPC network on which the instance can be accessed.
 It is specified in the following form: &#34;projects/{projectNumber}/global/networks/{network_id}&#34;.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
-  - `subnetwork` (`string`): Name of the Compute Engine subnetwork in which instances associated with this cluster will be created. 
+  - `subnetwork` (`string`): Name of the Compute Engine subnetwork in which instances associated with this cluster will be created.
 Must be part of the subnetwork specified for this cluster.
-  - `workstation_cluster_id` (`string`): The ID of the workstation cluster.
+  - `workstation_cluster_id` (`string`): ID to use for the workstation cluster.
   - `private_cluster_config` (`list[obj]`): Configuration for private cluster. When `null`, the `private_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_cluster.private_cluster_config.new](#fn-private_cluster_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -100,12 +100,12 @@ injecting into a complete block.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
   - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation cluster should reside. When `null`, the `location` field will be omitted from the resulting object.
-  - `network` (`string`): The relative resource name of the VPC network on which the instance can be accessed. 
+  - `network` (`string`): The relative resource name of the VPC network on which the instance can be accessed.
 It is specified in the following form: &#34;projects/{projectNumber}/global/networks/{network_id}&#34;.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
-  - `subnetwork` (`string`): Name of the Compute Engine subnetwork in which instances associated with this cluster will be created. 
+  - `subnetwork` (`string`): Name of the Compute Engine subnetwork in which instances associated with this cluster will be created.
 Must be part of the subnetwork specified for this cluster.
-  - `workstation_cluster_id` (`string`): The ID of the workstation cluster.
+  - `workstation_cluster_id` (`string`): ID to use for the workstation cluster.
   - `private_cluster_config` (`list[obj]`): Configuration for private cluster. When `null`, the `private_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_cluster.private_cluster_config.new](#fn-private_cluster_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 

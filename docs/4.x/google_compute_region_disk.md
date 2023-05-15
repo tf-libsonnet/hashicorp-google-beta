@@ -15,6 +15,8 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withAsyncPrimaryDisk()`](#fn-withasyncprimarydisk)
+* [`fn withAsyncPrimaryDiskMixin()`](#fn-withasyncprimarydiskmixin)
 * [`fn withDescription()`](#fn-withdescription)
 * [`fn withDiskEncryptionKey()`](#fn-withdiskencryptionkey)
 * [`fn withDiskEncryptionKeyMixin()`](#fn-withdiskencryptionkeymixin)
@@ -33,6 +35,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withType()`](#fn-withtype)
+* [`obj async_primary_disk`](#obj-async_primary_disk)
+  * [`fn new()`](#fn-async_primary_disknew)
 * [`obj disk_encryption_key`](#obj-disk_encryption_key)
   * [`fn new()`](#fn-disk_encryption_keynew)
 * [`obj source_snapshot_encryption_key`](#obj-source_snapshot_encryption_key)
@@ -115,6 +119,7 @@ For example, the following are valid values:
 * regions/{region}/disks/{disk} When `null`, the `source_disk` field will be omitted from the resulting object.
   - `type` (`string`): URL of the disk type resource describing which disk type to use to
 create the disk. Provide this when creating the disk. When `null`, the `type` field will be omitted from the resulting object.
+  - `async_primary_disk` (`list[obj]`): A nested object resource When `null`, the `async_primary_disk` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_disk.async_primary_disk.new](#fn-async_primary_disknew) constructor.
   - `disk_encryption_key` (`list[obj]`): Encrypts the disk using a customer-supplied encryption key.
 
 After you encrypt a disk with a customer-supplied key, you must
@@ -200,6 +205,7 @@ For example, the following are valid values:
 * regions/{region}/disks/{disk} When `null`, the `source_disk` field will be omitted from the resulting object.
   - `type` (`string`): URL of the disk type resource describing which disk type to use to
 create the disk. Provide this when creating the disk. When `null`, the `type` field will be omitted from the resulting object.
+  - `async_primary_disk` (`list[obj]`): A nested object resource When `null`, the `async_primary_disk` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_disk.async_primary_disk.new](#fn-async_primary_disknew) constructor.
   - `disk_encryption_key` (`list[obj]`): Encrypts the disk using a customer-supplied encryption key.
 
 After you encrypt a disk with a customer-supplied key, you must
@@ -219,6 +225,43 @@ key. When `null`, the `source_snapshot_encryption_key` sub block will be omitted
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_compute_region_disk` resource into the root Terraform configuration.
+
+
+### fn withAsyncPrimaryDisk
+
+```ts
+withAsyncPrimaryDisk()
+```
+
+`google-beta.list[obj].withAsyncPrimaryDisk` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the async_primary_disk field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withAsyncPrimaryDiskMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `async_primary_disk` field.
+
+
+### fn withAsyncPrimaryDiskMixin
+
+```ts
+withAsyncPrimaryDiskMixin()
+```
+
+`google-beta.list[obj].withAsyncPrimaryDiskMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the async_primary_disk field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withAsyncPrimaryDisk](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `async_primary_disk` field.
 
 
 ### fn withDescription
@@ -521,6 +564,29 @@ Terraform resource block to set or update the type field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `type` field.
+
+
+## obj async_primary_disk
+
+
+
+### fn async_primary_disk.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_compute_region_disk.async_primary_disk.new` constructs a new object with attributes and blocks configured for the `async_primary_disk`
+Terraform sub block.
+
+
+
+**Args**:
+  - `disk` (`string`): Primary disk for asynchronous disk replication.
+
+**Returns**:
+  - An attribute object that represents the `async_primary_disk` sub block.
 
 
 ## obj disk_encryption_key

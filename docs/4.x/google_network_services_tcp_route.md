@@ -74,7 +74,7 @@ Each mesh reference should match the pattern: projects/*/locations/global/meshes
 The attached Mesh should be of a type SIDECAR When `null`, the `meshes` field will be omitted from the resulting object.
   - `name` (`string`): Name of the TcpRoute resource.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
-  - `rules` (`list[obj]`): Rules that define how traffic is routed and handled. At least one RouteRule must be supplied. 
+  - `rules` (`list[obj]`): Rules that define how traffic is routed and handled. At least one RouteRule must be supplied.
 If there are multiple rules then the action taken will be the first rule to match. When `null`, the `rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_services_tcp_route.rules.new](#fn-rulesnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_services_tcp_route.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -109,7 +109,7 @@ Each mesh reference should match the pattern: projects/*/locations/global/meshes
 The attached Mesh should be of a type SIDECAR When `null`, the `meshes` field will be omitted from the resulting object.
   - `name` (`string`): Name of the TcpRoute resource.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
-  - `rules` (`list[obj]`): Rules that define how traffic is routed and handled. At least one RouteRule must be supplied. 
+  - `rules` (`list[obj]`): Rules that define how traffic is routed and handled. At least one RouteRule must be supplied.
 If there are multiple rules then the action taken will be the first rule to match. When `null`, the `rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_services_tcp_route.rules.new](#fn-rulesnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_services_tcp_route.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -304,7 +304,7 @@ Terraform sub block.
 
 **Args**:
   - `action` (`list[obj]`): A detailed rule defining how to route traffic. When `null`, the `action` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_services_tcp_route.rules.action.new](#fn-rulesactionnew) constructor.
-  - `matches` (`list[obj]`): RouteMatch defines the predicate used to match requests to a given action. Multiple match types are &#34;OR&#34;ed for evaluation. 
+  - `matches` (`list[obj]`): RouteMatch defines the predicate used to match requests to a given action. Multiple match types are &#34;OR&#34;ed for evaluation.
 If no routeMatch field is specified, this rule will unconditionally match traffic. When `null`, the `matches` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_services_tcp_route.rules.matches.new](#fn-rulesmatchesnew) constructor.
 
 **Returns**:
@@ -379,7 +379,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `address` (`string`): Must be specified in the CIDR range format. A CIDR range consists of an IP Address and a prefix length to construct the subnet mask. 
+  - `address` (`string`): Must be specified in the CIDR range format. A CIDR range consists of an IP Address and a prefix length to construct the subnet mask.
 By default, the prefix length is 32 (i.e. matches a single IP address). Only IPV4 addresses are supported. Examples: &#34;10.0.0.1&#34; - matches against this exact IP address. &#34;10.0.0.0/8&#34; - matches against any IP address within the 10.0.0.0 subnet and 255.255.255.0 mask. &#34;0.0.0.0/0&#34; - matches against any IP address&#39;.
   - `port` (`string`): Specifies the destination port to match against.
 

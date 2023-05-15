@@ -71,7 +71,7 @@ rule should match the pattern: (^a-z?$).
   - `priority` (`number`): Priority of the rule. Lower number corresponds to higher precedence.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `session_matcher` (`string`): CEL expression for matching on session criteria.
-  - `tls_inspection_enabled` (`bool`): Flag to enable TLS inspection of traffic matching on. Can only be true if the 
+  - `tls_inspection_enabled` (`bool`): Flag to enable TLS inspection of traffic matching on. Can only be true if the
 parent GatewaySecurityPolicy references a TLSInspectionConfig. When `null`, the `tls_inspection_enabled` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_security_gateway_security_policy_rule.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -108,7 +108,7 @@ rule should match the pattern: (^a-z?$).
   - `priority` (`number`): Priority of the rule. Lower number corresponds to higher precedence.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `session_matcher` (`string`): CEL expression for matching on session criteria.
-  - `tls_inspection_enabled` (`bool`): Flag to enable TLS inspection of traffic matching on. Can only be true if the 
+  - `tls_inspection_enabled` (`bool`): Flag to enable TLS inspection of traffic matching on. Can only be true if the
 parent GatewaySecurityPolicy references a TLSInspectionConfig. When `null`, the `tls_inspection_enabled` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_security_gateway_security_policy_rule.timeouts.new](#fn-timeoutsnew) constructor.
 
