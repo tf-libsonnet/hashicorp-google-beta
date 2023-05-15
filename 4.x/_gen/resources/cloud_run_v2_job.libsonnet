@@ -288,13 +288,25 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
             instances: instances,
           }),
         },
-        '#new':: d.fn(help='\n`google-beta.google_cloud_run_v2_job.template.template.volumes.new` constructs a new object with attributes and blocks configured for the `volumes`\nTerraform sub block.\n\n\n\n**Args**:\n  - `name` (`string`): Volume&#39;s name.\n  - `cloud_sql_instance` (`list[obj]`): For Cloud SQL volumes, contains the specific instances that should be mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run. When `null`, the `cloud_sql_instance` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_job.template.template.volumes.cloud_sql_instance.new](#fn-templatetemplatetemplatecloud_sql_instancenew) constructor.\n  - `secret` (`list[obj]`): Secret represents a secret that should populate this volume. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret When `null`, the `secret` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_job.template.template.volumes.secret.new](#fn-templatetemplatetemplatesecretnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `volumes` sub block.\n', args=[]),
+        empty_dir:: {
+          '#new':: d.fn(help='\n`google-beta.google_cloud_run_v2_job.template.template.volumes.empty_dir.new` constructs a new object with attributes and blocks configured for the `empty_dir`\nTerraform sub block.\n\n\n\n**Args**:\n  - `medium` (`string`): The different types of medium supported for EmptyDir. Default value: &#34;MEMORY&#34; Possible values: [&#34;MEMORY&#34;] When `null`, the `medium` field will be omitted from the resulting object.\n  - `size_limit` (`string`): Limit on the storage usable by this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. This field&#39;s values are of the &#39;Quantity&#39; k8s type: https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/. The default is nil which means that the limit is undefined. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir. When `null`, the `size_limit` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `empty_dir` sub block.\n', args=[]),
+          new(
+            medium=null,
+            size_limit=null
+          ):: std.prune(a={
+            medium: medium,
+            size_limit: size_limit,
+          }),
+        },
+        '#new':: d.fn(help='\n`google-beta.google_cloud_run_v2_job.template.template.volumes.new` constructs a new object with attributes and blocks configured for the `volumes`\nTerraform sub block.\n\n\n\n**Args**:\n  - `name` (`string`): Volume&#39;s name.\n  - `cloud_sql_instance` (`list[obj]`): For Cloud SQL volumes, contains the specific instances that should be mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run. When `null`, the `cloud_sql_instance` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_job.template.template.volumes.cloud_sql_instance.new](#fn-templatetemplatetemplatecloud_sql_instancenew) constructor.\n  - `empty_dir` (`list[obj]`): Ephemeral storage used as a shared volume. When `null`, the `empty_dir` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_job.template.template.volumes.empty_dir.new](#fn-templatetemplatetemplateempty_dirnew) constructor.\n  - `secret` (`list[obj]`): Secret represents a secret that should populate this volume. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret When `null`, the `secret` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_job.template.template.volumes.secret.new](#fn-templatetemplatetemplatesecretnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `volumes` sub block.\n', args=[]),
         new(
           name,
           cloud_sql_instance=null,
+          empty_dir=null,
           secret=null
         ):: std.prune(a={
           cloud_sql_instance: cloud_sql_instance,
+          empty_dir: empty_dir,
           name: name,
           secret: secret,
         }),

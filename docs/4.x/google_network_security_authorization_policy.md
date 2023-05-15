@@ -72,7 +72,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `name` (`string`): Name of the AuthorizationPolicy resource.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
-  - `rules` (`list[obj]`): List of rules to match. Note that at least one of the rules must match in order for the action specified in the &#39;action&#39; field to be taken. 
+  - `rules` (`list[obj]`): List of rules to match. Note that at least one of the rules must match in order for the action specified in the &#39;action&#39; field to be taken.
 A rule is a match if there is a matching source and destination. If left blank, the action specified in the action field will be applied on every request. When `null`, the `rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_security_authorization_policy.rules.new](#fn-rulesnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_security_authorization_policy.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -105,7 +105,7 @@ injecting into a complete block.
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `name` (`string`): Name of the AuthorizationPolicy resource.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
-  - `rules` (`list[obj]`): List of rules to match. Note that at least one of the rules must match in order for the action specified in the &#39;action&#39; field to be taken. 
+  - `rules` (`list[obj]`): List of rules to match. Note that at least one of the rules must match in order for the action specified in the &#39;action&#39; field to be taken.
 A rule is a match if there is a matching source and destination. If left blank, the action specified in the action field will be applied on every request. When `null`, the `rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_security_authorization_policy.rules.new](#fn-rulesnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_security_authorization_policy.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -299,9 +299,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `destinations` (`list[obj]`): List of attributes for the traffic destination. All of the destinations must match. A destination is a match if a request matches all the specified hosts, ports, methods and headers. 
+  - `destinations` (`list[obj]`): List of attributes for the traffic destination. All of the destinations must match. A destination is a match if a request matches all the specified hosts, ports, methods and headers.
 If not set, the action specified in the &#39;action&#39; field will be applied without any rule checks for the destination. When `null`, the `destinations` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_security_authorization_policy.rules.destinations.new](#fn-rulesdestinationsnew) constructor.
-  - `sources` (`list[obj]`): List of attributes for the traffic source. All of the sources must match. A source is a match if both principals and ipBlocks match. 
+  - `sources` (`list[obj]`): List of attributes for the traffic source. All of the sources must match. A source is a match if both principals and ipBlocks match.
 If not set, the action specified in the &#39;action&#39; field will be applied without any rule checks for the source. When `null`, the `sources` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_security_authorization_policy.rules.sources.new](#fn-rulessourcesnew) constructor.
 
 **Returns**:
@@ -328,7 +328,7 @@ Terraform sub block.
   - `hosts` (`list`): List of host names to match. Matched against the &#34;:authority&#34; header in http requests. At least one host should match. Each host can be an exact match, or a prefix match (example &#34;mydomain.*&#34;) or a suffix match (example &#34;*.myorg.com&#34;) or a presence (any) match &#34;*&#34;.
   - `methods` (`list`): A list of HTTP methods to match. At least one method should match. Should not be set for gRPC services.
   - `ports` (`list`): List of destination ports to match. At least one port should match.
-  - `http_header_match` (`list[obj]`): Match against key:value pair in http header. Provides a flexible match based on HTTP headers, for potentially advanced use cases. At least one header should match. 
+  - `http_header_match` (`list[obj]`): Match against key:value pair in http header. Provides a flexible match based on HTTP headers, for potentially advanced use cases. At least one header should match.
 Avoid using header matches to make authorization decisions unless there is a strong guarantee that requests arrive through a trusted client or proxy. When `null`, the `http_header_match` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_security_authorization_policy.rules.destinations.http_header_match.new](#fn-rulesruleshttp_header_matchnew) constructor.
 
 **Returns**:
@@ -376,9 +376,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `ip_blocks` (`list`): List of CIDR ranges to match based on source IP address. At least one IP block should match. Single IP (e.g., &#34;1.2.3.4&#34;) and CIDR (e.g., &#34;1.2.3.0/24&#34;) are supported. Authorization based on source IP alone should be avoided. 
+  - `ip_blocks` (`list`): List of CIDR ranges to match based on source IP address. At least one IP block should match. Single IP (e.g., &#34;1.2.3.4&#34;) and CIDR (e.g., &#34;1.2.3.0/24&#34;) are supported. Authorization based on source IP alone should be avoided.
 The IP addresses of any load balancers or proxies should be considered untrusted. When `null`, the `ip_blocks` field will be omitted from the resulting object.
-  - `principals` (`list`): List of peer identities to match for authorization. At least one principal should match. Each peer can be an exact match, or a prefix match (example, &#34;namespace/*&#34;) or a suffix match (example, &#34;*/service-account&#34;) or a presence match &#34;*&#34;. 
+  - `principals` (`list`): List of peer identities to match for authorization. At least one principal should match. Each peer can be an exact match, or a prefix match (example, &#34;namespace/*&#34;) or a suffix match (example, &#34;*/service-account&#34;) or a presence match &#34;*&#34;.
 Authorization based on the principal name without certificate validation (configured by ServerTlsPolicy resource) is considered insecure. When `null`, the `principals` field will be omitted from the resulting object.
 
 **Returns**:
