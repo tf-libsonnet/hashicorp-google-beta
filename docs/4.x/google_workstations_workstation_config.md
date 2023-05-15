@@ -85,8 +85,8 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation cluster config should reside.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
-  - `workstation_cluster_id` (`string`): The ID of the parent workstation cluster.
-  - `workstation_config_id` (`string`): The ID to be assigned to the workstation cluster config.
+  - `workstation_cluster_id` (`string`): The name of the workstation cluster.
+  - `workstation_config_id` (`string`): The ID of the workstation cluster config.
   - `container` (`list[obj]`): Container that will be run for each workstation using this configuration when that workstation is started. When `null`, the `container` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.container.new](#fn-containernew) constructor.
   - `encryption_key` (`list[obj]`): Encrypts resources of this workstation configuration using a customer-managed encryption key.
 
@@ -124,8 +124,8 @@ injecting into a complete block.
   - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation cluster config should reside.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
-  - `workstation_cluster_id` (`string`): The ID of the parent workstation cluster.
-  - `workstation_config_id` (`string`): The ID to be assigned to the workstation cluster config.
+  - `workstation_cluster_id` (`string`): The name of the workstation cluster.
+  - `workstation_config_id` (`string`): The ID of the workstation cluster config.
   - `container` (`list[obj]`): Container that will be run for each workstation using this configuration when that workstation is started. When `null`, the `container` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.container.new](#fn-containernew) constructor.
   - `encryption_key` (`list[obj]`): Encrypts resources of this workstation configuration using a customer-managed encryption key.
 
@@ -457,7 +457,7 @@ Terraform sub block.
   - `command` (`list`): If set, overrides the default ENTRYPOINT specified by the image. When `null`, the `command` field will be omitted from the resulting object.
   - `env` (`obj`): Environment variables passed to the container.
 The elements are of the form &#34;KEY=VALUE&#34; for the environment variable &#34;KEY&#34; being given the value &#34;VALUE&#34;. When `null`, the `env` field will be omitted from the resulting object.
-  - `image` (`string`): Docker image defining the container. This image must be accessible by the config&#39;s service account. When `null`, the `image` field will be omitted from the resulting object.
+  - `image` (`string`): Docker image defining the container. This image must be accessible by the config&#34;s service account. When `null`, the `image` field will be omitted from the resulting object.
   - `run_as_user` (`number`): If set, overrides the USER specified in the image with the given uid. When `null`, the `run_as_user` field will be omitted from the resulting object.
   - `working_dir` (`string`): If set, overrides the default DIR specified by the image. When `null`, the `working_dir` field will be omitted from the resulting object.
 
@@ -506,7 +506,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `gce_instance` (`list[obj]`): A runtime using a Compute Engine instance. When `null`, the `gce_instance` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.host.gce_instance.new](#fn-hostgce_instancenew) constructor.
+  - `gce_instance` (`list[obj]`): Specifies a Compute Engine instance as the host. When `null`, the `gce_instance` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.host.gce_instance.new](#fn-hostgce_instancenew) constructor.
 
 **Returns**:
   - An attribute object that represents the `host` sub block.
@@ -633,7 +633,7 @@ Terraform sub block.
 **Args**:
   - `disk_type` (`string`): Type of the disk to use. When `null`, the `disk_type` field will be omitted from the resulting object.
   - `fs_type` (`string`): Type of file system that the disk should be formatted with. The workstation image must support this file system type. Must be empty if sourceSnapshot is set. When `null`, the `fs_type` field will be omitted from the resulting object.
-  - `reclaim_policy` (`string`): What should happen to the disk after the workstation is deleted. Defaults to DELETE. Possible values: [&#34;DELETE&#34;, &#34;RETAIN&#34;] When `null`, the `reclaim_policy` field will be omitted from the resulting object.
+  - `reclaim_policy` (`string`): What should happen to the disk after the workstation is deleted. Defaults to DELETE. Possible values: [&#34;RECLAIM_POLICY_UNSPECIFIED&#34;, &#34;DELETE&#34;, &#34;RETAIN&#34;] When `null`, the `reclaim_policy` field will be omitted from the resulting object.
   - `size_gb` (`number`): Size of the disk in GB. Must be empty if sourceSnapshot is set. When `null`, the `size_gb` field will be omitted from the resulting object.
 
 **Returns**:

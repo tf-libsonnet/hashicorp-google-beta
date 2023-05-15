@@ -538,9 +538,9 @@ was published. Notifications are only sent if the topic is non-empty. Topic name
 project. service-PROJECT_NUMBER@gcp-sa-healthcare.iam.gserviceaccount.com must have publisher permissions on the given
 Cloud Pub/Sub topic. Not having adequate permissions will cause the calls that send notifications to fail.
   - `send_full_resource` (`bool`): Whether to send full FHIR resource to this Pub/Sub topic for Create and Update operation.
-Note that setting this to true does not guarantee that all resources will be sent in the format of
+Note that setting this to true does not guarantee that all resources will be sent in the format of 
 full FHIR resource. When a resource change is too large or during heavy traffic, only the resource name will be
-sent. Clients should always check the &#34;payloadType&#34; label from a Pub/Sub message to determine whether
+sent. Clients should always check the &#34;payloadType&#34; label from a Pub/Sub message to determine whether 
 it needs to fetch the full resource as a separate operation. When `null`, the `send_full_resource` field will be omitted from the resulting object.
 
 **Returns**:

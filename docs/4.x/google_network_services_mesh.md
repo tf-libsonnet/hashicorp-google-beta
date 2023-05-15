@@ -55,10 +55,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
-  - `interception_port` (`number`): Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the
-specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to
-be redirected to this port regardless of its actual ip:port destination. If unset, a port
-&#39;15001&#39; is used as the interception port. This will is applicable only for sidecar proxy
+  - `interception_port` (`number`): Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the 
+specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to 
+be redirected to this port regardless of its actual ip:port destination. If unset, a port 
+&#39;15001&#39; is used as the interception port. This will is applicable only for sidecar proxy 
 deployments. When `null`, the `interception_port` field will be omitted from the resulting object.
   - `labels` (`obj`): Set of label tags associated with the Mesh resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Short name of the Mesh resource to be created.
@@ -88,10 +88,10 @@ injecting into a complete block.
 
 **Args**:
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
-  - `interception_port` (`number`): Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the
-specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to
-be redirected to this port regardless of its actual ip:port destination. If unset, a port
-&#39;15001&#39; is used as the interception port. This will is applicable only for sidecar proxy
+  - `interception_port` (`number`): Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the 
+specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to 
+be redirected to this port regardless of its actual ip:port destination. If unset, a port 
+&#39;15001&#39; is used as the interception port. This will is applicable only for sidecar proxy 
 deployments. When `null`, the `interception_port` field will be omitted from the resulting object.
   - `labels` (`obj`): Set of label tags associated with the Mesh resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Short name of the Mesh resource to be created.

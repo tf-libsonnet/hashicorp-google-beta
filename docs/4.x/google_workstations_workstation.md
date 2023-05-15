@@ -60,10 +60,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `annotations` (`obj`): Client-specified annotations. This is distinct from labels. When `null`, the `annotations` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
   - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
-  - `location` (`string`): The location where the workstation parent resources reside.
+  - `location` (`string`): The location where the workstation cluster config should reside.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
-  - `workstation_cluster_id` (`string`): The ID of the parent workstation cluster.
-  - `workstation_config_id` (`string`): The ID of the parent workstation cluster config.
+  - `workstation_cluster_id` (`string`): The name of the workstation cluster.
+  - `workstation_config_id` (`string`): The ID of the workstation cluster config.
   - `workstation_id` (`string`): ID to use for the workstation.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -92,10 +92,10 @@ injecting into a complete block.
   - `annotations` (`obj`): Client-specified annotations. This is distinct from labels. When `null`, the `annotations` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
   - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
-  - `location` (`string`): The location where the workstation parent resources reside.
+  - `location` (`string`): The location where the workstation cluster config should reside.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
-  - `workstation_cluster_id` (`string`): The ID of the parent workstation cluster.
-  - `workstation_config_id` (`string`): The ID of the parent workstation cluster config.
+  - `workstation_cluster_id` (`string`): The name of the workstation cluster.
+  - `workstation_config_id` (`string`): The ID of the workstation cluster config.
   - `workstation_id` (`string`): ID to use for the workstation.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation.timeouts.new](#fn-timeoutsnew) constructor.
 
