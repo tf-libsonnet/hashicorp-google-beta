@@ -579,6 +579,7 @@ project.
 * [google_network_security_client_tls_policy](google_network_security_client_tls_policy.md)
 * [google_network_security_gateway_security_policy](google_network_security_gateway_security_policy.md)
 * [google_network_security_gateway_security_policy_rule](google_network_security_gateway_security_policy_rule.md)
+* [google_network_security_server_tls_policy](google_network_security_server_tls_policy.md)
 * [google_network_security_tls_inspection_policy](google_network_security_tls_inspection_policy.md)
 * [google_network_security_url_lists](google_network_security_url_lists.md)
 * [google_network_services_edge_cache_keyset](google_network_services_edge_cache_keyset.md)

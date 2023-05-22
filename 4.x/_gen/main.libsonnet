@@ -569,6 +569,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   network_security_client_tls_policy: (import 'resources/network_security_client_tls_policy.libsonnet'),
   network_security_gateway_security_policy: (import 'resources/network_security_gateway_security_policy.libsonnet'),
   network_security_gateway_security_policy_rule: (import 'resources/network_security_gateway_security_policy_rule.libsonnet'),
+  network_security_server_tls_policy: (import 'resources/network_security_server_tls_policy.libsonnet'),
   network_security_tls_inspection_policy: (import 'resources/network_security_tls_inspection_policy.libsonnet'),
   network_security_url_lists: (import 'resources/network_security_url_lists.libsonnet'),
   network_services_edge_cache_keyset: (import 'resources/network_services_edge_cache_keyset.libsonnet'),

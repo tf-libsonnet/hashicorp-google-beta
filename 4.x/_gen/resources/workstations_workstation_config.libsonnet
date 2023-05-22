@@ -145,17 +145,19 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   }),
   persistent_directories:: {
     gce_pd:: {
-      '#new':: d.fn(help='\n`google-beta.google_workstations_workstation_config.persistent_directories.gce_pd.new` constructs a new object with attributes and blocks configured for the `gce_pd`\nTerraform sub block.\n\n\n\n**Args**:\n  - `disk_type` (`string`): Type of the disk to use. When `null`, the `disk_type` field will be omitted from the resulting object.\n  - `fs_type` (`string`): Type of file system that the disk should be formatted with. The workstation image must support this file system type. Must be empty if sourceSnapshot is set. When `null`, the `fs_type` field will be omitted from the resulting object.\n  - `reclaim_policy` (`string`): What should happen to the disk after the workstation is deleted. Defaults to DELETE. Possible values: [&#34;DELETE&#34;, &#34;RETAIN&#34;] When `null`, the `reclaim_policy` field will be omitted from the resulting object.\n  - `size_gb` (`number`): Size of the disk in GB. Must be empty if sourceSnapshot is set. When `null`, the `size_gb` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `gce_pd` sub block.\n', args=[]),
+      '#new':: d.fn(help='\n`google-beta.google_workstations_workstation_config.persistent_directories.gce_pd.new` constructs a new object with attributes and blocks configured for the `gce_pd`\nTerraform sub block.\n\n\n\n**Args**:\n  - `disk_type` (`string`): Type of the disk to use. When `null`, the `disk_type` field will be omitted from the resulting object.\n  - `fs_type` (`string`): Type of file system that the disk should be formatted with. The workstation image must support this file system type. Must be empty if sourceSnapshot is set. When `null`, the `fs_type` field will be omitted from the resulting object.\n  - `reclaim_policy` (`string`): What should happen to the disk after the workstation is deleted. Defaults to DELETE. Possible values: [&#34;DELETE&#34;, &#34;RETAIN&#34;] When `null`, the `reclaim_policy` field will be omitted from the resulting object.\n  - `size_gb` (`number`): Size of the disk in GB. Must be empty if sourceSnapshot is set. When `null`, the `size_gb` field will be omitted from the resulting object.\n  - `source_snapshot` (`string`): The snapshot to use as the source for the disk. This can be the snapshot&#39;s &#39;self_link&#39;, &#39;id&#39;, or a string in the format of &#39;projects/{project}/global/snapshots/{snapshot}&#39;. If set, sizeGb and fsType must be empty. When `null`, the `source_snapshot` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `gce_pd` sub block.\n', args=[]),
       new(
         disk_type=null,
         fs_type=null,
         reclaim_policy=null,
-        size_gb=null
+        size_gb=null,
+        source_snapshot=null
       ):: std.prune(a={
         disk_type: disk_type,
         fs_type: fs_type,
         reclaim_policy: reclaim_policy,
         size_gb: size_gb,
+        source_snapshot: source_snapshot,
       }),
     },
     '#new':: d.fn(help='\n`google-beta.google_workstations_workstation_config.persistent_directories.new` constructs a new object with attributes and blocks configured for the `persistent_directories`\nTerraform sub block.\n\n\n\n**Args**:\n  - `mount_path` (`string`): Location of this directory in the running workstation. When `null`, the `mount_path` field will be omitted from the resulting object.\n  - `gce_pd` (`list[obj]`): PersistentDirectory backed by a Compute Engine regional persistent disk. When `null`, the `gce_pd` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.persistent_directories.gce_pd.new](#fn-persistent_directoriesgce_pdnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `persistent_directories` sub block.\n', args=[]),

@@ -635,6 +635,7 @@ Terraform sub block.
   - `fs_type` (`string`): Type of file system that the disk should be formatted with. The workstation image must support this file system type. Must be empty if sourceSnapshot is set. When `null`, the `fs_type` field will be omitted from the resulting object.
   - `reclaim_policy` (`string`): What should happen to the disk after the workstation is deleted. Defaults to DELETE. Possible values: [&#34;DELETE&#34;, &#34;RETAIN&#34;] When `null`, the `reclaim_policy` field will be omitted from the resulting object.
   - `size_gb` (`number`): Size of the disk in GB. Must be empty if sourceSnapshot is set. When `null`, the `size_gb` field will be omitted from the resulting object.
+  - `source_snapshot` (`string`): The snapshot to use as the source for the disk. This can be the snapshot&#39;s &#39;self_link&#39;, &#39;id&#39;, or a string in the format of &#39;projects/{project}/global/snapshots/{snapshot}&#39;. If set, sizeGb and fsType must be empty. When `null`, the `source_snapshot` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `gce_pd` sub block.

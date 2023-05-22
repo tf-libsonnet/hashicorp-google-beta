@@ -1767,7 +1767,7 @@ Format: projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}. pr
   - `ref` (`string`): The branch or tag to use. Must start with &#34;refs/&#34; (required).
   - `repo_type` (`string`): The type of the repo, since it may not be explicit from the repo field (e.g from a URL).
 Values can be UNKNOWN, CLOUD_SOURCE_REPOSITORIES, GITHUB, BITBUCKET_SERVER Possible values: [&#34;UNKNOWN&#34;, &#34;CLOUD_SOURCE_REPOSITORIES&#34;, &#34;GITHUB&#34;, &#34;BITBUCKET_SERVER&#34;]
-  - `repository` (`string`): The qualified resource name of the Repo API repository. 
+  - `repository` (`string`): The qualified resource name of the Repo API repository.
 Either uri or repository can be specified and is required. When `null`, the `repository` field will be omitted from the resulting object.
   - `uri` (`string`): The URI of the repo. When `null`, the `uri` field will be omitted from the resulting object.
 
