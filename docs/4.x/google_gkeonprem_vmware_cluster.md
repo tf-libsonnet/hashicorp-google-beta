@@ -1233,7 +1233,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `hostname` (`string`): Hostname of the machine. VM&#39;s name will be used if this field is empty.
+  - `hostname` (`string`): Hostname of the machine. VM&#39;s name will be used if this field is empty. When `null`, the `hostname` field will be omitted from the resulting object.
   - `ip` (`string`): IP could be an IP address (like 1.2.3.4) or a CIDR (like 1.2.3.0/24).
 
 **Returns**:
