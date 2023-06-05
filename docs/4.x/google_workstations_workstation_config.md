@@ -23,11 +23,13 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withEncryptionKeyMixin()`](#fn-withencryptionkeymixin)
 * [`fn withHost()`](#fn-withhost)
 * [`fn withHostMixin()`](#fn-withhostmixin)
+* [`fn withIdleTimeout()`](#fn-withidletimeout)
 * [`fn withLabels()`](#fn-withlabels)
 * [`fn withLocation()`](#fn-withlocation)
 * [`fn withPersistentDirectories()`](#fn-withpersistentdirectories)
 * [`fn withPersistentDirectoriesMixin()`](#fn-withpersistentdirectoriesmixin)
 * [`fn withProject()`](#fn-withproject)
+* [`fn withRunningTimeout()`](#fn-withrunningtimeout)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withWorkstationClusterId()`](#fn-withworkstationclusterid)
@@ -82,9 +84,13 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `annotations` (`obj`): Client-specified annotations. This is distinct from labels. When `null`, the `annotations` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
+  - `idle_timeout` (`string`): How long to wait before automatically stopping an instance that hasn&#39;t recently received any user traffic. A value of 0 indicates that this instance should never time out from idleness. Defaults to 20 minutes.
+A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `idle_timeout` field will be omitted from the resulting object.
   - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation cluster config should reside.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
+  - `running_timeout` (`string`): How long to wait before automatically stopping a workstation after it was started. A value of 0 indicates that workstations using this configuration should never time out from running duration. Must be greater than 0 and less than 24 hours if &#39;encryption_key&#39; is set. Defaults to 12 hours.
+A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `running_timeout` field will be omitted from the resulting object.
   - `workstation_cluster_id` (`string`): The ID of the parent workstation cluster.
   - `workstation_config_id` (`string`): The ID to be assigned to the workstation cluster config.
   - `container` (`list[obj]`): Container that will be run for each workstation using this configuration when that workstation is started. When `null`, the `container` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.container.new](#fn-containernew) constructor.
@@ -121,9 +127,13 @@ injecting into a complete block.
 **Args**:
   - `annotations` (`obj`): Client-specified annotations. This is distinct from labels. When `null`, the `annotations` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
+  - `idle_timeout` (`string`): How long to wait before automatically stopping an instance that hasn&#39;t recently received any user traffic. A value of 0 indicates that this instance should never time out from idleness. Defaults to 20 minutes.
+A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `idle_timeout` field will be omitted from the resulting object.
   - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation cluster config should reside.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
+  - `running_timeout` (`string`): How long to wait before automatically stopping a workstation after it was started. A value of 0 indicates that workstations using this configuration should never time out from running duration. Must be greater than 0 and less than 24 hours if &#39;encryption_key&#39; is set. Defaults to 12 hours.
+A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `running_timeout` field will be omitted from the resulting object.
   - `workstation_cluster_id` (`string`): The ID of the parent workstation cluster.
   - `workstation_config_id` (`string`): The ID to be assigned to the workstation cluster config.
   - `container` (`list[obj]`): Container that will be run for each workstation using this configuration when that workstation is started. When `null`, the `container` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.container.new](#fn-containernew) constructor.
@@ -283,6 +293,22 @@ function.
   - `value` (`list[obj]`): The value to set for the `host` field.
 
 
+### fn withIdleTimeout
+
+```ts
+withIdleTimeout()
+```
+
+`google-beta.string.withIdleTimeout` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the idle_timeout field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `idle_timeout` field.
+
+
 ### fn withLabels
 
 ```ts
@@ -366,6 +392,22 @@ Terraform resource block to set or update the project field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `project` field.
+
+
+### fn withRunningTimeout
+
+```ts
+withRunningTimeout()
+```
+
+`google-beta.string.withRunningTimeout` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the running_timeout field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `running_timeout` field.
 
 
 ### fn withTimeouts
@@ -608,7 +650,7 @@ Terraform sub block.
 
 **Args**:
   - `mount_path` (`string`): Location of this directory in the running workstation. When `null`, the `mount_path` field will be omitted from the resulting object.
-  - `gce_pd` (`list[obj]`): PersistentDirectory backed by a Compute Engine regional persistent disk. When `null`, the `gce_pd` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.persistent_directories.gce_pd.new](#fn-persistent_directoriesgce_pdnew) constructor.
+  - `gce_pd` (`list[obj]`): A directory to persist across workstation sessions, backed by a Compute Engine regional persistent disk. Can only be updated if not empty during creation. When `null`, the `gce_pd` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.persistent_directories.gce_pd.new](#fn-persistent_directoriesgce_pdnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `persistent_directories` sub block.
@@ -631,11 +673,12 @@ Terraform sub block.
 
 
 **Args**:
-  - `disk_type` (`string`): Type of the disk to use. When `null`, the `disk_type` field will be omitted from the resulting object.
-  - `fs_type` (`string`): Type of file system that the disk should be formatted with. The workstation image must support this file system type. Must be empty if sourceSnapshot is set. When `null`, the `fs_type` field will be omitted from the resulting object.
-  - `reclaim_policy` (`string`): What should happen to the disk after the workstation is deleted. Defaults to DELETE. Possible values: [&#34;DELETE&#34;, &#34;RETAIN&#34;] When `null`, the `reclaim_policy` field will be omitted from the resulting object.
-  - `size_gb` (`number`): Size of the disk in GB. Must be empty if sourceSnapshot is set. When `null`, the `size_gb` field will be omitted from the resulting object.
-  - `source_snapshot` (`string`): The snapshot to use as the source for the disk. This can be the snapshot&#39;s &#39;self_link&#39;, &#39;id&#39;, or a string in the format of &#39;projects/{project}/global/snapshots/{snapshot}&#39;. If set, sizeGb and fsType must be empty. When `null`, the `source_snapshot` field will be omitted from the resulting object.
+  - `disk_type` (`string`): The type of the persistent disk for the home directory. Defaults to &#39;pd-standard&#39;. When `null`, the `disk_type` field will be omitted from the resulting object.
+  - `fs_type` (`string`): Type of file system that the disk should be formatted with. The workstation image must support this file system type. Must be empty if &#39;sourceSnapshot&#39; is set. Defaults to &#39;ext4&#39;. When `null`, the `fs_type` field will be omitted from the resulting object.
+  - `reclaim_policy` (`string`): Whether the persistent disk should be deleted when the workstation is deleted. Valid values are &#39;DELETE&#39; and &#39;RETAIN&#39;. Defaults to &#39;DELETE&#39;. Possible values: [&#34;DELETE&#34;, &#34;RETAIN&#34;] When `null`, the `reclaim_policy` field will be omitted from the resulting object.
+  - `size_gb` (`number`): The GB capacity of a persistent home directory for each workstation created with this configuration. Must be empty if &#39;sourceSnapshot&#39; is set.
+Valid values are &#39;10&#39;, &#39;50&#39;, &#39;100&#39;, &#39;200&#39;, &#39;500&#39;, or &#39;1000&#39;. Defaults to &#39;200&#39;. If less than &#39;200&#39; GB, the &#39;diskType&#39; must be &#39;pd-balanced&#39; or &#39;pd-ssd&#39;. When `null`, the `size_gb` field will be omitted from the resulting object.
+  - `source_snapshot` (`string`): Name of the snapshot to use as the source for the disk. This can be the snapshot&#39;s &#39;self_link&#39;, &#39;id&#39;, or a string in the format of &#39;projects/{project}/global/snapshots/{snapshot}&#39;. If set, &#39;sizeGb&#39; and &#39;fsType&#39; must be empty. Can only be updated if it has an existing value. When `null`, the `source_snapshot` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `gce_pd` sub block.
