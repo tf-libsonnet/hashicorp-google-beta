@@ -210,10 +210,10 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
     static_ip_config:: {
       ip_blocks:: {
         ips:: {
-          '#new':: d.fn(help='\n`google-beta.google_gkeonprem_vmware_cluster.network_config.static_ip_config.ip_blocks.ips.new` constructs a new object with attributes and blocks configured for the `ips`\nTerraform sub block.\n\n\n\n**Args**:\n  - `hostname` (`string`): Hostname of the machine. VM&#39;s name will be used if this field is empty.\n  - `ip` (`string`): IP could be an IP address (like 1.2.3.4) or a CIDR (like 1.2.3.0/24).\n\n**Returns**:\n  - An attribute object that represents the `ips` sub block.\n', args=[]),
+          '#new':: d.fn(help='\n`google-beta.google_gkeonprem_vmware_cluster.network_config.static_ip_config.ip_blocks.ips.new` constructs a new object with attributes and blocks configured for the `ips`\nTerraform sub block.\n\n\n\n**Args**:\n  - `hostname` (`string`): Hostname of the machine. VM&#39;s name will be used if this field is empty. When `null`, the `hostname` field will be omitted from the resulting object.\n  - `ip` (`string`): IP could be an IP address (like 1.2.3.4) or a CIDR (like 1.2.3.0/24).\n\n**Returns**:\n  - An attribute object that represents the `ips` sub block.\n', args=[]),
           new(
-            hostname,
-            ip
+            ip,
+            hostname=null
           ):: std.prune(a={
             hostname: hostname,
             ip: ip,

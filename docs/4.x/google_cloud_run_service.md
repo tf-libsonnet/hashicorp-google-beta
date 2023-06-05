@@ -79,6 +79,8 @@ This package contains functions and utilities for setting up the resource using 
         * [`fn new()`](#fn-templatespeccontainersvolume_mountsnew)
     * [`obj template.spec.volumes`](#obj-templatespecvolumes)
       * [`fn new()`](#fn-templatespecvolumesnew)
+      * [`obj template.spec.volumes.empty_dir`](#obj-templatespecvolumesempty_dir)
+        * [`fn new()`](#fn-templatespecvolumesempty_dirnew)
       * [`obj template.spec.volumes.secret`](#obj-templatespecvolumessecret)
         * [`fn new()`](#fn-templatespecvolumessecretnew)
         * [`obj template.spec.volumes.secret.items`](#obj-templatespecvolumessecretitems)
@@ -584,9 +586,7 @@ service. The service account represents the identity of the running revision,
 and determines what permissions the revision has. If not provided, the revision
 will use the project&#39;s default service account. When `null`, the `service_account_name` field will be omitted from the resulting object.
   - `timeout_seconds` (`number`): TimeoutSeconds holds the max duration the instance is allowed for responding to a request. When `null`, the `timeout_seconds` field will be omitted from the resulting object.
-  - `containers` (`list[obj]`): Container defines the unit of execution for this Revision.
-In the context of a Revision, we disallow a number of the fields of
-this Container, including: name, ports, and volumeMounts. When `null`, the `containers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.new](#fn-templatetemplatecontainersnew) constructor.
+  - `containers` (`list[obj]`): Containers defines the unit of execution for this Revision. When `null`, the `containers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.containers.new](#fn-templatetemplatecontainersnew) constructor.
   - `volumes` (`list[obj]`): Volume represents a named volume in a container. When `null`, the `volumes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.volumes.new](#fn-templatetemplatevolumesnew) constructor.
 
 **Returns**:
@@ -616,6 +616,7 @@ The docker image&#39;s CMD is used if this is not provided. When `null`, the `ar
 The docker image&#39;s ENTRYPOINT is used if this is not provided. When `null`, the `command` field will be omitted from the resulting object.
   - `image` (`string`): Docker image name. This is most often a reference to a container located
 in the container registry, such as gcr.io/cloudrun/hello
+  - `name` (`string`): Name of the container When `null`, the `name` field will be omitted from the resulting object.
   - `working_dir` (`string`): Container&#39;s working directory.
 If not specified, the container runtime&#39;s default will be used, which
 might be configured in the container image. When `null`, the `working_dir` field will be omitted from the resulting object.
@@ -1179,12 +1180,37 @@ Terraform sub block.
 
 **Args**:
   - `name` (`string`): Volume&#39;s name.
+  - `empty_dir` (`list[obj]`): Ephemeral storage which can be backed by real disks (HD, SSD), network storage or memory (i.e. tmpfs). For now only in memory (tmpfs) is supported. It is ephemeral in the sense that when the sandbox is taken down, the data is destroyed with it (it does not persist across sandbox runs). When `null`, the `empty_dir` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.volumes.empty_dir.new](#fn-templatetemplatespecempty_dirnew) constructor.
   - `secret` (`list[obj]`): The secret&#39;s value will be presented as the content of a file whose
 name is defined in the item path. If no items are defined, the name of
 the file is the secret_name. When `null`, the `secret` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.volumes.secret.new](#fn-templatetemplatespecsecretnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `volumes` sub block.
+
+
+## obj template.spec.volumes.empty_dir
+
+
+
+### fn template.spec.volumes.empty_dir.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloud_run_service.template.spec.volumes.empty_dir.new` constructs a new object with attributes and blocks configured for the `empty_dir`
+Terraform sub block.
+
+
+
+**Args**:
+  - `medium` (`string`): The medium on which the data is stored. The default is &#34;&#34; which means to use the node&#39;s default medium. Must be an empty string (default) or Memory. When `null`, the `medium` field will be omitted from the resulting object.
+  - `size_limit` (`string`): Limit on the storage usable by this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. This field&#39;s values are of the &#39;Quantity&#39; k8s type: https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/. The default is nil which means that the limit is undefined. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir. When `null`, the `size_limit` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `empty_dir` sub block.
 
 
 ## obj template.spec.volumes.secret

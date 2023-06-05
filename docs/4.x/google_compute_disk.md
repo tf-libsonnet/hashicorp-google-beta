@@ -20,9 +20,12 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDescription()`](#fn-withdescription)
 * [`fn withDiskEncryptionKey()`](#fn-withdiskencryptionkey)
 * [`fn withDiskEncryptionKeyMixin()`](#fn-withdiskencryptionkeymixin)
+* [`fn withGuestOsFeatures()`](#fn-withguestosfeatures)
+* [`fn withGuestOsFeaturesMixin()`](#fn-withguestosfeaturesmixin)
 * [`fn withImage()`](#fn-withimage)
 * [`fn withInterface()`](#fn-withinterface)
 * [`fn withLabels()`](#fn-withlabels)
+* [`fn withLicenses()`](#fn-withlicenses)
 * [`fn withMultiWriter()`](#fn-withmultiwriter)
 * [`fn withName()`](#fn-withname)
 * [`fn withPhysicalBlockSizeBytes()`](#fn-withphysicalblocksizebytes)
@@ -44,6 +47,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-async_primary_disknew)
 * [`obj disk_encryption_key`](#obj-disk_encryption_key)
   * [`fn new()`](#fn-disk_encryption_keynew)
+* [`obj guest_os_features`](#obj-guest_os_features)
+  * [`fn new()`](#fn-guest_os_featuresnew)
 * [`obj source_image_encryption_key`](#obj-source_image_encryption_key)
   * [`fn new()`](#fn-source_image_encryption_keynew)
 * [`obj source_snapshot_encryption_key`](#obj-source_snapshot_encryption_key)
@@ -93,6 +98,7 @@ For instance, the image &#39;centos-6-v20180104&#39; includes its family name &#
 These images can be referred by family name here. When `null`, the `image` field will be omitted from the resulting object.
   - `interface` (`string`): Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. When `null`, the `interface` field will be omitted from the resulting object.
   - `labels` (`obj`): Labels to apply to this disk.  A list of key-&gt;value pairs. When `null`, the `labels` field will be omitted from the resulting object.
+  - `licenses` (`list`): Any applicable license URI. When `null`, the `licenses` field will be omitted from the resulting object.
   - `multi_writer` (`bool`): Indicates whether or not the disk can be read/write attached to more than one instance. When `null`, the `multi_writer` field will be omitted from the resulting object.
   - `name` (`string`): Name of the resource. Provided by the client when the resource is
 created. The name must be 1-63 characters long, and comply with
@@ -162,6 +168,8 @@ the disk.
 If you do not provide an encryption key when creating the disk, then
 the disk will be encrypted using an automatically generated key and
 you do not need to provide a key to use the disk later. When `null`, the `disk_encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_disk.disk_encryption_key.new](#fn-disk_encryption_keynew) constructor.
+  - `guest_os_features` (`list[obj]`): A list of features to enable on the guest operating system.
+Applicable only for bootable disks. When `null`, the `guest_os_features` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_disk.guest_os_features.new](#fn-guest_os_featuresnew) constructor.
   - `source_image_encryption_key` (`list[obj]`): The customer-supplied encryption key of the source image. Required if
 the source image is protected by a customer-supplied encryption key. When `null`, the `source_image_encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_disk.source_image_encryption_key.new](#fn-source_image_encryption_keynew) constructor.
   - `source_snapshot_encryption_key` (`list[obj]`): The customer-supplied encryption key of the source snapshot. Required
@@ -204,6 +212,7 @@ For instance, the image &#39;centos-6-v20180104&#39; includes its family name &#
 These images can be referred by family name here. When `null`, the `image` field will be omitted from the resulting object.
   - `interface` (`string`): Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. When `null`, the `interface` field will be omitted from the resulting object.
   - `labels` (`obj`): Labels to apply to this disk.  A list of key-&gt;value pairs. When `null`, the `labels` field will be omitted from the resulting object.
+  - `licenses` (`list`): Any applicable license URI. When `null`, the `licenses` field will be omitted from the resulting object.
   - `multi_writer` (`bool`): Indicates whether or not the disk can be read/write attached to more than one instance. When `null`, the `multi_writer` field will be omitted from the resulting object.
   - `name` (`string`): Name of the resource. Provided by the client when the resource is
 created. The name must be 1-63 characters long, and comply with
@@ -273,6 +282,8 @@ the disk.
 If you do not provide an encryption key when creating the disk, then
 the disk will be encrypted using an automatically generated key and
 you do not need to provide a key to use the disk later. When `null`, the `disk_encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_disk.disk_encryption_key.new](#fn-disk_encryption_keynew) constructor.
+  - `guest_os_features` (`list[obj]`): A list of features to enable on the guest operating system.
+Applicable only for bootable disks. When `null`, the `guest_os_features` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_disk.guest_os_features.new](#fn-guest_os_featuresnew) constructor.
   - `source_image_encryption_key` (`list[obj]`): The customer-supplied encryption key of the source image. Required if
 the source image is protected by a customer-supplied encryption key. When `null`, the `source_image_encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_disk.source_image_encryption_key.new](#fn-source_image_encryption_keynew) constructor.
   - `source_snapshot_encryption_key` (`list[obj]`): The customer-supplied encryption key of the source snapshot. Required
@@ -374,6 +385,43 @@ function.
   - `value` (`list[obj]`): The value to set for the `disk_encryption_key` field.
 
 
+### fn withGuestOsFeatures
+
+```ts
+withGuestOsFeatures()
+```
+
+`google-beta.list[obj].withGuestOsFeatures` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the guest_os_features field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withGuestOsFeaturesMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `guest_os_features` field.
+
+
+### fn withGuestOsFeaturesMixin
+
+```ts
+withGuestOsFeaturesMixin()
+```
+
+`google-beta.list[obj].withGuestOsFeaturesMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the guest_os_features field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withGuestOsFeatures](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `guest_os_features` field.
+
+
 ### fn withImage
 
 ```ts
@@ -420,6 +468,22 @@ Terraform resource block to set or update the labels field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `labels` field.
+
+
+### fn withLicenses
+
+```ts
+withLicenses()
+```
+
+`google-beta.list.withLicenses` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the licenses field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `licenses` field.
 
 
 ### fn withMultiWriter
@@ -763,6 +827,29 @@ this resource. You can provide either the rawKey or the rsaEncryptedKey. When `n
 
 **Returns**:
   - An attribute object that represents the `disk_encryption_key` sub block.
+
+
+## obj guest_os_features
+
+
+
+### fn guest_os_features.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_compute_disk.guest_os_features.new` constructs a new object with attributes and blocks configured for the `guest_os_features`
+Terraform sub block.
+
+
+
+**Args**:
+  - `type` (`string`): The type of supported feature. Read [Enabling guest operating system features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features) to see a list of available options. Possible values: [&#34;MULTI_IP_SUBNET&#34;, &#34;SECURE_BOOT&#34;, &#34;SEV_CAPABLE&#34;, &#34;UEFI_COMPATIBLE&#34;, &#34;VIRTIO_SCSI_MULTIQUEUE&#34;, &#34;WINDOWS&#34;, &#34;GVNIC&#34;, &#34;SEV_LIVE_MIGRATABLE&#34;, &#34;SEV_SNP_CAPABLE&#34;, &#34;SUSPEND_RESUME_COMPATIBLE&#34;, &#34;TDX_CAPABLE&#34;]
+
+**Returns**:
+  - An attribute object that represents the `guest_os_features` sub block.
 
 
 ## obj source_image_encryption_key
