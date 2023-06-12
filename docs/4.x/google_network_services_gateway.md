@@ -15,14 +15,20 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withAddresses()`](#fn-withaddresses)
+* [`fn withCertificateUrls()`](#fn-withcertificateurls)
+* [`fn withDeleteSwgAutogenRouterOnDestroy()`](#fn-withdeleteswgautogenrouterondestroy)
 * [`fn withDescription()`](#fn-withdescription)
+* [`fn withGatewaySecurityPolicy()`](#fn-withgatewaysecuritypolicy)
 * [`fn withLabels()`](#fn-withlabels)
 * [`fn withLocation()`](#fn-withlocation)
 * [`fn withName()`](#fn-withname)
+* [`fn withNetwork()`](#fn-withnetwork)
 * [`fn withPorts()`](#fn-withports)
 * [`fn withProject()`](#fn-withproject)
 * [`fn withScope()`](#fn-withscope)
 * [`fn withServerTlsPolicy()`](#fn-withservertlspolicy)
+* [`fn withSubnetwork()`](#fn-withsubnetwork)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withType()`](#fn-withtype)
@@ -58,11 +64,24 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
+  - `addresses` (`list`): Zero or one IPv4-address on which the Gateway will receive the traffic. When no address is provided,
+an IP from the subnetwork is allocated This field only applies to gateways of type &#39;SECURE_WEB_GATEWAY&#39;.
+Gateways of type &#39;OPEN_MESH&#39; listen on 0.0.0.0. When `null`, the `addresses` field will be omitted from the resulting object.
+  - `certificate_urls` (`list`): A fully-qualified Certificates URL reference. The proxy presents a Certificate (selected based on SNI) when establishing a TLS connection.
+This feature only applies to gateways of type &#39;SECURE_WEB_GATEWAY&#39;. When `null`, the `certificate_urls` field will be omitted from the resulting object.
+  - `delete_swg_autogen_router_on_destroy` (`bool`): When deleting a gateway of type &#39;SECURE_WEB_GATEWAY&#39;, this boolean option will also delete auto generated router by the gateway creation.
+If there is no other gateway of type &#39;SECURE_WEB_GATEWAY&#39; remaining for that region and network it will be deleted. When `null`, the `delete_swg_autogen_router_on_destroy` field will be omitted from the resulting object.
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
+  - `gateway_security_policy` (`string`): A fully-qualified GatewaySecurityPolicy URL reference. Defines how a server should apply security policy to inbound (VM to Proxy) initiated connections.
+For example: &#39;projects/*/locations/*/gatewaySecurityPolicies/swg-policy&#39;.
+This policy is specific to gateways of type &#39;SECURE_WEB_GATEWAY&#39;. When `null`, the `gateway_security_policy` field will be omitted from the resulting object.
   - `labels` (`obj`): Set of label tags associated with the Gateway resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location of the gateway.
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `name` (`string`): Short name of the Gateway resource to be created.
+  - `network` (`string`): The relative resource name identifying the VPC network that is using this configuration.
+For example: &#39;projects/*/global/networks/network-1&#39;.
+Currently, this field is specific to gateways of type &#39;SECURE_WEB_GATEWAY&#39;. When `null`, the `network` field will be omitted from the resulting object.
   - `ports` (`list`): One or more port numbers (1-65535), on which the Gateway will receive traffic.
 The proxy binds to the specified ports. Gateways of type &#39;SECURE_WEB_GATEWAY&#39; are
 limited to 1 port. Gateways of type &#39;OPEN_MESH&#39; listen on 0.0.0.0 and support multiple ports.
@@ -73,6 +92,9 @@ a single coniguration to the proxy/load balancer.
 Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
   - `server_tls_policy` (`string`): A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated.
 If empty, TLS termination is disabled. When `null`, the `server_tls_policy` field will be omitted from the resulting object.
+  - `subnetwork` (`string`): The relative resource name identifying the subnetwork in which this SWG is allocated.
+For example: &#39;projects/*/regions/us-central1/subnetworks/network-1&#39;.
+Currently, this field is specific to gateways of type &#39;SECURE_WEB_GATEWAY. When `null`, the `subnetwork` field will be omitted from the resulting object.
   - `type` (`string`): Immutable. The type of the customer-managed gateway. Possible values are: * OPEN_MESH * SECURE_WEB_GATEWAY. Possible values: [&#34;TYPE_UNSPECIFIED&#34;, &#34;OPEN_MESH&#34;, &#34;SECURE_WEB_GATEWAY&#34;]
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_services_gateway.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -98,11 +120,24 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
+  - `addresses` (`list`): Zero or one IPv4-address on which the Gateway will receive the traffic. When no address is provided,
+an IP from the subnetwork is allocated This field only applies to gateways of type &#39;SECURE_WEB_GATEWAY&#39;.
+Gateways of type &#39;OPEN_MESH&#39; listen on 0.0.0.0. When `null`, the `addresses` field will be omitted from the resulting object.
+  - `certificate_urls` (`list`): A fully-qualified Certificates URL reference. The proxy presents a Certificate (selected based on SNI) when establishing a TLS connection.
+This feature only applies to gateways of type &#39;SECURE_WEB_GATEWAY&#39;. When `null`, the `certificate_urls` field will be omitted from the resulting object.
+  - `delete_swg_autogen_router_on_destroy` (`bool`): When deleting a gateway of type &#39;SECURE_WEB_GATEWAY&#39;, this boolean option will also delete auto generated router by the gateway creation.
+If there is no other gateway of type &#39;SECURE_WEB_GATEWAY&#39; remaining for that region and network it will be deleted. When `null`, the `delete_swg_autogen_router_on_destroy` field will be omitted from the resulting object.
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
+  - `gateway_security_policy` (`string`): A fully-qualified GatewaySecurityPolicy URL reference. Defines how a server should apply security policy to inbound (VM to Proxy) initiated connections.
+For example: &#39;projects/*/locations/*/gatewaySecurityPolicies/swg-policy&#39;.
+This policy is specific to gateways of type &#39;SECURE_WEB_GATEWAY&#39;. When `null`, the `gateway_security_policy` field will be omitted from the resulting object.
   - `labels` (`obj`): Set of label tags associated with the Gateway resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location of the gateway.
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `name` (`string`): Short name of the Gateway resource to be created.
+  - `network` (`string`): The relative resource name identifying the VPC network that is using this configuration.
+For example: &#39;projects/*/global/networks/network-1&#39;.
+Currently, this field is specific to gateways of type &#39;SECURE_WEB_GATEWAY&#39;. When `null`, the `network` field will be omitted from the resulting object.
   - `ports` (`list`): One or more port numbers (1-65535), on which the Gateway will receive traffic.
 The proxy binds to the specified ports. Gateways of type &#39;SECURE_WEB_GATEWAY&#39; are
 limited to 1 port. Gateways of type &#39;OPEN_MESH&#39; listen on 0.0.0.0 and support multiple ports.
@@ -113,11 +148,62 @@ a single coniguration to the proxy/load balancer.
 Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
   - `server_tls_policy` (`string`): A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated.
 If empty, TLS termination is disabled. When `null`, the `server_tls_policy` field will be omitted from the resulting object.
+  - `subnetwork` (`string`): The relative resource name identifying the subnetwork in which this SWG is allocated.
+For example: &#39;projects/*/regions/us-central1/subnetworks/network-1&#39;.
+Currently, this field is specific to gateways of type &#39;SECURE_WEB_GATEWAY. When `null`, the `subnetwork` field will be omitted from the resulting object.
   - `type` (`string`): Immutable. The type of the customer-managed gateway. Possible values are: * OPEN_MESH * SECURE_WEB_GATEWAY. Possible values: [&#34;TYPE_UNSPECIFIED&#34;, &#34;OPEN_MESH&#34;, &#34;SECURE_WEB_GATEWAY&#34;]
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_services_gateway.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_network_services_gateway` resource into the root Terraform configuration.
+
+
+### fn withAddresses
+
+```ts
+withAddresses()
+```
+
+`google-beta.list.withAddresses` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the addresses field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `addresses` field.
+
+
+### fn withCertificateUrls
+
+```ts
+withCertificateUrls()
+```
+
+`google-beta.list.withCertificateUrls` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the certificate_urls field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `certificate_urls` field.
+
+
+### fn withDeleteSwgAutogenRouterOnDestroy
+
+```ts
+withDeleteSwgAutogenRouterOnDestroy()
+```
+
+`google-beta.bool.withDeleteSwgAutogenRouterOnDestroy` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the delete_swg_autogen_router_on_destroy field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `delete_swg_autogen_router_on_destroy` field.
 
 
 ### fn withDescription
@@ -134,6 +220,22 @@ Terraform resource block to set or update the description field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `description` field.
+
+
+### fn withGatewaySecurityPolicy
+
+```ts
+withGatewaySecurityPolicy()
+```
+
+`google-beta.string.withGatewaySecurityPolicy` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the gateway_security_policy field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `gateway_security_policy` field.
 
 
 ### fn withLabels
@@ -182,6 +284,22 @@ Terraform resource block to set or update the name field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `name` field.
+
+
+### fn withNetwork
+
+```ts
+withNetwork()
+```
+
+`google-beta.string.withNetwork` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the network field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `network` field.
 
 
 ### fn withPorts
@@ -246,6 +364,22 @@ Terraform resource block to set or update the server_tls_policy field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `server_tls_policy` field.
+
+
+### fn withSubnetwork
+
+```ts
+withSubnetwork()
+```
+
+`google-beta.string.withSubnetwork` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the subnetwork field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `subnetwork` field.
 
 
 ### fn withTimeouts
