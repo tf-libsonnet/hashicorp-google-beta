@@ -22,10 +22,14 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withRegion()`](#fn-withregion)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`fn withWorkspaceCompilationOverrides()`](#fn-withworkspacecompilationoverrides)
+* [`fn withWorkspaceCompilationOverridesMixin()`](#fn-withworkspacecompilationoverridesmixin)
 * [`obj git_remote_settings`](#obj-git_remote_settings)
   * [`fn new()`](#fn-git_remote_settingsnew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
+* [`obj workspace_compilation_overrides`](#obj-workspace_compilation_overrides)
+  * [`fn new()`](#fn-workspace_compilation_overridesnew)
 
 ## Fields
 
@@ -61,6 +65,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `region` (`string`): A reference to the region When `null`, the `region` field will be omitted from the resulting object.
   - `git_remote_settings` (`list[obj]`): Optional. If set, configures this repository to be linked to a Git remote. When `null`, the `git_remote_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.git_remote_settings.new](#fn-git_remote_settingsnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.timeouts.new](#fn-timeoutsnew) constructor.
+  - `workspace_compilation_overrides` (`list[obj]`): Optional. If set, fields of workspaceCompilationOverrides override the default compilation settings that are specified in dataform.json when creating workspace-scoped compilation results. When `null`, the `workspace_compilation_overrides` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.workspace_compilation_overrides.new](#fn-workspace_compilation_overridesnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -89,6 +94,7 @@ injecting into a complete block.
   - `region` (`string`): A reference to the region When `null`, the `region` field will be omitted from the resulting object.
   - `git_remote_settings` (`list[obj]`): Optional. If set, configures this repository to be linked to a Git remote. When `null`, the `git_remote_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.git_remote_settings.new](#fn-git_remote_settingsnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.timeouts.new](#fn-timeoutsnew) constructor.
+  - `workspace_compilation_overrides` (`list[obj]`): Optional. If set, fields of workspaceCompilationOverrides override the default compilation settings that are specified in dataform.json when creating workspace-scoped compilation results. When `null`, the `workspace_compilation_overrides` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.workspace_compilation_overrides.new](#fn-workspace_compilation_overridesnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_dataform_repository` resource into the root Terraform configuration.
@@ -215,6 +221,43 @@ function.
   - `value` (`obj`): The value to set for the `timeouts` field.
 
 
+### fn withWorkspaceCompilationOverrides
+
+```ts
+withWorkspaceCompilationOverrides()
+```
+
+`google-beta.list[obj].withWorkspaceCompilationOverrides` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the workspace_compilation_overrides field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withWorkspaceCompilationOverridesMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `workspace_compilation_overrides` field.
+
+
+### fn withWorkspaceCompilationOverridesMixin
+
+```ts
+withWorkspaceCompilationOverridesMixin()
+```
+
+`google-beta.list[obj].withWorkspaceCompilationOverridesMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the workspace_compilation_overrides field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withWorkspaceCompilationOverrides](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `workspace_compilation_overrides` field.
+
+
 ## obj git_remote_settings
 
 
@@ -263,3 +306,28 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.
+
+
+## obj workspace_compilation_overrides
+
+
+
+### fn workspace_compilation_overrides.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataform_repository.workspace_compilation_overrides.new` constructs a new object with attributes and blocks configured for the `workspace_compilation_overrides`
+Terraform sub block.
+
+
+
+**Args**:
+  - `default_database` (`string`): Optional. The default database (Google Cloud project ID). When `null`, the `default_database` field will be omitted from the resulting object.
+  - `schema_suffix` (`string`): Optional. The suffix that should be appended to all schema (BigQuery dataset ID) names. When `null`, the `schema_suffix` field will be omitted from the resulting object.
+  - `table_prefix` (`string`): Optional. The prefix that should be prepended to all table names. When `null`, the `table_prefix` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `workspace_compilation_overrides` sub block.
