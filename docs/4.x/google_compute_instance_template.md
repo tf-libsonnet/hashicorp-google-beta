@@ -1064,6 +1064,7 @@ Terraform sub block.
 
 **Args**:
   - `network` (`string`): The name or self_link of the network to attach this interface to. Use network attribute for Legacy or Auto subnetted networks and subnetwork for custom subnetted networks. When `null`, the `network` field will be omitted from the resulting object.
+  - `network_attachment` (`string`): The URL of the network attachment that this interface should connect to in the following format: projects/{projectNumber}/regions/{region_name}/networkAttachments/{network_attachment_name}. When `null`, the `network_attachment` field will be omitted from the resulting object.
   - `network_ip` (`string`): The private IP address to assign to the instance. If empty, the address will be automatically assigned. When `null`, the `network_ip` field will be omitted from the resulting object.
   - `nic_type` (`string`): The type of vNIC to be used on this interface. Possible values:GVNIC, VIRTIO_NET When `null`, the `nic_type` field will be omitted from the resulting object.
   - `queue_count` (`number`): The networking queue count that&#39;s specified by users for the network interface. Both Rx and Tx queues will be set to this number. It will be empty if not specified. When `null`, the `queue_count` field will be omitted from the resulting object.
