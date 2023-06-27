@@ -109,6 +109,7 @@ the `src` and/or `version` parameters are set.
   - `firestore_custom_endpoint` (`string`): Set the `firestore_custom_endpoint` field on the resulting provider block. When `null`, the `firestore_custom_endpoint` field will be omitted from the resulting object.
   - `game_services_custom_endpoint` (`string`): Set the `game_services_custom_endpoint` field on the resulting provider block. When `null`, the `game_services_custom_endpoint` field will be omitted from the resulting object.
   - `gke_backup_custom_endpoint` (`string`): Set the `gke_backup_custom_endpoint` field on the resulting provider block. When `null`, the `gke_backup_custom_endpoint` field will be omitted from the resulting object.
+  - `gke_hub2_custom_endpoint` (`string`): Set the `gke_hub2_custom_endpoint` field on the resulting provider block. When `null`, the `gke_hub2_custom_endpoint` field will be omitted from the resulting object.
   - `gke_hub_custom_endpoint` (`string`): Set the `gke_hub_custom_endpoint` field on the resulting provider block. When `null`, the `gke_hub_custom_endpoint` field will be omitted from the resulting object.
   - `gkehub_feature_custom_endpoint` (`string`): Set the `gkehub_feature_custom_endpoint` field on the resulting provider block. When `null`, the `gkehub_feature_custom_endpoint` field will be omitted from the resulting object.
   - `gkeonprem_custom_endpoint` (`string`): Set the `gkeonprem_custom_endpoint` field on the resulting provider block. When `null`, the `gkeonprem_custom_endpoint` field will be omitted from the resulting object.
@@ -277,6 +278,7 @@ injecting into a complete block.
   - `firestore_custom_endpoint` (`string`): Set the `firestore_custom_endpoint` field on the resulting object. When `null`, the `firestore_custom_endpoint` field will be omitted from the resulting object.
   - `game_services_custom_endpoint` (`string`): Set the `game_services_custom_endpoint` field on the resulting object. When `null`, the `game_services_custom_endpoint` field will be omitted from the resulting object.
   - `gke_backup_custom_endpoint` (`string`): Set the `gke_backup_custom_endpoint` field on the resulting object. When `null`, the `gke_backup_custom_endpoint` field will be omitted from the resulting object.
+  - `gke_hub2_custom_endpoint` (`string`): Set the `gke_hub2_custom_endpoint` field on the resulting object. When `null`, the `gke_hub2_custom_endpoint` field will be omitted from the resulting object.
   - `gke_hub_custom_endpoint` (`string`): Set the `gke_hub_custom_endpoint` field on the resulting object. When `null`, the `gke_hub_custom_endpoint` field will be omitted from the resulting object.
   - `gkehub_feature_custom_endpoint` (`string`): Set the `gkehub_feature_custom_endpoint` field on the resulting object. When `null`, the `gkehub_feature_custom_endpoint` field will be omitted from the resulting object.
   - `gkeonprem_custom_endpoint` (`string`): Set the `gkeonprem_custom_endpoint` field on the resulting object. When `null`, the `gkeonprem_custom_endpoint` field will be omitted from the resulting object.

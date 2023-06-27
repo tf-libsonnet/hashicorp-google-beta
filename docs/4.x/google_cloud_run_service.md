@@ -128,7 +128,7 @@ this field is set to false, the revision name will still autogenerate.) When `nu
   - `name` (`string`): Name must be unique within a Google Cloud project and region.
 Is required when creating resources. Name is primarily intended
 for creation idempotence and configuration definition. Cannot be updated.
-More info: http://kubernetes.io/docs/user-guide/identifiers#names
+More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `metadata` (`list[obj]`): Metadata associated with this Service, including name, namespace, labels,
 and annotations. When `null`, the `metadata` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.metadata.new](#fn-metadatanew) constructor.
@@ -177,7 +177,7 @@ this field is set to false, the revision name will still autogenerate.) When `nu
   - `name` (`string`): Name must be unique within a Google Cloud project and region.
 Is required when creating resources. Name is primarily intended
 for creation idempotence and configuration definition. Cannot be updated.
-More info: http://kubernetes.io/docs/user-guide/identifiers#names
+More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `metadata` (`list[obj]`): Metadata associated with this Service, including name, namespace, labels,
 and annotations. When `null`, the `metadata` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.metadata.new](#fn-metadatanew) constructor.
@@ -429,7 +429,7 @@ Terraform sub block.
 **Args**:
   - `annotations` (`obj`): Annotations is a key value map stored with a resource that
 may be set by external tools to store and retrieve arbitrary metadata. More
-info: http://kubernetes.io/docs/user-guide/annotations
+info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
 
 **Note**: The Cloud Run API may add additional annotations that were not provided in your config.
 If terraform plan shows a diff where a server-side annotation is added, you can add it to your config
@@ -507,7 +507,7 @@ Terraform sub block.
 **Args**:
   - `annotations` (`obj`): Annotations is a key value map stored with a resource that
 may be set by external tools to store and retrieve arbitrary metadata. More
-info: http://kubernetes.io/docs/user-guide/annotations
+info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
 
 **Note**: The Cloud Run API may add additional annotations that were not provided in your config.
 If terraform plan shows a diff where a server-side annotation is added, you can add it to your config
@@ -1207,7 +1207,7 @@ Terraform sub block.
 
 **Args**:
   - `medium` (`string`): The medium on which the data is stored. The default is &#34;&#34; which means to use the node&#39;s default medium. Must be an empty string (default) or Memory. When `null`, the `medium` field will be omitted from the resulting object.
-  - `size_limit` (`string`): Limit on the storage usable by this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. This field&#39;s values are of the &#39;Quantity&#39; k8s type: https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/. The default is nil which means that the limit is undefined. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir. When `null`, the `size_limit` field will be omitted from the resulting object.
+  - `size_limit` (`string`): Limit on the storage usable by this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. This field&#39;s values are of the &#39;Quantity&#39; k8s type: https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/. The default is nil which means that the limit is undefined. More info: https://kubernetes.io/docs/concepts/storage/volumes/#emptydir. When `null`, the `size_limit` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `empty_dir` sub block.
