@@ -445,6 +445,7 @@ project.
 * [google_firebase_android_app](google_firebase_android_app.md)
 * [google_firebase_apple_app](google_firebase_apple_app.md)
 * [google_firebase_database_instance](google_firebase_database_instance.md)
+* [google_firebase_extensions_instance](google_firebase_extensions_instance.md)
 * [google_firebase_hosting_channel](google_firebase_hosting_channel.md)
 * [google_firebase_hosting_release](google_firebase_hosting_release.md)
 * [google_firebase_hosting_site](google_firebase_hosting_site.md)

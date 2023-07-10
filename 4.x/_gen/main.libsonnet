@@ -435,6 +435,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   firebase_android_app: (import 'resources/firebase_android_app.libsonnet'),
   firebase_apple_app: (import 'resources/firebase_apple_app.libsonnet'),
   firebase_database_instance: (import 'resources/firebase_database_instance.libsonnet'),
+  firebase_extensions_instance: (import 'resources/firebase_extensions_instance.libsonnet'),
   firebase_hosting_channel: (import 'resources/firebase_hosting_channel.libsonnet'),
   firebase_hosting_release: (import 'resources/firebase_hosting_release.libsonnet'),
   firebase_hosting_site: (import 'resources/firebase_hosting_site.libsonnet'),
