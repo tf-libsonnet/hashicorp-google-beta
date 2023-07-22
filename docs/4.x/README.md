@@ -485,6 +485,7 @@ project.
 * [google_gke_hub_membership_iam_binding](google_gke_hub_membership_iam_binding.md)
 * [google_gke_hub_membership_iam_member](google_gke_hub_membership_iam_member.md)
 * [google_gke_hub_membership_iam_policy](google_gke_hub_membership_iam_policy.md)
+* [google_gkeonprem_bare_metal_admin_cluster](google_gkeonprem_bare_metal_admin_cluster.md)
 * [google_gkeonprem_bare_metal_cluster](google_gkeonprem_bare_metal_cluster.md)
 * [google_gkeonprem_bare_metal_node_pool](google_gkeonprem_bare_metal_node_pool.md)
 * [google_gkeonprem_vmware_cluster](google_gkeonprem_vmware_cluster.md)

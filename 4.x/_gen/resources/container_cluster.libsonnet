@@ -1233,10 +1233,12 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
       },
     },
     placement_policy:: {
-      '#new':: d.fn(help='\n`google-beta.google_container_cluster.node_pool.placement_policy.new` constructs a new object with attributes and blocks configured for the `placement_policy`\nTerraform sub block.\n\n\n\n**Args**:\n  - `type` (`string`): Type defines the type of placement policy\n\n**Returns**:\n  - An attribute object that represents the `placement_policy` sub block.\n', args=[]),
+      '#new':: d.fn(help='\n`google-beta.google_container_cluster.node_pool.placement_policy.new` constructs a new object with attributes and blocks configured for the `placement_policy`\nTerraform sub block.\n\n\n\n**Args**:\n  - `tpu_topology` (`string`): TPU placement topology for pod slice node pool. https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies When `null`, the `tpu_topology` field will be omitted from the resulting object.\n  - `type` (`string`): Type defines the type of placement policy\n\n**Returns**:\n  - An attribute object that represents the `placement_policy` sub block.\n', args=[]),
       new(
-        type
+        type,
+        tpu_topology=null
       ):: std.prune(a={
+        tpu_topology: tpu_topology,
         type: type,
       }),
     },

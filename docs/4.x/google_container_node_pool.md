@@ -1099,6 +1099,7 @@ Terraform sub block.
 
 
 **Args**:
+  - `tpu_topology` (`string`): TPU placement topology for pod slice node pool. https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies When `null`, the `tpu_topology` field will be omitted from the resulting object.
   - `type` (`string`): Type defines the type of placement policy
 
 **Returns**:

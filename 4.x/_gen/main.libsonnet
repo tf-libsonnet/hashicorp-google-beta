@@ -475,6 +475,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   gke_hub_membership_iam_binding: (import 'resources/gke_hub_membership_iam_binding.libsonnet'),
   gke_hub_membership_iam_member: (import 'resources/gke_hub_membership_iam_member.libsonnet'),
   gke_hub_membership_iam_policy: (import 'resources/gke_hub_membership_iam_policy.libsonnet'),
+  gkeonprem_bare_metal_admin_cluster: (import 'resources/gkeonprem_bare_metal_admin_cluster.libsonnet'),
   gkeonprem_bare_metal_cluster: (import 'resources/gkeonprem_bare_metal_cluster.libsonnet'),
   gkeonprem_bare_metal_node_pool: (import 'resources/gkeonprem_bare_metal_node_pool.libsonnet'),
   gkeonprem_vmware_cluster: (import 'resources/gkeonprem_vmware_cluster.libsonnet'),

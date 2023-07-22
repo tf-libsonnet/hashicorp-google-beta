@@ -30,6 +30,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-serial_pipelinenew)
   * [`obj serial_pipeline.stages`](#obj-serial_pipelinestages)
     * [`fn new()`](#fn-serial_pipelinestagesnew)
+    * [`obj serial_pipeline.stages.deploy_parameters`](#obj-serial_pipelinestagesdeploy_parameters)
+      * [`fn new()`](#fn-serial_pipelinestagesdeploy_parametersnew)
     * [`obj serial_pipeline.stages.strategy`](#obj-serial_pipelinestagesstrategy)
       * [`fn new()`](#fn-serial_pipelinestagesstrategynew)
       * [`obj serial_pipeline.stages.strategy.canary`](#obj-serial_pipelinestagesstrategycanary)
@@ -357,10 +359,35 @@ Terraform sub block.
 **Args**:
   - `profiles` (`list`): Skaffold profiles to use when rendering the manifest for this stage&#39;s `Target`. When `null`, the `profiles` field will be omitted from the resulting object.
   - `target_id` (`string`): The target_id to which this stage points. This field refers exclusively to the last segment of a target name. For example, this field would just be `my-target` (rather than `projects/project/locations/location/targets/my-target`). The location of the `Target` is inferred to be the same as the location of the `DeliveryPipeline` that contains this `Stage`. When `null`, the `target_id` field will be omitted from the resulting object.
+  - `deploy_parameters` (`list[obj]`): Optional. The deploy parameters to use for the target in this stage. When `null`, the `deploy_parameters` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.deploy_parameters.new](#fn-serial_pipelineserial_pipelinedeploy_parametersnew) constructor.
   - `strategy` (`list[obj]`): Optional. The strategy to use for a `Rollout` to this stage. When `null`, the `strategy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.new](#fn-serial_pipelineserial_pipelinestrategynew) constructor.
 
 **Returns**:
   - An attribute object that represents the `stages` sub block.
+
+
+## obj serial_pipeline.stages.deploy_parameters
+
+
+
+### fn serial_pipeline.stages.deploy_parameters.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.deploy_parameters.new` constructs a new object with attributes and blocks configured for the `deploy_parameters`
+Terraform sub block.
+
+
+
+**Args**:
+  - `match_target_labels` (`obj`): Optional. Deploy parameters are applied to targets with match labels. If unspecified, deploy parameters are applied to all targets (including child targets of a multi-target). When `null`, the `match_target_labels` field will be omitted from the resulting object.
+  - `values` (`obj`): Required. Values are deploy parameters in key-value pairs.
+
+**Returns**:
+  - An attribute object that represents the `deploy_parameters` sub block.
 
 
 ## obj serial_pipeline.stages.strategy
@@ -599,6 +626,7 @@ Terraform sub block.
 
 **Args**:
   - `deployment` (`string`): Required. Name of the Kubernetes Deployment whose traffic is managed by the specified Service.
+  - `disable_pod_overprovisioning` (`bool`): Optional. Whether to disable Pod overprovisioning. If Pod overprovisioning is disabled then Cloud Deploy will limit the number of total Pods used for the deployment strategy to the number of Pods the Deployment has on the cluster. When `null`, the `disable_pod_overprovisioning` field will be omitted from the resulting object.
   - `service` (`string`): Required. Name of the Kubernetes Service.
 
 **Returns**:
