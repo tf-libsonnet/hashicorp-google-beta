@@ -70,7 +70,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `labels` (`obj`): GCP labels for this Feature. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location for the resource
   - `name` (`string`): The full, unique name of this Feature resource When `null`, the `name` field will be omitted from the resulting object.
-  - `project` (`string`): The project for the resource When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `spec` (`list[obj]`): Optional. Hub-wide Feature configuration. If this Feature does not support any Hub-wide configuration, this field may be unused. When `null`, the `spec` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.spec.new](#fn-specnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -99,7 +99,7 @@ injecting into a complete block.
   - `labels` (`obj`): GCP labels for this Feature. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location for the resource
   - `name` (`string`): The full, unique name of this Feature resource When `null`, the `name` field will be omitted from the resulting object.
-  - `project` (`string`): The project for the resource When `null`, the `project` field will be omitted from the resulting object.
+  - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `spec` (`list[obj]`): Optional. Hub-wide Feature configuration. If this Feature does not support any Hub-wide configuration, this field may be unused. When `null`, the `spec` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.spec.new](#fn-specnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -261,7 +261,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `fleetobservability` (`list[obj]`): Fleet Observability spec. When `null`, the `fleetobservability` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.spec.fleetobservability.new](#fn-specfleetobservabilitynew) constructor.
+  - `fleetobservability` (`list[obj]`): Fleet Observability feature spec. When `null`, the `fleetobservability` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.spec.fleetobservability.new](#fn-specfleetobservabilitynew) constructor.
   - `multiclusteringress` (`list[obj]`): Multicluster Ingress-specific spec. When `null`, the `multiclusteringress` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.spec.multiclusteringress.new](#fn-specmulticlusteringressnew) constructor.
 
 **Returns**:
@@ -285,7 +285,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `logging_config` (`list[obj]`): Fleet Observability Logging-specific spec. When `null`, the `logging_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.spec.fleetobservability.logging_config.new](#fn-specspeclogging_confignew) constructor.
+  - `logging_config` (`list[obj]`): Specified if fleet logging feature is enabled for the entire fleet. If UNSPECIFIED, fleet logging feature is disabled for the entire fleet. When `null`, the `logging_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gke_hub_feature.spec.fleetobservability.logging_config.new](#fn-specspeclogging_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `fleetobservability` sub block.
@@ -332,7 +332,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `mode` (`string`): The logs routing mode Possible values: MODE_UNSPECIFIED, COPY, MOVE When `null`, the `mode` field will be omitted from the resulting object.
+  - `mode` (`string`): Specified if fleet logging feature is enabled. Possible values: [&#34;MODE_UNSPECIFIED&#34;, &#34;COPY&#34;, &#34;MOVE&#34;] When `null`, the `mode` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `default_config` sub block.
@@ -355,7 +355,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `mode` (`string`): The logs routing mode Possible values: MODE_UNSPECIFIED, COPY, MOVE When `null`, the `mode` field will be omitted from the resulting object.
+  - `mode` (`string`): Specified if fleet logging feature is enabled. Possible values: [&#34;MODE_UNSPECIFIED&#34;, &#34;COPY&#34;, &#34;MOVE&#34;] When `null`, the `mode` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `fleet_scope_logs_config` sub block.
@@ -378,7 +378,7 @@ Terraform sub block.
 
 
 **Args**:
-  - `config_membership` (`string`): Fully-qualified Membership name which hosts the MultiClusterIngress CRD. Example: `projects/foo-proj/locations/global/memberships/bar`
+  - `config_membership` (`string`): Fully-qualified Membership name which hosts the MultiClusterIngress CRD. Example: &#39;projects/foo-proj/locations/global/memberships/bar&#39;
 
 **Returns**:
   - An attribute object that represents the `multiclusteringress` sub block.

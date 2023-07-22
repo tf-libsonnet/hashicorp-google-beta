@@ -21,6 +21,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withGithubConfigMixin()`](#fn-withgithubconfigmixin)
 * [`fn withGithubEnterpriseConfig()`](#fn-withgithubenterpriseconfig)
 * [`fn withGithubEnterpriseConfigMixin()`](#fn-withgithubenterpriseconfigmixin)
+* [`fn withGitlabConfig()`](#fn-withgitlabconfig)
+* [`fn withGitlabConfigMixin()`](#fn-withgitlabconfigmixin)
 * [`fn withLocation()`](#fn-withlocation)
 * [`fn withName()`](#fn-withname)
 * [`fn withProject()`](#fn-withproject)
@@ -34,6 +36,14 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-github_enterprise_confignew)
   * [`obj github_enterprise_config.service_directory_config`](#obj-github_enterprise_configservice_directory_config)
     * [`fn new()`](#fn-github_enterprise_configservice_directory_confignew)
+* [`obj gitlab_config`](#obj-gitlab_config)
+  * [`fn new()`](#fn-gitlab_confignew)
+  * [`obj gitlab_config.authorizer_credential`](#obj-gitlab_configauthorizer_credential)
+    * [`fn new()`](#fn-gitlab_configauthorizer_credentialnew)
+  * [`obj gitlab_config.read_authorizer_credential`](#obj-gitlab_configread_authorizer_credential)
+    * [`fn new()`](#fn-gitlab_configread_authorizer_credentialnew)
+  * [`obj gitlab_config.service_directory_config`](#obj-gitlab_configservice_directory_config)
+    * [`fn new()`](#fn-gitlab_configservice_directory_confignew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -73,6 +83,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `project` (`string`): The project for the resource When `null`, the `project` field will be omitted from the resulting object.
   - `github_config` (`list[obj]`): Configuration for connections to github.com. When `null`, the `github_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_config.new](#fn-github_confignew) constructor.
   - `github_enterprise_config` (`list[obj]`): Configuration for connections to an instance of GitHub Enterprise. When `null`, the `github_enterprise_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_enterprise_config.new](#fn-github_enterprise_confignew) constructor.
+  - `gitlab_config` (`list[obj]`): Configuration for connections to gitlab.com or an instance of GitLab Enterprise. When `null`, the `gitlab_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.gitlab_config.new](#fn-gitlab_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -104,6 +115,7 @@ injecting into a complete block.
   - `project` (`string`): The project for the resource When `null`, the `project` field will be omitted from the resulting object.
   - `github_config` (`list[obj]`): Configuration for connections to github.com. When `null`, the `github_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_config.new](#fn-github_confignew) constructor.
   - `github_enterprise_config` (`list[obj]`): Configuration for connections to an instance of GitHub Enterprise. When `null`, the `github_enterprise_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_enterprise_config.new](#fn-github_enterprise_confignew) constructor.
+  - `gitlab_config` (`list[obj]`): Configuration for connections to gitlab.com or an instance of GitLab Enterprise. When `null`, the `gitlab_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.gitlab_config.new](#fn-gitlab_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -214,6 +226,43 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list[obj]`): The value to set for the `github_enterprise_config` field.
+
+
+### fn withGitlabConfig
+
+```ts
+withGitlabConfig()
+```
+
+`google-beta.list[obj].withGitlabConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the gitlab_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withGitlabConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `gitlab_config` field.
+
+
+### fn withGitlabConfigMixin
+
+```ts
+withGitlabConfigMixin()
+```
+
+`google-beta.list[obj].withGitlabConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the gitlab_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withGitlabConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `gitlab_config` field.
 
 
 ### fn withLocation
@@ -389,6 +438,103 @@ new()
 
 
 `google-beta.google_cloudbuildv2_connection.github_enterprise_config.service_directory_config.new` constructs a new object with attributes and blocks configured for the `service_directory_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `service` (`string`): Required. The Service Directory service name. Format: projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}.
+
+**Returns**:
+  - An attribute object that represents the `service_directory_config` sub block.
+
+
+## obj gitlab_config
+
+
+
+### fn gitlab_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloudbuildv2_connection.gitlab_config.new` constructs a new object with attributes and blocks configured for the `gitlab_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `host_uri` (`string`): The URI of the GitLab Enterprise host this connection is for. If not specified, the default value is https://gitlab.com. When `null`, the `host_uri` field will be omitted from the resulting object.
+  - `ssl_ca` (`string`): SSL certificate to use for requests to GitLab Enterprise. When `null`, the `ssl_ca` field will be omitted from the resulting object.
+  - `webhook_secret_secret_version` (`string`): Required. Immutable. SecretManager resource containing the webhook secret of a GitLab Enterprise project, formatted as `projects/*/secrets/*/versions/*`.
+  - `authorizer_credential` (`list[obj]`): Required. A GitLab personal access token with the `api` scope access. When `null`, the `authorizer_credential` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.gitlab_config.authorizer_credential.new](#fn-gitlab_configauthorizer_credentialnew) constructor.
+  - `read_authorizer_credential` (`list[obj]`): Required. A GitLab personal access token with the minimum `read_api` scope access. When `null`, the `read_authorizer_credential` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.gitlab_config.read_authorizer_credential.new](#fn-gitlab_configread_authorizer_credentialnew) constructor.
+  - `service_directory_config` (`list[obj]`): Configuration for using Service Directory to privately connect to a GitLab Enterprise server. This should only be set if the GitLab Enterprise server is hosted on-premises and not reachable by public internet. If this field is left empty, calls to the GitLab Enterprise server will be made over the public internet. When `null`, the `service_directory_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.gitlab_config.service_directory_config.new](#fn-gitlab_configservice_directory_confignew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `gitlab_config` sub block.
+
+
+## obj gitlab_config.authorizer_credential
+
+
+
+### fn gitlab_config.authorizer_credential.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloudbuildv2_connection.gitlab_config.authorizer_credential.new` constructs a new object with attributes and blocks configured for the `authorizer_credential`
+Terraform sub block.
+
+
+
+**Args**:
+  - `user_token_secret_version` (`string`): Required. A SecretManager resource containing the user token that authorizes the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.
+
+**Returns**:
+  - An attribute object that represents the `authorizer_credential` sub block.
+
+
+## obj gitlab_config.read_authorizer_credential
+
+
+
+### fn gitlab_config.read_authorizer_credential.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloudbuildv2_connection.gitlab_config.read_authorizer_credential.new` constructs a new object with attributes and blocks configured for the `read_authorizer_credential`
+Terraform sub block.
+
+
+
+**Args**:
+  - `user_token_secret_version` (`string`): Required. A SecretManager resource containing the user token that authorizes the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.
+
+**Returns**:
+  - An attribute object that represents the `read_authorizer_credential` sub block.
+
+
+## obj gitlab_config.service_directory_config
+
+
+
+### fn gitlab_config.service_directory_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloudbuildv2_connection.gitlab_config.service_directory_config.new` constructs a new object with attributes and blocks configured for the `service_directory_config`
 Terraform sub block.
 
 

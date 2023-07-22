@@ -61,12 +61,24 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
       stages: stages,
     }),
     stages:: {
-      '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.new` constructs a new object with attributes and blocks configured for the `stages`\nTerraform sub block.\n\n\n\n**Args**:\n  - `profiles` (`list`): Skaffold profiles to use when rendering the manifest for this stage&#39;s `Target`. When `null`, the `profiles` field will be omitted from the resulting object.\n  - `target_id` (`string`): The target_id to which this stage points. This field refers exclusively to the last segment of a target name. For example, this field would just be `my-target` (rather than `projects/project/locations/location/targets/my-target`). The location of the `Target` is inferred to be the same as the location of the `DeliveryPipeline` that contains this `Stage`. When `null`, the `target_id` field will be omitted from the resulting object.\n  - `strategy` (`list[obj]`): Optional. The strategy to use for a `Rollout` to this stage. When `null`, the `strategy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.new](#fn-serial_pipelineserial_pipelinestrategynew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `stages` sub block.\n', args=[]),
+      deploy_parameters:: {
+        '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.deploy_parameters.new` constructs a new object with attributes and blocks configured for the `deploy_parameters`\nTerraform sub block.\n\n\n\n**Args**:\n  - `match_target_labels` (`obj`): Optional. Deploy parameters are applied to targets with match labels. If unspecified, deploy parameters are applied to all targets (including child targets of a multi-target). When `null`, the `match_target_labels` field will be omitted from the resulting object.\n  - `values` (`obj`): Required. Values are deploy parameters in key-value pairs.\n\n**Returns**:\n  - An attribute object that represents the `deploy_parameters` sub block.\n', args=[]),
+        new(
+          values,
+          match_target_labels=null
+        ):: std.prune(a={
+          match_target_labels: match_target_labels,
+          values: values,
+        }),
+      },
+      '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.new` constructs a new object with attributes and blocks configured for the `stages`\nTerraform sub block.\n\n\n\n**Args**:\n  - `profiles` (`list`): Skaffold profiles to use when rendering the manifest for this stage&#39;s `Target`. When `null`, the `profiles` field will be omitted from the resulting object.\n  - `target_id` (`string`): The target_id to which this stage points. This field refers exclusively to the last segment of a target name. For example, this field would just be `my-target` (rather than `projects/project/locations/location/targets/my-target`). The location of the `Target` is inferred to be the same as the location of the `DeliveryPipeline` that contains this `Stage`. When `null`, the `target_id` field will be omitted from the resulting object.\n  - `deploy_parameters` (`list[obj]`): Optional. The deploy parameters to use for the target in this stage. When `null`, the `deploy_parameters` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.deploy_parameters.new](#fn-serial_pipelineserial_pipelinedeploy_parametersnew) constructor.\n  - `strategy` (`list[obj]`): Optional. The strategy to use for a `Rollout` to this stage. When `null`, the `strategy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.new](#fn-serial_pipelineserial_pipelinestrategynew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `stages` sub block.\n', args=[]),
       new(
+        deploy_parameters=null,
         profiles=null,
         strategy=null,
         target_id=null
       ):: std.prune(a={
+        deploy_parameters: deploy_parameters,
         profiles: profiles,
         strategy: strategy,
         target_id: target_id,
@@ -146,12 +158,14 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
                 service_networking: service_networking,
               }),
               service_networking:: {
-                '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.kubernetes.service_networking.new` constructs a new object with attributes and blocks configured for the `service_networking`\nTerraform sub block.\n\n\n\n**Args**:\n  - `deployment` (`string`): Required. Name of the Kubernetes Deployment whose traffic is managed by the specified Service.\n  - `service` (`string`): Required. Name of the Kubernetes Service.\n\n**Returns**:\n  - An attribute object that represents the `service_networking` sub block.\n', args=[]),
+                '#new':: d.fn(help='\n`google-beta.google_clouddeploy_delivery_pipeline.serial_pipeline.stages.strategy.canary.runtime_config.kubernetes.service_networking.new` constructs a new object with attributes and blocks configured for the `service_networking`\nTerraform sub block.\n\n\n\n**Args**:\n  - `deployment` (`string`): Required. Name of the Kubernetes Deployment whose traffic is managed by the specified Service.\n  - `disable_pod_overprovisioning` (`bool`): Optional. Whether to disable Pod overprovisioning. If Pod overprovisioning is disabled then Cloud Deploy will limit the number of total Pods used for the deployment strategy to the number of Pods the Deployment has on the cluster. When `null`, the `disable_pod_overprovisioning` field will be omitted from the resulting object.\n  - `service` (`string`): Required. Name of the Kubernetes Service.\n\n**Returns**:\n  - An attribute object that represents the `service_networking` sub block.\n', args=[]),
                 new(
                   deployment,
-                  service
+                  service,
+                  disable_pod_overprovisioning=null
                 ):: std.prune(a={
                   deployment: deployment,
+                  disable_pod_overprovisioning: disable_pod_overprovisioning,
                   service: service,
                 }),
               },

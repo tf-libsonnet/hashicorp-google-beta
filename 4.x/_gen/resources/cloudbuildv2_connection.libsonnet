@@ -50,7 +50,49 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
       }),
     },
   },
-  '#new':: d.fn(help="\n`google-beta.google_cloudbuildv2_connection.new` injects a new `google-beta_google_cloudbuildv2_connection` Terraform `resource`\nblock into the root module document.\n\nAdditionally, this inserts a private function into the `_ref` attribute that generates references to attributes of the\nresource. For example, if you added a new instance to the root using:\n\n    # arguments omitted for brevity\n    google-beta.google_cloudbuildv2_connection.new('some_id')\n\nYou can get the reference to the `id` field of the created `google-beta.google_cloudbuildv2_connection` using the reference:\n\n    $._ref.google-beta_google_cloudbuildv2_connection.some_id.get('id')\n\nThis is the same as directly entering `\"${ google-beta_google_cloudbuildv2_connection.some_id.id }\"` as the value.\n\nNOTE: if you are chaining multiple resources together in a merge operation, you may not be able to use `super`, `self`,\nor `$` to refer to the root object. Instead, make an explicit outer object using `local`.\n\n**Args**:\n  - `resourceLabel` (`string`): The name label of the block.\n  - `annotations` (`obj`): Allows clients to store small amounts of arbitrary data. When `null`, the `annotations` field will be omitted from the resulting object.\n  - `disabled` (`bool`): If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled. When `null`, the `disabled` field will be omitted from the resulting object.\n  - `location` (`string`): The location for the resource\n  - `name` (`string`): Immutable. The resource name of the connection, in the format `projects/{project}/locations/{location}/connections/{connection_id}`.\n  - `project` (`string`): The project for the resource When `null`, the `project` field will be omitted from the resulting object.\n  - `github_config` (`list[obj]`): Configuration for connections to github.com. When `null`, the `github_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_config.new](#fn-github_confignew) constructor.\n  - `github_enterprise_config` (`list[obj]`): Configuration for connections to an instance of GitHub Enterprise. When `null`, the `github_enterprise_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_enterprise_config.new](#fn-github_enterprise_confignew) constructor.\n  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.timeouts.new](#fn-timeoutsnew) constructor.\n\n**Returns**:\n- A mixin object that injects the new resource into the root Terraform configuration.\n", args=[]),
+  gitlab_config:: {
+    authorizer_credential:: {
+      '#new':: d.fn(help='\n`google-beta.google_cloudbuildv2_connection.gitlab_config.authorizer_credential.new` constructs a new object with attributes and blocks configured for the `authorizer_credential`\nTerraform sub block.\n\n\n\n**Args**:\n  - `user_token_secret_version` (`string`): Required. A SecretManager resource containing the user token that authorizes the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.\n\n**Returns**:\n  - An attribute object that represents the `authorizer_credential` sub block.\n', args=[]),
+      new(
+        user_token_secret_version
+      ):: std.prune(a={
+        user_token_secret_version: user_token_secret_version,
+      }),
+    },
+    '#new':: d.fn(help='\n`google-beta.google_cloudbuildv2_connection.gitlab_config.new` constructs a new object with attributes and blocks configured for the `gitlab_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `host_uri` (`string`): The URI of the GitLab Enterprise host this connection is for. If not specified, the default value is https://gitlab.com. When `null`, the `host_uri` field will be omitted from the resulting object.\n  - `ssl_ca` (`string`): SSL certificate to use for requests to GitLab Enterprise. When `null`, the `ssl_ca` field will be omitted from the resulting object.\n  - `webhook_secret_secret_version` (`string`): Required. Immutable. SecretManager resource containing the webhook secret of a GitLab Enterprise project, formatted as `projects/*/secrets/*/versions/*`.\n  - `authorizer_credential` (`list[obj]`): Required. A GitLab personal access token with the `api` scope access. When `null`, the `authorizer_credential` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.gitlab_config.authorizer_credential.new](#fn-gitlab_configauthorizer_credentialnew) constructor.\n  - `read_authorizer_credential` (`list[obj]`): Required. A GitLab personal access token with the minimum `read_api` scope access. When `null`, the `read_authorizer_credential` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.gitlab_config.read_authorizer_credential.new](#fn-gitlab_configread_authorizer_credentialnew) constructor.\n  - `service_directory_config` (`list[obj]`): Configuration for using Service Directory to privately connect to a GitLab Enterprise server. This should only be set if the GitLab Enterprise server is hosted on-premises and not reachable by public internet. If this field is left empty, calls to the GitLab Enterprise server will be made over the public internet. When `null`, the `service_directory_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.gitlab_config.service_directory_config.new](#fn-gitlab_configservice_directory_confignew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `gitlab_config` sub block.\n', args=[]),
+    new(
+      webhook_secret_secret_version,
+      authorizer_credential=null,
+      host_uri=null,
+      read_authorizer_credential=null,
+      service_directory_config=null,
+      ssl_ca=null
+    ):: std.prune(a={
+      authorizer_credential: authorizer_credential,
+      host_uri: host_uri,
+      read_authorizer_credential: read_authorizer_credential,
+      service_directory_config: service_directory_config,
+      ssl_ca: ssl_ca,
+      webhook_secret_secret_version: webhook_secret_secret_version,
+    }),
+    read_authorizer_credential:: {
+      '#new':: d.fn(help='\n`google-beta.google_cloudbuildv2_connection.gitlab_config.read_authorizer_credential.new` constructs a new object with attributes and blocks configured for the `read_authorizer_credential`\nTerraform sub block.\n\n\n\n**Args**:\n  - `user_token_secret_version` (`string`): Required. A SecretManager resource containing the user token that authorizes the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.\n\n**Returns**:\n  - An attribute object that represents the `read_authorizer_credential` sub block.\n', args=[]),
+      new(
+        user_token_secret_version
+      ):: std.prune(a={
+        user_token_secret_version: user_token_secret_version,
+      }),
+    },
+    service_directory_config:: {
+      '#new':: d.fn(help='\n`google-beta.google_cloudbuildv2_connection.gitlab_config.service_directory_config.new` constructs a new object with attributes and blocks configured for the `service_directory_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `service` (`string`): Required. The Service Directory service name. Format: projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}.\n\n**Returns**:\n  - An attribute object that represents the `service_directory_config` sub block.\n', args=[]),
+      new(
+        service
+      ):: std.prune(a={
+        service: service,
+      }),
+    },
+  },
+  '#new':: d.fn(help="\n`google-beta.google_cloudbuildv2_connection.new` injects a new `google-beta_google_cloudbuildv2_connection` Terraform `resource`\nblock into the root module document.\n\nAdditionally, this inserts a private function into the `_ref` attribute that generates references to attributes of the\nresource. For example, if you added a new instance to the root using:\n\n    # arguments omitted for brevity\n    google-beta.google_cloudbuildv2_connection.new('some_id')\n\nYou can get the reference to the `id` field of the created `google-beta.google_cloudbuildv2_connection` using the reference:\n\n    $._ref.google-beta_google_cloudbuildv2_connection.some_id.get('id')\n\nThis is the same as directly entering `\"${ google-beta_google_cloudbuildv2_connection.some_id.id }\"` as the value.\n\nNOTE: if you are chaining multiple resources together in a merge operation, you may not be able to use `super`, `self`,\nor `$` to refer to the root object. Instead, make an explicit outer object using `local`.\n\n**Args**:\n  - `resourceLabel` (`string`): The name label of the block.\n  - `annotations` (`obj`): Allows clients to store small amounts of arbitrary data. When `null`, the `annotations` field will be omitted from the resulting object.\n  - `disabled` (`bool`): If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled. When `null`, the `disabled` field will be omitted from the resulting object.\n  - `location` (`string`): The location for the resource\n  - `name` (`string`): Immutable. The resource name of the connection, in the format `projects/{project}/locations/{location}/connections/{connection_id}`.\n  - `project` (`string`): The project for the resource When `null`, the `project` field will be omitted from the resulting object.\n  - `github_config` (`list[obj]`): Configuration for connections to github.com. When `null`, the `github_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_config.new](#fn-github_confignew) constructor.\n  - `github_enterprise_config` (`list[obj]`): Configuration for connections to an instance of GitHub Enterprise. When `null`, the `github_enterprise_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_enterprise_config.new](#fn-github_enterprise_confignew) constructor.\n  - `gitlab_config` (`list[obj]`): Configuration for connections to gitlab.com or an instance of GitLab Enterprise. When `null`, the `gitlab_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.gitlab_config.new](#fn-gitlab_confignew) constructor.\n  - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.timeouts.new](#fn-timeoutsnew) constructor.\n\n**Returns**:\n- A mixin object that injects the new resource into the root Terraform configuration.\n", args=[]),
   new(
     resourceLabel,
     location,
@@ -59,6 +101,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
     disabled=null,
     github_config=null,
     github_enterprise_config=null,
+    gitlab_config=null,
     project=null,
     timeouts=null,
     _meta={}
@@ -70,6 +113,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
       disabled=disabled,
       github_config=github_config,
       github_enterprise_config=github_enterprise_config,
+      gitlab_config=gitlab_config,
       location=location,
       name=name,
       project=project,
@@ -77,7 +121,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
     ),
     _meta=_meta
   ),
-  '#newAttrs':: d.fn(help='\n`google-beta.google_cloudbuildv2_connection.newAttrs` constructs a new object with attributes and blocks configured for the `google_cloudbuildv2_connection`\nTerraform resource.\n\nUnlike [google-beta.google_cloudbuildv2_connection.new](#fn-new), this function will not inject the `resource`\nblock into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the\n[tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.\n\nThis is most useful when you need to preprocess the attributes with functions, conditional, or looping logic prior to\ninjecting into a complete block.\n\n**Args**:\n  - `annotations` (`obj`): Allows clients to store small amounts of arbitrary data. When `null`, the `annotations` field will be omitted from the resulting object.\n  - `disabled` (`bool`): If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled. When `null`, the `disabled` field will be omitted from the resulting object.\n  - `location` (`string`): The location for the resource\n  - `name` (`string`): Immutable. The resource name of the connection, in the format `projects/{project}/locations/{location}/connections/{connection_id}`.\n  - `project` (`string`): The project for the resource When `null`, the `project` field will be omitted from the resulting object.\n  - `github_config` (`list[obj]`): Configuration for connections to github.com. When `null`, the `github_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_config.new](#fn-github_confignew) constructor.\n  - `github_enterprise_config` (`list[obj]`): Configuration for connections to an instance of GitHub Enterprise. When `null`, the `github_enterprise_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_enterprise_config.new](#fn-github_enterprise_confignew) constructor.\n  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.timeouts.new](#fn-timeoutsnew) constructor.\n\n**Returns**:\n  - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_cloudbuildv2_connection` resource into the root Terraform configuration.\n', args=[]),
+  '#newAttrs':: d.fn(help='\n`google-beta.google_cloudbuildv2_connection.newAttrs` constructs a new object with attributes and blocks configured for the `google_cloudbuildv2_connection`\nTerraform resource.\n\nUnlike [google-beta.google_cloudbuildv2_connection.new](#fn-new), this function will not inject the `resource`\nblock into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the\n[tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.\n\nThis is most useful when you need to preprocess the attributes with functions, conditional, or looping logic prior to\ninjecting into a complete block.\n\n**Args**:\n  - `annotations` (`obj`): Allows clients to store small amounts of arbitrary data. When `null`, the `annotations` field will be omitted from the resulting object.\n  - `disabled` (`bool`): If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled. When `null`, the `disabled` field will be omitted from the resulting object.\n  - `location` (`string`): The location for the resource\n  - `name` (`string`): Immutable. The resource name of the connection, in the format `projects/{project}/locations/{location}/connections/{connection_id}`.\n  - `project` (`string`): The project for the resource When `null`, the `project` field will be omitted from the resulting object.\n  - `github_config` (`list[obj]`): Configuration for connections to github.com. When `null`, the `github_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_config.new](#fn-github_confignew) constructor.\n  - `github_enterprise_config` (`list[obj]`): Configuration for connections to an instance of GitHub Enterprise. When `null`, the `github_enterprise_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.github_enterprise_config.new](#fn-github_enterprise_confignew) constructor.\n  - `gitlab_config` (`list[obj]`): Configuration for connections to gitlab.com or an instance of GitLab Enterprise. When `null`, the `gitlab_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.gitlab_config.new](#fn-gitlab_confignew) constructor.\n  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloudbuildv2_connection.timeouts.new](#fn-timeoutsnew) constructor.\n\n**Returns**:\n  - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_cloudbuildv2_connection` resource into the root Terraform configuration.\n', args=[]),
   newAttrs(
     location,
     name,
@@ -85,6 +129,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
     disabled=null,
     github_config=null,
     github_enterprise_config=null,
+    gitlab_config=null,
     project=null,
     timeouts=null
   ):: std.prune(a={
@@ -92,6 +137,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
     disabled: disabled,
     github_config: github_config,
     github_enterprise_config: github_enterprise_config,
+    gitlab_config: gitlab_config,
     location: location,
     name: name,
     project: project,
@@ -165,6 +211,26 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
       google_cloudbuildv2_connection+: {
         [resourceLabel]+: {
           github_enterprise_config+: if std.isArray(v=value) then value else [value],
+        },
+      },
+    },
+  },
+  '#withGitlabConfig':: d.fn(help='`google-beta.list[obj].withGitlabConfig` constructs a mixin object that can be merged into the `list[obj]`\nTerraform resource block to set or update the gitlab_config field.\n\nThis function will replace the array with the passed in `value`. If you wish to instead append the\npassed in value to the existing array, use the [google-beta.list[obj].withGitlabConfigMixin](TODO) function.\n\n\n**Args**:\n  - `resourceLabel` (`string`): The name label of the block to update.\n  - `value` (`list[obj]`): The value to set for the `gitlab_config` field.\n', args=[]),
+  withGitlabConfig(resourceLabel, value): {
+    resource+: {
+      google_cloudbuildv2_connection+: {
+        [resourceLabel]+: {
+          gitlab_config: value,
+        },
+      },
+    },
+  },
+  '#withGitlabConfigMixin':: d.fn(help='`google-beta.list[obj].withGitlabConfigMixin` constructs a mixin object that can be merged into the `list[obj]`\nTerraform resource block to set or update the gitlab_config field.\n\nThis function will append the passed in array or object to the existing array. If you wish\nto instead replace the array with the passed in `value`, use the [google-beta.list[obj].withGitlabConfig](TODO)\nfunction.\n\n\n**Args**:\n  - `resourceLabel` (`string`): The name label of the block to update.\n  - `value` (`list[obj]`): The value to set for the `gitlab_config` field.\n', args=[]),
+  withGitlabConfigMixin(resourceLabel, value): {
+    resource+: {
+      google_cloudbuildv2_connection+: {
+        [resourceLabel]+: {
+          gitlab_config+: if std.isArray(v=value) then value else [value],
         },
       },
     },
