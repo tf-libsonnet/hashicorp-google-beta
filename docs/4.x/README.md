@@ -577,6 +577,7 @@ project.
 * [google_logging_project_bucket_config](google_logging_project_bucket_config.md)
 * [google_logging_project_exclusion](google_logging_project_exclusion.md)
 * [google_logging_project_sink](google_logging_project_sink.md)
+* [google_looker_instance](google_looker_instance.md)
 * [google_memcache_instance](google_memcache_instance.md)
 * [google_ml_engine_model](google_ml_engine_model.md)
 * [google_monitoring_alert_policy](google_monitoring_alert_policy.md)

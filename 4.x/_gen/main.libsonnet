@@ -567,6 +567,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   logging_project_bucket_config: (import 'resources/logging_project_bucket_config.libsonnet'),
   logging_project_exclusion: (import 'resources/logging_project_exclusion.libsonnet'),
   logging_project_sink: (import 'resources/logging_project_sink.libsonnet'),
+  looker_instance: (import 'resources/looker_instance.libsonnet'),
   memcache_instance: (import 'resources/memcache_instance.libsonnet'),
   ml_engine_model: (import 'resources/ml_engine_model.libsonnet'),
   monitoring_alert_policy: (import 'resources/monitoring_alert_policy.libsonnet'),
