@@ -20,6 +20,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withBinaryAuthorizationMixin()`](#fn-withbinaryauthorizationmixin)
 * [`fn withClient()`](#fn-withclient)
 * [`fn withClientVersion()`](#fn-withclientversion)
+* [`fn withCustomAudiences()`](#fn-withcustomaudiences)
 * [`fn withDescription()`](#fn-withdescription)
 * [`fn withIngress()`](#fn-withingress)
 * [`fn withLabels()`](#fn-withlabels)
@@ -127,6 +128,8 @@ All system annotations in v1 now have a corresponding field in v2 Service.
 This field follows Kubernetes annotations&#39; namespacing, limits, and rules. When `null`, the `annotations` field will be omitted from the resulting object.
   - `client` (`string`): Arbitrary identifier for the API client. When `null`, the `client` field will be omitted from the resulting object.
   - `client_version` (`string`): Arbitrary version identifier for the API client. When `null`, the `client_version` field will be omitted from the resulting object.
+  - `custom_audiences` (`list`): One or more custom audiences that you want this service to support. Specify each custom audience as the full URL in a string. The custom audiences are encoded in the token and used to authenticate requests.
+For more information, see https://cloud.google.com/run/docs/configuring/custom-audiences. When `null`, the `custom_audiences` field will be omitted from the resulting object.
   - `description` (`string`): User-provided description of the Service. This field currently has a 512-character limit. When `null`, the `description` field will be omitted from the resulting object.
   - `ingress` (`string`): Provides the ingress settings for this Service. On output, returns the currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no revision is active. Possible values: [&#34;INGRESS_TRAFFIC_ALL&#34;, &#34;INGRESS_TRAFFIC_INTERNAL_ONLY&#34;, &#34;INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER&#34;] When `null`, the `ingress` field will be omitted from the resulting object.
   - `labels` (`obj`): Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google&#39;s billing system, so they can be used to filter, or break down billing charges by team, component,
@@ -176,6 +179,8 @@ All system annotations in v1 now have a corresponding field in v2 Service.
 This field follows Kubernetes annotations&#39; namespacing, limits, and rules. When `null`, the `annotations` field will be omitted from the resulting object.
   - `client` (`string`): Arbitrary identifier for the API client. When `null`, the `client` field will be omitted from the resulting object.
   - `client_version` (`string`): Arbitrary version identifier for the API client. When `null`, the `client_version` field will be omitted from the resulting object.
+  - `custom_audiences` (`list`): One or more custom audiences that you want this service to support. Specify each custom audience as the full URL in a string. The custom audiences are encoded in the token and used to authenticate requests.
+For more information, see https://cloud.google.com/run/docs/configuring/custom-audiences. When `null`, the `custom_audiences` field will be omitted from the resulting object.
   - `description` (`string`): User-provided description of the Service. This field currently has a 512-character limit. When `null`, the `description` field will be omitted from the resulting object.
   - `ingress` (`string`): Provides the ingress settings for this Service. On output, returns the currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no revision is active. Possible values: [&#34;INGRESS_TRAFFIC_ALL&#34;, &#34;INGRESS_TRAFFIC_INTERNAL_ONLY&#34;, &#34;INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER&#34;] When `null`, the `ingress` field will be omitted from the resulting object.
   - `labels` (`obj`): Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google&#39;s billing system, so they can be used to filter, or break down billing charges by team, component,
@@ -282,6 +287,22 @@ Terraform resource block to set or update the client_version field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `client_version` field.
+
+
+### fn withCustomAudiences
+
+```ts
+withCustomAudiences()
+```
+
+`google-beta.list.withCustomAudiences` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the custom_audiences field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `custom_audiences` field.
 
 
 ### fn withDescription
