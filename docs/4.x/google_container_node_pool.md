@@ -45,6 +45,10 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-managementnew)
 * [`obj network_config`](#obj-network_config)
   * [`fn new()`](#fn-network_confignew)
+  * [`obj network_config.additional_node_network_configs`](#obj-network_configadditional_node_network_configs)
+    * [`fn new()`](#fn-network_configadditional_node_network_configsnew)
+  * [`obj network_config.additional_pod_network_configs`](#obj-network_configadditional_pod_network_configs)
+    * [`fn new()`](#fn-network_configadditional_pod_network_configsnew)
   * [`obj network_config.pod_cidr_overprovision_config`](#obj-network_configpod_cidr_overprovision_config)
     * [`fn new()`](#fn-network_configpod_cidr_overprovision_confignew)
 * [`obj node_config`](#obj-node_config)
@@ -669,10 +673,61 @@ Terraform sub block.
   - `enable_private_nodes` (`bool`): Whether nodes have internal IP addresses only. When `null`, the `enable_private_nodes` field will be omitted from the resulting object.
   - `pod_ipv4_cidr_block` (`string`): The IP address range for pod IPs in this node pool. Only applicable if create_pod_range is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. /14) to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14) to pick a specific range to use. When `null`, the `pod_ipv4_cidr_block` field will be omitted from the resulting object.
   - `pod_range` (`string`): The ID of the secondary range for pod IPs. If create_pod_range is true, this ID is used for the new range. If create_pod_range is false, uses an existing secondary range with this ID. When `null`, the `pod_range` field will be omitted from the resulting object.
+  - `additional_node_network_configs` (`list[obj]`): We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface When `null`, the `additional_node_network_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.additional_node_network_configs.new](#fn-network_configadditional_node_network_configsnew) constructor.
+  - `additional_pod_network_configs` (`list[obj]`): We specify the additional pod networks for this node pool using this list. Each pod network corresponds to an additional alias IP range for the node When `null`, the `additional_pod_network_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.additional_pod_network_configs.new](#fn-network_configadditional_pod_network_configsnew) constructor.
   - `pod_cidr_overprovision_config` (`list[obj]`): Configuration for node-pool level pod cidr overprovision. If not set, the cluster level setting will be inherited When `null`, the `pod_cidr_overprovision_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.pod_cidr_overprovision_config.new](#fn-network_configpod_cidr_overprovision_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `network_config` sub block.
+
+
+## obj network_config.additional_node_network_configs
+
+
+
+### fn network_config.additional_node_network_configs.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_node_pool.network_config.additional_node_network_configs.new` constructs a new object with attributes and blocks configured for the `additional_node_network_configs`
+Terraform sub block.
+
+
+
+**Args**:
+  - `network` (`string`): Name of the VPC where the additional interface belongs. When `null`, the `network` field will be omitted from the resulting object.
+  - `subnetwork` (`string`): Name of the subnetwork where the additional interface belongs. When `null`, the `subnetwork` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `additional_node_network_configs` sub block.
+
+
+## obj network_config.additional_pod_network_configs
+
+
+
+### fn network_config.additional_pod_network_configs.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_node_pool.network_config.additional_pod_network_configs.new` constructs a new object with attributes and blocks configured for the `additional_pod_network_configs`
+Terraform sub block.
+
+
+
+**Args**:
+  - `max_pods_per_node` (`number`): The maximum number of pods per node which use this pod network. When `null`, the `max_pods_per_node` field will be omitted from the resulting object.
+  - `secondary_pod_range` (`string`): The name of the secondary range on the subnet which provides IP address for this pod range. When `null`, the `secondary_pod_range` field will be omitted from the resulting object.
+  - `subnetwork` (`string`): Name of the subnetwork where the additional pod network belongs. When `null`, the `subnetwork` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `additional_pod_network_configs` sub block.
 
 
 ## obj network_config.pod_cidr_overprovision_config

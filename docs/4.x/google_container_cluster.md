@@ -17,6 +17,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withAddonsConfig()`](#fn-withaddonsconfig)
 * [`fn withAddonsConfigMixin()`](#fn-withaddonsconfigmixin)
+* [`fn withAllowNetAdmin()`](#fn-withallownetadmin)
 * [`fn withAuthenticatorGroupsConfig()`](#fn-withauthenticatorgroupsconfig)
 * [`fn withAuthenticatorGroupsConfigMixin()`](#fn-withauthenticatorgroupsconfigmixin)
 * [`fn withBinaryAuthorization()`](#fn-withbinaryauthorization)
@@ -45,6 +46,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withEnableKubernetesAlpha()`](#fn-withenablekubernetesalpha)
 * [`fn withEnableL4IlbSubsetting()`](#fn-withenablel4ilbsubsetting)
 * [`fn withEnableLegacyAbac()`](#fn-withenablelegacyabac)
+* [`fn withEnableMultiNetworking()`](#fn-withenablemultinetworking)
 * [`fn withEnableShieldedNodes()`](#fn-withenableshieldednodes)
 * [`fn withEnableTpu()`](#fn-withenabletpu)
 * [`fn withGatewayApiConfig()`](#fn-withgatewayapiconfig)
@@ -246,6 +248,10 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-node_poolmanagementnew)
   * [`obj node_pool.network_config`](#obj-node_poolnetwork_config)
     * [`fn new()`](#fn-node_poolnetwork_confignew)
+    * [`obj node_pool.network_config.additional_node_network_configs`](#obj-node_poolnetwork_configadditional_node_network_configs)
+      * [`fn new()`](#fn-node_poolnetwork_configadditional_node_network_configsnew)
+    * [`obj node_pool.network_config.additional_pod_network_configs`](#obj-node_poolnetwork_configadditional_pod_network_configs)
+      * [`fn new()`](#fn-node_poolnetwork_configadditional_pod_network_configsnew)
     * [`obj node_pool.network_config.pod_cidr_overprovision_config`](#obj-node_poolnetwork_configpod_cidr_overprovision_config)
       * [`fn new()`](#fn-node_poolnetwork_configpod_cidr_overprovision_confignew)
   * [`obj node_pool.node_config`](#obj-node_poolnode_config)
@@ -360,6 +366,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
+  - `allow_net_admin` (`bool`): Enable NET_ADMIN for this cluster. When `null`, the `allow_net_admin` field will be omitted from the resulting object.
   - `cluster_ipv4_cidr` (`string`): The IP address range of the Kubernetes pods in this cluster in CIDR notation (e.g. 10.96.0.0/14). Leave blank to have one automatically chosen or specify a /14 block in 10.0.0.0/8. This field will only work for routes-based clusters, where ip_allocation_policy is not defined. When `null`, the `cluster_ipv4_cidr` field will be omitted from the resulting object.
   - `datapath_provider` (`string`): The desired datapath provider for this cluster. By default, uses the IPTables-based kube-proxy implementation. When `null`, the `datapath_provider` field will be omitted from the resulting object.
   - `default_max_pods_per_node` (`number`): The default maximum number of pods per node in this cluster. This doesn&#39;t work on &#34;routes-based&#34; clusters, clusters that don&#39;t have IP Aliasing enabled. When `null`, the `default_max_pods_per_node` field will be omitted from the resulting object.
@@ -370,6 +377,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `enable_kubernetes_alpha` (`bool`): Whether to enable Kubernetes Alpha features for this cluster. Note that when this option is enabled, the cluster cannot be upgraded and will be automatically deleted after 30 days. When `null`, the `enable_kubernetes_alpha` field will be omitted from the resulting object.
   - `enable_l4_ilb_subsetting` (`bool`): Whether L4ILB Subsetting is enabled for this cluster. When `null`, the `enable_l4_ilb_subsetting` field will be omitted from the resulting object.
   - `enable_legacy_abac` (`bool`): Whether the ABAC authorizer is enabled for this cluster. When enabled, identities in the system, including service accounts, nodes, and controllers, will have statically granted permissions beyond those provided by the RBAC configuration or IAM. Defaults to false. When `null`, the `enable_legacy_abac` field will be omitted from the resulting object.
+  - `enable_multi_networking` (`bool`): Whether multi-networking is enabled for this cluster. When `null`, the `enable_multi_networking` field will be omitted from the resulting object.
   - `enable_shielded_nodes` (`bool`): Enable Shielded Nodes features on all nodes in this cluster. Defaults to true. When `null`, the `enable_shielded_nodes` field will be omitted from the resulting object.
   - `enable_tpu` (`bool`): Whether to enable Cloud TPU resources in this cluster. When `null`, the `enable_tpu` field will be omitted from the resulting object.
   - `initial_node_count` (`number`): The number of nodes to create in this cluster&#39;s default node pool. In regional or multi-zonal clusters, this is the number of nodes per zone. Must be set if node_pool is not set. If you&#39;re using google_container_node_pool objects with no default node pool, you&#39;ll need to set this to a value of at least 1, alongside setting remove_default_node_pool to true. When `null`, the `initial_node_count` field will be omitted from the resulting object.
@@ -446,6 +454,7 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
+  - `allow_net_admin` (`bool`): Enable NET_ADMIN for this cluster. When `null`, the `allow_net_admin` field will be omitted from the resulting object.
   - `cluster_ipv4_cidr` (`string`): The IP address range of the Kubernetes pods in this cluster in CIDR notation (e.g. 10.96.0.0/14). Leave blank to have one automatically chosen or specify a /14 block in 10.0.0.0/8. This field will only work for routes-based clusters, where ip_allocation_policy is not defined. When `null`, the `cluster_ipv4_cidr` field will be omitted from the resulting object.
   - `datapath_provider` (`string`): The desired datapath provider for this cluster. By default, uses the IPTables-based kube-proxy implementation. When `null`, the `datapath_provider` field will be omitted from the resulting object.
   - `default_max_pods_per_node` (`number`): The default maximum number of pods per node in this cluster. This doesn&#39;t work on &#34;routes-based&#34; clusters, clusters that don&#39;t have IP Aliasing enabled. When `null`, the `default_max_pods_per_node` field will be omitted from the resulting object.
@@ -456,6 +465,7 @@ injecting into a complete block.
   - `enable_kubernetes_alpha` (`bool`): Whether to enable Kubernetes Alpha features for this cluster. Note that when this option is enabled, the cluster cannot be upgraded and will be automatically deleted after 30 days. When `null`, the `enable_kubernetes_alpha` field will be omitted from the resulting object.
   - `enable_l4_ilb_subsetting` (`bool`): Whether L4ILB Subsetting is enabled for this cluster. When `null`, the `enable_l4_ilb_subsetting` field will be omitted from the resulting object.
   - `enable_legacy_abac` (`bool`): Whether the ABAC authorizer is enabled for this cluster. When enabled, identities in the system, including service accounts, nodes, and controllers, will have statically granted permissions beyond those provided by the RBAC configuration or IAM. Defaults to false. When `null`, the `enable_legacy_abac` field will be omitted from the resulting object.
+  - `enable_multi_networking` (`bool`): Whether multi-networking is enabled for this cluster. When `null`, the `enable_multi_networking` field will be omitted from the resulting object.
   - `enable_shielded_nodes` (`bool`): Enable Shielded Nodes features on all nodes in this cluster. Defaults to true. When `null`, the `enable_shielded_nodes` field will be omitted from the resulting object.
   - `enable_tpu` (`bool`): Whether to enable Cloud TPU resources in this cluster. When `null`, the `enable_tpu` field will be omitted from the resulting object.
   - `initial_node_count` (`number`): The number of nodes to create in this cluster&#39;s default node pool. In regional or multi-zonal clusters, this is the number of nodes per zone. Must be set if node_pool is not set. If you&#39;re using google_container_node_pool objects with no default node pool, you&#39;ll need to set this to a value of at least 1, alongside setting remove_default_node_pool to true. When `null`, the `initial_node_count` field will be omitted from the resulting object.
@@ -549,6 +559,22 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list[obj]`): The value to set for the `addons_config` field.
+
+
+### fn withAllowNetAdmin
+
+```ts
+withAllowNetAdmin()
+```
+
+`google-beta.bool.withAllowNetAdmin` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the allow_net_admin field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `allow_net_admin` field.
 
 
 ### fn withAuthenticatorGroupsConfig
@@ -1042,6 +1068,22 @@ Terraform resource block to set or update the enable_legacy_abac field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`bool`): The value to set for the `enable_legacy_abac` field.
+
+
+### fn withEnableMultiNetworking
+
+```ts
+withEnableMultiNetworking()
+```
+
+`google-beta.bool.withEnableMultiNetworking` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the enable_multi_networking field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `enable_multi_networking` field.
 
 
 ### fn withEnableShieldedNodes
@@ -3908,10 +3950,61 @@ Terraform sub block.
   - `enable_private_nodes` (`bool`): Whether nodes have internal IP addresses only. When `null`, the `enable_private_nodes` field will be omitted from the resulting object.
   - `pod_ipv4_cidr_block` (`string`): The IP address range for pod IPs in this node pool. Only applicable if create_pod_range is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. /14) to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14) to pick a specific range to use. When `null`, the `pod_ipv4_cidr_block` field will be omitted from the resulting object.
   - `pod_range` (`string`): The ID of the secondary range for pod IPs. If create_pod_range is true, this ID is used for the new range. If create_pod_range is false, uses an existing secondary range with this ID. When `null`, the `pod_range` field will be omitted from the resulting object.
+  - `additional_node_network_configs` (`list[obj]`): We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface When `null`, the `additional_node_network_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.network_config.additional_node_network_configs.new](#fn-node_poolnode_pooladditional_node_network_configsnew) constructor.
+  - `additional_pod_network_configs` (`list[obj]`): We specify the additional pod networks for this node pool using this list. Each pod network corresponds to an additional alias IP range for the node When `null`, the `additional_pod_network_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.network_config.additional_pod_network_configs.new](#fn-node_poolnode_pooladditional_pod_network_configsnew) constructor.
   - `pod_cidr_overprovision_config` (`list[obj]`): Configuration for node-pool level pod cidr overprovision. If not set, the cluster level setting will be inherited When `null`, the `pod_cidr_overprovision_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.network_config.pod_cidr_overprovision_config.new](#fn-node_poolnode_poolpod_cidr_overprovision_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `network_config` sub block.
+
+
+## obj node_pool.network_config.additional_node_network_configs
+
+
+
+### fn node_pool.network_config.additional_node_network_configs.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_pool.network_config.additional_node_network_configs.new` constructs a new object with attributes and blocks configured for the `additional_node_network_configs`
+Terraform sub block.
+
+
+
+**Args**:
+  - `network` (`string`): Name of the VPC where the additional interface belongs. When `null`, the `network` field will be omitted from the resulting object.
+  - `subnetwork` (`string`): Name of the subnetwork where the additional interface belongs. When `null`, the `subnetwork` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `additional_node_network_configs` sub block.
+
+
+## obj node_pool.network_config.additional_pod_network_configs
+
+
+
+### fn node_pool.network_config.additional_pod_network_configs.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_pool.network_config.additional_pod_network_configs.new` constructs a new object with attributes and blocks configured for the `additional_pod_network_configs`
+Terraform sub block.
+
+
+
+**Args**:
+  - `max_pods_per_node` (`number`): The maximum number of pods per node which use this pod network. When `null`, the `max_pods_per_node` field will be omitted from the resulting object.
+  - `secondary_pod_range` (`string`): The name of the secondary range on the subnet which provides IP address for this pod range. When `null`, the `secondary_pod_range` field will be omitted from the resulting object.
+  - `subnetwork` (`string`): Name of the subnetwork where the additional pod network belongs. When `null`, the `subnetwork` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `additional_pod_network_configs` sub block.
 
 
 ## obj node_pool.network_config.pod_cidr_overprovision_config

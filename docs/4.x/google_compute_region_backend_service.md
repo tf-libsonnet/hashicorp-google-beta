@@ -46,6 +46,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withProject()`](#fn-withproject)
 * [`fn withProtocol()`](#fn-withprotocol)
 * [`fn withRegion()`](#fn-withregion)
+* [`fn withSecurityPolicy()`](#fn-withsecuritypolicy)
 * [`fn withSessionAffinity()`](#fn-withsessionaffinity)
 * [`fn withSubsetting()`](#fn-withsubsetting)
 * [`fn withSubsettingMixin()`](#fn-withsubsettingmixin)
@@ -217,6 +218,7 @@ The default is HTTP. **NOTE**: HTTP2 is only valid for beta HTTP/2 load balancer
 types and may result in errors if used with the GA API. Possible values: [&#34;HTTP&#34;, &#34;HTTPS&#34;, &#34;HTTP2&#34;, &#34;SSL&#34;, &#34;TCP&#34;, &#34;UDP&#34;, &#34;GRPC&#34;, &#34;UNSPECIFIED&#34;] When `null`, the `protocol` field will be omitted from the resulting object.
   - `region` (`string`): The Region in which the created backend service should reside.
 If it is not provided, the provider region is used. When `null`, the `region` field will be omitted from the resulting object.
+  - `security_policy` (`string`): The security policy associated with this backend service. When `null`, the `security_policy` field will be omitted from the resulting object.
   - `session_affinity` (`string`): Type of session affinity to use. The default is NONE. Session affinity is
 not applicable if the protocol is UDP. Possible values: [&#34;NONE&#34;, &#34;CLIENT_IP&#34;, &#34;CLIENT_IP_PORT_PROTO&#34;, &#34;CLIENT_IP_PROTO&#34;, &#34;GENERATED_COOKIE&#34;, &#34;HEADER_FIELD&#34;, &#34;HTTP_COOKIE&#34;, &#34;CLIENT_IP_NO_DESTINATION&#34;] When `null`, the `session_affinity` field will be omitted from the resulting object.
   - `timeout_sec` (`number`): How many seconds to wait for the backend before considering it a
@@ -370,6 +372,7 @@ The default is HTTP. **NOTE**: HTTP2 is only valid for beta HTTP/2 load balancer
 types and may result in errors if used with the GA API. Possible values: [&#34;HTTP&#34;, &#34;HTTPS&#34;, &#34;HTTP2&#34;, &#34;SSL&#34;, &#34;TCP&#34;, &#34;UDP&#34;, &#34;GRPC&#34;, &#34;UNSPECIFIED&#34;] When `null`, the `protocol` field will be omitted from the resulting object.
   - `region` (`string`): The Region in which the created backend service should reside.
 If it is not provided, the provider region is used. When `null`, the `region` field will be omitted from the resulting object.
+  - `security_policy` (`string`): The security policy associated with this backend service. When `null`, the `security_policy` field will be omitted from the resulting object.
   - `session_affinity` (`string`): Type of session affinity to use. The default is NONE. Session affinity is
 not applicable if the protocol is UDP. Possible values: [&#34;NONE&#34;, &#34;CLIENT_IP&#34;, &#34;CLIENT_IP_PORT_PROTO&#34;, &#34;CLIENT_IP_PROTO&#34;, &#34;GENERATED_COOKIE&#34;, &#34;HEADER_FIELD&#34;, &#34;HTTP_COOKIE&#34;, &#34;CLIENT_IP_NO_DESTINATION&#34;] When `null`, the `session_affinity` field will be omitted from the resulting object.
   - `timeout_sec` (`number`): How many seconds to wait for the backend before considering it a
@@ -945,6 +948,22 @@ Terraform resource block to set or update the region field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `region` field.
+
+
+### fn withSecurityPolicy
+
+```ts
+withSecurityPolicy()
+```
+
+`google-beta.string.withSecurityPolicy` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the security_policy field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `security_policy` field.
 
 
 ### fn withSessionAffinity
