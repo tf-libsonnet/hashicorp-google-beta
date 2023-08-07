@@ -1383,6 +1383,7 @@ backend. They are always diverted to newly selected healthy backends
 If set to &#39;ALWAYS_PERSIST&#39;, existing connections always persist on
 unhealthy backends regardless of protocol and session affinity. It is
 generally not recommended to use this mode overriding the default. Default value: &#34;DEFAULT_FOR_PROTOCOL&#34; Possible values: [&#34;DEFAULT_FOR_PROTOCOL&#34;, &#34;NEVER_PERSIST&#34;, &#34;ALWAYS_PERSIST&#34;] When `null`, the `connection_persistence_on_unhealthy_backends` field will be omitted from the resulting object.
+  - `enable_strong_affinity` (`bool`): Enable Strong Session Affinity for Network Load Balancing. This option is not available publicly. When `null`, the `enable_strong_affinity` field will be omitted from the resulting object.
   - `idle_timeout_sec` (`number`): Specifies how long to keep a Connection Tracking entry while there is
 no matching traffic (in seconds).
 

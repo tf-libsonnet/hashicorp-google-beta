@@ -42,6 +42,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-hostnew)
   * [`obj host.gce_instance`](#obj-hostgce_instance)
     * [`fn new()`](#fn-hostgce_instancenew)
+    * [`obj host.gce_instance.accelerators`](#obj-hostgce_instanceaccelerators)
+      * [`fn new()`](#fn-hostgce_instanceacceleratorsnew)
     * [`obj host.gce_instance.confidential_instance_config`](#obj-hostgce_instanceconfidential_instance_config)
       * [`fn new()`](#fn-hostgce_instanceconfidential_instance_confignew)
     * [`obj host.gce_instance.shielded_instance_config`](#obj-hostgce_instanceshielded_instance_config)
@@ -577,11 +579,36 @@ Terraform sub block.
   - `pool_size` (`number`): Number of instances to pool for faster workstation startup. When `null`, the `pool_size` field will be omitted from the resulting object.
   - `service_account` (`string`): Email address of the service account that will be used on VM instances used to support this config. This service account must have permission to pull the specified container image. If not set, VMs will run without a service account, in which case the image must be publicly accessible. When `null`, the `service_account` field will be omitted from the resulting object.
   - `tags` (`list`): Network tags to add to the Compute Engine machines backing the Workstations. When `null`, the `tags` field will be omitted from the resulting object.
+  - `accelerators` (`list[obj]`): An accelerator card attached to the instance. When `null`, the `accelerators` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.host.gce_instance.accelerators.new](#fn-hosthostacceleratorsnew) constructor.
   - `confidential_instance_config` (`list[obj]`): A set of Compute Engine Confidential VM instance options. When `null`, the `confidential_instance_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.host.gce_instance.confidential_instance_config.new](#fn-hosthostconfidential_instance_confignew) constructor.
   - `shielded_instance_config` (`list[obj]`): A set of Compute Engine Shielded instance options. When `null`, the `shielded_instance_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.host.gce_instance.shielded_instance_config.new](#fn-hosthostshielded_instance_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `gce_instance` sub block.
+
+
+## obj host.gce_instance.accelerators
+
+
+
+### fn host.gce_instance.accelerators.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_workstations_workstation_config.host.gce_instance.accelerators.new` constructs a new object with attributes and blocks configured for the `accelerators`
+Terraform sub block.
+
+
+
+**Args**:
+  - `count` (`number`): Number of accelerator cards exposed to the instance.
+  - `type` (`string`): Type of accelerator resource to attach to the instance, for example, &#34;nvidia-tesla-p100&#34;.
+
+**Returns**:
+  - An attribute object that represents the `accelerators` sub block.
 
 
 ## obj host.gce_instance.confidential_instance_config
