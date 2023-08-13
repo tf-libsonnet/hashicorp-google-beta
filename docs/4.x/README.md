@@ -432,6 +432,8 @@ project.
 * [google_dns_response_policy_rule](google_dns_response_policy_rule.md)
 * [google_document_ai_processor](google_document_ai_processor.md)
 * [google_document_ai_processor_default_version](google_document_ai_processor_default_version.md)
+* [google_document_ai_warehouse_document_schema](google_document_ai_warehouse_document_schema.md)
+* [google_document_ai_warehouse_location](google_document_ai_warehouse_location.md)
 * [google_endpoints_service](google_endpoints_service.md)
 * [google_endpoints_service_consumers_iam_binding](google_endpoints_service_consumers_iam_binding.md)
 * [google_endpoints_service_consumers_iam_member](google_endpoints_service_consumers_iam_member.md)
