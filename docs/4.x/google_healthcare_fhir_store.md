@@ -563,6 +563,11 @@ Note that setting this to true does not guarantee that all resources will be sen
 full FHIR resource. When a resource change is too large or during heavy traffic, only the resource name will be
 sent. Clients should always check the &#34;payloadType&#34; label from a Pub/Sub message to determine whether
 it needs to fetch the full resource as a separate operation. When `null`, the `send_full_resource` field will be omitted from the resulting object.
+  - `send_previous_resource_on_delete` (`bool`): Whether to send full FHIR resource to this Pub/Sub topic for deleting FHIR resource. Note that setting this to
+true does not guarantee that all previous resources will be sent in the format of full FHIR resource. When a
+resource change is too large or during heavy traffic, only the resource name will be sent. Clients should always
+check the &#34;payloadType&#34; label from a Pub/Sub message to determine whether it needs to fetch the full previous
+resource as a separate operation. When `null`, the `send_previous_resource_on_delete` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `notification_configs` sub block.
