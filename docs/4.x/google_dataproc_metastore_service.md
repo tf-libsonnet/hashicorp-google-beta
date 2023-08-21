@@ -32,6 +32,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withPort()`](#fn-withport)
 * [`fn withProject()`](#fn-withproject)
 * [`fn withReleaseChannel()`](#fn-withreleasechannel)
+* [`fn withScalingConfig()`](#fn-withscalingconfig)
+* [`fn withScalingConfigMixin()`](#fn-withscalingconfigmixin)
 * [`fn withServiceId()`](#fn-withserviceid)
 * [`fn withTelemetryConfig()`](#fn-withtelemetryconfig)
 * [`fn withTelemetryConfigMixin()`](#fn-withtelemetryconfigmixin)
@@ -58,6 +60,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-network_confignew)
   * [`obj network_config.consumers`](#obj-network_configconsumers)
     * [`fn new()`](#fn-network_configconsumersnew)
+* [`obj scaling_config`](#obj-scaling_config)
+  * [`fn new()`](#fn-scaling_confignew)
 * [`obj telemetry_config`](#obj-telemetry_config)
   * [`fn new()`](#fn-telemetry_confignew)
 * [`obj timeouts`](#obj-timeouts)
@@ -114,6 +118,7 @@ This specifies when the service can be restarted for maintenance purposes in UTC
 Maintenance window is not needed for services with the &#39;SPANNER&#39; database type. When `null`, the `maintenance_window` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.maintenance_window.new](#fn-maintenance_windownew) constructor.
   - `metadata_integration` (`list[obj]`): The setting that defines how metastore metadata should be integrated with external services and systems. When `null`, the `metadata_integration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.metadata_integration.new](#fn-metadata_integrationnew) constructor.
   - `network_config` (`list[obj]`): The configuration specifying the network settings for the Dataproc Metastore service. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.network_config.new](#fn-network_confignew) constructor.
+  - `scaling_config` (`list[obj]`): Represents the scaling configuration of a metastore service. When `null`, the `scaling_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.scaling_config.new](#fn-scaling_confignew) constructor.
   - `telemetry_config` (`list[obj]`): The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON. When `null`, the `telemetry_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.telemetry_config.new](#fn-telemetry_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -161,6 +166,7 @@ This specifies when the service can be restarted for maintenance purposes in UTC
 Maintenance window is not needed for services with the &#39;SPANNER&#39; database type. When `null`, the `maintenance_window` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.maintenance_window.new](#fn-maintenance_windownew) constructor.
   - `metadata_integration` (`list[obj]`): The setting that defines how metastore metadata should be integrated with external services and systems. When `null`, the `metadata_integration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.metadata_integration.new](#fn-metadata_integrationnew) constructor.
   - `network_config` (`list[obj]`): The configuration specifying the network settings for the Dataproc Metastore service. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.network_config.new](#fn-network_confignew) constructor.
+  - `scaling_config` (`list[obj]`): Represents the scaling configuration of a metastore service. When `null`, the `scaling_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.scaling_config.new](#fn-scaling_confignew) constructor.
   - `telemetry_config` (`list[obj]`): The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON. When `null`, the `telemetry_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.telemetry_config.new](#fn-telemetry_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -463,6 +469,43 @@ Terraform resource block to set or update the release_channel field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `release_channel` field.
+
+
+### fn withScalingConfig
+
+```ts
+withScalingConfig()
+```
+
+`google-beta.list[obj].withScalingConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the scaling_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withScalingConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `scaling_config` field.
+
+
+### fn withScalingConfigMixin
+
+```ts
+withScalingConfigMixin()
+```
+
+`google-beta.list[obj].withScalingConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the scaling_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withScalingConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `scaling_config` field.
 
 
 ### fn withServiceId
@@ -819,6 +862,30 @@ There must be at least one IP address available in the subnet&#39;s primary rang
 
 **Returns**:
   - An attribute object that represents the `consumers` sub block.
+
+
+## obj scaling_config
+
+
+
+### fn scaling_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataproc_metastore_service.scaling_config.new` constructs a new object with attributes and blocks configured for the `scaling_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `instance_size` (`string`): Metastore instance sizes. Possible values: [&#34;EXTRA_SMALL&#34;, &#34;SMALL&#34;, &#34;MEDIUM&#34;, &#34;LARGE&#34;, &#34;EXTRA_LARGE&#34;] When `null`, the `instance_size` field will be omitted from the resulting object.
+  - `scaling_factor` (`number`): Scaling factor, in increments of 0.1 for values less than 1.0, and increments of 1.0 for values greater than 1.0. When `null`, the `scaling_factor` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `scaling_config` sub block.
 
 
 ## obj telemetry_config
