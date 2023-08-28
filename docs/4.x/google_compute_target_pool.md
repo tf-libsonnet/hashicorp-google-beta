@@ -23,6 +23,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withName()`](#fn-withname)
 * [`fn withProject()`](#fn-withproject)
 * [`fn withRegion()`](#fn-withregion)
+* [`fn withSecurityPolicy()`](#fn-withsecuritypolicy)
 * [`fn withSessionAffinity()`](#fn-withsessionaffinity)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
@@ -66,6 +67,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `name` (`string`): A unique name for the resource, required by GCE. Changing this forces a new resource to be created.
   - `project` (`string`): The ID of the project in which the resource belongs. If it is not provided, the provider project is used. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): Where the target pool resides. Defaults to project region. When `null`, the `region` field will be omitted from the resulting object.
+  - `security_policy` (`string`): The resource URL for the security policy associated with this target pool. When `null`, the `security_policy` field will be omitted from the resulting object.
   - `session_affinity` (`string`): How to distribute load. Options are &#34;NONE&#34; (no affinity). &#34;CLIENT_IP&#34; (hash of the source/dest addresses / ports), and &#34;CLIENT_IP_PROTO&#34; also includes the protocol (default &#34;NONE&#34;). When `null`, the `session_affinity` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_target_pool.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -99,6 +101,7 @@ injecting into a complete block.
   - `name` (`string`): A unique name for the resource, required by GCE. Changing this forces a new resource to be created.
   - `project` (`string`): The ID of the project in which the resource belongs. If it is not provided, the provider project is used. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): Where the target pool resides. Defaults to project region. When `null`, the `region` field will be omitted from the resulting object.
+  - `security_policy` (`string`): The resource URL for the security policy associated with this target pool. When `null`, the `security_policy` field will be omitted from the resulting object.
   - `session_affinity` (`string`): How to distribute load. Options are &#34;NONE&#34; (no affinity). &#34;CLIENT_IP&#34; (hash of the source/dest addresses / ports), and &#34;CLIENT_IP_PROTO&#34; also includes the protocol (default &#34;NONE&#34;). When `null`, the `session_affinity` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_target_pool.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -232,6 +235,22 @@ Terraform resource block to set or update the region field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `region` field.
+
+
+### fn withSecurityPolicy
+
+```ts
+withSecurityPolicy()
+```
+
+`google-beta.string.withSecurityPolicy` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the security_policy field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `security_policy` field.
 
 
 ### fn withSessionAffinity

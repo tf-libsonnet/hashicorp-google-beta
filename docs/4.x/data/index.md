@@ -229,6 +229,7 @@ permalink: /data/
 * [google_sql_ca_certs](google_sql_ca_certs.md)
 * [google_sql_database](google_sql_database.md)
 * [google_sql_database_instance](google_sql_database_instance.md)
+* [google_sql_database_instance_latest_recovery_time](google_sql_database_instance_latest_recovery_time.md)
 * [google_sql_database_instances](google_sql_database_instances.md)
 * [google_sql_databases](google_sql_databases.md)
 * [google_sql_tiers](google_sql_tiers.md)
