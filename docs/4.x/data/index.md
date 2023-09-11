@@ -149,6 +149,7 @@ permalink: /data/
 * [google_gke_backup_backup_plan_iam_policy](google_gke_backup_backup_plan_iam_policy.md)
 * [google_gke_hub_feature_iam_policy](google_gke_hub_feature_iam_policy.md)
 * [google_gke_hub_membership_iam_policy](google_gke_hub_membership_iam_policy.md)
+* [google_gke_hub_scope_iam_policy](google_gke_hub_scope_iam_policy.md)
 * [google_healthcare_consent_store_iam_policy](google_healthcare_consent_store_iam_policy.md)
 * [google_healthcare_dataset_iam_policy](google_healthcare_dataset_iam_policy.md)
 * [google_healthcare_dicom_store_iam_policy](google_healthcare_dicom_store_iam_policy.md)
