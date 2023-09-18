@@ -41,6 +41,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withStorageMixin()`](#fn-withstoragemixin)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`fn withUpgradePolicy()`](#fn-withupgradepolicy)
+* [`fn withUpgradePolicyMixin()`](#fn-withupgradepolicymixin)
 * [`fn withVmTrackingEnabled()`](#fn-withvmtrackingenabled)
 * [`obj anti_affinity_groups`](#obj-anti_affinity_groups)
   * [`fn new()`](#fn-anti_affinity_groupsnew)
@@ -90,6 +92,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-storagenew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
+* [`obj upgrade_policy`](#obj-upgrade_policy)
+  * [`fn new()`](#fn-upgrade_policynew)
 
 ## Fields
 
@@ -149,6 +153,7 @@ least three physical hosts in the datacenter. When `null`, the `anti_affinity_gr
   - `network_config` (`list[obj]`): The VMware User Cluster network configuration. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.network_config.new](#fn-network_confignew) constructor.
   - `storage` (`list[obj]`): Storage configuration. When `null`, the `storage` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.storage.new](#fn-storagenew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.timeouts.new](#fn-timeoutsnew) constructor.
+  - `upgrade_policy` (`list[obj]`): Specifies upgrade policy for the cluster. When `null`, the `upgrade_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.upgrade_policy.new](#fn-upgrade_policynew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -201,6 +206,7 @@ least three physical hosts in the datacenter. When `null`, the `anti_affinity_gr
   - `network_config` (`list[obj]`): The VMware User Cluster network configuration. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.network_config.new](#fn-network_confignew) constructor.
   - `storage` (`list[obj]`): Storage configuration. When `null`, the `storage` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.storage.new](#fn-storagenew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.timeouts.new](#fn-timeoutsnew) constructor.
+  - `upgrade_policy` (`list[obj]`): Specifies upgrade policy for the cluster. When `null`, the `upgrade_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.upgrade_policy.new](#fn-upgrade_policynew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_gkeonprem_vmware_cluster` resource into the root Terraform configuration.
@@ -664,6 +670,43 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `timeouts` field.
+
+
+### fn withUpgradePolicy
+
+```ts
+withUpgradePolicy()
+```
+
+`google-beta.list[obj].withUpgradePolicy` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the upgrade_policy field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withUpgradePolicyMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `upgrade_policy` field.
+
+
+### fn withUpgradePolicyMixin
+
+```ts
+withUpgradePolicyMixin()
+```
+
+`google-beta.list[obj].withUpgradePolicyMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the upgrade_policy field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withUpgradePolicy](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `upgrade_policy` field.
 
 
 ### fn withVmTrackingEnabled
@@ -1287,3 +1330,26 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.
+
+
+## obj upgrade_policy
+
+
+
+### fn upgrade_policy.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_gkeonprem_vmware_cluster.upgrade_policy.new` constructs a new object with attributes and blocks configured for the `upgrade_policy`
+Terraform sub block.
+
+
+
+**Args**:
+  - `control_plane_only` (`bool`): Controls whether the upgrade applies to the control plane only. When `null`, the `control_plane_only` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `upgrade_policy` sub block.

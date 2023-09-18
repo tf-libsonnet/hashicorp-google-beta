@@ -18,6 +18,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withAdminClusterMembership()`](#fn-withadminclustermembership)
 * [`fn withAnnotations()`](#fn-withannotations)
 * [`fn withBareMetalVersion()`](#fn-withbaremetalversion)
+* [`fn withBinaryAuthorization()`](#fn-withbinaryauthorization)
+* [`fn withBinaryAuthorizationMixin()`](#fn-withbinaryauthorizationmixin)
 * [`fn withClusterOperations()`](#fn-withclusteroperations)
 * [`fn withClusterOperationsMixin()`](#fn-withclusteroperationsmixin)
 * [`fn withControlPlane()`](#fn-withcontrolplane)
@@ -46,6 +48,10 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withStorageMixin()`](#fn-withstoragemixin)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`fn withUpgradePolicy()`](#fn-withupgradepolicy)
+* [`fn withUpgradePolicyMixin()`](#fn-withupgradepolicymixin)
+* [`obj binary_authorization`](#obj-binary_authorization)
+  * [`fn new()`](#fn-binary_authorizationnew)
 * [`obj cluster_operations`](#obj-cluster_operations)
   * [`fn new()`](#fn-cluster_operationsnew)
 * [`obj control_plane`](#obj-control_plane)
@@ -130,6 +136,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-storagelvp_share_configlvp_confignew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
+* [`obj upgrade_policy`](#obj-upgrade_policy)
+  * [`fn new()`](#fn-upgrade_policynew)
 
 ## Fields
 
@@ -175,6 +183,7 @@ with dashes (-), underscores (_), dots (.), and alphanumerics between. When `nul
   - `location` (`string`): The location of the resource.
   - `name` (`string`): The bare metal cluster name.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
+  - `binary_authorization` (`list[obj]`): Binary Authorization related configurations. When `null`, the `binary_authorization` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.binary_authorization.new](#fn-binary_authorizationnew) constructor.
   - `cluster_operations` (`list[obj]`): Specifies the User Cluster&#39;s observability infrastructure. When `null`, the `cluster_operations` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.cluster_operations.new](#fn-cluster_operationsnew) constructor.
   - `control_plane` (`list[obj]`): Specifies the control plane configuration. When `null`, the `control_plane` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.control_plane.new](#fn-control_planenew) constructor.
   - `load_balancer` (`list[obj]`): Specifies the load balancer configuration. When `null`, the `load_balancer` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.load_balancer.new](#fn-load_balancernew) constructor.
@@ -187,6 +196,7 @@ with dashes (-), underscores (_), dots (.), and alphanumerics between. When `nul
   - `security_config` (`list[obj]`): Specifies the security related settings for the Bare Metal User Cluster. When `null`, the `security_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.security_config.new](#fn-security_confignew) constructor.
   - `storage` (`list[obj]`): Specifies the cluster storage configuration. When `null`, the `storage` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.storage.new](#fn-storagenew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.timeouts.new](#fn-timeoutsnew) constructor.
+  - `upgrade_policy` (`list[obj]`): The cluster upgrade policy. When `null`, the `upgrade_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.upgrade_policy.new](#fn-upgrade_policynew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -225,6 +235,7 @@ with dashes (-), underscores (_), dots (.), and alphanumerics between. When `nul
   - `location` (`string`): The location of the resource.
   - `name` (`string`): The bare metal cluster name.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
+  - `binary_authorization` (`list[obj]`): Binary Authorization related configurations. When `null`, the `binary_authorization` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.binary_authorization.new](#fn-binary_authorizationnew) constructor.
   - `cluster_operations` (`list[obj]`): Specifies the User Cluster&#39;s observability infrastructure. When `null`, the `cluster_operations` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.cluster_operations.new](#fn-cluster_operationsnew) constructor.
   - `control_plane` (`list[obj]`): Specifies the control plane configuration. When `null`, the `control_plane` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.control_plane.new](#fn-control_planenew) constructor.
   - `load_balancer` (`list[obj]`): Specifies the load balancer configuration. When `null`, the `load_balancer` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.load_balancer.new](#fn-load_balancernew) constructor.
@@ -237,6 +248,7 @@ with dashes (-), underscores (_), dots (.), and alphanumerics between. When `nul
   - `security_config` (`list[obj]`): Specifies the security related settings for the Bare Metal User Cluster. When `null`, the `security_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.security_config.new](#fn-security_confignew) constructor.
   - `storage` (`list[obj]`): Specifies the cluster storage configuration. When `null`, the `storage` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.storage.new](#fn-storagenew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.timeouts.new](#fn-timeoutsnew) constructor.
+  - `upgrade_policy` (`list[obj]`): The cluster upgrade policy. When `null`, the `upgrade_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_bare_metal_cluster.upgrade_policy.new](#fn-upgrade_policynew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_gkeonprem_bare_metal_cluster` resource into the root Terraform configuration.
@@ -288,6 +300,43 @@ Terraform resource block to set or update the bare_metal_version field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `bare_metal_version` field.
+
+
+### fn withBinaryAuthorization
+
+```ts
+withBinaryAuthorization()
+```
+
+`google-beta.list[obj].withBinaryAuthorization` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the binary_authorization field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withBinaryAuthorizationMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `binary_authorization` field.
+
+
+### fn withBinaryAuthorizationMixin
+
+```ts
+withBinaryAuthorizationMixin()
+```
+
+`google-beta.list[obj].withBinaryAuthorizationMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the binary_authorization field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withBinaryAuthorization](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `binary_authorization` field.
 
 
 ### fn withClusterOperations
@@ -795,6 +844,67 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `timeouts` field.
+
+
+### fn withUpgradePolicy
+
+```ts
+withUpgradePolicy()
+```
+
+`google-beta.list[obj].withUpgradePolicy` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the upgrade_policy field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withUpgradePolicyMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `upgrade_policy` field.
+
+
+### fn withUpgradePolicyMixin
+
+```ts
+withUpgradePolicyMixin()
+```
+
+`google-beta.list[obj].withUpgradePolicyMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the upgrade_policy field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withUpgradePolicy](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `upgrade_policy` field.
+
+
+## obj binary_authorization
+
+
+
+### fn binary_authorization.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_gkeonprem_bare_metal_cluster.binary_authorization.new` constructs a new object with attributes and blocks configured for the `binary_authorization`
+Terraform sub block.
+
+
+
+**Args**:
+  - `evaluation_mode` (`string`): Mode of operation for binauthz policy evaluation. If unspecified,
+defaults to DISABLED. Possible values: [&#34;DISABLED&#34;, &#34;PROJECT_SINGLETON_POLICY_ENFORCE&#34;] When `null`, the `evaluation_mode` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `binary_authorization` sub block.
 
 
 ## obj cluster_operations
@@ -1923,3 +2033,26 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.
+
+
+## obj upgrade_policy
+
+
+
+### fn upgrade_policy.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_gkeonprem_bare_metal_cluster.upgrade_policy.new` constructs a new object with attributes and blocks configured for the `upgrade_policy`
+Terraform sub block.
+
+
+
+**Args**:
+  - `policy` (`string`): Specifies which upgrade policy to use. Possible values: [&#34;SERIAL&#34;, &#34;CONCURRENT&#34;] When `null`, the `policy` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `upgrade_policy` sub block.
