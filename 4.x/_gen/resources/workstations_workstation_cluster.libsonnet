@@ -58,10 +58,12 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
     workstation_cluster_id: workstation_cluster_id,
   }),
   private_cluster_config:: {
-    '#new':: d.fn(help='\n`google-beta.google_workstations_workstation_cluster.private_cluster_config.new` constructs a new object with attributes and blocks configured for the `private_cluster_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `enable_private_endpoint` (`bool`): Whether Workstations endpoint is private.\n\n**Returns**:\n  - An attribute object that represents the `private_cluster_config` sub block.\n', args=[]),
+    '#new':: d.fn(help='\n`google-beta.google_workstations_workstation_cluster.private_cluster_config.new` constructs a new object with attributes and blocks configured for the `private_cluster_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `allowed_projects` (`list`): Additional project IDs that are allowed to attach to the workstation cluster&#39;s service attachment.\nBy default, the workstation cluster&#39;s project and the VPC host project (if different) are allowed. When `null`, the `allowed_projects` field will be omitted from the resulting object.\n  - `enable_private_endpoint` (`bool`): Whether Workstations endpoint is private.\n\n**Returns**:\n  - An attribute object that represents the `private_cluster_config` sub block.\n', args=[]),
     new(
-      enable_private_endpoint
+      enable_private_endpoint,
+      allowed_projects=null
     ):: std.prune(a={
+      allowed_projects: allowed_projects,
       enable_private_endpoint: enable_private_endpoint,
     }),
   },

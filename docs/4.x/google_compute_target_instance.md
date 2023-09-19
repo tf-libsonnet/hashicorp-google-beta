@@ -21,6 +21,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withNatPolicy()`](#fn-withnatpolicy)
 * [`fn withNetwork()`](#fn-withnetwork)
 * [`fn withProject()`](#fn-withproject)
+* [`fn withSecurityPolicy()`](#fn-withsecuritypolicy)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withZone()`](#fn-withzone)
@@ -74,6 +75,7 @@ character, which cannot be a dash.
 Currently only NO_NAT (default value) is supported. Default value: &#34;NO_NAT&#34; Possible values: [&#34;NO_NAT&#34;] When `null`, the `nat_policy` field will be omitted from the resulting object.
   - `network` (`string`): The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to. When `null`, the `network` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
+  - `security_policy` (`string`): The resource URL for the security policy associated with this target instance. When `null`, the `security_policy` field will be omitted from the resulting object.
   - `zone` (`string`): URL of the zone where the target instance resides. When `null`, the `zone` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_target_instance.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -117,6 +119,7 @@ character, which cannot be a dash.
 Currently only NO_NAT (default value) is supported. Default value: &#34;NO_NAT&#34; Possible values: [&#34;NO_NAT&#34;] When `null`, the `nat_policy` field will be omitted from the resulting object.
   - `network` (`string`): The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to. When `null`, the `network` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
+  - `security_policy` (`string`): The resource URL for the security policy associated with this target instance. When `null`, the `security_policy` field will be omitted from the resulting object.
   - `zone` (`string`): URL of the zone where the target instance resides. When `null`, the `zone` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_target_instance.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -220,6 +223,22 @@ Terraform resource block to set or update the project field.
   - `value` (`string`): The value to set for the `project` field.
 
 
+### fn withSecurityPolicy
+
+```ts
+withSecurityPolicy()
+```
+
+`google-beta.string.withSecurityPolicy` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the security_policy field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `security_policy` field.
+
+
 ### fn withTimeouts
 
 ```ts
@@ -291,6 +310,7 @@ Terraform sub block.
 **Args**:
   - `create` (`string`): Set the `create` field on the resulting object. When `null`, the `create` field will be omitted from the resulting object.
   - `delete` (`string`): Set the `delete` field on the resulting object. When `null`, the `delete` field will be omitted from the resulting object.
+  - `update` (`string`): Set the `update` field on the resulting object. When `null`, the `update` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.

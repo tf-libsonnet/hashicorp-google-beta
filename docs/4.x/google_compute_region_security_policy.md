@@ -24,10 +24,14 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withType()`](#fn-withtype)
+* [`fn withUserDefinedFields()`](#fn-withuserdefinedfields)
+* [`fn withUserDefinedFieldsMixin()`](#fn-withuserdefinedfieldsmixin)
 * [`obj ddos_protection_config`](#obj-ddos_protection_config)
   * [`fn new()`](#fn-ddos_protection_confignew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
+* [`obj user_defined_fields`](#obj-user_defined_fields)
+  * [`fn new()`](#fn-user_defined_fieldsnew)
 
 ## Fields
 
@@ -71,6 +75,9 @@ If it is not provided, the provider region is used. When `null`, the `region` fi
 This field can be set only at resource creation time. Possible values: [&#34;CLOUD_ARMOR&#34;, &#34;CLOUD_ARMOR_EDGE&#34;, &#34;CLOUD_ARMOR_NETWORK&#34;] When `null`, the `type` field will be omitted from the resulting object.
   - `ddos_protection_config` (`list[obj]`): Configuration for Google Cloud Armor DDOS Proctection Config. When `null`, the `ddos_protection_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_security_policy.ddos_protection_config.new](#fn-ddos_protection_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_security_policy.timeouts.new](#fn-timeoutsnew) constructor.
+  - `user_defined_fields` (`list[obj]`): Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies.
+A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits.
+Rules may then specify matching values for these fields. When `null`, the `user_defined_fields` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_security_policy.user_defined_fields.new](#fn-user_defined_fieldsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -107,6 +114,9 @@ If it is not provided, the provider region is used. When `null`, the `region` fi
 This field can be set only at resource creation time. Possible values: [&#34;CLOUD_ARMOR&#34;, &#34;CLOUD_ARMOR_EDGE&#34;, &#34;CLOUD_ARMOR_NETWORK&#34;] When `null`, the `type` field will be omitted from the resulting object.
   - `ddos_protection_config` (`list[obj]`): Configuration for Google Cloud Armor DDOS Proctection Config. When `null`, the `ddos_protection_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_security_policy.ddos_protection_config.new](#fn-ddos_protection_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_security_policy.timeouts.new](#fn-timeoutsnew) constructor.
+  - `user_defined_fields` (`list[obj]`): Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies.
+A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits.
+Rules may then specify matching values for these fields. When `null`, the `user_defined_fields` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_region_security_policy.user_defined_fields.new](#fn-user_defined_fieldsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_compute_region_security_policy` resource into the root Terraform configuration.
@@ -265,6 +275,43 @@ Terraform resource block to set or update the type field.
   - `value` (`string`): The value to set for the `type` field.
 
 
+### fn withUserDefinedFields
+
+```ts
+withUserDefinedFields()
+```
+
+`google-beta.list[obj].withUserDefinedFields` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the user_defined_fields field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withUserDefinedFieldsMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `user_defined_fields` field.
+
+
+### fn withUserDefinedFieldsMixin
+
+```ts
+withUserDefinedFieldsMixin()
+```
+
+`google-beta.list[obj].withUserDefinedFieldsMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the user_defined_fields field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withUserDefinedFields](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `user_defined_fields` field.
+
+
 ## obj ddos_protection_config
 
 
@@ -314,3 +361,36 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.
+
+
+## obj user_defined_fields
+
+
+
+### fn user_defined_fields.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_compute_region_security_policy.user_defined_fields.new` constructs a new object with attributes and blocks configured for the `user_defined_fields`
+Terraform sub block.
+
+
+
+**Args**:
+  - `base` (`string`): The base relative to which &#39;offset&#39; is measured. Possible values are:
+- IPV4: Points to the beginning of the IPv4 header.
+- IPV6: Points to the beginning of the IPv6 header.
+- TCP: Points to the beginning of the TCP header, skipping over any IPv4 options or IPv6 extension headers. Not present for non-first fragments.
+- UDP: Points to the beginning of the UDP header, skipping over any IPv4 options or IPv6 extension headers. Not present for non-first fragments. Possible values: [&#34;IPV4&#34;, &#34;IPV6&#34;, &#34;TCP&#34;, &#34;UDP&#34;]
+  - `mask` (`string`): If specified, apply this mask (bitwise AND) to the field to ignore bits before matching.
+Encoded as a hexadecimal number (starting with &#34;0x&#34;).
+The last byte of the field (in network byte order) corresponds to the least significant byte of the mask. When `null`, the `mask` field will be omitted from the resulting object.
+  - `name` (`string`): The name of this field. Must be unique within the policy. When `null`, the `name` field will be omitted from the resulting object.
+  - `offset` (`number`): Offset of the first byte of the field (in network byte order) relative to &#39;base&#39;. When `null`, the `offset` field will be omitted from the resulting object.
+  - `size` (`number`): Size of the field in bytes. Valid values: 1-4. When `null`, the `size` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `user_defined_fields` sub block.

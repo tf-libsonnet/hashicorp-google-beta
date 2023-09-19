@@ -15,6 +15,7 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withApiKeyId()`](#fn-withapikeyid)
 * [`fn withDeletionPolicy()`](#fn-withdeletionpolicy)
 * [`fn withDisplayName()`](#fn-withdisplayname)
 * [`fn withProject()`](#fn-withproject)
@@ -52,6 +53,9 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
+  - `api_key_id` (`string`): The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the WebApp.
+If apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the WebApp.
+This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned. When `null`, the `api_key_id` field will be omitted from the resulting object.
   - `deletion_policy` (`string`): Set to &#39;ABANDON&#39; to allow the WebApp to be untracked from terraform state
 rather than deleted upon &#39;terraform destroy&#39;. This is useful becaue the WebApp may be
 serving traffic. Set to &#39;DELETE&#39; to delete the WebApp. Default to &#39;ABANDON&#39; When `null`, the `deletion_policy` field will be omitted from the resulting object.
@@ -81,6 +85,9 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
+  - `api_key_id` (`string`): The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the WebApp.
+If apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the WebApp.
+This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned. When `null`, the `api_key_id` field will be omitted from the resulting object.
   - `deletion_policy` (`string`): Set to &#39;ABANDON&#39; to allow the WebApp to be untracked from terraform state
 rather than deleted upon &#39;terraform destroy&#39;. This is useful becaue the WebApp may be
 serving traffic. Set to &#39;DELETE&#39; to delete the WebApp. Default to &#39;ABANDON&#39; When `null`, the `deletion_policy` field will be omitted from the resulting object.
@@ -90,6 +97,22 @@ serving traffic. Set to &#39;DELETE&#39; to delete the WebApp. Default to &#39;A
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_firebase_web_app` resource into the root Terraform configuration.
+
+
+### fn withApiKeyId
+
+```ts
+withApiKeyId()
+```
+
+`google-beta.string.withApiKeyId` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the api_key_id field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `api_key_id` field.
 
 
 ### fn withDeletionPolicy

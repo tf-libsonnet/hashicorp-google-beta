@@ -42,6 +42,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDnsConfigMixin()`](#fn-withdnsconfigmixin)
 * [`fn withEnableAutopilot()`](#fn-withenableautopilot)
 * [`fn withEnableBinaryAuthorization()`](#fn-withenablebinaryauthorization)
+* [`fn withEnableFqdnNetworkPolicy()`](#fn-withenablefqdnnetworkpolicy)
 * [`fn withEnableIntranodeVisibility()`](#fn-withenableintranodevisibility)
 * [`fn withEnableK8SBetaApis()`](#fn-withenablek8sbetaapis)
 * [`fn withEnableK8SBetaApisMixin()`](#fn-withenablek8sbetaapismixin)
@@ -184,6 +185,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-identity_service_confignew)
 * [`obj ip_allocation_policy`](#obj-ip_allocation_policy)
   * [`fn new()`](#fn-ip_allocation_policynew)
+  * [`obj ip_allocation_policy.additional_pod_ranges_config`](#obj-ip_allocation_policyadditional_pod_ranges_config)
+    * [`fn new()`](#fn-ip_allocation_policyadditional_pod_ranges_confignew)
   * [`obj ip_allocation_policy.pod_cidr_overprovision_config`](#obj-ip_allocation_policypod_cidr_overprovision_config)
     * [`fn new()`](#fn-ip_allocation_policypod_cidr_overprovision_confignew)
 * [`obj logging_config`](#obj-logging_config)
@@ -210,6 +213,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-mesh_certificatesnew)
 * [`obj monitoring_config`](#obj-monitoring_config)
   * [`fn new()`](#fn-monitoring_confignew)
+  * [`obj monitoring_config.advanced_datapath_observability_config`](#obj-monitoring_configadvanced_datapath_observability_config)
+    * [`fn new()`](#fn-monitoring_configadvanced_datapath_observability_confignew)
   * [`obj monitoring_config.managed_prometheus`](#obj-monitoring_configmanaged_prometheus)
     * [`fn new()`](#fn-monitoring_configmanaged_prometheusnew)
 * [`obj network_policy`](#obj-network_policy)
@@ -218,6 +223,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-node_confignew)
   * [`obj node_config.advanced_machine_features`](#obj-node_configadvanced_machine_features)
     * [`fn new()`](#fn-node_configadvanced_machine_featuresnew)
+  * [`obj node_config.confidential_nodes`](#obj-node_configconfidential_nodes)
+    * [`fn new()`](#fn-node_configconfidential_nodesnew)
   * [`obj node_config.ephemeral_storage_config`](#obj-node_configephemeral_storage_config)
     * [`fn new()`](#fn-node_configephemeral_storage_confignew)
   * [`obj node_config.ephemeral_storage_local_ssd_config`](#obj-node_configephemeral_storage_local_ssd_config)
@@ -264,6 +271,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-node_poolnode_confignew)
     * [`obj node_pool.node_config.advanced_machine_features`](#obj-node_poolnode_configadvanced_machine_features)
       * [`fn new()`](#fn-node_poolnode_configadvanced_machine_featuresnew)
+    * [`obj node_pool.node_config.confidential_nodes`](#obj-node_poolnode_configconfidential_nodes)
+      * [`fn new()`](#fn-node_poolnode_configconfidential_nodesnew)
     * [`obj node_pool.node_config.ephemeral_storage_config`](#obj-node_poolnode_configephemeral_storage_config)
       * [`fn new()`](#fn-node_poolnode_configephemeral_storage_confignew)
     * [`obj node_pool.node_config.ephemeral_storage_local_ssd_config`](#obj-node_poolnode_configephemeral_storage_local_ssd_config)
@@ -381,6 +390,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `description` (`string`):  Description of the cluster. When `null`, the `description` field will be omitted from the resulting object.
   - `enable_autopilot` (`bool`): Enable Autopilot for this cluster. When `null`, the `enable_autopilot` field will be omitted from the resulting object.
   - `enable_binary_authorization` (`bool`): Enable Binary Authorization for this cluster. If enabled, all container images will be validated by Google Binary Authorization. When `null`, the `enable_binary_authorization` field will be omitted from the resulting object.
+  - `enable_fqdn_network_policy` (`bool`): Whether FQDN Network Policy is enabled on this cluster. When `null`, the `enable_fqdn_network_policy` field will be omitted from the resulting object.
   - `enable_intranode_visibility` (`bool`): Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network. When `null`, the `enable_intranode_visibility` field will be omitted from the resulting object.
   - `enable_kubernetes_alpha` (`bool`): Whether to enable Kubernetes Alpha features for this cluster. Note that when this option is enabled, the cluster cannot be upgraded and will be automatically deleted after 30 days. When `null`, the `enable_kubernetes_alpha` field will be omitted from the resulting object.
   - `enable_l4_ilb_subsetting` (`bool`): Whether L4ILB Subsetting is enabled for this cluster. When `null`, the `enable_l4_ilb_subsetting` field will be omitted from the resulting object.
@@ -470,6 +480,7 @@ injecting into a complete block.
   - `description` (`string`):  Description of the cluster. When `null`, the `description` field will be omitted from the resulting object.
   - `enable_autopilot` (`bool`): Enable Autopilot for this cluster. When `null`, the `enable_autopilot` field will be omitted from the resulting object.
   - `enable_binary_authorization` (`bool`): Enable Binary Authorization for this cluster. If enabled, all container images will be validated by Google Binary Authorization. When `null`, the `enable_binary_authorization` field will be omitted from the resulting object.
+  - `enable_fqdn_network_policy` (`bool`): Whether FQDN Network Policy is enabled on this cluster. When `null`, the `enable_fqdn_network_policy` field will be omitted from the resulting object.
   - `enable_intranode_visibility` (`bool`): Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network. When `null`, the `enable_intranode_visibility` field will be omitted from the resulting object.
   - `enable_kubernetes_alpha` (`bool`): Whether to enable Kubernetes Alpha features for this cluster. Note that when this option is enabled, the cluster cannot be upgraded and will be automatically deleted after 30 days. When `null`, the `enable_kubernetes_alpha` field will be omitted from the resulting object.
   - `enable_l4_ilb_subsetting` (`bool`): Whether L4ILB Subsetting is enabled for this cluster. When `null`, the `enable_l4_ilb_subsetting` field will be omitted from the resulting object.
@@ -1014,6 +1025,22 @@ Terraform resource block to set or update the enable_binary_authorization field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`bool`): The value to set for the `enable_binary_authorization` field.
+
+
+### fn withEnableFqdnNetworkPolicy
+
+```ts
+withEnableFqdnNetworkPolicy()
+```
+
+`google-beta.bool.withEnableFqdnNetworkPolicy` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the enable_fqdn_network_policy field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `enable_fqdn_network_policy` field.
 
 
 ### fn withEnableIntranodeVisibility
@@ -2386,7 +2413,7 @@ Terraform sub block.
   - `cloudrun_config` (`list[obj]`): The status of the CloudRun addon. It is disabled by default. Set disabled = false to enable. When `null`, the `cloudrun_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.cloudrun_config.new](#fn-addons_configcloudrun_confignew) constructor.
   - `config_connector_config` (`list[obj]`): The of the Config Connector addon. When `null`, the `config_connector_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.config_connector_config.new](#fn-addons_configconfig_connector_confignew) constructor.
   - `dns_cache_config` (`list[obj]`): The status of the NodeLocal DNSCache addon. It is disabled by default. Set enabled = true to enable. When `null`, the `dns_cache_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.dns_cache_config.new](#fn-addons_configdns_cache_confignew) constructor.
-  - `gce_persistent_disk_csi_driver_config` (`list[obj]`): Whether this cluster should enable the Google Compute Engine Persistent Disk Container Storage Interface (CSI) Driver. Defaults to enabled; set disabled = true to disable. When `null`, the `gce_persistent_disk_csi_driver_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.gce_persistent_disk_csi_driver_config.new](#fn-addons_configgce_persistent_disk_csi_driver_confignew) constructor.
+  - `gce_persistent_disk_csi_driver_config` (`list[obj]`): Whether this cluster should enable the Google Compute Engine Persistent Disk Container Storage Interface (CSI) Driver. Set enabled = true to enable. The Compute Engine persistent disk CSI Driver is enabled by default on newly created clusters for the following versions: Linux clusters: GKE version 1.18.10-gke.2100 or later, or 1.19.3-gke.2100 or later. When `null`, the `gce_persistent_disk_csi_driver_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.gce_persistent_disk_csi_driver_config.new](#fn-addons_configgce_persistent_disk_csi_driver_confignew) constructor.
   - `gcp_filestore_csi_driver_config` (`list[obj]`): The status of the Filestore CSI driver addon, which allows the usage of filestore instance as volumes. Defaults to disabled; set enabled = true to enable. When `null`, the `gcp_filestore_csi_driver_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.gcp_filestore_csi_driver_config.new](#fn-addons_configgcp_filestore_csi_driver_confignew) constructor.
   - `gcs_fuse_csi_driver_config` (`list[obj]`): The status of the GCS Fuse CSI driver addon, which allows the usage of gcs bucket as volumes. Defaults to disabled; set enabled = true to enable. When `null`, the `gcs_fuse_csi_driver_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.gcs_fuse_csi_driver_config.new](#fn-addons_configgcs_fuse_csi_driver_confignew) constructor.
   - `gke_backup_agent_config` (`list[obj]`): The status of the Backup for GKE Agent addon. It is disabled by default. Set enabled = true to enable. When `null`, the `gke_backup_agent_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.addons_config.gke_backup_agent_config.new](#fn-addons_configgke_backup_agent_confignew) constructor.
@@ -3167,10 +3194,34 @@ Terraform sub block.
   - `services_ipv4_cidr_block` (`string`): The IP address range of the services IPs in this cluster. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. /14) to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14) from the RFC-1918 private networks (e.g. 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) to pick a specific range to use. When `null`, the `services_ipv4_cidr_block` field will be omitted from the resulting object.
   - `services_secondary_range_name` (`string`): The name of the existing secondary range in the cluster&#39;s subnetwork to use for service ClusterIPs. Alternatively, services_ipv4_cidr_block can be used to automatically create a GKE-managed one. When `null`, the `services_secondary_range_name` field will be omitted from the resulting object.
   - `stack_type` (`string`): The IP Stack type of the cluster. Choose between IPV4 and IPV4_IPV6. Default type is IPV4 Only if not set When `null`, the `stack_type` field will be omitted from the resulting object.
+  - `additional_pod_ranges_config` (`list[obj]`): AdditionalPodRangesConfig is the configuration for additional pod secondary ranges supporting the ClusterUpdate message. When `null`, the `additional_pod_ranges_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.ip_allocation_policy.additional_pod_ranges_config.new](#fn-ip_allocation_policyadditional_pod_ranges_confignew) constructor.
   - `pod_cidr_overprovision_config` (`list[obj]`): Configuration for cluster level pod cidr overprovision. Default is disabled=false. When `null`, the `pod_cidr_overprovision_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.ip_allocation_policy.pod_cidr_overprovision_config.new](#fn-ip_allocation_policypod_cidr_overprovision_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `ip_allocation_policy` sub block.
+
+
+## obj ip_allocation_policy.additional_pod_ranges_config
+
+
+
+### fn ip_allocation_policy.additional_pod_ranges_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.ip_allocation_policy.additional_pod_ranges_config.new` constructs a new object with attributes and blocks configured for the `additional_pod_ranges_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `pod_range_names` (`list`): Name for pod secondary ipv4 range which has the actual range defined ahead.
+
+**Returns**:
+  - An attribute object that represents the `additional_pod_ranges_config` sub block.
 
 
 ## obj ip_allocation_policy.pod_cidr_overprovision_config
@@ -3475,11 +3526,36 @@ Terraform sub block.
 
 
 **Args**:
-  - `enable_components` (`list`): GKE components exposing metrics. Valid values include SYSTEM_COMPONENTS, APISERVER, CONTROLLER_MANAGER, SCHEDULER, and WORKLOADS. When `null`, the `enable_components` field will be omitted from the resulting object.
+  - `enable_components` (`list`): GKE components exposing metrics. Valid values include SYSTEM_COMPONENTS, APISERVER, SCHEDULER, CONTROLLER_MANAGER, STORAGE, HPA, POD, DAEMONSET, DEPLOYMENT, STATEFULSET and WORKLOADS. When `null`, the `enable_components` field will be omitted from the resulting object.
+  - `advanced_datapath_observability_config` (`list[obj]`): Configuration of Advanced Datapath Observability features. When `null`, the `advanced_datapath_observability_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.monitoring_config.advanced_datapath_observability_config.new](#fn-monitoring_configadvanced_datapath_observability_confignew) constructor.
   - `managed_prometheus` (`list[obj]`): Configuration for Google Cloud Managed Services for Prometheus. When `null`, the `managed_prometheus` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.monitoring_config.managed_prometheus.new](#fn-monitoring_configmanaged_prometheusnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `monitoring_config` sub block.
+
+
+## obj monitoring_config.advanced_datapath_observability_config
+
+
+
+### fn monitoring_config.advanced_datapath_observability_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.monitoring_config.advanced_datapath_observability_config.new` constructs a new object with attributes and blocks configured for the `advanced_datapath_observability_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enable_metrics` (`bool`): Whether or not the advanced datapath metrics are enabled.
+  - `relay_mode` (`string`): Mode used to make Relay available. When `null`, the `relay_mode` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `advanced_datapath_observability_config` sub block.
 
 
 ## obj monitoring_config.managed_prometheus
@@ -3566,6 +3642,7 @@ Terraform sub block.
   - `tags` (`list`): The list of instance tags applied to all nodes. When `null`, the `tags` field will be omitted from the resulting object.
   - `taint` (`list`): List of Kubernetes taints to be applied to each node. When `null`, the `taint` field will be omitted from the resulting object.
   - `advanced_machine_features` (`list[obj]`): Specifies options for controlling advanced machine features. When `null`, the `advanced_machine_features` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.advanced_machine_features.new](#fn-node_configadvanced_machine_featuresnew) constructor.
+  - `confidential_nodes` (`list[obj]`): Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can&#39;t be changed (or added/removed) after pool creation without deleting and recreating the entire pool. When `null`, the `confidential_nodes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.confidential_nodes.new](#fn-node_configconfidential_nodesnew) constructor.
   - `ephemeral_storage_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.ephemeral_storage_config.new](#fn-node_configephemeral_storage_confignew) constructor.
   - `ephemeral_storage_local_ssd_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_local_ssd_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.ephemeral_storage_local_ssd_config.new](#fn-node_configephemeral_storage_local_ssd_confignew) constructor.
   - `gcfs_config` (`list[obj]`): GCFS configuration for this node. When `null`, the `gcfs_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.gcfs_config.new](#fn-node_configgcfs_confignew) constructor.
@@ -3605,6 +3682,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `advanced_machine_features` sub block.
+
+
+## obj node_config.confidential_nodes
+
+
+
+### fn node_config.confidential_nodes.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_config.confidential_nodes.new` constructs a new object with attributes and blocks configured for the `confidential_nodes`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enabled` (`bool`): Whether Confidential Nodes feature is enabled for all nodes in this pool.
+
+**Returns**:
+  - An attribute object that represents the `confidential_nodes` sub block.
 
 
 ## obj node_config.ephemeral_storage_config
@@ -4161,6 +4261,7 @@ Terraform sub block.
   - `tags` (`list`): The list of instance tags applied to all nodes. When `null`, the `tags` field will be omitted from the resulting object.
   - `taint` (`list`): List of Kubernetes taints to be applied to each node. When `null`, the `taint` field will be omitted from the resulting object.
   - `advanced_machine_features` (`list[obj]`): Specifies options for controlling advanced machine features. When `null`, the `advanced_machine_features` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.advanced_machine_features.new](#fn-node_poolnode_pooladvanced_machine_featuresnew) constructor.
+  - `confidential_nodes` (`list[obj]`): Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can&#39;t be changed (or added/removed) after pool creation without deleting and recreating the entire pool. When `null`, the `confidential_nodes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.confidential_nodes.new](#fn-node_poolnode_poolconfidential_nodesnew) constructor.
   - `ephemeral_storage_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.ephemeral_storage_config.new](#fn-node_poolnode_poolephemeral_storage_confignew) constructor.
   - `ephemeral_storage_local_ssd_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_local_ssd_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.ephemeral_storage_local_ssd_config.new](#fn-node_poolnode_poolephemeral_storage_local_ssd_confignew) constructor.
   - `gcfs_config` (`list[obj]`): GCFS configuration for this node. When `null`, the `gcfs_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.gcfs_config.new](#fn-node_poolnode_poolgcfs_confignew) constructor.
@@ -4200,6 +4301,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `advanced_machine_features` sub block.
+
+
+## obj node_pool.node_config.confidential_nodes
+
+
+
+### fn node_pool.node_config.confidential_nodes.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_pool.node_config.confidential_nodes.new` constructs a new object with attributes and blocks configured for the `confidential_nodes`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enabled` (`bool`): Whether Confidential Nodes feature is enabled for all nodes in this pool.
+
+**Returns**:
+  - An attribute object that represents the `confidential_nodes` sub block.
 
 
 ## obj node_pool.node_config.ephemeral_storage_config

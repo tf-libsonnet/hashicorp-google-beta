@@ -575,6 +575,9 @@ Terraform sub block.
 **Args**:
   - `boot_disk_size_gb` (`number`): Size of the boot disk in GB. When `null`, the `boot_disk_size_gb` field will be omitted from the resulting object.
   - `disable_public_ip_addresses` (`bool`): Whether instances have no public IP address. When `null`, the `disable_public_ip_addresses` field will be omitted from the resulting object.
+  - `enable_nested_virtualization` (`bool`): Whether to enable nested virtualization on the Compute Engine VMs backing the Workstations.
+
+See https://cloud.google.com/workstations/docs/reference/rest/v1beta/projects.locations.workstationClusters.workstationConfigs#GceInstance.FIELDS.enable_nested_virtualization When `null`, the `enable_nested_virtualization` field will be omitted from the resulting object.
   - `machine_type` (`string`): The name of a Compute Engine machine type. When `null`, the `machine_type` field will be omitted from the resulting object.
   - `pool_size` (`number`): Number of instances to pool for faster workstation startup. When `null`, the `pool_size` field will be omitted from the resulting object.
   - `service_account` (`string`): Email address of the service account that will be used on VM instances used to support this config. This service account must have permission to pull the specified container image. If not set, VMs will run without a service account, in which case the image must be publicly accessible. When `null`, the `service_account` field will be omitted from the resulting object.

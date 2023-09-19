@@ -17,6 +17,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withAnnotations()`](#fn-withannotations)
 * [`fn withDisplayName()`](#fn-withdisplayname)
+* [`fn withEnv()`](#fn-withenv)
 * [`fn withLabels()`](#fn-withlabels)
 * [`fn withLocation()`](#fn-withlocation)
 * [`fn withProject()`](#fn-withproject)
@@ -59,6 +60,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `annotations` (`obj`): Client-specified annotations. This is distinct from labels. When `null`, the `annotations` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
+  - `env` (`obj`): &#39;Client-specified environment variables passed to the workstation container&#39;s entrypoint.&#39; When `null`, the `env` field will be omitted from the resulting object.
   - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation parent resources reside.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
@@ -91,6 +93,7 @@ injecting into a complete block.
 **Args**:
   - `annotations` (`obj`): Client-specified annotations. This is distinct from labels. When `null`, the `annotations` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
+  - `env` (`obj`): &#39;Client-specified environment variables passed to the workstation container&#39;s entrypoint.&#39; When `null`, the `env` field will be omitted from the resulting object.
   - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation parent resources reside.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
@@ -133,6 +136,22 @@ Terraform resource block to set or update the display_name field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `display_name` field.
+
+
+### fn withEnv
+
+```ts
+withEnv()
+```
+
+`google-beta.obj.withEnv` constructs a mixin object that can be merged into the `obj`
+Terraform resource block to set or update the env field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`obj`): The value to set for the `env` field.
 
 
 ### fn withLabels

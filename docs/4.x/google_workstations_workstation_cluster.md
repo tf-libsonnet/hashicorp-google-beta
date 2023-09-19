@@ -331,6 +331,8 @@ Terraform sub block.
 
 
 **Args**:
+  - `allowed_projects` (`list`): Additional project IDs that are allowed to attach to the workstation cluster&#39;s service attachment.
+By default, the workstation cluster&#39;s project and the VPC host project (if different) are allowed. When `null`, the `allowed_projects` field will be omitted from the resulting object.
   - `enable_private_endpoint` (`bool`): Whether Workstations endpoint is private.
 
 **Returns**:

@@ -496,6 +496,7 @@ Terraform sub block.
 **Args**:
   - `json_parsing` (`string`): JSON body parsing. Supported values include: &#34;DISABLED&#34;, &#34;STANDARD&#34;. When `null`, the `json_parsing` field will be omitted from the resulting object.
   - `log_level` (`string`): Logging level. Supported values include: &#34;NORMAL&#34;, &#34;VERBOSE&#34;. When `null`, the `log_level` field will be omitted from the resulting object.
+  - `user_ip_request_headers` (`list`): An optional list of case-insensitive request header names to use for resolving the callers client IP address. When `null`, the `user_ip_request_headers` field will be omitted from the resulting object.
   - `json_custom_config` (`list[obj]`): Custom configuration to apply the JSON parsing. Only applicable when JSON parsing is set to STANDARD. When `null`, the `json_custom_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_security_policy.advanced_options_config.json_custom_config.new](#fn-advanced_options_configjson_custom_confignew) constructor.
 
 **Returns**:

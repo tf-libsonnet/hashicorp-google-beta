@@ -15,6 +15,7 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withApiKeyId()`](#fn-withapikeyid)
 * [`fn withAppStoreId()`](#fn-withappstoreid)
 * [`fn withBundleId()`](#fn-withbundleid)
 * [`fn withDeletionPolicy()`](#fn-withdeletionpolicy)
@@ -55,6 +56,9 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
+  - `api_key_id` (`string`): The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the AppleApp.
+If apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the AppleApp.
+This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned. When `null`, the `api_key_id` field will be omitted from the resulting object.
   - `app_store_id` (`string`): The automatically generated Apple ID assigned to the Apple app by Apple in the Apple App Store. When `null`, the `app_store_id` field will be omitted from the resulting object.
   - `bundle_id` (`string`): The canonical bundle ID of the Apple app as it would appear in the Apple AppStore.
   - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the Apple to be untracked from terraform state
@@ -87,6 +91,9 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
+  - `api_key_id` (`string`): The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the AppleApp.
+If apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the AppleApp.
+This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned. When `null`, the `api_key_id` field will be omitted from the resulting object.
   - `app_store_id` (`string`): The automatically generated Apple ID assigned to the Apple app by Apple in the Apple App Store. When `null`, the `app_store_id` field will be omitted from the resulting object.
   - `bundle_id` (`string`): The canonical bundle ID of the Apple app as it would appear in the Apple AppStore.
   - `deletion_policy` (`string`): (Optional) Set to &#39;ABANDON&#39; to allow the Apple to be untracked from terraform state
@@ -99,6 +106,22 @@ serving traffic. Set to &#39;DELETE&#39; to delete the Apple. Defaults to &#39;D
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_firebase_apple_app` resource into the root Terraform configuration.
+
+
+### fn withApiKeyId
+
+```ts
+withApiKeyId()
+```
+
+`google-beta.string.withApiKeyId` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the api_key_id field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `api_key_id` field.
 
 
 ### fn withAppStoreId
