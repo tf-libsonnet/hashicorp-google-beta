@@ -229,6 +229,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-node_configephemeral_storage_confignew)
   * [`obj node_config.ephemeral_storage_local_ssd_config`](#obj-node_configephemeral_storage_local_ssd_config)
     * [`fn new()`](#fn-node_configephemeral_storage_local_ssd_confignew)
+  * [`obj node_config.fast_socket`](#obj-node_configfast_socket)
+    * [`fn new()`](#fn-node_configfast_socketnew)
   * [`obj node_config.gcfs_config`](#obj-node_configgcfs_config)
     * [`fn new()`](#fn-node_configgcfs_confignew)
   * [`obj node_config.gvnic`](#obj-node_configgvnic)
@@ -277,6 +279,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-node_poolnode_configephemeral_storage_confignew)
     * [`obj node_pool.node_config.ephemeral_storage_local_ssd_config`](#obj-node_poolnode_configephemeral_storage_local_ssd_config)
       * [`fn new()`](#fn-node_poolnode_configephemeral_storage_local_ssd_confignew)
+    * [`obj node_pool.node_config.fast_socket`](#obj-node_poolnode_configfast_socket)
+      * [`fn new()`](#fn-node_poolnode_configfast_socketnew)
     * [`obj node_pool.node_config.gcfs_config`](#obj-node_poolnode_configgcfs_config)
       * [`fn new()`](#fn-node_poolnode_configgcfs_confignew)
     * [`obj node_pool.node_config.gvnic`](#obj-node_poolnode_configgvnic)
@@ -3645,6 +3649,7 @@ Terraform sub block.
   - `confidential_nodes` (`list[obj]`): Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can&#39;t be changed (or added/removed) after pool creation without deleting and recreating the entire pool. When `null`, the `confidential_nodes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.confidential_nodes.new](#fn-node_configconfidential_nodesnew) constructor.
   - `ephemeral_storage_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.ephemeral_storage_config.new](#fn-node_configephemeral_storage_confignew) constructor.
   - `ephemeral_storage_local_ssd_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_local_ssd_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.ephemeral_storage_local_ssd_config.new](#fn-node_configephemeral_storage_local_ssd_confignew) constructor.
+  - `fast_socket` (`list[obj]`): Enable or disable NCCL Fast Socket in the node pool. When `null`, the `fast_socket` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.fast_socket.new](#fn-node_configfast_socketnew) constructor.
   - `gcfs_config` (`list[obj]`): GCFS configuration for this node. When `null`, the `gcfs_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.gcfs_config.new](#fn-node_configgcfs_confignew) constructor.
   - `gvnic` (`list[obj]`): Enable or disable gvnic in the node pool. When `null`, the `gvnic` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.gvnic.new](#fn-node_configgvnicnew) constructor.
   - `host_maintenance_policy` (`list[obj]`): The maintenance policy for the hosts on which the GKE VMs run on. When `null`, the `host_maintenance_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_config.host_maintenance_policy.new](#fn-node_confighost_maintenance_policynew) constructor.
@@ -3751,6 +3756,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `ephemeral_storage_local_ssd_config` sub block.
+
+
+## obj node_config.fast_socket
+
+
+
+### fn node_config.fast_socket.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_config.fast_socket.new` constructs a new object with attributes and blocks configured for the `fast_socket`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enabled` (`bool`): Whether or not NCCL Fast Socket is enabled
+
+**Returns**:
+  - An attribute object that represents the `fast_socket` sub block.
 
 
 ## obj node_config.gcfs_config
@@ -4264,6 +4292,7 @@ Terraform sub block.
   - `confidential_nodes` (`list[obj]`): Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can&#39;t be changed (or added/removed) after pool creation without deleting and recreating the entire pool. When `null`, the `confidential_nodes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.confidential_nodes.new](#fn-node_poolnode_poolconfidential_nodesnew) constructor.
   - `ephemeral_storage_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.ephemeral_storage_config.new](#fn-node_poolnode_poolephemeral_storage_confignew) constructor.
   - `ephemeral_storage_local_ssd_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_local_ssd_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.ephemeral_storage_local_ssd_config.new](#fn-node_poolnode_poolephemeral_storage_local_ssd_confignew) constructor.
+  - `fast_socket` (`list[obj]`): Enable or disable NCCL Fast Socket in the node pool. When `null`, the `fast_socket` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.fast_socket.new](#fn-node_poolnode_poolfast_socketnew) constructor.
   - `gcfs_config` (`list[obj]`): GCFS configuration for this node. When `null`, the `gcfs_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.gcfs_config.new](#fn-node_poolnode_poolgcfs_confignew) constructor.
   - `gvnic` (`list[obj]`): Enable or disable gvnic in the node pool. When `null`, the `gvnic` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.gvnic.new](#fn-node_poolnode_poolgvnicnew) constructor.
   - `host_maintenance_policy` (`list[obj]`): The maintenance policy for the hosts on which the GKE VMs run on. When `null`, the `host_maintenance_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.host_maintenance_policy.new](#fn-node_poolnode_poolhost_maintenance_policynew) constructor.
@@ -4370,6 +4399,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `ephemeral_storage_local_ssd_config` sub block.
+
+
+## obj node_pool.node_config.fast_socket
+
+
+
+### fn node_pool.node_config.fast_socket.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_pool.node_config.fast_socket.new` constructs a new object with attributes and blocks configured for the `fast_socket`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enabled` (`bool`): Whether or not NCCL Fast Socket is enabled
+
+**Returns**:
+  - An attribute object that represents the `fast_socket` sub block.
 
 
 ## obj node_pool.node_config.gcfs_config
