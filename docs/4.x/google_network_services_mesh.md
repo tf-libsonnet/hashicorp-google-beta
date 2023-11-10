@@ -60,7 +60,10 @@ specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect a
 be redirected to this port regardless of its actual ip:port destination. If unset, a port
 &#39;15001&#39; is used as the interception port. This will is applicable only for sidecar proxy
 deployments. When `null`, the `interception_port` field will be omitted from the resulting object.
-  - `labels` (`obj`): Set of label tags associated with the Mesh resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Set of label tags associated with the Mesh resource.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Short name of the Mesh resource to be created.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_services_mesh.timeouts.new](#fn-timeoutsnew) constructor.
@@ -93,7 +96,10 @@ specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect a
 be redirected to this port regardless of its actual ip:port destination. If unset, a port
 &#39;15001&#39; is used as the interception port. This will is applicable only for sidecar proxy
 deployments. When `null`, the `interception_port` field will be omitted from the resulting object.
-  - `labels` (`obj`): Set of label tags associated with the Mesh resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Set of label tags associated with the Mesh resource.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Short name of the Mesh resource to be created.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_network_services_mesh.timeouts.new](#fn-timeoutsnew) constructor.

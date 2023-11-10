@@ -19,6 +19,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withContainer()`](#fn-withcontainer)
 * [`fn withContainerMixin()`](#fn-withcontainermixin)
 * [`fn withDisplayName()`](#fn-withdisplayname)
+* [`fn withEnableAuditAgent()`](#fn-withenableauditagent)
 * [`fn withEncryptionKey()`](#fn-withencryptionkey)
 * [`fn withEncryptionKeyMixin()`](#fn-withencryptionkeymixin)
 * [`fn withHost()`](#fn-withhost)
@@ -29,6 +30,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withPersistentDirectories()`](#fn-withpersistentdirectories)
 * [`fn withPersistentDirectoriesMixin()`](#fn-withpersistentdirectoriesmixin)
 * [`fn withProject()`](#fn-withproject)
+* [`fn withReplicaZones()`](#fn-withreplicazones)
 * [`fn withRunningTimeout()`](#fn-withrunningtimeout)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
@@ -84,13 +86,22 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
-  - `annotations` (`obj`): Client-specified annotations. This is distinct from labels. When `null`, the `annotations` field will be omitted from the resulting object.
+  - `annotations` (`obj`): Client-specified annotations. This is distinct from labels.
+
+**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
+  - `enable_audit_agent` (`bool`): Whether to enable Linux &#39;auditd&#39; logging on the workstation. When enabled, a service account must also be specified that has &#39;logging.buckets.write&#39; permission on the project. Operating system audit logging is distinct from Cloud Audit Logs. When `null`, the `enable_audit_agent` field will be omitted from the resulting object.
   - `idle_timeout` (`string`): How long to wait before automatically stopping an instance that hasn&#39;t recently received any user traffic. A value of 0 indicates that this instance should never time out from idleness. Defaults to 20 minutes.
 A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `idle_timeout` field will be omitted from the resulting object.
-  - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation cluster config should reside.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
+  - `replica_zones` (`list`): Specifies the zones used to replicate the VM and disk resources within the region. If set, exactly two zones within the workstation cluster&#39;s region must be specified—for example, &#39;[&#39;us-central1-a&#39;, &#39;us-central1-f&#39;]&#39;.
+If this field is empty, two default zones within the region are used. Immutable after the workstation configuration is created. When `null`, the `replica_zones` field will be omitted from the resulting object.
   - `running_timeout` (`string`): How long to wait before automatically stopping a workstation after it was started. A value of 0 indicates that workstations using this configuration should never time out from running duration. Must be greater than 0 and less than 24 hours if &#39;encryption_key&#39; is set. Defaults to 12 hours.
 A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `running_timeout` field will be omitted from the resulting object.
   - `workstation_cluster_id` (`string`): The ID of the parent workstation cluster.
@@ -127,13 +138,22 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `annotations` (`obj`): Client-specified annotations. This is distinct from labels. When `null`, the `annotations` field will be omitted from the resulting object.
+  - `annotations` (`obj`): Client-specified annotations. This is distinct from labels.
+
+**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
+  - `enable_audit_agent` (`bool`): Whether to enable Linux &#39;auditd&#39; logging on the workstation. When enabled, a service account must also be specified that has &#39;logging.buckets.write&#39; permission on the project. Operating system audit logging is distinct from Cloud Audit Logs. When `null`, the `enable_audit_agent` field will be omitted from the resulting object.
   - `idle_timeout` (`string`): How long to wait before automatically stopping an instance that hasn&#39;t recently received any user traffic. A value of 0 indicates that this instance should never time out from idleness. Defaults to 20 minutes.
 A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `idle_timeout` field will be omitted from the resulting object.
-  - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation cluster config should reside.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
+  - `replica_zones` (`list`): Specifies the zones used to replicate the VM and disk resources within the region. If set, exactly two zones within the workstation cluster&#39;s region must be specified—for example, &#39;[&#39;us-central1-a&#39;, &#39;us-central1-f&#39;]&#39;.
+If this field is empty, two default zones within the region are used. Immutable after the workstation configuration is created. When `null`, the `replica_zones` field will be omitted from the resulting object.
   - `running_timeout` (`string`): How long to wait before automatically stopping a workstation after it was started. A value of 0 indicates that workstations using this configuration should never time out from running duration. Must be greater than 0 and less than 24 hours if &#39;encryption_key&#39; is set. Defaults to 12 hours.
 A duration in seconds with up to nine fractional digits, ending with &#39;s&#39;. Example: &#34;3.5s&#34;. When `null`, the `running_timeout` field will be omitted from the resulting object.
   - `workstation_cluster_id` (`string`): The ID of the parent workstation cluster.
@@ -219,6 +239,22 @@ Terraform resource block to set or update the display_name field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `display_name` field.
+
+
+### fn withEnableAuditAgent
+
+```ts
+withEnableAuditAgent()
+```
+
+`google-beta.bool.withEnableAuditAgent` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the enable_audit_agent field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `enable_audit_agent` field.
 
 
 ### fn withEncryptionKey
@@ -394,6 +430,22 @@ Terraform resource block to set or update the project field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `project` field.
+
+
+### fn withReplicaZones
+
+```ts
+withReplicaZones()
+```
+
+`google-beta.list.withReplicaZones` constructs a mixin object that can be merged into the `list`
+Terraform resource block to set or update the replica_zones field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list`): The value to set for the `replica_zones` field.
 
 
 ### fn withRunningTimeout
@@ -581,6 +633,7 @@ See https://cloud.google.com/workstations/docs/reference/rest/v1beta/projects.lo
   - `machine_type` (`string`): The name of a Compute Engine machine type. When `null`, the `machine_type` field will be omitted from the resulting object.
   - `pool_size` (`number`): Number of instances to pool for faster workstation startup. When `null`, the `pool_size` field will be omitted from the resulting object.
   - `service_account` (`string`): Email address of the service account that will be used on VM instances used to support this config. This service account must have permission to pull the specified container image. If not set, VMs will run without a service account, in which case the image must be publicly accessible. When `null`, the `service_account` field will be omitted from the resulting object.
+  - `service_account_scopes` (`list`): Scopes to grant to the service_account. Various scopes are automatically added based on feature usage. When specified, users of workstations under this configuration must have &#39;iam.serviceAccounts.actAs&#39; on the service account. When `null`, the `service_account_scopes` field will be omitted from the resulting object.
   - `tags` (`list`): Network tags to add to the Compute Engine machines backing the Workstations. When `null`, the `tags` field will be omitted from the resulting object.
   - `accelerators` (`list[obj]`): An accelerator card attached to the instance. When `null`, the `accelerators` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.host.gce_instance.accelerators.new](#fn-hosthostacceleratorsnew) constructor.
   - `confidential_instance_config` (`list[obj]`): A set of Compute Engine Confidential VM instance options. When `null`, the `confidential_instance_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.host.gce_instance.confidential_instance_config.new](#fn-hosthostconfidential_instance_confignew) constructor.

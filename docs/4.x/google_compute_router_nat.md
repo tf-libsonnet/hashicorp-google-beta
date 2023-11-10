@@ -39,6 +39,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTcpTransitoryIdleTimeoutSec()`](#fn-withtcptransitoryidletimeoutsec)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`fn withType()`](#fn-withtype)
 * [`fn withUdpIdleTimeoutSec()`](#fn-withudpidletimeoutsec)
 * [`obj log_config`](#obj-log_config)
   * [`fn new()`](#fn-log_confignew)
@@ -89,8 +90,8 @@ If maxPortsPerVm is set, maxPortsPerVm must be set to a power of two greater tha
 If maxPortsPerVm is not set, a maximum of 65536 ports will be allocated to a VM from this NAT config.
 
 Mutually exclusive with enableEndpointIndependentMapping. When `null`, the `enable_dynamic_port_allocation` field will be omitted from the resulting object.
-  - `enable_endpoint_independent_mapping` (`bool`): Specifies if endpoint independent mapping is enabled. This is enabled by default. For more information
-see the [official documentation](https://cloud.google.com/nat/docs/overview#specs-rfcs). When `null`, the `enable_endpoint_independent_mapping` field will be omitted from the resulting object.
+  - `enable_endpoint_independent_mapping` (`bool`): Enable endpoint independent mapping.
+For more information see the [official documentation](https://cloud.google.com/nat/docs/overview#specs-rfcs). When `null`, the `enable_endpoint_independent_mapping` field will be omitted from the resulting object.
   - `icmp_idle_timeout_sec` (`number`): Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. When `null`, the `icmp_idle_timeout_sec` field will be omitted from the resulting object.
   - `max_ports_per_vm` (`number`): Maximum number of ports allocated to a VM from this NAT.
 This field can only be set when enableDynamicPortAllocation is enabled. When `null`, the `max_ports_per_vm` field will be omitted from the resulting object.
@@ -99,7 +100,7 @@ This field can only be set when enableDynamicPortAllocation is enabled. When `nu
 comply with RFC1035.
   - `nat_ip_allocate_option` (`string`): How external IPs should be allocated for this NAT. Valid values are
 &#39;AUTO_ONLY&#39; for only allowing NAT IPs allocated by Google Cloud
-Platform, or &#39;MANUAL_ONLY&#39; for only user-allocated NAT IP addresses. Possible values: [&#34;MANUAL_ONLY&#34;, &#34;AUTO_ONLY&#34;]
+Platform, or &#39;MANUAL_ONLY&#39; for only user-allocated NAT IP addresses. Possible values: [&#34;MANUAL_ONLY&#34;, &#34;AUTO_ONLY&#34;] When `null`, the `nat_ip_allocate_option` field will be omitted from the resulting object.
   - `nat_ips` (`list`): Self-links of NAT IPs. Only valid if natIpAllocateOption
 is set to MANUAL_ONLY. When `null`, the `nat_ips` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
@@ -121,6 +122,10 @@ Defaults to 1200s if not set. When `null`, the `tcp_established_idle_timeout_sec
 Defaults to 120s if not set. When `null`, the `tcp_time_wait_timeout_sec` field will be omitted from the resulting object.
   - `tcp_transitory_idle_timeout_sec` (`number`): Timeout (in seconds) for TCP transitory connections.
 Defaults to 30s if not set. When `null`, the `tcp_transitory_idle_timeout_sec` field will be omitted from the resulting object.
+  - `type` (`string`): Indicates whether this NAT is used for public or private IP translation.
+If unspecified, it defaults to PUBLIC.
+If &#39;PUBLIC&#39; NAT used for public IP translation.
+If &#39;PRIVATE&#39; NAT used for private IP translation. Default value: &#34;PUBLIC&#34; Possible values: [&#34;PUBLIC&#34;, &#34;PRIVATE&#34;] When `null`, the `type` field will be omitted from the resulting object.
   - `udp_idle_timeout_sec` (`number`): Timeout (in seconds) for UDP connections. Defaults to 30s if not set. When `null`, the `udp_idle_timeout_sec` field will be omitted from the resulting object.
   - `log_config` (`list[obj]`): Configuration for logging on NAT When `null`, the `log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_router_nat.log_config.new](#fn-log_confignew) constructor.
   - `rules` (`list[obj]`): A list of rules associated with this NAT. When `null`, the `rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_router_nat.rules.new](#fn-rulesnew) constructor.
@@ -159,8 +164,8 @@ If maxPortsPerVm is set, maxPortsPerVm must be set to a power of two greater tha
 If maxPortsPerVm is not set, a maximum of 65536 ports will be allocated to a VM from this NAT config.
 
 Mutually exclusive with enableEndpointIndependentMapping. When `null`, the `enable_dynamic_port_allocation` field will be omitted from the resulting object.
-  - `enable_endpoint_independent_mapping` (`bool`): Specifies if endpoint independent mapping is enabled. This is enabled by default. For more information
-see the [official documentation](https://cloud.google.com/nat/docs/overview#specs-rfcs). When `null`, the `enable_endpoint_independent_mapping` field will be omitted from the resulting object.
+  - `enable_endpoint_independent_mapping` (`bool`): Enable endpoint independent mapping.
+For more information see the [official documentation](https://cloud.google.com/nat/docs/overview#specs-rfcs). When `null`, the `enable_endpoint_independent_mapping` field will be omitted from the resulting object.
   - `icmp_idle_timeout_sec` (`number`): Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. When `null`, the `icmp_idle_timeout_sec` field will be omitted from the resulting object.
   - `max_ports_per_vm` (`number`): Maximum number of ports allocated to a VM from this NAT.
 This field can only be set when enableDynamicPortAllocation is enabled. When `null`, the `max_ports_per_vm` field will be omitted from the resulting object.
@@ -169,7 +174,7 @@ This field can only be set when enableDynamicPortAllocation is enabled. When `nu
 comply with RFC1035.
   - `nat_ip_allocate_option` (`string`): How external IPs should be allocated for this NAT. Valid values are
 &#39;AUTO_ONLY&#39; for only allowing NAT IPs allocated by Google Cloud
-Platform, or &#39;MANUAL_ONLY&#39; for only user-allocated NAT IP addresses. Possible values: [&#34;MANUAL_ONLY&#34;, &#34;AUTO_ONLY&#34;]
+Platform, or &#39;MANUAL_ONLY&#39; for only user-allocated NAT IP addresses. Possible values: [&#34;MANUAL_ONLY&#34;, &#34;AUTO_ONLY&#34;] When `null`, the `nat_ip_allocate_option` field will be omitted from the resulting object.
   - `nat_ips` (`list`): Self-links of NAT IPs. Only valid if natIpAllocateOption
 is set to MANUAL_ONLY. When `null`, the `nat_ips` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
@@ -191,6 +196,10 @@ Defaults to 1200s if not set. When `null`, the `tcp_established_idle_timeout_sec
 Defaults to 120s if not set. When `null`, the `tcp_time_wait_timeout_sec` field will be omitted from the resulting object.
   - `tcp_transitory_idle_timeout_sec` (`number`): Timeout (in seconds) for TCP transitory connections.
 Defaults to 30s if not set. When `null`, the `tcp_transitory_idle_timeout_sec` field will be omitted from the resulting object.
+  - `type` (`string`): Indicates whether this NAT is used for public or private IP translation.
+If unspecified, it defaults to PUBLIC.
+If &#39;PUBLIC&#39; NAT used for public IP translation.
+If &#39;PRIVATE&#39; NAT used for private IP translation. Default value: &#34;PUBLIC&#34; Possible values: [&#34;PUBLIC&#34;, &#34;PRIVATE&#34;] When `null`, the `type` field will be omitted from the resulting object.
   - `udp_idle_timeout_sec` (`number`): Timeout (in seconds) for UDP connections. Defaults to 30s if not set. When `null`, the `udp_idle_timeout_sec` field will be omitted from the resulting object.
   - `log_config` (`list[obj]`): Configuration for logging on NAT When `null`, the `log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_router_nat.log_config.new](#fn-log_confignew) constructor.
   - `rules` (`list[obj]`): A list of rules associated with this NAT. When `null`, the `rules` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_compute_router_nat.rules.new](#fn-rulesnew) constructor.
@@ -605,6 +614,22 @@ function.
   - `value` (`obj`): The value to set for the `timeouts` field.
 
 
+### fn withType
+
+```ts
+withType()
+```
+
+`google-beta.string.withType` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the type field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `type` field.
+
+
 ### fn withUdpIdleTimeoutSec
 
 ```ts
@@ -703,10 +728,16 @@ Terraform sub block.
   - `source_nat_active_ips` (`list`): A list of URLs of the IP resources used for this NAT rule.
 These IP addresses must be valid static external IP addresses assigned to the project.
 This field is used for public NAT. When `null`, the `source_nat_active_ips` field will be omitted from the resulting object.
+  - `source_nat_active_ranges` (`list`): A list of URLs of the subnetworks used as source ranges for this NAT Rule.
+These subnetworks must have purpose set to PRIVATE_NAT.
+This field is used for private NAT. When `null`, the `source_nat_active_ranges` field will be omitted from the resulting object.
   - `source_nat_drain_ips` (`list`): A list of URLs of the IP resources to be drained.
 These IPs must be valid static external IPs that have been assigned to the NAT.
 These IPs should be used for updating/patching a NAT rule only.
 This field is used for public NAT. When `null`, the `source_nat_drain_ips` field will be omitted from the resulting object.
+  - `source_nat_drain_ranges` (`list`): A list of URLs of subnetworks representing source ranges to be drained.
+This is only supported on patch/update, and these subnetworks must have previously been used as active ranges in this NAT Rule.
+This field is used for private NAT. When `null`, the `source_nat_drain_ranges` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `action` sub block.

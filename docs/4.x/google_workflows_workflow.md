@@ -26,6 +26,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withSourceContents()`](#fn-withsourcecontents)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`fn withUserEnvVars()`](#fn-withuserenvvars)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -62,7 +63,11 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 Format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey} When `null`, the `crypto_key_name` field will be omitted from the resulting object.
   - `description` (`string`): Description of the workflow provided by the user. Must be at most 1000 unicode characters long. When `null`, the `description` field will be omitted from the resulting object.
-  - `labels` (`obj`): A set of key/value label pairs to assign to this Workflow. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): A set of key/value label pairs to assign to this Workflow.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Name of the Workflow. When `null`, the `name` field will be omitted from the resulting object.
   - `name_prefix` (`string`): Set the `name_prefix` field on the resulting resource block. When `null`, the `name_prefix` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
@@ -75,6 +80,7 @@ The {account} value can be the email address or the unique_id of the service acc
 If not provided, workflow will use the project&#39;s default service account.
 Modifying this field for an existing workflow results in a new workflow revision. When `null`, the `service_account` field will be omitted from the resulting object.
   - `source_contents` (`string`): Workflow code to be executed. The size limit is 32KB. When `null`, the `source_contents` field will be omitted from the resulting object.
+  - `user_env_vars` (`obj`): User-defined environment variables associated with this workflow revision. This map has a maximum length of 20. Each string can take up to 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or “WORKFLOWS&#34;. When `null`, the `user_env_vars` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workflows_workflow.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -103,7 +109,11 @@ injecting into a complete block.
 
 Format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey} When `null`, the `crypto_key_name` field will be omitted from the resulting object.
   - `description` (`string`): Description of the workflow provided by the user. Must be at most 1000 unicode characters long. When `null`, the `description` field will be omitted from the resulting object.
-  - `labels` (`obj`): A set of key/value label pairs to assign to this Workflow. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): A set of key/value label pairs to assign to this Workflow.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Name of the Workflow. When `null`, the `name` field will be omitted from the resulting object.
   - `name_prefix` (`string`): Set the `name_prefix` field on the resulting object. When `null`, the `name_prefix` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
@@ -116,6 +126,7 @@ The {account} value can be the email address or the unique_id of the service acc
 If not provided, workflow will use the project&#39;s default service account.
 Modifying this field for an existing workflow results in a new workflow revision. When `null`, the `service_account` field will be omitted from the resulting object.
   - `source_contents` (`string`): Workflow code to be executed. The size limit is 32KB. When `null`, the `source_contents` field will be omitted from the resulting object.
+  - `user_env_vars` (`obj`): User-defined environment variables associated with this workflow revision. This map has a maximum length of 20. Each string can take up to 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or “WORKFLOWS&#34;. When `null`, the `user_env_vars` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workflows_workflow.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -300,6 +311,22 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `timeouts` field.
+
+
+### fn withUserEnvVars
+
+```ts
+withUserEnvVars()
+```
+
+`google-beta.obj.withUserEnvVars` constructs a mixin object that can be merged into the `obj`
+Terraform resource block to set or update the user_env_vars field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`obj`): The value to set for the `user_env_vars` field.
 
 
 ## obj timeouts

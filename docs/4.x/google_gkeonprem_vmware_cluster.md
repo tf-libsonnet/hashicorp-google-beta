@@ -43,6 +43,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withUpgradePolicy()`](#fn-withupgradepolicy)
 * [`fn withUpgradePolicyMixin()`](#fn-withupgradepolicymixin)
+* [`fn withVcenter()`](#fn-withvcenter)
+* [`fn withVcenterMixin()`](#fn-withvcentermixin)
 * [`fn withVmTrackingEnabled()`](#fn-withvmtrackingenabled)
 * [`obj anti_affinity_groups`](#obj-anti_affinity_groups)
   * [`fn new()`](#fn-anti_affinity_groupsnew)
@@ -94,6 +96,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-timeoutsnew)
 * [`obj upgrade_policy`](#obj-upgrade_policy)
   * [`fn new()`](#fn-upgrade_policynew)
+* [`obj vcenter`](#obj-vcenter)
+  * [`fn new()`](#fn-vcenternew)
 
 ## Fields
 
@@ -135,7 +139,11 @@ Key can have 2 segments: prefix (optional) and name (required),
 separated by a slash (/).
 Prefix must be a DNS subdomain.
 Name must be 63 characters or less, begin and end with alphanumerics,
-with dashes (-), underscores (_), dots (.), and alphanumerics between. When `null`, the `annotations` field will be omitted from the resulting object.
+with dashes (-), underscores (_), dots (.), and alphanumerics between.
+
+
+**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
   - `description` (`string`): A human readable description of this VMware User Cluster. When `null`, the `description` field will be omitted from the resulting object.
   - `enable_control_plane_v2` (`bool`): Enable control plane V2. Default to false. When `null`, the `enable_control_plane_v2` field will be omitted from the resulting object.
   - `location` (`string`): The location of the resource.
@@ -154,6 +162,8 @@ least three physical hosts in the datacenter. When `null`, the `anti_affinity_gr
   - `storage` (`list[obj]`): Storage configuration. When `null`, the `storage` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.storage.new](#fn-storagenew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.timeouts.new](#fn-timeoutsnew) constructor.
   - `upgrade_policy` (`list[obj]`): Specifies upgrade policy for the cluster. When `null`, the `upgrade_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.upgrade_policy.new](#fn-upgrade_policynew) constructor.
+  - `vcenter` (`list[obj]`): VmwareVCenterConfig specifies vCenter config for the user cluster.
+Inherited from the admin cluster. When `null`, the `vcenter` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.vcenter.new](#fn-vcenternew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -188,7 +198,11 @@ Key can have 2 segments: prefix (optional) and name (required),
 separated by a slash (/).
 Prefix must be a DNS subdomain.
 Name must be 63 characters or less, begin and end with alphanumerics,
-with dashes (-), underscores (_), dots (.), and alphanumerics between. When `null`, the `annotations` field will be omitted from the resulting object.
+with dashes (-), underscores (_), dots (.), and alphanumerics between.
+
+
+**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
   - `description` (`string`): A human readable description of this VMware User Cluster. When `null`, the `description` field will be omitted from the resulting object.
   - `enable_control_plane_v2` (`bool`): Enable control plane V2. Default to false. When `null`, the `enable_control_plane_v2` field will be omitted from the resulting object.
   - `location` (`string`): The location of the resource.
@@ -207,6 +221,8 @@ least three physical hosts in the datacenter. When `null`, the `anti_affinity_gr
   - `storage` (`list[obj]`): Storage configuration. When `null`, the `storage` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.storage.new](#fn-storagenew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.timeouts.new](#fn-timeoutsnew) constructor.
   - `upgrade_policy` (`list[obj]`): Specifies upgrade policy for the cluster. When `null`, the `upgrade_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.upgrade_policy.new](#fn-upgrade_policynew) constructor.
+  - `vcenter` (`list[obj]`): VmwareVCenterConfig specifies vCenter config for the user cluster.
+Inherited from the admin cluster. When `null`, the `vcenter` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_gkeonprem_vmware_cluster.vcenter.new](#fn-vcenternew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_gkeonprem_vmware_cluster` resource into the root Terraform configuration.
@@ -707,6 +723,43 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list[obj]`): The value to set for the `upgrade_policy` field.
+
+
+### fn withVcenter
+
+```ts
+withVcenter()
+```
+
+`google-beta.list[obj].withVcenter` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the vcenter field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withVcenterMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `vcenter` field.
+
+
+### fn withVcenterMixin
+
+```ts
+withVcenterMixin()
+```
+
+`google-beta.list[obj].withVcenterMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the vcenter field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withVcenter](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `vcenter` field.
 
 
 ### fn withVmTrackingEnabled
@@ -1353,3 +1406,32 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `upgrade_policy` sub block.
+
+
+## obj vcenter
+
+
+
+### fn vcenter.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_gkeonprem_vmware_cluster.vcenter.new` constructs a new object with attributes and blocks configured for the `vcenter`
+Terraform sub block.
+
+
+
+**Args**:
+  - `ca_cert_data` (`string`): Contains the vCenter CA certificate public key for SSL verification. When `null`, the `ca_cert_data` field will be omitted from the resulting object.
+  - `cluster` (`string`): The name of the vCenter cluster for the user cluster. When `null`, the `cluster` field will be omitted from the resulting object.
+  - `datacenter` (`string`): The name of the vCenter datacenter for the user cluster. When `null`, the `datacenter` field will be omitted from the resulting object.
+  - `datastore` (`string`): The name of the vCenter datastore for the user cluster. When `null`, the `datastore` field will be omitted from the resulting object.
+  - `folder` (`string`): The name of the vCenter folder for the user cluster. When `null`, the `folder` field will be omitted from the resulting object.
+  - `resource_pool` (`string`): The name of the vCenter resource pool for the user cluster. When `null`, the `resource_pool` field will be omitted from the resulting object.
+  - `storage_policy_name` (`string`): The name of the vCenter storage policy for the user cluster. When `null`, the `storage_policy_name` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `vcenter` sub block.

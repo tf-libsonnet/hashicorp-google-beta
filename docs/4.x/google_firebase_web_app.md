@@ -58,7 +58,7 @@ If apiKeyId is not set during creation, then Firebase automatically associates a
 This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned. When `null`, the `api_key_id` field will be omitted from the resulting object.
   - `deletion_policy` (`string`): Set to &#39;ABANDON&#39; to allow the WebApp to be untracked from terraform state
 rather than deleted upon &#39;terraform destroy&#39;. This is useful becaue the WebApp may be
-serving traffic. Set to &#39;DELETE&#39; to delete the WebApp. Default to &#39;ABANDON&#39; When `null`, the `deletion_policy` field will be omitted from the resulting object.
+serving traffic. Set to &#39;DELETE&#39; to delete the WebApp. Default to &#39;DELETE&#39; When `null`, the `deletion_policy` field will be omitted from the resulting object.
   - `display_name` (`string`): The user-assigned display name of the App.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_web_app.timeouts.new](#fn-timeoutsnew) constructor.
@@ -90,7 +90,7 @@ If apiKeyId is not set during creation, then Firebase automatically associates a
 This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned. When `null`, the `api_key_id` field will be omitted from the resulting object.
   - `deletion_policy` (`string`): Set to &#39;ABANDON&#39; to allow the WebApp to be untracked from terraform state
 rather than deleted upon &#39;terraform destroy&#39;. This is useful becaue the WebApp may be
-serving traffic. Set to &#39;DELETE&#39; to delete the WebApp. Default to &#39;ABANDON&#39; When `null`, the `deletion_policy` field will be omitted from the resulting object.
+serving traffic. Set to &#39;DELETE&#39; to delete the WebApp. Default to &#39;DELETE&#39; When `null`, the `deletion_policy` field will be omitted from the resulting object.
   - `display_name` (`string`): The user-assigned display name of the App.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_firebase_web_app.timeouts.new](#fn-timeoutsnew) constructor.

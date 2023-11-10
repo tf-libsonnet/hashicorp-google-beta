@@ -67,7 +67,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `action` (`string`): The action to take when a rule match is found. Possible values are &#34;ALLOW&#34; or &#34;DENY&#34;. Possible values: [&#34;ALLOW&#34;, &#34;DENY&#34;]
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
-  - `labels` (`obj`): Set of label tags associated with the AuthorizationPolicy resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Set of label tags associated with the AuthorizationPolicy resource.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location of the authorization policy.
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `name` (`string`): Name of the AuthorizationPolicy resource.
@@ -100,7 +103,10 @@ injecting into a complete block.
 **Args**:
   - `action` (`string`): The action to take when a rule match is found. Possible values are &#34;ALLOW&#34; or &#34;DENY&#34;. Possible values: [&#34;ALLOW&#34;, &#34;DENY&#34;]
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
-  - `labels` (`obj`): Set of label tags associated with the AuthorizationPolicy resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Set of label tags associated with the AuthorizationPolicy resource.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location of the authorization policy.
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `name` (`string`): Name of the AuthorizationPolicy resource.

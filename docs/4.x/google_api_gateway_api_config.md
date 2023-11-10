@@ -83,7 +83,11 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `api_config_id` (`string`): Identifier to assign to the API Config. Must be unique within scope of the parent resource(api). When `null`, the `api_config_id` field will be omitted from the resulting object.
   - `api_config_id_prefix` (`string`): Creates a unique name beginning with the specified prefix. If this and api_config_id are unspecified, a random value is chosen for the name. When `null`, the `api_config_id_prefix` field will be omitted from the resulting object.
   - `display_name` (`string`): A user-visible name for the API. When `null`, the `display_name` field will be omitted from the resulting object.
-  - `labels` (`obj`): Resource labels to represent user-provided metadata. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Resource labels to represent user-provided metadata.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `gateway_config` (`list[obj]`): Immutable. Gateway specific configuration.
 If not specified, backend authentication will be set to use OIDC authentication using the default compute service account When `null`, the `gateway_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.gateway_config.new](#fn-gateway_confignew) constructor.
@@ -119,7 +123,11 @@ injecting into a complete block.
   - `api_config_id` (`string`): Identifier to assign to the API Config. Must be unique within scope of the parent resource(api). When `null`, the `api_config_id` field will be omitted from the resulting object.
   - `api_config_id_prefix` (`string`): Creates a unique name beginning with the specified prefix. If this and api_config_id are unspecified, a random value is chosen for the name. When `null`, the `api_config_id_prefix` field will be omitted from the resulting object.
   - `display_name` (`string`): A user-visible name for the API. When `null`, the `display_name` field will be omitted from the resulting object.
-  - `labels` (`obj`): Resource labels to represent user-provided metadata. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Resource labels to represent user-provided metadata.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `gateway_config` (`list[obj]`): Immutable. Gateway specific configuration.
 If not specified, backend authentication will be set to use OIDC authentication using the default compute service account When `null`, the `gateway_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_api_config.gateway_config.new](#fn-gateway_confignew) constructor.

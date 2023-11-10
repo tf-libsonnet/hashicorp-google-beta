@@ -85,6 +85,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-node_configsole_tenant_confignew)
     * [`obj node_config.sole_tenant_config.node_affinity`](#obj-node_configsole_tenant_confignode_affinity)
       * [`fn new()`](#fn-node_configsole_tenant_confignode_affinitynew)
+  * [`obj node_config.taint`](#obj-node_configtaint)
+    * [`fn new()`](#fn-node_configtaintnew)
   * [`obj node_config.workload_metadata_config`](#obj-node_configworkload_metadata_config)
     * [`fn new()`](#fn-node_configworkload_metadata_confignew)
 * [`obj placement_policy`](#obj-placement_policy)
@@ -651,8 +653,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `auto_repair` (`bool`): Whether the nodes will be automatically repaired. When `null`, the `auto_repair` field will be omitted from the resulting object.
-  - `auto_upgrade` (`bool`): Whether the nodes will be automatically upgraded. When `null`, the `auto_upgrade` field will be omitted from the resulting object.
+  - `auto_repair` (`bool`): Whether the nodes will be automatically repaired. Enabled by default. When `null`, the `auto_repair` field will be omitted from the resulting object.
+  - `auto_upgrade` (`bool`): Whether the nodes will be automatically upgraded. Enabled by default. When `null`, the `auto_upgrade` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `management` sub block.
@@ -779,6 +781,7 @@ Terraform sub block.
   - `boot_disk_kms_key` (`string`): The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. When `null`, the `boot_disk_kms_key` field will be omitted from the resulting object.
   - `disk_size_gb` (`number`): Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. When `null`, the `disk_size_gb` field will be omitted from the resulting object.
   - `disk_type` (`string`): Type of the disk attached to each node. Such as pd-standard, pd-balanced or pd-ssd When `null`, the `disk_type` field will be omitted from the resulting object.
+  - `enable_confidential_storage` (`bool`): If enabled boot disks are configured with confidential mode. When `null`, the `enable_confidential_storage` field will be omitted from the resulting object.
   - `guest_accelerator` (`list`): List of the type and count of accelerator cards attached to the instance. When `null`, the `guest_accelerator` field will be omitted from the resulting object.
   - `image_type` (`string`): The image type to use for this node. Note that for a given image type, the latest version of it will be used. When `null`, the `image_type` field will be omitted from the resulting object.
   - `labels` (`obj`): The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node. When `null`, the `labels` field will be omitted from the resulting object.
@@ -794,7 +797,6 @@ Terraform sub block.
   - `service_account` (`string`): The Google Cloud Platform Service Account to be used by the node VMs. When `null`, the `service_account` field will be omitted from the resulting object.
   - `spot` (`bool`): Whether the nodes are created as spot VM instances. When `null`, the `spot` field will be omitted from the resulting object.
   - `tags` (`list`): The list of instance tags applied to all nodes. When `null`, the `tags` field will be omitted from the resulting object.
-  - `taint` (`list`): List of Kubernetes taints to be applied to each node. When `null`, the `taint` field will be omitted from the resulting object.
   - `advanced_machine_features` (`list[obj]`): Specifies options for controlling advanced machine features. When `null`, the `advanced_machine_features` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.advanced_machine_features.new](#fn-node_configadvanced_machine_featuresnew) constructor.
   - `confidential_nodes` (`list[obj]`): Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can&#39;t be changed (or added/removed) after pool creation without deleting and recreating the entire pool. When `null`, the `confidential_nodes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.confidential_nodes.new](#fn-node_configconfidential_nodesnew) constructor.
   - `ephemeral_storage_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.ephemeral_storage_config.new](#fn-node_configephemeral_storage_confignew) constructor.
@@ -810,6 +812,7 @@ Terraform sub block.
   - `sandbox_config` (`list[obj]`): Sandbox configuration for this node. When `null`, the `sandbox_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.sandbox_config.new](#fn-node_configsandbox_confignew) constructor.
   - `shielded_instance_config` (`list[obj]`): Shielded Instance options. When `null`, the `shielded_instance_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.shielded_instance_config.new](#fn-node_configshielded_instance_confignew) constructor.
   - `sole_tenant_config` (`list[obj]`): Node affinity options for sole tenant node pools. When `null`, the `sole_tenant_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.sole_tenant_config.new](#fn-node_configsole_tenant_confignew) constructor.
+  - `taint` (`list[obj]`): List of Kubernetes taints to be applied to each node. When `null`, the `taint` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.taint.new](#fn-node_configtaintnew) constructor.
   - `workload_metadata_config` (`list[obj]`): The workload metadata configuration for this node. When `null`, the `workload_metadata_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.workload_metadata_config.new](#fn-node_configworkload_metadata_confignew) constructor.
 
 **Returns**:
@@ -1043,7 +1046,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `sysctls` (`obj`): The Linux kernel parameters to be applied to the nodes and all pods running on the nodes.
+  - `cgroup_mode` (`string`): cgroupMode specifies the cgroup mode to be used on the node. When `null`, the `cgroup_mode` field will be omitted from the resulting object.
+  - `sysctls` (`obj`): The Linux kernel parameters to be applied to the nodes and all pods running on the nodes. When `null`, the `sysctls` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `linux_node_config` sub block.
@@ -1190,6 +1194,31 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `node_affinity` sub block.
+
+
+## obj node_config.taint
+
+
+
+### fn node_config.taint.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_node_pool.node_config.taint.new` constructs a new object with attributes and blocks configured for the `taint`
+Terraform sub block.
+
+
+
+**Args**:
+  - `effect` (`string`): Effect for taint.
+  - `key` (`string`): Key for taint.
+  - `value` (`string`): Value for taint.
+
+**Returns**:
+  - An attribute object that represents the `taint` sub block.
 
 
 ## obj node_config.workload_metadata_config

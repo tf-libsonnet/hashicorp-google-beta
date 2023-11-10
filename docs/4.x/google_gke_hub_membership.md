@@ -21,6 +21,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withEndpoint()`](#fn-withendpoint)
 * [`fn withEndpointMixin()`](#fn-withendpointmixin)
 * [`fn withLabels()`](#fn-withlabels)
+* [`fn withLocation()`](#fn-withlocation)
 * [`fn withMembershipId()`](#fn-withmembershipid)
 * [`fn withProject()`](#fn-withproject)
 * [`fn withTimeouts()`](#fn-withtimeouts)
@@ -64,7 +65,13 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
   - `description` (`string`): The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API. When `null`, the `description` field will be omitted from the resulting object.
-  - `labels` (`obj`): Labels to apply to this membership. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Labels to apply to this membership.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `location` (`string`): Location of the membership.
+The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `membership_id` (`string`): The client-provided identifier of the membership.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `authority` (`list[obj]`): Authority encodes how Google will recognize identities from this Membership.
@@ -96,7 +103,13 @@ injecting into a complete block.
 
 **Args**:
   - `description` (`string`): The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API. When `null`, the `description` field will be omitted from the resulting object.
-  - `labels` (`obj`): Labels to apply to this membership. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Labels to apply to this membership.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `location` (`string`): Location of the membership.
+The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `membership_id` (`string`): The client-provided identifier of the membership.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `authority` (`list[obj]`): Authority encodes how Google will recognize identities from this Membership.
@@ -213,6 +226,22 @@ Terraform resource block to set or update the labels field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `labels` field.
+
+
+### fn withLocation
+
+```ts
+withLocation()
+```
+
+`google-beta.string.withLocation` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the location field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `location` field.
 
 
 ### fn withMembershipId
