@@ -103,6 +103,7 @@ the `src` and/or `version` parameters are set.
   - `dns_custom_endpoint` (`string`): Set the `dns_custom_endpoint` field on the resulting provider block. When `null`, the `dns_custom_endpoint` field will be omitted from the resulting object.
   - `document_ai_custom_endpoint` (`string`): Set the `document_ai_custom_endpoint` field on the resulting provider block. When `null`, the `document_ai_custom_endpoint` field will be omitted from the resulting object.
   - `document_ai_warehouse_custom_endpoint` (`string`): Set the `document_ai_warehouse_custom_endpoint` field on the resulting provider block. When `null`, the `document_ai_warehouse_custom_endpoint` field will be omitted from the resulting object.
+  - `edgenetwork_custom_endpoint` (`string`): Set the `edgenetwork_custom_endpoint` field on the resulting provider block. When `null`, the `edgenetwork_custom_endpoint` field will be omitted from the resulting object.
   - `essential_contacts_custom_endpoint` (`string`): Set the `essential_contacts_custom_endpoint` field on the resulting provider block. When `null`, the `essential_contacts_custom_endpoint` field will be omitted from the resulting object.
   - `eventarc_custom_endpoint` (`string`): Set the `eventarc_custom_endpoint` field on the resulting provider block. When `null`, the `eventarc_custom_endpoint` field will be omitted from the resulting object.
   - `filestore_custom_endpoint` (`string`): Set the `filestore_custom_endpoint` field on the resulting provider block. When `null`, the `filestore_custom_endpoint` field will be omitted from the resulting object.
@@ -174,6 +175,7 @@ the `src` and/or `version` parameters are set.
   - `tags_custom_endpoint` (`string`): Set the `tags_custom_endpoint` field on the resulting provider block. When `null`, the `tags_custom_endpoint` field will be omitted from the resulting object.
   - `tags_location_custom_endpoint` (`string`): Set the `tags_location_custom_endpoint` field on the resulting provider block. When `null`, the `tags_location_custom_endpoint` field will be omitted from the resulting object.
   - `tpu_custom_endpoint` (`string`): Set the `tpu_custom_endpoint` field on the resulting provider block. When `null`, the `tpu_custom_endpoint` field will be omitted from the resulting object.
+  - `tpu_v2_custom_endpoint` (`string`): Set the `tpu_v2_custom_endpoint` field on the resulting provider block. When `null`, the `tpu_v2_custom_endpoint` field will be omitted from the resulting object.
   - `user_project_override` (`bool`): Set the `user_project_override` field on the resulting provider block. When `null`, the `user_project_override` field will be omitted from the resulting object.
   - `vertex_ai_custom_endpoint` (`string`): Set the `vertex_ai_custom_endpoint` field on the resulting provider block. When `null`, the `vertex_ai_custom_endpoint` field will be omitted from the resulting object.
   - `vmwareengine_custom_endpoint` (`string`): Set the `vmwareengine_custom_endpoint` field on the resulting provider block. When `null`, the `vmwareengine_custom_endpoint` field will be omitted from the resulting object.
@@ -281,6 +283,7 @@ injecting into a complete block.
   - `dns_custom_endpoint` (`string`): Set the `dns_custom_endpoint` field on the resulting object. When `null`, the `dns_custom_endpoint` field will be omitted from the resulting object.
   - `document_ai_custom_endpoint` (`string`): Set the `document_ai_custom_endpoint` field on the resulting object. When `null`, the `document_ai_custom_endpoint` field will be omitted from the resulting object.
   - `document_ai_warehouse_custom_endpoint` (`string`): Set the `document_ai_warehouse_custom_endpoint` field on the resulting object. When `null`, the `document_ai_warehouse_custom_endpoint` field will be omitted from the resulting object.
+  - `edgenetwork_custom_endpoint` (`string`): Set the `edgenetwork_custom_endpoint` field on the resulting object. When `null`, the `edgenetwork_custom_endpoint` field will be omitted from the resulting object.
   - `essential_contacts_custom_endpoint` (`string`): Set the `essential_contacts_custom_endpoint` field on the resulting object. When `null`, the `essential_contacts_custom_endpoint` field will be omitted from the resulting object.
   - `eventarc_custom_endpoint` (`string`): Set the `eventarc_custom_endpoint` field on the resulting object. When `null`, the `eventarc_custom_endpoint` field will be omitted from the resulting object.
   - `filestore_custom_endpoint` (`string`): Set the `filestore_custom_endpoint` field on the resulting object. When `null`, the `filestore_custom_endpoint` field will be omitted from the resulting object.
@@ -352,6 +355,7 @@ injecting into a complete block.
   - `tags_custom_endpoint` (`string`): Set the `tags_custom_endpoint` field on the resulting object. When `null`, the `tags_custom_endpoint` field will be omitted from the resulting object.
   - `tags_location_custom_endpoint` (`string`): Set the `tags_location_custom_endpoint` field on the resulting object. When `null`, the `tags_location_custom_endpoint` field will be omitted from the resulting object.
   - `tpu_custom_endpoint` (`string`): Set the `tpu_custom_endpoint` field on the resulting object. When `null`, the `tpu_custom_endpoint` field will be omitted from the resulting object.
+  - `tpu_v2_custom_endpoint` (`string`): Set the `tpu_v2_custom_endpoint` field on the resulting object. When `null`, the `tpu_v2_custom_endpoint` field will be omitted from the resulting object.
   - `user_project_override` (`bool`): Set the `user_project_override` field on the resulting object. When `null`, the `user_project_override` field will be omitted from the resulting object.
   - `vertex_ai_custom_endpoint` (`string`): Set the `vertex_ai_custom_endpoint` field on the resulting object. When `null`, the `vertex_ai_custom_endpoint` field will be omitted from the resulting object.
   - `vmwareengine_custom_endpoint` (`string`): Set the `vmwareengine_custom_endpoint` field on the resulting object. When `null`, the `vmwareengine_custom_endpoint` field will be omitted from the resulting object.
