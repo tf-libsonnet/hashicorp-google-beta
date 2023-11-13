@@ -20,6 +20,7 @@ permalink: /data/
 * [google_app_engine_default_service_account](google_app_engine_default_service_account.md)
 * [google_artifact_registry_repository](google_artifact_registry_repository.md)
 * [google_artifact_registry_repository_iam_policy](google_artifact_registry_repository_iam_policy.md)
+* [google_backup_dr_management_server](google_backup_dr_management_server.md)
 * [google_beyondcorp_app_connection](google_beyondcorp_app_connection.md)
 * [google_beyondcorp_app_connector](google_beyondcorp_app_connector.md)
 * [google_beyondcorp_app_gateway](google_beyondcorp_app_gateway.md)

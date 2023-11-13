@@ -15,6 +15,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   app_engine_default_service_account: (import 'app_engine_default_service_account.libsonnet'),
   artifact_registry_repository: (import 'artifact_registry_repository.libsonnet'),
   artifact_registry_repository_iam_policy: (import 'artifact_registry_repository_iam_policy.libsonnet'),
+  backup_dr_management_server: (import 'backup_dr_management_server.libsonnet'),
   beyondcorp_app_connection: (import 'beyondcorp_app_connection.libsonnet'),
   beyondcorp_app_connector: (import 'beyondcorp_app_connector.libsonnet'),
   beyondcorp_app_gateway: (import 'beyondcorp_app_gateway.libsonnet'),
