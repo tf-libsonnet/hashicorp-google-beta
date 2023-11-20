@@ -56,7 +56,8 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
   - `api_config` (`string`): Resource name of the API Config for this Gateway. Format: projects/{project}/locations/global/apis/{api}/configs/{apiConfig}.
-When changing api configs please ensure the new config is a new resource and the lifecycle rule &#39;create_before_destroy&#39; is set.
+When changing api configs please ensure the new config is a new resource and the
+[lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle) rule &#39;create_before_destroy&#39; is set.
   - `display_name` (`string`): A user-visible name for the API. When `null`, the `display_name` field will be omitted from the resulting object.
   - `gateway_id` (`string`): Identifier to assign to the Gateway. Must be unique within scope of the parent resource(project).
   - `labels` (`obj`): Resource labels to represent user-provided metadata.
@@ -91,7 +92,8 @@ injecting into a complete block.
 
 **Args**:
   - `api_config` (`string`): Resource name of the API Config for this Gateway. Format: projects/{project}/locations/global/apis/{api}/configs/{apiConfig}.
-When changing api configs please ensure the new config is a new resource and the lifecycle rule &#39;create_before_destroy&#39; is set.
+When changing api configs please ensure the new config is a new resource and the
+[lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle) rule &#39;create_before_destroy&#39; is set.
   - `display_name` (`string`): A user-visible name for the API. When `null`, the `display_name` field will be omitted from the resulting object.
   - `gateway_id` (`string`): Identifier to assign to the Gateway. Must be unique within scope of the parent resource(project).
   - `labels` (`obj`): Resource labels to represent user-provided metadata.
