@@ -163,6 +163,7 @@ the `src` and/or `version` parameters are set.
   - `runtimeconfig_custom_endpoint` (`string`): Set the `runtimeconfig_custom_endpoint` field on the resulting provider block. When `null`, the `runtimeconfig_custom_endpoint` field will be omitted from the resulting object.
   - `scopes` (`list`): Set the `scopes` field on the resulting provider block. When `null`, the `scopes` field will be omitted from the resulting object.
   - `secret_manager_custom_endpoint` (`string`): Set the `secret_manager_custom_endpoint` field on the resulting provider block. When `null`, the `secret_manager_custom_endpoint` field will be omitted from the resulting object.
+  - `secure_source_manager_custom_endpoint` (`string`): Set the `secure_source_manager_custom_endpoint` field on the resulting provider block. When `null`, the `secure_source_manager_custom_endpoint` field will be omitted from the resulting object.
   - `security_center_custom_endpoint` (`string`): Set the `security_center_custom_endpoint` field on the resulting provider block. When `null`, the `security_center_custom_endpoint` field will be omitted from the resulting object.
   - `security_scanner_custom_endpoint` (`string`): Set the `security_scanner_custom_endpoint` field on the resulting provider block. When `null`, the `security_scanner_custom_endpoint` field will be omitted from the resulting object.
   - `service_directory_custom_endpoint` (`string`): Set the `service_directory_custom_endpoint` field on the resulting provider block. When `null`, the `service_directory_custom_endpoint` field will be omitted from the resulting object.
@@ -347,6 +348,7 @@ injecting into a complete block.
   - `runtimeconfig_custom_endpoint` (`string`): Set the `runtimeconfig_custom_endpoint` field on the resulting object. When `null`, the `runtimeconfig_custom_endpoint` field will be omitted from the resulting object.
   - `scopes` (`list`): Set the `scopes` field on the resulting object. When `null`, the `scopes` field will be omitted from the resulting object.
   - `secret_manager_custom_endpoint` (`string`): Set the `secret_manager_custom_endpoint` field on the resulting object. When `null`, the `secret_manager_custom_endpoint` field will be omitted from the resulting object.
+  - `secure_source_manager_custom_endpoint` (`string`): Set the `secure_source_manager_custom_endpoint` field on the resulting object. When `null`, the `secure_source_manager_custom_endpoint` field will be omitted from the resulting object.
   - `security_center_custom_endpoint` (`string`): Set the `security_center_custom_endpoint` field on the resulting object. When `null`, the `security_center_custom_endpoint` field will be omitted from the resulting object.
   - `security_scanner_custom_endpoint` (`string`): Set the `security_scanner_custom_endpoint` field on the resulting object. When `null`, the `security_scanner_custom_endpoint` field will be omitted from the resulting object.
   - `service_directory_custom_endpoint` (`string`): Set the `service_directory_custom_endpoint` field on the resulting object. When `null`, the `service_directory_custom_endpoint` field will be omitted from the resulting object.

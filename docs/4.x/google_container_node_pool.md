@@ -34,6 +34,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withPlacementPolicy()`](#fn-withplacementpolicy)
 * [`fn withPlacementPolicyMixin()`](#fn-withplacementpolicymixin)
 * [`fn withProject()`](#fn-withproject)
+* [`fn withQueuedProvisioning()`](#fn-withqueuedprovisioning)
+* [`fn withQueuedProvisioningMixin()`](#fn-withqueuedprovisioningmixin)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withUpgradeSettings()`](#fn-withupgradesettings)
@@ -91,6 +93,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-node_configworkload_metadata_confignew)
 * [`obj placement_policy`](#obj-placement_policy)
   * [`fn new()`](#fn-placement_policynew)
+* [`obj queued_provisioning`](#obj-queued_provisioning)
+  * [`fn new()`](#fn-queued_provisioningnew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 * [`obj upgrade_settings`](#obj-upgrade_settings)
@@ -144,6 +148,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `network_config` (`list[obj]`): Networking configuration for this NodePool. If specified, it overrides the cluster-level defaults. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.new](#fn-network_confignew) constructor.
   - `node_config` (`list[obj]`): The configuration of the nodepool When `null`, the `node_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.new](#fn-node_confignew) constructor.
   - `placement_policy` (`list[obj]`): Specifies the node placement policy When `null`, the `placement_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.placement_policy.new](#fn-placement_policynew) constructor.
+  - `queued_provisioning` (`list[obj]`): Specifies the configuration of queued provisioning When `null`, the `queued_provisioning` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.queued_provisioning.new](#fn-queued_provisioningnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.timeouts.new](#fn-timeoutsnew) constructor.
   - `upgrade_settings` (`list[obj]`): Specify node upgrade settings to change how many nodes GKE attempts to upgrade at once. The number of nodes upgraded simultaneously is the sum of max_surge and max_unavailable. The maximum number of nodes upgraded simultaneously is limited to 20. When `null`, the `upgrade_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.upgrade_settings.new](#fn-upgrade_settingsnew) constructor.
 
@@ -184,6 +189,7 @@ injecting into a complete block.
   - `network_config` (`list[obj]`): Networking configuration for this NodePool. If specified, it overrides the cluster-level defaults. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.new](#fn-network_confignew) constructor.
   - `node_config` (`list[obj]`): The configuration of the nodepool When `null`, the `node_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.new](#fn-node_confignew) constructor.
   - `placement_policy` (`list[obj]`): Specifies the node placement policy When `null`, the `placement_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.placement_policy.new](#fn-placement_policynew) constructor.
+  - `queued_provisioning` (`list[obj]`): Specifies the configuration of queued provisioning When `null`, the `queued_provisioning` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.queued_provisioning.new](#fn-queued_provisioningnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.timeouts.new](#fn-timeoutsnew) constructor.
   - `upgrade_settings` (`list[obj]`): Specify node upgrade settings to change how many nodes GKE attempts to upgrade at once. The number of nodes upgraded simultaneously is the sum of max_surge and max_unavailable. The maximum number of nodes upgraded simultaneously is limited to 20. When `null`, the `upgrade_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.upgrade_settings.new](#fn-upgrade_settingsnew) constructor.
 
@@ -518,6 +524,43 @@ Terraform resource block to set or update the project field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `project` field.
+
+
+### fn withQueuedProvisioning
+
+```ts
+withQueuedProvisioning()
+```
+
+`google-beta.list[obj].withQueuedProvisioning` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the queued_provisioning field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withQueuedProvisioningMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `queued_provisioning` field.
+
+
+### fn withQueuedProvisioningMixin
+
+```ts
+withQueuedProvisioningMixin()
+```
+
+`google-beta.list[obj].withQueuedProvisioningMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the queued_provisioning field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withQueuedProvisioning](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `queued_provisioning` field.
 
 
 ### fn withTimeouts
@@ -1267,6 +1310,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `placement_policy` sub block.
+
+
+## obj queued_provisioning
+
+
+
+### fn queued_provisioning.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_node_pool.queued_provisioning.new` constructs a new object with attributes and blocks configured for the `queued_provisioning`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enabled` (`bool`): Whether nodes in this node pool are obtainable solely through the ProvisioningRequest API
+
+**Returns**:
+  - An attribute object that represents the `queued_provisioning` sub block.
 
 
 ## obj timeouts

@@ -315,6 +315,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-node_poolnode_configworkload_metadata_confignew)
   * [`obj node_pool.placement_policy`](#obj-node_poolplacement_policy)
     * [`fn new()`](#fn-node_poolplacement_policynew)
+  * [`obj node_pool.queued_provisioning`](#obj-node_poolqueued_provisioning)
+    * [`fn new()`](#fn-node_poolqueued_provisioningnew)
   * [`obj node_pool.upgrade_settings`](#obj-node_poolupgrade_settings)
     * [`fn new()`](#fn-node_poolupgrade_settingsnew)
     * [`obj node_pool.upgrade_settings.blue_green_settings`](#obj-node_poolupgrade_settingsblue_green_settings)
@@ -4191,6 +4193,7 @@ Terraform sub block.
   - `network_config` (`list[obj]`): Networking configuration for this NodePool. If specified, it overrides the cluster-level defaults. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.network_config.new](#fn-node_poolnetwork_confignew) constructor.
   - `node_config` (`list[obj]`): The configuration of the nodepool When `null`, the `node_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.node_config.new](#fn-node_poolnode_confignew) constructor.
   - `placement_policy` (`list[obj]`): Specifies the node placement policy When `null`, the `placement_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.placement_policy.new](#fn-node_poolplacement_policynew) constructor.
+  - `queued_provisioning` (`list[obj]`): Specifies the configuration of queued provisioning When `null`, the `queued_provisioning` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.queued_provisioning.new](#fn-node_poolqueued_provisioningnew) constructor.
   - `upgrade_settings` (`list[obj]`): Specify node upgrade settings to change how many nodes GKE attempts to upgrade at once. The number of nodes upgraded simultaneously is the sum of max_surge and max_unavailable. The maximum number of nodes upgraded simultaneously is limited to 20. When `null`, the `upgrade_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.upgrade_settings.new](#fn-node_poolupgrade_settingsnew) constructor.
 
 **Returns**:
@@ -4855,6 +4858,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `placement_policy` sub block.
+
+
+## obj node_pool.queued_provisioning
+
+
+
+### fn node_pool.queued_provisioning.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_pool.queued_provisioning.new` constructs a new object with attributes and blocks configured for the `queued_provisioning`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enabled` (`bool`): Whether nodes in this node pool are obtainable solely through the ProvisioningRequest API
+
+**Returns**:
+  - An attribute object that represents the `queued_provisioning` sub block.
 
 
 ## obj node_pool.upgrade_settings
