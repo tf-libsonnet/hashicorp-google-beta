@@ -15,9 +15,12 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withDisplayName()`](#fn-withdisplayname)
 * [`fn withGitRemoteSettings()`](#fn-withgitremotesettings)
 * [`fn withGitRemoteSettingsMixin()`](#fn-withgitremotesettingsmixin)
+* [`fn withLabels()`](#fn-withlabels)
 * [`fn withName()`](#fn-withname)
+* [`fn withNpmrcEnvironmentVariablesSecretVersion()`](#fn-withnpmrcenvironmentvariablessecretversion)
 * [`fn withProject()`](#fn-withproject)
 * [`fn withRegion()`](#fn-withregion)
 * [`fn withServiceAccount()`](#fn-withserviceaccount)
@@ -63,7 +66,15 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
+  - `display_name` (`string`): Optional. The repository&#39;s user-friendly name. When `null`, the `display_name` field will be omitted from the resulting object.
+  - `labels` (`obj`): Optional. Repository user labels.
+An object containing a list of &#34;key&#34;: value pairs. Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#34;count&#34;: &#34;3&#34; }.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): The repository&#39;s name.
+  - `npmrc_environment_variables_secret_version` (`string`): Optional. The name of the Secret Manager secret version to be used to interpolate variables into the .npmrc file for package installation operations. Must be in the format projects/*/secrets/*/versions/*. The file itself must be in a JSON format. When `null`, the `npmrc_environment_variables_secret_version` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): A reference to the region When `null`, the `region` field will be omitted from the resulting object.
   - `service_account` (`string`): The service account to run workflow invocations under. When `null`, the `service_account` field will be omitted from the resulting object.
@@ -93,7 +104,15 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
+  - `display_name` (`string`): Optional. The repository&#39;s user-friendly name. When `null`, the `display_name` field will be omitted from the resulting object.
+  - `labels` (`obj`): Optional. Repository user labels.
+An object containing a list of &#34;key&#34;: value pairs. Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#34;count&#34;: &#34;3&#34; }.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): The repository&#39;s name.
+  - `npmrc_environment_variables_secret_version` (`string`): Optional. The name of the Secret Manager secret version to be used to interpolate variables into the .npmrc file for package installation operations. Must be in the format projects/*/secrets/*/versions/*. The file itself must be in a JSON format. When `null`, the `npmrc_environment_variables_secret_version` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): A reference to the region When `null`, the `region` field will be omitted from the resulting object.
   - `service_account` (`string`): The service account to run workflow invocations under. When `null`, the `service_account` field will be omitted from the resulting object.
@@ -103,6 +122,22 @@ injecting into a complete block.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_dataform_repository` resource into the root Terraform configuration.
+
+
+### fn withDisplayName
+
+```ts
+withDisplayName()
+```
+
+`google-beta.string.withDisplayName` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the display_name field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `display_name` field.
 
 
 ### fn withGitRemoteSettings
@@ -142,6 +177,22 @@ function.
   - `value` (`list[obj]`): The value to set for the `git_remote_settings` field.
 
 
+### fn withLabels
+
+```ts
+withLabels()
+```
+
+`google-beta.obj.withLabels` constructs a mixin object that can be merged into the `obj`
+Terraform resource block to set or update the labels field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`obj`): The value to set for the `labels` field.
+
+
 ### fn withName
 
 ```ts
@@ -156,6 +207,22 @@ Terraform resource block to set or update the name field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `name` field.
+
+
+### fn withNpmrcEnvironmentVariablesSecretVersion
+
+```ts
+withNpmrcEnvironmentVariablesSecretVersion()
+```
+
+`google-beta.string.withNpmrcEnvironmentVariablesSecretVersion` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the npmrc_environment_variables_secret_version field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `npmrc_environment_variables_secret_version` field.
 
 
 ### fn withProject

@@ -273,6 +273,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-node_poolnetwork_configadditional_node_network_configsnew)
     * [`obj node_pool.network_config.additional_pod_network_configs`](#obj-node_poolnetwork_configadditional_pod_network_configs)
       * [`fn new()`](#fn-node_poolnetwork_configadditional_pod_network_configsnew)
+    * [`obj node_pool.network_config.network_performance_config`](#obj-node_poolnetwork_confignetwork_performance_config)
+      * [`fn new()`](#fn-node_poolnetwork_confignetwork_performance_confignew)
     * [`obj node_pool.network_config.pod_cidr_overprovision_config`](#obj-node_poolnetwork_configpod_cidr_overprovision_config)
       * [`fn new()`](#fn-node_poolnetwork_configpod_cidr_overprovision_confignew)
   * [`obj node_pool.node_config`](#obj-node_poolnode_config)
@@ -4274,6 +4276,7 @@ Terraform sub block.
   - `pod_range` (`string`): The ID of the secondary range for pod IPs. If create_pod_range is true, this ID is used for the new range. If create_pod_range is false, uses an existing secondary range with this ID. When `null`, the `pod_range` field will be omitted from the resulting object.
   - `additional_node_network_configs` (`list[obj]`): We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface When `null`, the `additional_node_network_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.network_config.additional_node_network_configs.new](#fn-node_poolnode_pooladditional_node_network_configsnew) constructor.
   - `additional_pod_network_configs` (`list[obj]`): We specify the additional pod networks for this node pool using this list. Each pod network corresponds to an additional alias IP range for the node When `null`, the `additional_pod_network_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.network_config.additional_pod_network_configs.new](#fn-node_poolnode_pooladditional_pod_network_configsnew) constructor.
+  - `network_performance_config` (`list[obj]`): Network bandwidth tier configuration. When `null`, the `network_performance_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.network_config.network_performance_config.new](#fn-node_poolnode_poolnetwork_performance_confignew) constructor.
   - `pod_cidr_overprovision_config` (`list[obj]`): Configuration for node-pool level pod cidr overprovision. If not set, the cluster level setting will be inherited When `null`, the `pod_cidr_overprovision_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.node_pool.network_config.pod_cidr_overprovision_config.new](#fn-node_poolnode_poolpod_cidr_overprovision_confignew) constructor.
 
 **Returns**:
@@ -4327,6 +4330,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `additional_pod_network_configs` sub block.
+
+
+## obj node_pool.network_config.network_performance_config
+
+
+
+### fn node_pool.network_config.network_performance_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.node_pool.network_config.network_performance_config.new` constructs a new object with attributes and blocks configured for the `network_performance_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `total_egress_bandwidth_tier` (`string`): Specifies the total network bandwidth tier for the NodePool.
+
+**Returns**:
+  - An attribute object that represents the `network_performance_config` sub block.
 
 
 ## obj node_pool.network_config.pod_cidr_overprovision_config

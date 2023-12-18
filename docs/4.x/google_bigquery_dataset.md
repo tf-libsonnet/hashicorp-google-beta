@@ -25,6 +25,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDefaultTableExpirationMs()`](#fn-withdefaulttableexpirationms)
 * [`fn withDeleteContentsOnDestroy()`](#fn-withdeletecontentsondestroy)
 * [`fn withDescription()`](#fn-withdescription)
+* [`fn withExternalDatasetReference()`](#fn-withexternaldatasetreference)
+* [`fn withExternalDatasetReferenceMixin()`](#fn-withexternaldatasetreferencemixin)
 * [`fn withFriendlyName()`](#fn-withfriendlyname)
 * [`fn withIsCaseInsensitive()`](#fn-withiscaseinsensitive)
 * [`fn withLabels()`](#fn-withlabels)
@@ -46,6 +48,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-accessviewnew)
 * [`obj default_encryption_configuration`](#obj-default_encryption_configuration)
   * [`fn new()`](#fn-default_encryption_configurationnew)
+* [`obj external_dataset_reference`](#obj-external_dataset_reference)
+  * [`fn new()`](#fn-external_dataset_referencenew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -156,6 +160,7 @@ LOGICAL is the default if this flag isn&#39;t specified. When `null`, the `stora
   - `default_encryption_configuration` (`list[obj]`): The default encryption key for all tables in the dataset. Once this property is set,
 all newly-created partitioned tables in the dataset will have encryption key set to
 this value, unless table creation request (or query) overrides the key. When `null`, the `default_encryption_configuration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_dataset.default_encryption_configuration.new](#fn-default_encryption_configurationnew) constructor.
+  - `external_dataset_reference` (`list[obj]`): Information about the external metadata storage where the dataset is defined. When `null`, the `external_dataset_reference` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_dataset.external_dataset_reference.new](#fn-external_dataset_referencenew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_dataset.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -258,6 +263,7 @@ LOGICAL is the default if this flag isn&#39;t specified. When `null`, the `stora
   - `default_encryption_configuration` (`list[obj]`): The default encryption key for all tables in the dataset. Once this property is set,
 all newly-created partitioned tables in the dataset will have encryption key set to
 this value, unless table creation request (or query) overrides the key. When `null`, the `default_encryption_configuration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_dataset.default_encryption_configuration.new](#fn-default_encryption_configurationnew) constructor.
+  - `external_dataset_reference` (`list[obj]`): Information about the external metadata storage where the dataset is defined. When `null`, the `external_dataset_reference` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_dataset.external_dataset_reference.new](#fn-external_dataset_referencenew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_dataset.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -432,6 +438,43 @@ Terraform resource block to set or update the description field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `description` field.
+
+
+### fn withExternalDatasetReference
+
+```ts
+withExternalDatasetReference()
+```
+
+`google-beta.list[obj].withExternalDatasetReference` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the external_dataset_reference field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withExternalDatasetReferenceMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `external_dataset_reference` field.
+
+
+### fn withExternalDatasetReferenceMixin
+
+```ts
+withExternalDatasetReferenceMixin()
+```
+
+`google-beta.list[obj].withExternalDatasetReferenceMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the external_dataset_reference field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withExternalDatasetReference](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `external_dataset_reference` field.
 
 
 ### fn withFriendlyName
@@ -766,6 +809,31 @@ access to this encryption key.
 
 **Returns**:
   - An attribute object that represents the `default_encryption_configuration` sub block.
+
+
+## obj external_dataset_reference
+
+
+
+### fn external_dataset_reference.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_bigquery_dataset.external_dataset_reference.new` constructs a new object with attributes and blocks configured for the `external_dataset_reference`
+Terraform sub block.
+
+
+
+**Args**:
+  - `connection` (`string`): The connection id that is used to access the externalSource.
+Format: projects/{projectId}/locations/{locationId}/connections/{connectionId}
+  - `external_source` (`string`): External source that backs this dataset.
+
+**Returns**:
+  - An attribute object that represents the `external_dataset_reference` sub block.
 
 
 ## obj timeouts
