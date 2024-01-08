@@ -57,6 +57,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-configweb_server_network_access_controlallowed_ip_rangenew)
   * [`obj config.workloads_config`](#obj-configworkloads_config)
     * [`fn new()`](#fn-configworkloads_confignew)
+    * [`obj config.workloads_config.dag_processor`](#obj-configworkloads_configdag_processor)
+      * [`fn new()`](#fn-configworkloads_configdag_processornew)
     * [`obj config.workloads_config.scheduler`](#obj-configworkloads_configscheduler)
       * [`fn new()`](#fn-configworkloads_configschedulernew)
     * [`obj config.workloads_config.triggerer`](#obj-configworkloads_configtriggerer)
@@ -494,6 +496,7 @@ Terraform sub block.
 
 
 **Args**:
+  - `composer_internal_ipv4_cidr_block` (`string`): IPv4 cidr range that will be used by Composer internal components. When `null`, the `composer_internal_ipv4_cidr_block` field will be omitted from the resulting object.
   - `disk_size_gb` (`number`): The disk size in GB used for node VMs. Minimum size is 20GB. If unspecified, defaults to 100GB. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. When `null`, the `disk_size_gb` field will be omitted from the resulting object.
   - `enable_ip_masq_agent` (`bool`): Deploys &#39;ip-masq-agent&#39; daemon set in the GKE cluster and defines nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for all destination addresses, except between pods traffic. See: https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent When `null`, the `enable_ip_masq_agent` field will be omitted from the resulting object.
   - `ip_allocation_policy` (`list`): Configuration for controlling how IPs are allocated in the GKE cluster. Cannot be updated. When `null`, the `ip_allocation_policy` field will be omitted from the resulting object.
@@ -612,6 +615,7 @@ Terraform sub block.
   - `pypi_packages` (`obj`): Custom Python Package Index (PyPI) packages to be installed in the environment. Keys refer to the lowercase package name (e.g. &#34;numpy&#34;). Values are the lowercase extras and version specifier (e.g. &#34;==1.12.0&#34;, &#34;[devel,gcp_api]&#34;, &#34;[devel]&gt;=1.8.2, &lt;1.9.2&#34;). To specify a package without pinning it to a version specifier, use the empty string as the value. When `null`, the `pypi_packages` field will be omitted from the resulting object.
   - `python_version` (`string`): The major version of Python used to run the Apache Airflow scheduler, worker, and webserver processes. Can be set to &#39;2&#39; or &#39;3&#39;. If not specified, the default is &#39;2&#39;. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. Environments in newer versions always use Python major version 3. When `null`, the `python_version` field will be omitted from the resulting object.
   - `scheduler_count` (`number`): The number of schedulers for Airflow. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-2.*.*. When `null`, the `scheduler_count` field will be omitted from the resulting object.
+  - `web_server_plugins_mode` (`string`): Should be either &#39;ENABLED&#39; or &#39;DISABLED&#39;. Defaults to &#39;ENABLED&#39;. Used in Composer 3. When `null`, the `web_server_plugins_mode` field will be omitted from the resulting object.
   - `cloud_data_lineage_integration` (`list[obj]`): The configuration for Cloud Data Lineage integration. Supported for Cloud Composer environments in versions composer-2.1.2-airflow-*.*.* and newer When `null`, the `cloud_data_lineage_integration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.software_config.cloud_data_lineage_integration.new](#fn-configconfigcloud_data_lineage_integrationnew) constructor.
 
 **Returns**:
@@ -728,6 +732,7 @@ Terraform sub block.
 
 
 **Args**:
+  - `dag_processor` (`list[obj]`): Configuration for resources used by DAG processor. When `null`, the `dag_processor` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.dag_processor.new](#fn-configconfigdag_processornew) constructor.
   - `scheduler` (`list[obj]`): Configuration for resources used by Airflow schedulers. When `null`, the `scheduler` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.scheduler.new](#fn-configconfigschedulernew) constructor.
   - `triggerer` (`list[obj]`): Configuration for resources used by Airflow triggerers. When `null`, the `triggerer` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.triggerer.new](#fn-configconfigtriggerernew) constructor.
   - `web_server` (`list[obj]`): Configuration for resources used by Airflow web server. When `null`, the `web_server` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.web_server.new](#fn-configconfigweb_servernew) constructor.
@@ -735,6 +740,31 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `workloads_config` sub block.
+
+
+## obj config.workloads_config.dag_processor
+
+
+
+### fn config.workloads_config.dag_processor.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_composer_environment.config.workloads_config.dag_processor.new` constructs a new object with attributes and blocks configured for the `dag_processor`
+Terraform sub block.
+
+
+
+**Args**:
+  - `cpu` (`number`): CPU request and limit for DAG processor. When `null`, the `cpu` field will be omitted from the resulting object.
+  - `memory_gb` (`number`): Memory (GB) request and limit for DAG processor. When `null`, the `memory_gb` field will be omitted from the resulting object.
+  - `storage_gb` (`number`): Storage (GB) request and limit for DAG processor. When `null`, the `storage_gb` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `dag_processor` sub block.
 
 
 ## obj config.workloads_config.scheduler

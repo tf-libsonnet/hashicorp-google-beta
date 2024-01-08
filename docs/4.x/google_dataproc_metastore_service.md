@@ -838,6 +838,7 @@ Terraform sub block.
 
 
 **Args**:
+  - `custom_routes_enabled` (`bool`): Enables custom routes to be imported and exported for the Dataproc Metastore service&#39;s peered VPC network. When `null`, the `custom_routes_enabled` field will be omitted from the resulting object.
   - `consumers` (`list[obj]`): The consumer-side network configuration for the Dataproc Metastore instance. When `null`, the `consumers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.network_config.consumers.new](#fn-network_configconsumersnew) constructor.
 
 **Returns**:

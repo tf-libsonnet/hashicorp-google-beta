@@ -119,6 +119,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTpuConfigMixin()`](#fn-withtpuconfigmixin)
 * [`fn withVerticalPodAutoscaling()`](#fn-withverticalpodautoscaling)
 * [`fn withVerticalPodAutoscalingMixin()`](#fn-withverticalpodautoscalingmixin)
+* [`fn withWorkloadAltsConfig()`](#fn-withworkloadaltsconfig)
+* [`fn withWorkloadAltsConfigMixin()`](#fn-withworkloadaltsconfigmixin)
 * [`fn withWorkloadIdentityConfig()`](#fn-withworkloadidentityconfig)
 * [`fn withWorkloadIdentityConfigMixin()`](#fn-withworkloadidentityconfigmixin)
 * [`obj addons_config`](#obj-addons_config)
@@ -367,6 +369,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-tpu_confignew)
 * [`obj vertical_pod_autoscaling`](#obj-vertical_pod_autoscaling)
   * [`fn new()`](#fn-vertical_pod_autoscalingnew)
+* [`obj workload_alts_config`](#obj-workload_alts_config)
+  * [`fn new()`](#fn-workload_alts_confignew)
 * [`obj workload_identity_config`](#obj-workload_identity_config)
   * [`fn new()`](#fn-workload_identity_confignew)
 
@@ -466,6 +470,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.timeouts.new](#fn-timeoutsnew) constructor.
   - `tpu_config` (`list[obj]`): TPU configuration for the cluster. When `null`, the `tpu_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.tpu_config.new](#fn-tpu_confignew) constructor.
   - `vertical_pod_autoscaling` (`list[obj]`): Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it. When `null`, the `vertical_pod_autoscaling` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.vertical_pod_autoscaling.new](#fn-vertical_pod_autoscalingnew) constructor.
+  - `workload_alts_config` (`list[obj]`): Configuration for direct-path (via ALTS) with workload identity. When `null`, the `workload_alts_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.workload_alts_config.new](#fn-workload_alts_confignew) constructor.
   - `workload_identity_config` (`list[obj]`): Configuration for the use of Kubernetes Service Accounts in GCP IAM policies. When `null`, the `workload_identity_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.workload_identity_config.new](#fn-workload_identity_confignew) constructor.
 
 **Returns**:
@@ -557,6 +562,7 @@ injecting into a complete block.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.timeouts.new](#fn-timeoutsnew) constructor.
   - `tpu_config` (`list[obj]`): TPU configuration for the cluster. When `null`, the `tpu_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.tpu_config.new](#fn-tpu_confignew) constructor.
   - `vertical_pod_autoscaling` (`list[obj]`): Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it. When `null`, the `vertical_pod_autoscaling` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.vertical_pod_autoscaling.new](#fn-vertical_pod_autoscalingnew) constructor.
+  - `workload_alts_config` (`list[obj]`): Configuration for direct-path (via ALTS) with workload identity. When `null`, the `workload_alts_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.workload_alts_config.new](#fn-workload_alts_confignew) constructor.
   - `workload_identity_config` (`list[obj]`): Configuration for the use of Kubernetes Service Accounts in GCP IAM policies. When `null`, the `workload_identity_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_cluster.workload_identity_config.new](#fn-workload_identity_confignew) constructor.
 
 **Returns**:
@@ -2409,6 +2415,43 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list[obj]`): The value to set for the `vertical_pod_autoscaling` field.
+
+
+### fn withWorkloadAltsConfig
+
+```ts
+withWorkloadAltsConfig()
+```
+
+`google-beta.list[obj].withWorkloadAltsConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the workload_alts_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withWorkloadAltsConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `workload_alts_config` field.
+
+
+### fn withWorkloadAltsConfigMixin
+
+```ts
+withWorkloadAltsConfigMixin()
+```
+
+`google-beta.list[obj].withWorkloadAltsConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the workload_alts_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withWorkloadAltsConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `workload_alts_config` field.
 
 
 ### fn withWorkloadIdentityConfig
@@ -5484,6 +5527,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `vertical_pod_autoscaling` sub block.
+
+
+## obj workload_alts_config
+
+
+
+### fn workload_alts_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_cluster.workload_alts_config.new` constructs a new object with attributes and blocks configured for the `workload_alts_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enable_alts` (`bool`): Whether the alts handshaker should be enabled or not for direct-path. Requires Workload Identity (workloadPool must be non-empty).
+
+**Returns**:
+  - An attribute object that represents the `workload_alts_config` sub block.
 
 
 ## obj workload_identity_config
