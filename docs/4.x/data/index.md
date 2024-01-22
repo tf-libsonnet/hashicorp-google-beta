@@ -201,6 +201,7 @@ permalink: /data/
 * [google_monitoring_notification_channel](google_monitoring_notification_channel.md)
 * [google_monitoring_uptime_check_ips](google_monitoring_uptime_check_ips.md)
 * [google_netblock_ip_ranges](google_netblock_ip_ranges.md)
+* [google_network_security_address_group_iam_policy](google_network_security_address_group_iam_policy.md)
 * [google_notebooks_instance_iam_policy](google_notebooks_instance_iam_policy.md)
 * [google_notebooks_runtime_iam_policy](google_notebooks_runtime_iam_policy.md)
 * [google_organization](google_organization.md)

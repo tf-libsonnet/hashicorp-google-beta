@@ -18,6 +18,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withAnnotations()`](#fn-withannotations)
 * [`fn withContainer()`](#fn-withcontainer)
 * [`fn withContainerMixin()`](#fn-withcontainermixin)
+* [`fn withDisableTcpConnections()`](#fn-withdisabletcpconnections)
 * [`fn withDisplayName()`](#fn-withdisplayname)
 * [`fn withEnableAuditAgent()`](#fn-withenableauditagent)
 * [`fn withEncryptionKey()`](#fn-withencryptionkey)
@@ -90,6 +91,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
 Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
+  - `disable_tcp_connections` (`bool`): Disables support for plain TCP connections in the workstation. By default the service supports TCP connections via a websocket relay. Setting this option to true disables that relay, which prevents the usage of services that require plain tcp connections, such as ssh. When enabled, all communication must occur over https or wss. When `null`, the `disable_tcp_connections` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
   - `enable_audit_agent` (`bool`): Whether to enable Linux &#39;auditd&#39; logging on the workstation. When enabled, a service account must also be specified that has &#39;logging.buckets.write&#39; permission on the project. Operating system audit logging is distinct from Cloud Audit Logs. When `null`, the `enable_audit_agent` field will be omitted from the resulting object.
   - `idle_timeout` (`string`): How long to wait before automatically stopping an instance that hasn&#39;t recently received any user traffic. A value of 0 indicates that this instance should never time out from idleness. Defaults to 20 minutes.
@@ -142,6 +144,7 @@ injecting into a complete block.
 
 **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
 Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
+  - `disable_tcp_connections` (`bool`): Disables support for plain TCP connections in the workstation. By default the service supports TCP connections via a websocket relay. Setting this option to true disables that relay, which prevents the usage of services that require plain tcp connections, such as ssh. When enabled, all communication must occur over https or wss. When `null`, the `disable_tcp_connections` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
   - `enable_audit_agent` (`bool`): Whether to enable Linux &#39;auditd&#39; logging on the workstation. When enabled, a service account must also be specified that has &#39;logging.buckets.write&#39; permission on the project. Operating system audit logging is distinct from Cloud Audit Logs. When `null`, the `enable_audit_agent` field will be omitted from the resulting object.
   - `idle_timeout` (`string`): How long to wait before automatically stopping an instance that hasn&#39;t recently received any user traffic. A value of 0 indicates that this instance should never time out from idleness. Defaults to 20 minutes.
@@ -223,6 +226,22 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`list[obj]`): The value to set for the `container` field.
+
+
+### fn withDisableTcpConnections
+
+```ts
+withDisableTcpConnections()
+```
+
+`google-beta.bool.withDisableTcpConnections` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the disable_tcp_connections field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `disable_tcp_connections` field.
 
 
 ### fn withDisplayName

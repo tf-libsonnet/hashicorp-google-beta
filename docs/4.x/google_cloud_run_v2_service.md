@@ -54,6 +54,8 @@ This package contains functions and utilities for setting up the resource using 
         * [`fn new()`](#fn-templatecontainersliveness_probehttp_getnew)
         * [`obj template.containers.liveness_probe.http_get.http_headers`](#obj-templatecontainersliveness_probehttp_gethttp_headers)
           * [`fn new()`](#fn-templatecontainersliveness_probehttp_gethttp_headersnew)
+      * [`obj template.containers.liveness_probe.tcp_socket`](#obj-templatecontainersliveness_probetcp_socket)
+        * [`fn new()`](#fn-templatecontainersliveness_probetcp_socketnew)
     * [`obj template.containers.ports`](#obj-templatecontainersports)
       * [`fn new()`](#fn-templatecontainersportsnew)
     * [`obj template.containers.resources`](#obj-templatecontainersresources)
@@ -78,6 +80,10 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-templatevolumescloud_sql_instancenew)
     * [`obj template.volumes.empty_dir`](#obj-templatevolumesempty_dir)
       * [`fn new()`](#fn-templatevolumesempty_dirnew)
+    * [`obj template.volumes.gcs`](#obj-templatevolumesgcs)
+      * [`fn new()`](#fn-templatevolumesgcsnew)
+    * [`obj template.volumes.nfs`](#obj-templatevolumesnfs)
+      * [`fn new()`](#fn-templatevolumesnfsnew)
     * [`obj template.volumes.secret`](#obj-templatevolumessecret)
       * [`fn new()`](#fn-templatevolumessecretnew)
       * [`obj template.volumes.secret.items`](#obj-templatevolumessecretitems)
@@ -740,6 +746,7 @@ Terraform sub block.
   - `timeout_seconds` (`number`): Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than periodSeconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes When `null`, the `timeout_seconds` field will be omitted from the resulting object.
   - `grpc` (`list[obj]`): GRPC specifies an action involving a GRPC port. When `null`, the `grpc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.containers.liveness_probe.grpc.new](#fn-templatetemplatecontainersgrpcnew) constructor.
   - `http_get` (`list[obj]`): HTTPGet specifies the http request to perform. When `null`, the `http_get` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.containers.liveness_probe.http_get.new](#fn-templatetemplatecontainershttp_getnew) constructor.
+  - `tcp_socket` (`list[obj]`): TCPSocketAction describes an action based on opening a socket When `null`, the `tcp_socket` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.containers.liveness_probe.tcp_socket.new](#fn-templatetemplatecontainerstcp_socketnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `liveness_probe` sub block.
@@ -820,6 +827,31 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `http_headers` sub block.
+
+
+## obj template.containers.liveness_probe.tcp_socket
+
+
+
+### fn template.containers.liveness_probe.tcp_socket.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloud_run_v2_service.template.containers.liveness_probe.tcp_socket.new` constructs a new object with attributes and blocks configured for the `tcp_socket`
+Terraform sub block.
+
+
+
+**Args**:
+  - `port` (`number`): Port number to access on the container. Must be in the range 1 to 65535.
+If not specified, defaults to the exposed port of the container, which
+is the value of container.ports[0].containerPort.
+
+**Returns**:
+  - An attribute object that represents the `tcp_socket` sub block.
 
 
 ## obj template.containers.ports
@@ -1069,6 +1101,8 @@ Terraform sub block.
   - `name` (`string`): Volume&#39;s name.
   - `cloud_sql_instance` (`list[obj]`): For Cloud SQL volumes, contains the specific instances that should be mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run. When `null`, the `cloud_sql_instance` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.cloud_sql_instance.new](#fn-templatetemplatecloud_sql_instancenew) constructor.
   - `empty_dir` (`list[obj]`): Ephemeral storage used as a shared volume. When `null`, the `empty_dir` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.empty_dir.new](#fn-templatetemplateempty_dirnew) constructor.
+  - `gcs` (`list[obj]`): Represents a GCS Bucket mounted as a volume. When `null`, the `gcs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.gcs.new](#fn-templatetemplategcsnew) constructor.
+  - `nfs` (`list[obj]`): Represents an NFS mount. When `null`, the `nfs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.nfs.new](#fn-templatetemplatenfsnew) constructor.
   - `secret` (`list[obj]`): Secret represents a secret that should populate this volume. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret When `null`, the `secret` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.secret.new](#fn-templatetemplatesecretnew) constructor.
 
 **Returns**:
@@ -1120,6 +1154,55 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `empty_dir` sub block.
+
+
+## obj template.volumes.gcs
+
+
+
+### fn template.volumes.gcs.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloud_run_v2_service.template.volumes.gcs.new` constructs a new object with attributes and blocks configured for the `gcs`
+Terraform sub block.
+
+
+
+**Args**:
+  - `bucket` (`string`): GCS Bucket name
+  - `read_only` (`bool`): If true, mount the GCS bucket as read-only When `null`, the `read_only` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `gcs` sub block.
+
+
+## obj template.volumes.nfs
+
+
+
+### fn template.volumes.nfs.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloud_run_v2_service.template.volumes.nfs.new` constructs a new object with attributes and blocks configured for the `nfs`
+Terraform sub block.
+
+
+
+**Args**:
+  - `path` (`string`): Path that is exported by the NFS server.
+  - `read_only` (`bool`): If true, mount the NFS volume as read only When `null`, the `read_only` field will be omitted from the resulting object.
+  - `server` (`string`): Hostname or IP address of the NFS server
+
+**Returns**:
+  - An attribute object that represents the `nfs` sub block.
 
 
 ## obj template.volumes.secret

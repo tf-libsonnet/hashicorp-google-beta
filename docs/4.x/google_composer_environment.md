@@ -340,6 +340,8 @@ Terraform sub block.
 
 
 **Args**:
+  - `enable_private_builds_only` (`bool`): Optional. If true, builds performed during operations that install Python packages have only private connectivity to Google services. If false, the builds also have access to the internet. When `null`, the `enable_private_builds_only` field will be omitted from the resulting object.
+  - `enable_private_environment` (`bool`): Optional. If true, a private Composer environment will be created. When `null`, the `enable_private_environment` field will be omitted from the resulting object.
   - `environment_size` (`string`): The size of the Cloud Composer environment. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer. When `null`, the `environment_size` field will be omitted from the resulting object.
   - `node_count` (`number`): The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. When `null`, the `node_count` field will be omitted from the resulting object.
   - `resilience_mode` (`string`): Whether high resilience is enabled or not. This field is supported for Cloud Composer environments in versions composer-2.1.15-airflow-*.*.* and newer. When `null`, the `resilience_mode` field will be omitted from the resulting object.

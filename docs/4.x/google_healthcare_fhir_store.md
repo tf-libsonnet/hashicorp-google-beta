@@ -21,6 +21,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDisableReferentialIntegrity()`](#fn-withdisablereferentialintegrity)
 * [`fn withDisableResourceVersioning()`](#fn-withdisableresourceversioning)
 * [`fn withEnableHistoryImport()`](#fn-withenablehistoryimport)
+* [`fn withEnableHistoryModifications()`](#fn-withenablehistorymodifications)
 * [`fn withEnableUpdateCreate()`](#fn-withenableupdatecreate)
 * [`fn withLabels()`](#fn-withlabels)
 * [`fn withName()`](#fn-withname)
@@ -105,6 +106,8 @@ will fail with an error.
 ** Changing this property may recreate the FHIR store (removing all data) **
 
 ** This property can be changed manually in the Google Cloud Healthcare admin console without recreating the FHIR store ** When `null`, the `enable_history_import` field will be omitted from the resulting object.
+  - `enable_history_modifications` (`bool`): Whether to allow the ExecuteBundle API to accept history bundles, and directly insert and overwrite historical
+resource versions into the FHIR store. If set to false, using history bundles fails with an error. When `null`, the `enable_history_modifications` field will be omitted from the resulting object.
   - `enable_update_create` (`bool`): Whether this FHIR store has the updateCreate capability. This determines if the client can use an Update
 operation to create a new resource with a client-specified ID. If false, all IDs are server-assigned through
 the Create operation and attempts to Update a non-existent resource will return errors. Please treat the audit
@@ -191,6 +194,8 @@ will fail with an error.
 ** Changing this property may recreate the FHIR store (removing all data) **
 
 ** This property can be changed manually in the Google Cloud Healthcare admin console without recreating the FHIR store ** When `null`, the `enable_history_import` field will be omitted from the resulting object.
+  - `enable_history_modifications` (`bool`): Whether to allow the ExecuteBundle API to accept history bundles, and directly insert and overwrite historical
+resource versions into the FHIR store. If set to false, using history bundles fails with an error. When `null`, the `enable_history_modifications` field will be omitted from the resulting object.
   - `enable_update_create` (`bool`): Whether this FHIR store has the updateCreate capability. This determines if the client can use an Update
 operation to create a new resource with a client-specified ID. If false, all IDs are server-assigned through
 the Create operation and attempts to Update a non-existent resource will return errors. Please treat the audit
@@ -325,6 +330,22 @@ Terraform resource block to set or update the enable_history_import field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`bool`): The value to set for the `enable_history_import` field.
+
+
+### fn withEnableHistoryModifications
+
+```ts
+withEnableHistoryModifications()
+```
+
+`google-beta.bool.withEnableHistoryModifications` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the enable_history_modifications field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `enable_history_modifications` field.
 
 
 ### fn withEnableUpdateCreate
