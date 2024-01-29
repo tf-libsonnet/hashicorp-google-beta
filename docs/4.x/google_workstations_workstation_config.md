@@ -31,6 +31,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withPersistentDirectories()`](#fn-withpersistentdirectories)
 * [`fn withPersistentDirectoriesMixin()`](#fn-withpersistentdirectoriesmixin)
 * [`fn withProject()`](#fn-withproject)
+* [`fn withReadinessChecks()`](#fn-withreadinesschecks)
+* [`fn withReadinessChecksMixin()`](#fn-withreadinesschecksmixin)
 * [`fn withReplicaZones()`](#fn-withreplicazones)
 * [`fn withRunningTimeout()`](#fn-withrunningtimeout)
 * [`fn withTimeouts()`](#fn-withtimeouts)
@@ -55,6 +57,8 @@ This package contains functions and utilities for setting up the resource using 
   * [`fn new()`](#fn-persistent_directoriesnew)
   * [`obj persistent_directories.gce_pd`](#obj-persistent_directoriesgce_pd)
     * [`fn new()`](#fn-persistent_directoriesgce_pdnew)
+* [`obj readiness_checks`](#obj-readiness_checks)
+  * [`fn new()`](#fn-readiness_checksnew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -116,6 +120,7 @@ If the customer-managed encryption key is rotated, when the workstation instance
 If the encryption key is revoked, the workstation session will automatically be stopped within 7 hours. When `null`, the `encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.encryption_key.new](#fn-encryption_keynew) constructor.
   - `host` (`list[obj]`): Runtime host for a workstation. When `null`, the `host` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.host.new](#fn-hostnew) constructor.
   - `persistent_directories` (`list[obj]`): Directories to persist across workstation sessions. When `null`, the `persistent_directories` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.persistent_directories.new](#fn-persistent_directoriesnew) constructor.
+  - `readiness_checks` (`list[obj]`): Readiness checks to be performed on a workstation. When `null`, the `readiness_checks` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.readiness_checks.new](#fn-readiness_checksnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -169,6 +174,7 @@ If the customer-managed encryption key is rotated, when the workstation instance
 If the encryption key is revoked, the workstation session will automatically be stopped within 7 hours. When `null`, the `encryption_key` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.encryption_key.new](#fn-encryption_keynew) constructor.
   - `host` (`list[obj]`): Runtime host for a workstation. When `null`, the `host` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.host.new](#fn-hostnew) constructor.
   - `persistent_directories` (`list[obj]`): Directories to persist across workstation sessions. When `null`, the `persistent_directories` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.persistent_directories.new](#fn-persistent_directoriesnew) constructor.
+  - `readiness_checks` (`list[obj]`): Readiness checks to be performed on a workstation. When `null`, the `readiness_checks` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.readiness_checks.new](#fn-readiness_checksnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_config.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -449,6 +455,43 @@ Terraform resource block to set or update the project field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `project` field.
+
+
+### fn withReadinessChecks
+
+```ts
+withReadinessChecks()
+```
+
+`google-beta.list[obj].withReadinessChecks` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the readiness_checks field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withReadinessChecksMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `readiness_checks` field.
+
+
+### fn withReadinessChecksMixin
+
+```ts
+withReadinessChecksMixin()
+```
+
+`google-beta.list[obj].withReadinessChecksMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the readiness_checks field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withReadinessChecks](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `readiness_checks` field.
 
 
 ### fn withReplicaZones
@@ -784,6 +827,30 @@ Valid values are &#39;10&#39;, &#39;50&#39;, &#39;100&#39;, &#39;200&#39;, &#39;
 
 **Returns**:
   - An attribute object that represents the `gce_pd` sub block.
+
+
+## obj readiness_checks
+
+
+
+### fn readiness_checks.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_workstations_workstation_config.readiness_checks.new` constructs a new object with attributes and blocks configured for the `readiness_checks`
+Terraform sub block.
+
+
+
+**Args**:
+  - `path` (`string`): Path to which the request should be sent.
+  - `port` (`number`): Port to which the request should be sent.
+
+**Returns**:
+  - An attribute object that represents the `readiness_checks` sub block.
 
 
 ## obj timeouts

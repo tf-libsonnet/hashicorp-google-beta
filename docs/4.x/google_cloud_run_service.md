@@ -79,6 +79,8 @@ This package contains functions and utilities for setting up the resource using 
         * [`fn new()`](#fn-templatespeccontainersvolume_mountsnew)
     * [`obj template.spec.volumes`](#obj-templatespecvolumes)
       * [`fn new()`](#fn-templatespecvolumesnew)
+      * [`obj template.spec.volumes.csi`](#obj-templatespecvolumescsi)
+        * [`fn new()`](#fn-templatespecvolumescsinew)
       * [`obj template.spec.volumes.empty_dir`](#obj-templatespecvolumesempty_dir)
         * [`fn new()`](#fn-templatespecvolumesempty_dirnew)
       * [`obj template.spec.volumes.secret`](#obj-templatespecvolumessecret)
@@ -1186,6 +1188,7 @@ Terraform sub block.
 
 **Args**:
   - `name` (`string`): Volume&#39;s name.
+  - `csi` (`list[obj]`): A filesystem specified by the Container Storage Interface (CSI). When `null`, the `csi` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.volumes.csi.new](#fn-templatetemplatespeccsinew) constructor.
   - `empty_dir` (`list[obj]`): Ephemeral storage which can be backed by real disks (HD, SSD), network storage or memory (i.e. tmpfs). For now only in memory (tmpfs) is supported. It is ephemeral in the sense that when the sandbox is taken down, the data is destroyed with it (it does not persist across sandbox runs). When `null`, the `empty_dir` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.volumes.empty_dir.new](#fn-templatetemplatespecempty_dirnew) constructor.
   - `secret` (`list[obj]`): The secret&#39;s value will be presented as the content of a file whose
 name is defined in the item path. If no items are defined, the name of
@@ -1193,6 +1196,36 @@ the file is the secret_name. When `null`, the `secret` sub block will be omitted
 
 **Returns**:
   - An attribute object that represents the `volumes` sub block.
+
+
+## obj template.spec.volumes.csi
+
+
+
+### fn template.spec.volumes.csi.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloud_run_service.template.spec.volumes.csi.new` constructs a new object with attributes and blocks configured for the `csi`
+Terraform sub block.
+
+
+
+**Args**:
+  - `driver` (`string`): Unique name representing the type of file system to be created. Cloud Run supports the following values:
+  * gcsfuse.run.googleapis.com: Mount a Google Cloud Storage bucket using GCSFuse. This driver requires the
+    run.googleapis.com/execution-environment annotation to be set to &#34;gen2&#34; and
+    run.googleapis.com/launch-stage set to &#34;BETA&#34; or &#34;ALPHA&#34;.
+  - `read_only` (`bool`): If true, all mounts created from this volume will be read-only. When `null`, the `read_only` field will be omitted from the resulting object.
+  - `volume_attributes` (`obj`): Driver-specific attributes. The following options are supported for available drivers:
+  * gcsfuse.run.googleapis.com
+    * bucketName: The name of the Cloud Storage Bucket that backs this volume. The Cloud Run Service identity must have access to this bucket. When `null`, the `volume_attributes` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `csi` sub block.
 
 
 ## obj template.spec.volumes.empty_dir

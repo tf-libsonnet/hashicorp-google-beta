@@ -26,12 +26,20 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withSyncConfigMixin()`](#fn-withsyncconfigmixin)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`fn withVectorSearchConfig()`](#fn-withvectorsearchconfig)
+* [`fn withVectorSearchConfigMixin()`](#fn-withvectorsearchconfigmixin)
 * [`obj big_query_source`](#obj-big_query_source)
   * [`fn new()`](#fn-big_query_sourcenew)
 * [`obj sync_config`](#obj-sync_config)
   * [`fn new()`](#fn-sync_confignew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
+* [`obj vector_search_config`](#obj-vector_search_config)
+  * [`fn new()`](#fn-vector_search_confignew)
+  * [`obj vector_search_config.brute_force_config`](#obj-vector_search_configbrute_force_config)
+    * [`fn new()`](#fn-vector_search_configbrute_force_confignew)
+  * [`obj vector_search_config.tree_ah_config`](#obj-vector_search_configtree_ah_config)
+    * [`fn new()`](#fn-vector_search_configtree_ah_confignew)
 
 ## Fields
 
@@ -74,6 +82,7 @@ Please refer to the field &#39;effective_labels&#39; for all of the labels prese
   - `big_query_source` (`list[obj]`): Configures how data is supposed to be extracted from a BigQuery source to be loaded onto the FeatureOnlineStore. When `null`, the `big_query_source` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_feature_online_store_featureview.big_query_source.new](#fn-big_query_sourcenew) constructor.
   - `sync_config` (`list[obj]`): Configures when data is to be synced/updated for this FeatureView. At the end of the sync the latest featureValues for each entityId of this FeatureView are made ready for online serving. When `null`, the `sync_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_feature_online_store_featureview.sync_config.new](#fn-sync_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_feature_online_store_featureview.timeouts.new](#fn-timeoutsnew) constructor.
+  - `vector_search_config` (`list[obj]`): Configuration for vector search. It contains the required configurations to create an index from source data, so that approximate nearest neighbor (a.k.a ANN) algorithms search can be performed during online serving. When `null`, the `vector_search_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_feature_online_store_featureview.vector_search_config.new](#fn-vector_search_confignew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -109,6 +118,7 @@ Please refer to the field &#39;effective_labels&#39; for all of the labels prese
   - `big_query_source` (`list[obj]`): Configures how data is supposed to be extracted from a BigQuery source to be loaded onto the FeatureOnlineStore. When `null`, the `big_query_source` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_feature_online_store_featureview.big_query_source.new](#fn-big_query_sourcenew) constructor.
   - `sync_config` (`list[obj]`): Configures when data is to be synced/updated for this FeatureView. At the end of the sync the latest featureValues for each entityId of this FeatureView are made ready for online serving. When `null`, the `sync_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_feature_online_store_featureview.sync_config.new](#fn-sync_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_feature_online_store_featureview.timeouts.new](#fn-timeoutsnew) constructor.
+  - `vector_search_config` (`list[obj]`): Configuration for vector search. It contains the required configurations to create an index from source data, so that approximate nearest neighbor (a.k.a ANN) algorithms search can be performed during online serving. When `null`, the `vector_search_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_feature_online_store_featureview.vector_search_config.new](#fn-vector_search_confignew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_vertex_ai_feature_online_store_featureview` resource into the root Terraform configuration.
@@ -304,6 +314,43 @@ function.
   - `value` (`obj`): The value to set for the `timeouts` field.
 
 
+### fn withVectorSearchConfig
+
+```ts
+withVectorSearchConfig()
+```
+
+`google-beta.list[obj].withVectorSearchConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the vector_search_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withVectorSearchConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `vector_search_config` field.
+
+
+### fn withVectorSearchConfigMixin
+
+```ts
+withVectorSearchConfigMixin()
+```
+
+`google-beta.list[obj].withVectorSearchConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the vector_search_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withVectorSearchConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `vector_search_config` field.
+
+
 ## obj big_query_source
 
 
@@ -375,3 +422,76 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `timeouts` sub block.
+
+
+## obj vector_search_config
+
+
+
+### fn vector_search_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_vertex_ai_feature_online_store_featureview.vector_search_config.new` constructs a new object with attributes and blocks configured for the `vector_search_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `crowding_column` (`string`): Column of crowding. This column contains crowding attribute which is a constraint on a neighbor list produced by nearest neighbor search requiring that no more than some value k&#39; of the k neighbors returned have the same value of crowdingAttribute. When `null`, the `crowding_column` field will be omitted from the resulting object.
+  - `distance_measure_type` (`string`): The distance measure used in nearest neighbor search.
+For details on allowed values, see the [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1beta1/projects.locations.featureOnlineStores.featureViews#DistanceMeasureType). Possible values: [&#34;SQUARED_L2_DISTANCE&#34;, &#34;COSINE_DISTANCE&#34;, &#34;DOT_PRODUCT_DISTANCE&#34;] When `null`, the `distance_measure_type` field will be omitted from the resulting object.
+  - `embedding_column` (`string`): Column of embedding. This column contains the source data to create index for vector search.
+  - `embedding_dimension` (`number`): The number of dimensions of the input embedding. When `null`, the `embedding_dimension` field will be omitted from the resulting object.
+  - `filter_columns` (`list`): Columns of features that are used to filter vector search results. When `null`, the `filter_columns` field will be omitted from the resulting object.
+  - `brute_force_config` (`list[obj]`): Configuration options for using brute force search, which simply implements the standard linear search in the database for each query. It is primarily meant for benchmarking and to generate the ground truth for approximate search. When `null`, the `brute_force_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_feature_online_store_featureview.vector_search_config.brute_force_config.new](#fn-vector_search_configbrute_force_confignew) constructor.
+  - `tree_ah_config` (`list[obj]`): Configuration options for the tree-AH algorithm (Shallow tree &#43; Asymmetric Hashing). Please refer to this paper for more details: https://arxiv.org/abs/1908.10396 When `null`, the `tree_ah_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vertex_ai_feature_online_store_featureview.vector_search_config.tree_ah_config.new](#fn-vector_search_configtree_ah_confignew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `vector_search_config` sub block.
+
+
+## obj vector_search_config.brute_force_config
+
+
+
+### fn vector_search_config.brute_force_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_vertex_ai_feature_online_store_featureview.vector_search_config.brute_force_config.new` constructs a new object with attributes and blocks configured for the `brute_force_config`
+Terraform sub block.
+
+
+
+**Returns**:
+  - An attribute object that represents the `brute_force_config` sub block.
+
+
+## obj vector_search_config.tree_ah_config
+
+
+
+### fn vector_search_config.tree_ah_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_vertex_ai_feature_online_store_featureview.vector_search_config.tree_ah_config.new` constructs a new object with attributes and blocks configured for the `tree_ah_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `leaf_node_embedding_count` (`string`): Number of embeddings on each leaf node. The default value is 1000 if not set. When `null`, the `leaf_node_embedding_count` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `tree_ah_config` sub block.

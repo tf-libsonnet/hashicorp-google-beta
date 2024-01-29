@@ -350,6 +350,18 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
         volumes: volumes,
       }),
       volumes:: {
+        csi:: {
+          '#new':: d.fn(help='\n`google-beta.google_cloud_run_service.template.spec.volumes.csi.new` constructs a new object with attributes and blocks configured for the `csi`\nTerraform sub block.\n\n\n\n**Args**:\n  - `driver` (`string`): Unique name representing the type of file system to be created. Cloud Run supports the following values:\n  * gcsfuse.run.googleapis.com: Mount a Google Cloud Storage bucket using GCSFuse. This driver requires the\n    run.googleapis.com/execution-environment annotation to be set to &#34;gen2&#34; and\n    run.googleapis.com/launch-stage set to &#34;BETA&#34; or &#34;ALPHA&#34;.\n  - `read_only` (`bool`): If true, all mounts created from this volume will be read-only. When `null`, the `read_only` field will be omitted from the resulting object.\n  - `volume_attributes` (`obj`): Driver-specific attributes. The following options are supported for available drivers:\n  * gcsfuse.run.googleapis.com\n    * bucketName: The name of the Cloud Storage Bucket that backs this volume. The Cloud Run Service identity must have access to this bucket. When `null`, the `volume_attributes` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `csi` sub block.\n', args=[]),
+          new(
+            driver,
+            read_only=null,
+            volume_attributes=null
+          ):: std.prune(a={
+            driver: driver,
+            read_only: read_only,
+            volume_attributes: volume_attributes,
+          }),
+        },
         empty_dir:: {
           '#new':: d.fn(help='\n`google-beta.google_cloud_run_service.template.spec.volumes.empty_dir.new` constructs a new object with attributes and blocks configured for the `empty_dir`\nTerraform sub block.\n\n\n\n**Args**:\n  - `medium` (`string`): The medium on which the data is stored. The default is &#34;&#34; which means to use the node&#39;s default medium. Must be an empty string (default) or Memory. When `null`, the `medium` field will be omitted from the resulting object.\n  - `size_limit` (`string`): Limit on the storage usable by this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. This field&#39;s values are of the &#39;Quantity&#39; k8s type: https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/. The default is nil which means that the limit is undefined. More info: https://kubernetes.io/docs/concepts/storage/volumes/#emptydir. When `null`, the `size_limit` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `empty_dir` sub block.\n', args=[]),
           new(
@@ -360,12 +372,14 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
             size_limit: size_limit,
           }),
         },
-        '#new':: d.fn(help='\n`google-beta.google_cloud_run_service.template.spec.volumes.new` constructs a new object with attributes and blocks configured for the `volumes`\nTerraform sub block.\n\n\n\n**Args**:\n  - `name` (`string`): Volume&#39;s name.\n  - `empty_dir` (`list[obj]`): Ephemeral storage which can be backed by real disks (HD, SSD), network storage or memory (i.e. tmpfs). For now only in memory (tmpfs) is supported. It is ephemeral in the sense that when the sandbox is taken down, the data is destroyed with it (it does not persist across sandbox runs). When `null`, the `empty_dir` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.volumes.empty_dir.new](#fn-templatetemplatespecempty_dirnew) constructor.\n  - `secret` (`list[obj]`): The secret&#39;s value will be presented as the content of a file whose\nname is defined in the item path. If no items are defined, the name of\nthe file is the secret_name. When `null`, the `secret` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.volumes.secret.new](#fn-templatetemplatespecsecretnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `volumes` sub block.\n', args=[]),
+        '#new':: d.fn(help='\n`google-beta.google_cloud_run_service.template.spec.volumes.new` constructs a new object with attributes and blocks configured for the `volumes`\nTerraform sub block.\n\n\n\n**Args**:\n  - `name` (`string`): Volume&#39;s name.\n  - `csi` (`list[obj]`): A filesystem specified by the Container Storage Interface (CSI). When `null`, the `csi` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.volumes.csi.new](#fn-templatetemplatespeccsinew) constructor.\n  - `empty_dir` (`list[obj]`): Ephemeral storage which can be backed by real disks (HD, SSD), network storage or memory (i.e. tmpfs). For now only in memory (tmpfs) is supported. It is ephemeral in the sense that when the sandbox is taken down, the data is destroyed with it (it does not persist across sandbox runs). When `null`, the `empty_dir` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.volumes.empty_dir.new](#fn-templatetemplatespecempty_dirnew) constructor.\n  - `secret` (`list[obj]`): The secret&#39;s value will be presented as the content of a file whose\nname is defined in the item path. If no items are defined, the name of\nthe file is the secret_name. When `null`, the `secret` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_service.template.spec.volumes.secret.new](#fn-templatetemplatespecsecretnew) constructor.\n\n**Returns**:\n  - An attribute object that represents the `volumes` sub block.\n', args=[]),
         new(
           name,
+          csi=null,
           empty_dir=null,
           secret=null
         ):: std.prune(a={
+          csi: csi,
           empty_dir: empty_dir,
           name: name,
           secret: secret,
