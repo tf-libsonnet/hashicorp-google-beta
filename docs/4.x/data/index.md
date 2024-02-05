@@ -84,6 +84,7 @@ permalink: /data/
 * [google_compute_instance_template](google_compute_instance_template.md)
 * [google_compute_lb_ip_ranges](google_compute_lb_ip_ranges.md)
 * [google_compute_machine_image_iam_policy](google_compute_machine_image_iam_policy.md)
+* [google_compute_machine_types](google_compute_machine_types.md)
 * [google_compute_network](google_compute_network.md)
 * [google_compute_network_endpoint_group](google_compute_network_endpoint_group.md)
 * [google_compute_network_peering](google_compute_network_peering.md)

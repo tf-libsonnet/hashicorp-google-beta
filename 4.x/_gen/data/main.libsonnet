@@ -79,6 +79,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   compute_instance_template: (import 'compute_instance_template.libsonnet'),
   compute_lb_ip_ranges: (import 'compute_lb_ip_ranges.libsonnet'),
   compute_machine_image_iam_policy: (import 'compute_machine_image_iam_policy.libsonnet'),
+  compute_machine_types: (import 'compute_machine_types.libsonnet'),
   compute_network: (import 'compute_network.libsonnet'),
   compute_network_endpoint_group: (import 'compute_network_endpoint_group.libsonnet'),
   compute_network_peering: (import 'compute_network_peering.libsonnet'),
