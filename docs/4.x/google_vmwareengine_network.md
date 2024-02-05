@@ -58,7 +58,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `location` (`string`): The location where the VMwareEngineNetwork should reside.
   - `name` (`string`): The ID of the VMwareEngineNetwork.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
-  - `type` (`string`): VMware Engine network type. Possible values: [&#34;LEGACY&#34;]
+  - `type` (`string`): VMware Engine network type. Possible values: [&#34;LEGACY&#34;, &#34;STANDARD&#34;]
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vmwareengine_network.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -87,7 +87,7 @@ injecting into a complete block.
   - `location` (`string`): The location where the VMwareEngineNetwork should reside.
   - `name` (`string`): The ID of the VMwareEngineNetwork.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
-  - `type` (`string`): VMware Engine network type. Possible values: [&#34;LEGACY&#34;]
+  - `type` (`string`): VMware Engine network type. Possible values: [&#34;LEGACY&#34;, &#34;STANDARD&#34;]
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_vmwareengine_network.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:

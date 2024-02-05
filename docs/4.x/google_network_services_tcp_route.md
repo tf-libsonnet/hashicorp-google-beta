@@ -68,7 +68,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
   - `gateways` (`list`): Gateways defines a list of gateways this TcpRoute is attached to, as one of the routing rules to route the requests served by the gateway.
 Each gateway reference should match the pattern: projects/*/locations/global/gateways/&lt;gateway_name&gt; When `null`, the `gateways` field will be omitted from the resulting object.
-  - `labels` (`obj`): Set of label tags associated with the TcpRoute resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Set of label tags associated with the TcpRoute resource.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `meshes` (`list`): Meshes defines a list of meshes this TcpRoute is attached to, as one of the routing rules to route the requests served by the mesh.
 Each mesh reference should match the pattern: projects/*/locations/global/meshes/&lt;mesh_name&gt;
 The attached Mesh should be of a type SIDECAR When `null`, the `meshes` field will be omitted from the resulting object.
@@ -103,7 +106,10 @@ injecting into a complete block.
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
   - `gateways` (`list`): Gateways defines a list of gateways this TcpRoute is attached to, as one of the routing rules to route the requests served by the gateway.
 Each gateway reference should match the pattern: projects/*/locations/global/gateways/&lt;gateway_name&gt; When `null`, the `gateways` field will be omitted from the resulting object.
-  - `labels` (`obj`): Set of label tags associated with the TcpRoute resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Set of label tags associated with the TcpRoute resource.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `meshes` (`list`): Meshes defines a list of meshes this TcpRoute is attached to, as one of the routing rules to route the requests served by the mesh.
 Each mesh reference should match the pattern: projects/*/locations/global/meshes/&lt;mesh_name&gt;
 The attached Mesh should be of a type SIDECAR When `null`, the `meshes` field will be omitted from the resulting object.

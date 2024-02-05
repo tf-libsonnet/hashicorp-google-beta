@@ -15,17 +15,23 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withDisplayName()`](#fn-withdisplayname)
 * [`fn withGitRemoteSettings()`](#fn-withgitremotesettings)
 * [`fn withGitRemoteSettingsMixin()`](#fn-withgitremotesettingsmixin)
+* [`fn withLabels()`](#fn-withlabels)
 * [`fn withName()`](#fn-withname)
+* [`fn withNpmrcEnvironmentVariablesSecretVersion()`](#fn-withnpmrcenvironmentvariablessecretversion)
 * [`fn withProject()`](#fn-withproject)
 * [`fn withRegion()`](#fn-withregion)
+* [`fn withServiceAccount()`](#fn-withserviceaccount)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withWorkspaceCompilationOverrides()`](#fn-withworkspacecompilationoverrides)
 * [`fn withWorkspaceCompilationOverridesMixin()`](#fn-withworkspacecompilationoverridesmixin)
 * [`obj git_remote_settings`](#obj-git_remote_settings)
   * [`fn new()`](#fn-git_remote_settingsnew)
+  * [`obj git_remote_settings.ssh_authentication_config`](#obj-git_remote_settingsssh_authentication_config)
+    * [`fn new()`](#fn-git_remote_settingsssh_authentication_confignew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 * [`obj workspace_compilation_overrides`](#obj-workspace_compilation_overrides)
@@ -60,12 +66,21 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
+  - `display_name` (`string`): Optional. The repository&#39;s user-friendly name. When `null`, the `display_name` field will be omitted from the resulting object.
+  - `labels` (`obj`): Optional. Repository user labels.
+An object containing a list of &#34;key&#34;: value pairs. Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#34;count&#34;: &#34;3&#34; }.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): The repository&#39;s name.
+  - `npmrc_environment_variables_secret_version` (`string`): Optional. The name of the Secret Manager secret version to be used to interpolate variables into the .npmrc file for package installation operations. Must be in the format projects/*/secrets/*/versions/*. The file itself must be in a JSON format. When `null`, the `npmrc_environment_variables_secret_version` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): A reference to the region When `null`, the `region` field will be omitted from the resulting object.
+  - `service_account` (`string`): The service account to run workflow invocations under. When `null`, the `service_account` field will be omitted from the resulting object.
   - `git_remote_settings` (`list[obj]`): Optional. If set, configures this repository to be linked to a Git remote. When `null`, the `git_remote_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.git_remote_settings.new](#fn-git_remote_settingsnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.timeouts.new](#fn-timeoutsnew) constructor.
-  - `workspace_compilation_overrides` (`list[obj]`): Optional. If set, fields of workspaceCompilationOverrides override the default compilation settings that are specified in dataform.json when creating workspace-scoped compilation results. When `null`, the `workspace_compilation_overrides` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.workspace_compilation_overrides.new](#fn-workspace_compilation_overridesnew) constructor.
+  - `workspace_compilation_overrides` (`list[obj]`): If set, fields of workspaceCompilationOverrides override the default compilation settings that are specified in dataform.json when creating workspace-scoped compilation results. When `null`, the `workspace_compilation_overrides` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.workspace_compilation_overrides.new](#fn-workspace_compilation_overridesnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -89,15 +104,40 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
+  - `display_name` (`string`): Optional. The repository&#39;s user-friendly name. When `null`, the `display_name` field will be omitted from the resulting object.
+  - `labels` (`obj`): Optional. Repository user labels.
+An object containing a list of &#34;key&#34;: value pairs. Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#34;count&#34;: &#34;3&#34; }.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): The repository&#39;s name.
+  - `npmrc_environment_variables_secret_version` (`string`): Optional. The name of the Secret Manager secret version to be used to interpolate variables into the .npmrc file for package installation operations. Must be in the format projects/*/secrets/*/versions/*. The file itself must be in a JSON format. When `null`, the `npmrc_environment_variables_secret_version` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): A reference to the region When `null`, the `region` field will be omitted from the resulting object.
+  - `service_account` (`string`): The service account to run workflow invocations under. When `null`, the `service_account` field will be omitted from the resulting object.
   - `git_remote_settings` (`list[obj]`): Optional. If set, configures this repository to be linked to a Git remote. When `null`, the `git_remote_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.git_remote_settings.new](#fn-git_remote_settingsnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.timeouts.new](#fn-timeoutsnew) constructor.
-  - `workspace_compilation_overrides` (`list[obj]`): Optional. If set, fields of workspaceCompilationOverrides override the default compilation settings that are specified in dataform.json when creating workspace-scoped compilation results. When `null`, the `workspace_compilation_overrides` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.workspace_compilation_overrides.new](#fn-workspace_compilation_overridesnew) constructor.
+  - `workspace_compilation_overrides` (`list[obj]`): If set, fields of workspaceCompilationOverrides override the default compilation settings that are specified in dataform.json when creating workspace-scoped compilation results. When `null`, the `workspace_compilation_overrides` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.workspace_compilation_overrides.new](#fn-workspace_compilation_overridesnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_dataform_repository` resource into the root Terraform configuration.
+
+
+### fn withDisplayName
+
+```ts
+withDisplayName()
+```
+
+`google-beta.string.withDisplayName` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the display_name field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `display_name` field.
 
 
 ### fn withGitRemoteSettings
@@ -137,6 +177,22 @@ function.
   - `value` (`list[obj]`): The value to set for the `git_remote_settings` field.
 
 
+### fn withLabels
+
+```ts
+withLabels()
+```
+
+`google-beta.obj.withLabels` constructs a mixin object that can be merged into the `obj`
+Terraform resource block to set or update the labels field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`obj`): The value to set for the `labels` field.
+
+
 ### fn withName
 
 ```ts
@@ -151,6 +207,22 @@ Terraform resource block to set or update the name field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `name` field.
+
+
+### fn withNpmrcEnvironmentVariablesSecretVersion
+
+```ts
+withNpmrcEnvironmentVariablesSecretVersion()
+```
+
+`google-beta.string.withNpmrcEnvironmentVariablesSecretVersion` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the npmrc_environment_variables_secret_version field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `npmrc_environment_variables_secret_version` field.
 
 
 ### fn withProject
@@ -183,6 +255,22 @@ Terraform resource block to set or update the region field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `region` field.
+
+
+### fn withServiceAccount
+
+```ts
+withServiceAccount()
+```
+
+`google-beta.string.withServiceAccount` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the service_account field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `service_account` field.
 
 
 ### fn withTimeouts
@@ -275,12 +363,37 @@ Terraform sub block.
 
 
 **Args**:
-  - `authentication_token_secret_version` (`string`): The name of the Secret Manager secret version to use as an authentication token for Git operations. Must be in the format projects/*/secrets/*/versions/*.
+  - `authentication_token_secret_version` (`string`): The name of the Secret Manager secret version to use as an authentication token for Git operations. This secret is for assigning with HTTPS only(for SSH use &#39;ssh_authentication_config&#39;). Must be in the format projects/*/secrets/*/versions/*. When `null`, the `authentication_token_secret_version` field will be omitted from the resulting object.
   - `default_branch` (`string`): The Git remote&#39;s default branch name.
   - `url` (`string`): The Git remote&#39;s URL.
+  - `ssh_authentication_config` (`list[obj]`): Authentication fields for remote uris using SSH protocol. When `null`, the `ssh_authentication_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataform_repository.git_remote_settings.ssh_authentication_config.new](#fn-git_remote_settingsssh_authentication_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `git_remote_settings` sub block.
+
+
+## obj git_remote_settings.ssh_authentication_config
+
+
+
+### fn git_remote_settings.ssh_authentication_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_dataform_repository.git_remote_settings.ssh_authentication_config.new` constructs a new object with attributes and blocks configured for the `ssh_authentication_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `host_public_key` (`string`): Content of a public SSH key to verify an identity of a remote Git host.
+  - `user_private_key_secret_version` (`string`): The name of the Secret Manager secret version to use as a ssh private key for Git operations. Must be in the format projects/*/secrets/*/versions/*.
+
+**Returns**:
+  - An attribute object that represents the `ssh_authentication_config` sub block.
 
 
 ## obj timeouts
@@ -325,9 +438,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `default_database` (`string`): Optional. The default database (Google Cloud project ID). When `null`, the `default_database` field will be omitted from the resulting object.
-  - `schema_suffix` (`string`): Optional. The suffix that should be appended to all schema (BigQuery dataset ID) names. When `null`, the `schema_suffix` field will be omitted from the resulting object.
-  - `table_prefix` (`string`): Optional. The prefix that should be prepended to all table names. When `null`, the `table_prefix` field will be omitted from the resulting object.
+  - `default_database` (`string`): The default database (Google Cloud project ID). When `null`, the `default_database` field will be omitted from the resulting object.
+  - `schema_suffix` (`string`): The suffix that should be appended to all schema (BigQuery dataset ID) names. When `null`, the `schema_suffix` field will be omitted from the resulting object.
+  - `table_prefix` (`string`): The prefix that should be prepended to all table names. When `null`, the `table_prefix` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `workspace_compilation_overrides` sub block.

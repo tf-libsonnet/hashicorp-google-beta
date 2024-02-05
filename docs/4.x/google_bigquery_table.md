@@ -32,10 +32,13 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withProject()`](#fn-withproject)
 * [`fn withRangePartitioning()`](#fn-withrangepartitioning)
 * [`fn withRangePartitioningMixin()`](#fn-withrangepartitioningmixin)
+* [`fn withRequirePartitionFilter()`](#fn-withrequirepartitionfilter)
 * [`fn withSchema()`](#fn-withschema)
 * [`fn withTableConstraints()`](#fn-withtableconstraints)
 * [`fn withTableConstraintsMixin()`](#fn-withtableconstraintsmixin)
 * [`fn withTableId()`](#fn-withtableid)
+* [`fn withTableReplicationInfo()`](#fn-withtablereplicationinfo)
+* [`fn withTableReplicationInfoMixin()`](#fn-withtablereplicationinfomixin)
 * [`fn withTimePartitioning()`](#fn-withtimepartitioning)
 * [`fn withTimePartitioningMixin()`](#fn-withtimepartitioningmixin)
 * [`fn withView()`](#fn-withview)
@@ -72,6 +75,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-table_constraintsforeign_keysreferenced_tablenew)
   * [`obj table_constraints.primary_key`](#obj-table_constraintsprimary_key)
     * [`fn new()`](#fn-table_constraintsprimary_keynew)
+* [`obj table_replication_info`](#obj-table_replication_info)
+  * [`fn new()`](#fn-table_replication_infonew)
 * [`obj time_partitioning`](#obj-time_partitioning)
   * [`fn new()`](#fn-time_partitioningnew)
 * [`obj view`](#obj-view)
@@ -112,9 +117,13 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `description` (`string`): The field description. When `null`, the `description` field will be omitted from the resulting object.
   - `expiration_time` (`number`): The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. When `null`, the `expiration_time` field will be omitted from the resulting object.
   - `friendly_name` (`string`): A descriptive name for the table. When `null`, the `friendly_name` field will be omitted from the resulting object.
-  - `labels` (`obj`): A mapping of labels to assign to the resource. When `null`, the `labels` field will be omitted from the resulting object.
-  - `max_staleness` (`string`): The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of sql IntervalValue type. When `null`, the `max_staleness` field will be omitted from the resulting object.
+  - `labels` (`obj`): A mapping of labels to assign to the resource.
+
+				**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+				Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `max_staleness` (`string`): The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of [SQL IntervalValue type](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#interval_type). When `null`, the `max_staleness` field will be omitted from the resulting object.
   - `project` (`string`): The ID of the project in which the resource belongs. When `null`, the `project` field will be omitted from the resulting object.
+  - `require_partition_filter` (`bool`): If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified. When `null`, the `require_partition_filter` field will be omitted from the resulting object.
   - `schema` (`string`): A JSON schema for the table. When `null`, the `schema` field will be omitted from the resulting object.
   - `table_id` (`string`): A unique ID for the resource. Changing this forces a new resource to be created.
   - `encryption_configuration` (`list[obj]`): Specifies how the table should be encrypted. If left blank, the table will be encrypted with a Google-managed key; that process is transparent to the user. When `null`, the `encryption_configuration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.encryption_configuration.new](#fn-encryption_configurationnew) constructor.
@@ -122,6 +131,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `materialized_view` (`list[obj]`): If specified, configures this table as a materialized view. When `null`, the `materialized_view` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.materialized_view.new](#fn-materialized_viewnew) constructor.
   - `range_partitioning` (`list[obj]`): If specified, configures range-based partitioning for this table. When `null`, the `range_partitioning` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.range_partitioning.new](#fn-range_partitioningnew) constructor.
   - `table_constraints` (`list[obj]`): Defines the primary key and foreign keys. When `null`, the `table_constraints` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.table_constraints.new](#fn-table_constraintsnew) constructor.
+  - `table_replication_info` (`list[obj]`): Replication info of a table created using &#34;AS REPLICA&#34; DDL like: &#34;CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv&#34;. When `null`, the `table_replication_info` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.table_replication_info.new](#fn-table_replication_infonew) constructor.
   - `time_partitioning` (`list[obj]`): If specified, configures time-based partitioning for this table. When `null`, the `time_partitioning` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.time_partitioning.new](#fn-time_partitioningnew) constructor.
   - `view` (`list[obj]`): If specified, configures this table as a view. When `null`, the `view` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.view.new](#fn-viewnew) constructor.
 
@@ -153,9 +163,13 @@ injecting into a complete block.
   - `description` (`string`): The field description. When `null`, the `description` field will be omitted from the resulting object.
   - `expiration_time` (`number`): The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. When `null`, the `expiration_time` field will be omitted from the resulting object.
   - `friendly_name` (`string`): A descriptive name for the table. When `null`, the `friendly_name` field will be omitted from the resulting object.
-  - `labels` (`obj`): A mapping of labels to assign to the resource. When `null`, the `labels` field will be omitted from the resulting object.
-  - `max_staleness` (`string`): The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of sql IntervalValue type. When `null`, the `max_staleness` field will be omitted from the resulting object.
+  - `labels` (`obj`): A mapping of labels to assign to the resource.
+
+				**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+				Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `max_staleness` (`string`): The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of [SQL IntervalValue type](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#interval_type). When `null`, the `max_staleness` field will be omitted from the resulting object.
   - `project` (`string`): The ID of the project in which the resource belongs. When `null`, the `project` field will be omitted from the resulting object.
+  - `require_partition_filter` (`bool`): If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified. When `null`, the `require_partition_filter` field will be omitted from the resulting object.
   - `schema` (`string`): A JSON schema for the table. When `null`, the `schema` field will be omitted from the resulting object.
   - `table_id` (`string`): A unique ID for the resource. Changing this forces a new resource to be created.
   - `encryption_configuration` (`list[obj]`): Specifies how the table should be encrypted. If left blank, the table will be encrypted with a Google-managed key; that process is transparent to the user. When `null`, the `encryption_configuration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.encryption_configuration.new](#fn-encryption_configurationnew) constructor.
@@ -163,6 +177,7 @@ injecting into a complete block.
   - `materialized_view` (`list[obj]`): If specified, configures this table as a materialized view. When `null`, the `materialized_view` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.materialized_view.new](#fn-materialized_viewnew) constructor.
   - `range_partitioning` (`list[obj]`): If specified, configures range-based partitioning for this table. When `null`, the `range_partitioning` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.range_partitioning.new](#fn-range_partitioningnew) constructor.
   - `table_constraints` (`list[obj]`): Defines the primary key and foreign keys. When `null`, the `table_constraints` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.table_constraints.new](#fn-table_constraintsnew) constructor.
+  - `table_replication_info` (`list[obj]`): Replication info of a table created using &#34;AS REPLICA&#34; DDL like: &#34;CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv&#34;. When `null`, the `table_replication_info` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.table_replication_info.new](#fn-table_replication_infonew) constructor.
   - `time_partitioning` (`list[obj]`): If specified, configures time-based partitioning for this table. When `null`, the `time_partitioning` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.time_partitioning.new](#fn-time_partitioningnew) constructor.
   - `view` (`list[obj]`): If specified, configures this table as a view. When `null`, the `view` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_bigquery_table.view.new](#fn-viewnew) constructor.
 
@@ -462,6 +477,22 @@ function.
   - `value` (`list[obj]`): The value to set for the `range_partitioning` field.
 
 
+### fn withRequirePartitionFilter
+
+```ts
+withRequirePartitionFilter()
+```
+
+`google-beta.bool.withRequirePartitionFilter` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the require_partition_filter field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `require_partition_filter` field.
+
+
 ### fn withSchema
 
 ```ts
@@ -529,6 +560,43 @@ Terraform resource block to set or update the table_id field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `table_id` field.
+
+
+### fn withTableReplicationInfo
+
+```ts
+withTableReplicationInfo()
+```
+
+`google-beta.list[obj].withTableReplicationInfo` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the table_replication_info field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withTableReplicationInfoMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `table_replication_info` field.
+
+
+### fn withTableReplicationInfoMixin
+
+```ts
+withTableReplicationInfoMixin()
+```
+
+`google-beta.list[obj].withTableReplicationInfoMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the table_replication_info field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withTableReplicationInfo](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `table_replication_info` field.
 
 
 ### fn withTimePartitioning
@@ -835,7 +903,7 @@ Terraform sub block.
   - `allow_non_incremental_definition` (`bool`): Allow non incremental materialized view definition. The default value is false. When `null`, the `allow_non_incremental_definition` field will be omitted from the resulting object.
   - `enable_refresh` (`bool`): Specifies if BigQuery should automatically refresh materialized view when the base table is updated. The default is true. When `null`, the `enable_refresh` field will be omitted from the resulting object.
   - `query` (`string`): A query whose result is persisted.
-  - `refresh_interval_ms` (`number`): Specifies maximum frequency at which this materialized view will be refreshed. The default is 1800000 When `null`, the `refresh_interval_ms` field will be omitted from the resulting object.
+  - `refresh_interval_ms` (`number`): Specifies maximum frequency at which this materialized view will be refreshed. The default is 1800000. When `null`, the `refresh_interval_ms` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `materialized_view` sub block.
@@ -1009,6 +1077,32 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `primary_key` sub block.
+
+
+## obj table_replication_info
+
+
+
+### fn table_replication_info.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_bigquery_table.table_replication_info.new` constructs a new object with attributes and blocks configured for the `table_replication_info`
+Terraform sub block.
+
+
+
+**Args**:
+  - `replication_interval_ms` (`number`): The interval at which the source materialized view is polled for updates. The default is 300000. When `null`, the `replication_interval_ms` field will be omitted from the resulting object.
+  - `source_dataset_id` (`string`): The ID of the source dataset.
+  - `source_project_id` (`string`): The ID of the source project.
+  - `source_table_id` (`string`): The ID of the source materialized view.
+
+**Returns**:
+  - An attribute object that represents the `table_replication_info` sub block.
 
 
 ## obj time_partitioning

@@ -56,10 +56,15 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
   - `api_config` (`string`): Resource name of the API Config for this Gateway. Format: projects/{project}/locations/global/apis/{api}/configs/{apiConfig}.
-When changing api configs please ensure the new config is a new resource and the lifecycle rule &#39;create_before_destroy&#39; is set.
+When changing api configs please ensure the new config is a new resource and the
+[lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle) rule &#39;create_before_destroy&#39; is set.
   - `display_name` (`string`): A user-visible name for the API. When `null`, the `display_name` field will be omitted from the resulting object.
   - `gateway_id` (`string`): Identifier to assign to the Gateway. Must be unique within scope of the parent resource(project).
-  - `labels` (`obj`): Resource labels to represent user-provided metadata. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Resource labels to represent user-provided metadata.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): The region of the gateway for the API. When `null`, the `region` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_gateway.timeouts.new](#fn-timeoutsnew) constructor.
@@ -87,10 +92,15 @@ injecting into a complete block.
 
 **Args**:
   - `api_config` (`string`): Resource name of the API Config for this Gateway. Format: projects/{project}/locations/global/apis/{api}/configs/{apiConfig}.
-When changing api configs please ensure the new config is a new resource and the lifecycle rule &#39;create_before_destroy&#39; is set.
+When changing api configs please ensure the new config is a new resource and the
+[lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle) rule &#39;create_before_destroy&#39; is set.
   - `display_name` (`string`): A user-visible name for the API. When `null`, the `display_name` field will be omitted from the resulting object.
   - `gateway_id` (`string`): Identifier to assign to the Gateway. Must be unique within scope of the parent resource(project).
-  - `labels` (`obj`): Resource labels to represent user-provided metadata. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Resource labels to represent user-provided metadata.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): The region of the gateway for the API. When `null`, the `region` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_api_gateway_gateway.timeouts.new](#fn-timeoutsnew) constructor.

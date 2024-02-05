@@ -59,7 +59,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `expire_time` (`string`): The time at which the channel will be automatically deleted. If null, the channel
 will not be automatically deleted. This field is present in the output whether it&#39;s
 set directly or via the &#39;ttl&#39; field. When `null`, the `expire_time` field will be omitted from the resulting object.
-  - `labels` (`obj`): Text labels used for extra metadata and/or filtering When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Text labels used for extra metadata and/or filtering
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `retained_release_count` (`number`): The number of previous releases to retain on the channel for rollback or other
 purposes. Must be a number between 1-100. Defaults to 10 for new channels. When `null`, the `retained_release_count` field will be omitted from the resulting object.
   - `site_id` (`string`): Required. The ID of the site in which to create this channel.
@@ -94,7 +97,10 @@ injecting into a complete block.
   - `expire_time` (`string`): The time at which the channel will be automatically deleted. If null, the channel
 will not be automatically deleted. This field is present in the output whether it&#39;s
 set directly or via the &#39;ttl&#39; field. When `null`, the `expire_time` field will be omitted from the resulting object.
-  - `labels` (`obj`): Text labels used for extra metadata and/or filtering When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Text labels used for extra metadata and/or filtering
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `retained_release_count` (`number`): The number of previous releases to retain on the channel for rollback or other
 purposes. Must be a number between 1-100. Defaults to 10 for new channels. When `null`, the `retained_release_count` field will be omitted from the resulting object.
   - `site_id` (`string`): Required. The ID of the site in which to create this channel.

@@ -15,7 +15,9 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withAllowSubnetCidrRoutesOverlap()`](#fn-withallowsubnetcidrroutesoverlap)
 * [`fn withDescription()`](#fn-withdescription)
+* [`fn withExternalIpv6Prefix()`](#fn-withexternalipv6prefix)
 * [`fn withIpCidrRange()`](#fn-withipcidrrange)
 * [`fn withIpv6AccessType()`](#fn-withipv6accesstype)
 * [`fn withLogConfig()`](#fn-withlogconfig)
@@ -66,9 +68,14 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
+  - `allow_subnet_cidr_routes_overlap` (`bool`): Typically packets destined to IPs within the subnetwork range that do not match
+existing resources are dropped and prevented from leaving the VPC.
+Setting this field to true will allow these packets to match dynamic routes injected
+via BGP even if their destinations match existing subnet ranges. When `null`, the `allow_subnet_cidr_routes_overlap` field will be omitted from the resulting object.
   - `description` (`string`): An optional description of this resource. Provide this property when
 you create the resource. This field can be set only at resource
 creation time. When `null`, the `description` field will be omitted from the resulting object.
+  - `external_ipv6_prefix` (`string`): The range of external IPv6 addresses that are owned by this subnetwork. When `null`, the `external_ipv6_prefix` field will be omitted from the resulting object.
   - `ip_cidr_range` (`string`): The range of internal addresses that are owned by this subnetwork.
 Provide this property when you create the subnetwork. For example,
 10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique and
@@ -89,10 +96,11 @@ Only networks that are in the distributed mode can have subnetworks.
 access Google APIs and services by using Private Google Access. When `null`, the `private_ip_google_access` field will be omitted from the resulting object.
   - `private_ipv6_google_access` (`string`): The private IPv6 google access type for the VMs in this subnet. When `null`, the `private_ipv6_google_access` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
-  - `purpose` (`string`): The purpose of the resource. This field can be either &#39;PRIVATE_RFC_1918&#39;, &#39;REGIONAL_MANAGED_PROXY&#39;, &#39;GLOBAL_MANAGED_PROXY&#39;, or &#39;PRIVATE_SERVICE_CONNECT&#39;.
+  - `purpose` (`string`): The purpose of the resource. This field can be either &#39;PRIVATE_RFC_1918&#39;, &#39;REGIONAL_MANAGED_PROXY&#39;, &#39;GLOBAL_MANAGED_PROXY&#39;, &#39;PRIVATE_SERVICE_CONNECT&#39; or &#39;PRIVATE_NAT&#39;([Beta](https://terraform.io/docs/providers/google/guides/provider_versions.html)).
 A subnet with purpose set to &#39;REGIONAL_MANAGED_PROXY&#39; is a user-created subnetwork that is reserved for regional Envoy-based load balancers.
 A subnetwork in a given region with purpose set to &#39;GLOBAL_MANAGED_PROXY&#39; is a proxy-only subnet and is shared between all the cross-regional Envoy-based load balancers.
 A subnetwork with purpose set to &#39;PRIVATE_SERVICE_CONNECT&#39; reserves the subnet for hosting a Private Service Connect published service.
+A subnetwork with purpose set to &#39;PRIVATE_NAT&#39; is used as source range for Private NAT gateways.
 Note that &#39;REGIONAL_MANAGED_PROXY&#39; is the preferred setting for all regional Envoy load balancers.
 If unspecified, the purpose defaults to &#39;PRIVATE_RFC_1918&#39;. When `null`, the `purpose` field will be omitted from the resulting object.
   - `region` (`string`): The GCP region for this subnetwork. When `null`, the `region` field will be omitted from the resulting object.
@@ -141,9 +149,14 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
+  - `allow_subnet_cidr_routes_overlap` (`bool`): Typically packets destined to IPs within the subnetwork range that do not match
+existing resources are dropped and prevented from leaving the VPC.
+Setting this field to true will allow these packets to match dynamic routes injected
+via BGP even if their destinations match existing subnet ranges. When `null`, the `allow_subnet_cidr_routes_overlap` field will be omitted from the resulting object.
   - `description` (`string`): An optional description of this resource. Provide this property when
 you create the resource. This field can be set only at resource
 creation time. When `null`, the `description` field will be omitted from the resulting object.
+  - `external_ipv6_prefix` (`string`): The range of external IPv6 addresses that are owned by this subnetwork. When `null`, the `external_ipv6_prefix` field will be omitted from the resulting object.
   - `ip_cidr_range` (`string`): The range of internal addresses that are owned by this subnetwork.
 Provide this property when you create the subnetwork. For example,
 10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique and
@@ -164,10 +177,11 @@ Only networks that are in the distributed mode can have subnetworks.
 access Google APIs and services by using Private Google Access. When `null`, the `private_ip_google_access` field will be omitted from the resulting object.
   - `private_ipv6_google_access` (`string`): The private IPv6 google access type for the VMs in this subnet. When `null`, the `private_ipv6_google_access` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
-  - `purpose` (`string`): The purpose of the resource. This field can be either &#39;PRIVATE_RFC_1918&#39;, &#39;REGIONAL_MANAGED_PROXY&#39;, &#39;GLOBAL_MANAGED_PROXY&#39;, or &#39;PRIVATE_SERVICE_CONNECT&#39;.
+  - `purpose` (`string`): The purpose of the resource. This field can be either &#39;PRIVATE_RFC_1918&#39;, &#39;REGIONAL_MANAGED_PROXY&#39;, &#39;GLOBAL_MANAGED_PROXY&#39;, &#39;PRIVATE_SERVICE_CONNECT&#39; or &#39;PRIVATE_NAT&#39;([Beta](https://terraform.io/docs/providers/google/guides/provider_versions.html)).
 A subnet with purpose set to &#39;REGIONAL_MANAGED_PROXY&#39; is a user-created subnetwork that is reserved for regional Envoy-based load balancers.
 A subnetwork in a given region with purpose set to &#39;GLOBAL_MANAGED_PROXY&#39; is a proxy-only subnet and is shared between all the cross-regional Envoy-based load balancers.
 A subnetwork with purpose set to &#39;PRIVATE_SERVICE_CONNECT&#39; reserves the subnet for hosting a Private Service Connect published service.
+A subnetwork with purpose set to &#39;PRIVATE_NAT&#39; is used as source range for Private NAT gateways.
 Note that &#39;REGIONAL_MANAGED_PROXY&#39; is the preferred setting for all regional Envoy load balancers.
 If unspecified, the purpose defaults to &#39;PRIVATE_RFC_1918&#39;. When `null`, the `purpose` field will be omitted from the resulting object.
   - `region` (`string`): The GCP region for this subnetwork. When `null`, the `region` field will be omitted from the resulting object.
@@ -198,6 +212,22 @@ isn&#39;t supported if the subnet &#39;purpose&#39; field is set to subnetwork i
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `google_compute_subnetwork` resource into the root Terraform configuration.
 
 
+### fn withAllowSubnetCidrRoutesOverlap
+
+```ts
+withAllowSubnetCidrRoutesOverlap()
+```
+
+`google-beta.bool.withAllowSubnetCidrRoutesOverlap` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the allow_subnet_cidr_routes_overlap field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `allow_subnet_cidr_routes_overlap` field.
+
+
 ### fn withDescription
 
 ```ts
@@ -212,6 +242,22 @@ Terraform resource block to set or update the description field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `description` field.
+
+
+### fn withExternalIpv6Prefix
+
+```ts
+withExternalIpv6Prefix()
+```
+
+`google-beta.string.withExternalIpv6Prefix` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the external_ipv6_prefix field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `external_ipv6_prefix` field.
 
 
 ### fn withIpCidrRange

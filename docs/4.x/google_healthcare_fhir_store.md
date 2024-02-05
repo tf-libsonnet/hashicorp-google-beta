@@ -21,6 +21,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withDisableReferentialIntegrity()`](#fn-withdisablereferentialintegrity)
 * [`fn withDisableResourceVersioning()`](#fn-withdisableresourceversioning)
 * [`fn withEnableHistoryImport()`](#fn-withenablehistoryimport)
+* [`fn withEnableHistoryModifications()`](#fn-withenablehistorymodifications)
 * [`fn withEnableUpdateCreate()`](#fn-withenableupdatecreate)
 * [`fn withLabels()`](#fn-withlabels)
 * [`fn withName()`](#fn-withname)
@@ -105,6 +106,8 @@ will fail with an error.
 ** Changing this property may recreate the FHIR store (removing all data) **
 
 ** This property can be changed manually in the Google Cloud Healthcare admin console without recreating the FHIR store ** When `null`, the `enable_history_import` field will be omitted from the resulting object.
+  - `enable_history_modifications` (`bool`): Whether to allow the ExecuteBundle API to accept history bundles, and directly insert and overwrite historical
+resource versions into the FHIR store. If set to false, using history bundles fails with an error. When `null`, the `enable_history_modifications` field will be omitted from the resulting object.
   - `enable_update_create` (`bool`): Whether this FHIR store has the updateCreate capability. This determines if the client can use an Update
 operation to create a new resource with a client-specified ID. If false, all IDs are server-assigned through
 the Create operation and attempts to Update a non-existent resource will return errors. Please treat the audit
@@ -122,7 +125,11 @@ bytes, and must conform to the following PCRE regular expression: [\p{Ll}\p{Lo}\
 No more than 64 labels can be associated with a given store.
 
 An object containing a list of &#34;key&#34;: value pairs.
-Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#34;count&#34;: &#34;3&#34; }. When `null`, the `labels` field will be omitted from the resulting object.
+Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#34;count&#34;: &#34;3&#34; }.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): The resource name for the FhirStore.
 
 ** Changing this property may recreate the FHIR store (removing all data) **
@@ -187,6 +194,8 @@ will fail with an error.
 ** Changing this property may recreate the FHIR store (removing all data) **
 
 ** This property can be changed manually in the Google Cloud Healthcare admin console without recreating the FHIR store ** When `null`, the `enable_history_import` field will be omitted from the resulting object.
+  - `enable_history_modifications` (`bool`): Whether to allow the ExecuteBundle API to accept history bundles, and directly insert and overwrite historical
+resource versions into the FHIR store. If set to false, using history bundles fails with an error. When `null`, the `enable_history_modifications` field will be omitted from the resulting object.
   - `enable_update_create` (`bool`): Whether this FHIR store has the updateCreate capability. This determines if the client can use an Update
 operation to create a new resource with a client-specified ID. If false, all IDs are server-assigned through
 the Create operation and attempts to Update a non-existent resource will return errors. Please treat the audit
@@ -204,7 +213,11 @@ bytes, and must conform to the following PCRE regular expression: [\p{Ll}\p{Lo}\
 No more than 64 labels can be associated with a given store.
 
 An object containing a list of &#34;key&#34;: value pairs.
-Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#34;count&#34;: &#34;3&#34; }. When `null`, the `labels` field will be omitted from the resulting object.
+Example: { &#34;name&#34;: &#34;wrench&#34;, &#34;mass&#34;: &#34;1.3kg&#34;, &#34;count&#34;: &#34;3&#34; }.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): The resource name for the FhirStore.
 
 ** Changing this property may recreate the FHIR store (removing all data) **
@@ -317,6 +330,22 @@ Terraform resource block to set or update the enable_history_import field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`bool`): The value to set for the `enable_history_import` field.
+
+
+### fn withEnableHistoryModifications
+
+```ts
+withEnableHistoryModifications()
+```
+
+`google-beta.bool.withEnableHistoryModifications` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the enable_history_modifications field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `enable_history_modifications` field.
 
 
 ### fn withEnableUpdateCreate

@@ -97,7 +97,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
   - `database_type` (`string`): The database type that the Metastore service stores its data. Default value: &#34;MYSQL&#34; Possible values: [&#34;MYSQL&#34;, &#34;SPANNER&#34;] When `null`, the `database_type` field will be omitted from the resulting object.
-  - `labels` (`obj`): User-defined labels for the metastore service. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): User-defined labels for the metastore service.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the metastore service should reside.
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `network` (`string`): The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:
@@ -145,7 +148,10 @@ injecting into a complete block.
 
 **Args**:
   - `database_type` (`string`): The database type that the Metastore service stores its data. Default value: &#34;MYSQL&#34; Possible values: [&#34;MYSQL&#34;, &#34;SPANNER&#34;] When `null`, the `database_type` field will be omitted from the resulting object.
-  - `labels` (`obj`): User-defined labels for the metastore service. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): User-defined labels for the metastore service.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the metastore service should reside.
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `network` (`string`): The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:
@@ -832,6 +838,7 @@ Terraform sub block.
 
 
 **Args**:
+  - `custom_routes_enabled` (`bool`): Enables custom routes to be imported and exported for the Dataproc Metastore service&#39;s peered VPC network. When `null`, the `custom_routes_enabled` field will be omitted from the resulting object.
   - `consumers` (`list[obj]`): The consumer-side network configuration for the Dataproc Metastore instance. When `null`, the `consumers` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_dataproc_metastore_service.network_config.consumers.new](#fn-network_configconsumersnew) constructor.
 
 **Returns**:

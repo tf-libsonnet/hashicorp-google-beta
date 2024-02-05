@@ -34,6 +34,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withPlacementPolicy()`](#fn-withplacementpolicy)
 * [`fn withPlacementPolicyMixin()`](#fn-withplacementpolicymixin)
 * [`fn withProject()`](#fn-withproject)
+* [`fn withQueuedProvisioning()`](#fn-withqueuedprovisioning)
+* [`fn withQueuedProvisioningMixin()`](#fn-withqueuedprovisioningmixin)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withUpgradeSettings()`](#fn-withupgradesettings)
@@ -49,6 +51,8 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-network_configadditional_node_network_configsnew)
   * [`obj network_config.additional_pod_network_configs`](#obj-network_configadditional_pod_network_configs)
     * [`fn new()`](#fn-network_configadditional_pod_network_configsnew)
+  * [`obj network_config.network_performance_config`](#obj-network_confignetwork_performance_config)
+    * [`fn new()`](#fn-network_confignetwork_performance_confignew)
   * [`obj network_config.pod_cidr_overprovision_config`](#obj-network_configpod_cidr_overprovision_config)
     * [`fn new()`](#fn-network_configpod_cidr_overprovision_confignew)
 * [`obj node_config`](#obj-node_config)
@@ -85,10 +89,14 @@ This package contains functions and utilities for setting up the resource using 
     * [`fn new()`](#fn-node_configsole_tenant_confignew)
     * [`obj node_config.sole_tenant_config.node_affinity`](#obj-node_configsole_tenant_confignode_affinity)
       * [`fn new()`](#fn-node_configsole_tenant_confignode_affinitynew)
+  * [`obj node_config.taint`](#obj-node_configtaint)
+    * [`fn new()`](#fn-node_configtaintnew)
   * [`obj node_config.workload_metadata_config`](#obj-node_configworkload_metadata_config)
     * [`fn new()`](#fn-node_configworkload_metadata_confignew)
 * [`obj placement_policy`](#obj-placement_policy)
   * [`fn new()`](#fn-placement_policynew)
+* [`obj queued_provisioning`](#obj-queued_provisioning)
+  * [`fn new()`](#fn-queued_provisioningnew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 * [`obj upgrade_settings`](#obj-upgrade_settings)
@@ -142,6 +150,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `network_config` (`list[obj]`): Networking configuration for this NodePool. If specified, it overrides the cluster-level defaults. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.new](#fn-network_confignew) constructor.
   - `node_config` (`list[obj]`): The configuration of the nodepool When `null`, the `node_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.new](#fn-node_confignew) constructor.
   - `placement_policy` (`list[obj]`): Specifies the node placement policy When `null`, the `placement_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.placement_policy.new](#fn-placement_policynew) constructor.
+  - `queued_provisioning` (`list[obj]`): Specifies the configuration of queued provisioning When `null`, the `queued_provisioning` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.queued_provisioning.new](#fn-queued_provisioningnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.timeouts.new](#fn-timeoutsnew) constructor.
   - `upgrade_settings` (`list[obj]`): Specify node upgrade settings to change how many nodes GKE attempts to upgrade at once. The number of nodes upgraded simultaneously is the sum of max_surge and max_unavailable. The maximum number of nodes upgraded simultaneously is limited to 20. When `null`, the `upgrade_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.upgrade_settings.new](#fn-upgrade_settingsnew) constructor.
 
@@ -182,6 +191,7 @@ injecting into a complete block.
   - `network_config` (`list[obj]`): Networking configuration for this NodePool. If specified, it overrides the cluster-level defaults. When `null`, the `network_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.new](#fn-network_confignew) constructor.
   - `node_config` (`list[obj]`): The configuration of the nodepool When `null`, the `node_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.new](#fn-node_confignew) constructor.
   - `placement_policy` (`list[obj]`): Specifies the node placement policy When `null`, the `placement_policy` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.placement_policy.new](#fn-placement_policynew) constructor.
+  - `queued_provisioning` (`list[obj]`): Specifies the configuration of queued provisioning When `null`, the `queued_provisioning` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.queued_provisioning.new](#fn-queued_provisioningnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.timeouts.new](#fn-timeoutsnew) constructor.
   - `upgrade_settings` (`list[obj]`): Specify node upgrade settings to change how many nodes GKE attempts to upgrade at once. The number of nodes upgraded simultaneously is the sum of max_surge and max_unavailable. The maximum number of nodes upgraded simultaneously is limited to 20. When `null`, the `upgrade_settings` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.upgrade_settings.new](#fn-upgrade_settingsnew) constructor.
 
@@ -518,6 +528,43 @@ Terraform resource block to set or update the project field.
   - `value` (`string`): The value to set for the `project` field.
 
 
+### fn withQueuedProvisioning
+
+```ts
+withQueuedProvisioning()
+```
+
+`google-beta.list[obj].withQueuedProvisioning` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the queued_provisioning field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withQueuedProvisioningMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `queued_provisioning` field.
+
+
+### fn withQueuedProvisioningMixin
+
+```ts
+withQueuedProvisioningMixin()
+```
+
+`google-beta.list[obj].withQueuedProvisioningMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the queued_provisioning field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withQueuedProvisioning](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `queued_provisioning` field.
+
+
 ### fn withTimeouts
 
 ```ts
@@ -651,8 +698,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `auto_repair` (`bool`): Whether the nodes will be automatically repaired. When `null`, the `auto_repair` field will be omitted from the resulting object.
-  - `auto_upgrade` (`bool`): Whether the nodes will be automatically upgraded. When `null`, the `auto_upgrade` field will be omitted from the resulting object.
+  - `auto_repair` (`bool`): Whether the nodes will be automatically repaired. Enabled by default. When `null`, the `auto_repair` field will be omitted from the resulting object.
+  - `auto_upgrade` (`bool`): Whether the nodes will be automatically upgraded. Enabled by default. When `null`, the `auto_upgrade` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `management` sub block.
@@ -681,6 +728,7 @@ Terraform sub block.
   - `pod_range` (`string`): The ID of the secondary range for pod IPs. If create_pod_range is true, this ID is used for the new range. If create_pod_range is false, uses an existing secondary range with this ID. When `null`, the `pod_range` field will be omitted from the resulting object.
   - `additional_node_network_configs` (`list[obj]`): We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface When `null`, the `additional_node_network_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.additional_node_network_configs.new](#fn-network_configadditional_node_network_configsnew) constructor.
   - `additional_pod_network_configs` (`list[obj]`): We specify the additional pod networks for this node pool using this list. Each pod network corresponds to an additional alias IP range for the node When `null`, the `additional_pod_network_configs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.additional_pod_network_configs.new](#fn-network_configadditional_pod_network_configsnew) constructor.
+  - `network_performance_config` (`list[obj]`): Network bandwidth tier configuration. When `null`, the `network_performance_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.network_performance_config.new](#fn-network_confignetwork_performance_confignew) constructor.
   - `pod_cidr_overprovision_config` (`list[obj]`): Configuration for node-pool level pod cidr overprovision. If not set, the cluster level setting will be inherited When `null`, the `pod_cidr_overprovision_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.network_config.pod_cidr_overprovision_config.new](#fn-network_configpod_cidr_overprovision_confignew) constructor.
 
 **Returns**:
@@ -736,6 +784,29 @@ Terraform sub block.
   - An attribute object that represents the `additional_pod_network_configs` sub block.
 
 
+## obj network_config.network_performance_config
+
+
+
+### fn network_config.network_performance_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_node_pool.network_config.network_performance_config.new` constructs a new object with attributes and blocks configured for the `network_performance_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `total_egress_bandwidth_tier` (`string`): Specifies the total network bandwidth tier for the NodePool.
+
+**Returns**:
+  - An attribute object that represents the `network_performance_config` sub block.
+
+
 ## obj network_config.pod_cidr_overprovision_config
 
 
@@ -779,6 +850,7 @@ Terraform sub block.
   - `boot_disk_kms_key` (`string`): The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. When `null`, the `boot_disk_kms_key` field will be omitted from the resulting object.
   - `disk_size_gb` (`number`): Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. When `null`, the `disk_size_gb` field will be omitted from the resulting object.
   - `disk_type` (`string`): Type of the disk attached to each node. Such as pd-standard, pd-balanced or pd-ssd When `null`, the `disk_type` field will be omitted from the resulting object.
+  - `enable_confidential_storage` (`bool`): If enabled boot disks are configured with confidential mode. When `null`, the `enable_confidential_storage` field will be omitted from the resulting object.
   - `guest_accelerator` (`list`): List of the type and count of accelerator cards attached to the instance. When `null`, the `guest_accelerator` field will be omitted from the resulting object.
   - `image_type` (`string`): The image type to use for this node. Note that for a given image type, the latest version of it will be used. When `null`, the `image_type` field will be omitted from the resulting object.
   - `labels` (`obj`): The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node. When `null`, the `labels` field will be omitted from the resulting object.
@@ -794,7 +866,6 @@ Terraform sub block.
   - `service_account` (`string`): The Google Cloud Platform Service Account to be used by the node VMs. When `null`, the `service_account` field will be omitted from the resulting object.
   - `spot` (`bool`): Whether the nodes are created as spot VM instances. When `null`, the `spot` field will be omitted from the resulting object.
   - `tags` (`list`): The list of instance tags applied to all nodes. When `null`, the `tags` field will be omitted from the resulting object.
-  - `taint` (`list`): List of Kubernetes taints to be applied to each node. When `null`, the `taint` field will be omitted from the resulting object.
   - `advanced_machine_features` (`list[obj]`): Specifies options for controlling advanced machine features. When `null`, the `advanced_machine_features` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.advanced_machine_features.new](#fn-node_configadvanced_machine_featuresnew) constructor.
   - `confidential_nodes` (`list[obj]`): Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can&#39;t be changed (or added/removed) after pool creation without deleting and recreating the entire pool. When `null`, the `confidential_nodes` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.confidential_nodes.new](#fn-node_configconfidential_nodesnew) constructor.
   - `ephemeral_storage_config` (`list[obj]`): Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. When `null`, the `ephemeral_storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.ephemeral_storage_config.new](#fn-node_configephemeral_storage_confignew) constructor.
@@ -810,6 +881,7 @@ Terraform sub block.
   - `sandbox_config` (`list[obj]`): Sandbox configuration for this node. When `null`, the `sandbox_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.sandbox_config.new](#fn-node_configsandbox_confignew) constructor.
   - `shielded_instance_config` (`list[obj]`): Shielded Instance options. When `null`, the `shielded_instance_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.shielded_instance_config.new](#fn-node_configshielded_instance_confignew) constructor.
   - `sole_tenant_config` (`list[obj]`): Node affinity options for sole tenant node pools. When `null`, the `sole_tenant_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.sole_tenant_config.new](#fn-node_configsole_tenant_confignew) constructor.
+  - `taint` (`list[obj]`): List of Kubernetes taints to be applied to each node. When `null`, the `taint` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.taint.new](#fn-node_configtaintnew) constructor.
   - `workload_metadata_config` (`list[obj]`): The workload metadata configuration for this node. When `null`, the `workload_metadata_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_container_node_pool.node_config.workload_metadata_config.new](#fn-node_configworkload_metadata_confignew) constructor.
 
 **Returns**:
@@ -1043,7 +1115,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `sysctls` (`obj`): The Linux kernel parameters to be applied to the nodes and all pods running on the nodes.
+  - `cgroup_mode` (`string`): cgroupMode specifies the cgroup mode to be used on the node. When `null`, the `cgroup_mode` field will be omitted from the resulting object.
+  - `sysctls` (`obj`): The Linux kernel parameters to be applied to the nodes and all pods running on the nodes. When `null`, the `sysctls` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `linux_node_config` sub block.
@@ -1192,6 +1265,31 @@ Terraform sub block.
   - An attribute object that represents the `node_affinity` sub block.
 
 
+## obj node_config.taint
+
+
+
+### fn node_config.taint.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_node_pool.node_config.taint.new` constructs a new object with attributes and blocks configured for the `taint`
+Terraform sub block.
+
+
+
+**Args**:
+  - `effect` (`string`): Effect for taint.
+  - `key` (`string`): Key for taint.
+  - `value` (`string`): Value for taint.
+
+**Returns**:
+  - An attribute object that represents the `taint` sub block.
+
+
 ## obj node_config.workload_metadata_config
 
 
@@ -1238,6 +1336,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `placement_policy` sub block.
+
+
+## obj queued_provisioning
+
+
+
+### fn queued_provisioning.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_container_node_pool.queued_provisioning.new` constructs a new object with attributes and blocks configured for the `queued_provisioning`
+Terraform sub block.
+
+
+
+**Args**:
+  - `enabled` (`bool`): Whether nodes in this node pool are obtainable solely through the ProvisioningRequest API
+
+**Returns**:
+  - An attribute object that represents the `queued_provisioning` sub block.
 
 
 ## obj timeouts

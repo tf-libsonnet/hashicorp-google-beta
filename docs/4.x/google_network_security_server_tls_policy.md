@@ -77,7 +77,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 Determines if server allows plaintext connections. If set to true, server allows plain text connections. By default, it is set to false. This setting is not exclusive of other encryption modes. For example, if allowOpen and mtlsPolicy are set, server allows both plain text and mTLS connections. See documentation of other encryption modes to confirm compatibility.
 Consider using it if you wish to upgrade in place your deployment to TLS while having mixed TLS and non-TLS traffic reaching port :80. When `null`, the `allow_open` field will be omitted from the resulting object.
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
-  - `labels` (`obj`): Set of label tags associated with the ServerTlsPolicy resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Set of label tags associated with the ServerTlsPolicy resource.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location of the server tls policy.
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `name` (`string`): Name of the ServerTlsPolicy resource.
@@ -113,7 +116,10 @@ injecting into a complete block.
 Determines if server allows plaintext connections. If set to true, server allows plain text connections. By default, it is set to false. This setting is not exclusive of other encryption modes. For example, if allowOpen and mtlsPolicy are set, server allows both plain text and mTLS connections. See documentation of other encryption modes to confirm compatibility.
 Consider using it if you wish to upgrade in place your deployment to TLS while having mixed TLS and non-TLS traffic reaching port :80. When `null`, the `allow_open` field will be omitted from the resulting object.
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
-  - `labels` (`obj`): Set of label tags associated with the ServerTlsPolicy resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Set of label tags associated with the ServerTlsPolicy resource.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location of the server tls policy.
 The default value is &#39;global&#39;. When `null`, the `location` field will be omitted from the resulting object.
   - `name` (`string`): Name of the ServerTlsPolicy resource.

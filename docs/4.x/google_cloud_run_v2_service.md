@@ -80,6 +80,10 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-templatevolumescloud_sql_instancenew)
     * [`obj template.volumes.empty_dir`](#obj-templatevolumesempty_dir)
       * [`fn new()`](#fn-templatevolumesempty_dirnew)
+    * [`obj template.volumes.gcs`](#obj-templatevolumesgcs)
+      * [`fn new()`](#fn-templatevolumesgcsnew)
+    * [`obj template.volumes.nfs`](#obj-templatevolumesnfs)
+      * [`fn new()`](#fn-templatevolumesnfsnew)
     * [`obj template.volumes.secret`](#obj-templatevolumessecret)
       * [`fn new()`](#fn-templatevolumessecretnew)
       * [`obj template.volumes.secret.items`](#obj-templatevolumessecretitems)
@@ -127,7 +131,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 Cloud Run API v2 does not support annotations with &#39;run.googleapis.com&#39;, &#39;cloud.googleapis.com&#39;, &#39;serving.knative.dev&#39;, or &#39;autoscaling.knative.dev&#39; namespaces, and they will be rejected in new resources.
 All system annotations in v1 now have a corresponding field in v2 Service.
 
-This field follows Kubernetes annotations&#39; namespacing, limits, and rules. When `null`, the `annotations` field will be omitted from the resulting object.
+This field follows Kubernetes annotations&#39; namespacing, limits, and rules.
+
+**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
   - `client` (`string`): Arbitrary identifier for the API client. When `null`, the `client` field will be omitted from the resulting object.
   - `client_version` (`string`): Arbitrary version identifier for the API client. When `null`, the `client_version` field will be omitted from the resulting object.
   - `custom_audiences` (`list`): One or more custom audiences that you want this service to support. Specify each custom audience as the full URL in a string. The custom audiences are encoded in the token and used to authenticate requests.
@@ -138,12 +145,15 @@ For more information, see https://cloud.google.com/run/docs/configuring/custom-a
 environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels.
 
 Cloud Run API v2 does not support labels with  &#39;run.googleapis.com&#39;, &#39;cloud.googleapis.com&#39;, &#39;serving.knative.dev&#39;, or &#39;autoscaling.knative.dev&#39; namespaces, and they will be rejected.
-All system labels in v1 now have a corresponding field in v2 Service. When `null`, the `labels` field will be omitted from the resulting object.
+All system labels in v1 now have a corresponding field in v2 Service.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `launch_stage` (`string`): The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/products#product-launch-stages). Cloud Run supports ALPHA, BETA, and GA.
 If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features.
 
 For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output. Possible values: [&#34;UNIMPLEMENTED&#34;, &#34;PRELAUNCH&#34;, &#34;EARLY_ACCESS&#34;, &#34;ALPHA&#34;, &#34;BETA&#34;, &#34;GA&#34;, &#34;DEPRECATED&#34;] When `null`, the `launch_stage` field will be omitted from the resulting object.
-  - `location` (`string`): The location of the cloud run service When `null`, the `location` field will be omitted from the resulting object.
+  - `location` (`string`): The location of the cloud run service
   - `name` (`string`): Name of the Service.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `binary_authorization` (`list[obj]`): Settings for the Binary Authorization feature. When `null`, the `binary_authorization` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.binary_authorization.new](#fn-binary_authorizationnew) constructor.
@@ -178,7 +188,10 @@ injecting into a complete block.
 Cloud Run API v2 does not support annotations with &#39;run.googleapis.com&#39;, &#39;cloud.googleapis.com&#39;, &#39;serving.knative.dev&#39;, or &#39;autoscaling.knative.dev&#39; namespaces, and they will be rejected in new resources.
 All system annotations in v1 now have a corresponding field in v2 Service.
 
-This field follows Kubernetes annotations&#39; namespacing, limits, and rules. When `null`, the `annotations` field will be omitted from the resulting object.
+This field follows Kubernetes annotations&#39; namespacing, limits, and rules.
+
+**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
   - `client` (`string`): Arbitrary identifier for the API client. When `null`, the `client` field will be omitted from the resulting object.
   - `client_version` (`string`): Arbitrary version identifier for the API client. When `null`, the `client_version` field will be omitted from the resulting object.
   - `custom_audiences` (`list`): One or more custom audiences that you want this service to support. Specify each custom audience as the full URL in a string. The custom audiences are encoded in the token and used to authenticate requests.
@@ -189,12 +202,15 @@ For more information, see https://cloud.google.com/run/docs/configuring/custom-a
 environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels.
 
 Cloud Run API v2 does not support labels with  &#39;run.googleapis.com&#39;, &#39;cloud.googleapis.com&#39;, &#39;serving.knative.dev&#39;, or &#39;autoscaling.knative.dev&#39; namespaces, and they will be rejected.
-All system labels in v1 now have a corresponding field in v2 Service. When `null`, the `labels` field will be omitted from the resulting object.
+All system labels in v1 now have a corresponding field in v2 Service.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `launch_stage` (`string`): The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/products#product-launch-stages). Cloud Run supports ALPHA, BETA, and GA.
 If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features.
 
 For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output. Possible values: [&#34;UNIMPLEMENTED&#34;, &#34;PRELAUNCH&#34;, &#34;EARLY_ACCESS&#34;, &#34;ALPHA&#34;, &#34;BETA&#34;, &#34;GA&#34;, &#34;DEPRECATED&#34;] When `null`, the `launch_stage` field will be omitted from the resulting object.
-  - `location` (`string`): The location of the cloud run service When `null`, the `location` field will be omitted from the resulting object.
+  - `location` (`string`): The location of the cloud run service
   - `name` (`string`): Name of the Service.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `binary_authorization` (`list[obj]`): Settings for the Binary Authorization feature. When `null`, the `binary_authorization` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.binary_authorization.new](#fn-binary_authorizationnew) constructor.
@@ -730,7 +746,7 @@ Terraform sub block.
   - `timeout_seconds` (`number`): Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than periodSeconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes When `null`, the `timeout_seconds` field will be omitted from the resulting object.
   - `grpc` (`list[obj]`): GRPC specifies an action involving a GRPC port. When `null`, the `grpc` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.containers.liveness_probe.grpc.new](#fn-templatetemplatecontainersgrpcnew) constructor.
   - `http_get` (`list[obj]`): HTTPGet specifies the http request to perform. When `null`, the `http_get` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.containers.liveness_probe.http_get.new](#fn-templatetemplatecontainershttp_getnew) constructor.
-  - `tcp_socket` (`list[obj]`): TCPSocket specifies an action involving a TCP port. This field is not supported in liveness probe currently. When `null`, the `tcp_socket` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.containers.liveness_probe.tcp_socket.new](#fn-templatetemplatecontainerstcp_socketnew) constructor.
+  - `tcp_socket` (`list[obj]`): TCPSocketAction describes an action based on opening a socket When `null`, the `tcp_socket` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.containers.liveness_probe.tcp_socket.new](#fn-templatetemplatecontainerstcp_socketnew) constructor.
 
 **Returns**:
   - An attribute object that represents the `liveness_probe` sub block.
@@ -830,7 +846,9 @@ Terraform sub block.
 
 
 **Args**:
-  - `port` (`number`): Port number to access on the container. Must be in the range 1 to 65535. If not specified, defaults to 8080. When `null`, the `port` field will be omitted from the resulting object.
+  - `port` (`number`): Port number to access on the container. Must be in the range 1 to 65535.
+If not specified, defaults to the exposed port of the container, which
+is the value of container.ports[0].containerPort.
 
 **Returns**:
   - An attribute object that represents the `tcp_socket` sub block.
@@ -878,7 +896,7 @@ Terraform sub block.
 
 **Args**:
   - `cpu_idle` (`bool`): Determines whether CPU should be throttled or not outside of requests. When `null`, the `cpu_idle` field will be omitted from the resulting object.
-  - `limits` (`obj`): Only memory and CPU are supported. Note: The only supported values for CPU are &#39;1&#39;, &#39;2&#39;, &#39;4&#39;, and &#39;8&#39;. Setting 4 CPU requires at least 2Gi of memory. The values of the map is string form of the &#39;quantity&#39; k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go When `null`, the `limits` field will be omitted from the resulting object.
+  - `limits` (`obj`): Only memory and CPU are supported. Use key &#39;cpu&#39; for CPU limit and &#39;memory&#39; for memory limit. Note: The only supported values for CPU are &#39;1&#39;, &#39;2&#39;, &#39;4&#39;, and &#39;8&#39;. Setting 4 CPU requires at least 2Gi of memory. The values of the map is string form of the &#39;quantity&#39; k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go When `null`, the `limits` field will be omitted from the resulting object.
   - `startup_cpu_boost` (`bool`): Determines whether CPU should be boosted on startup of a new container instance above the requested CPU threshold, this can help reduce cold-start latency. When `null`, the `startup_cpu_boost` field will be omitted from the resulting object.
 
 **Returns**:
@@ -1083,6 +1101,8 @@ Terraform sub block.
   - `name` (`string`): Volume&#39;s name.
   - `cloud_sql_instance` (`list[obj]`): For Cloud SQL volumes, contains the specific instances that should be mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run. When `null`, the `cloud_sql_instance` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.cloud_sql_instance.new](#fn-templatetemplatecloud_sql_instancenew) constructor.
   - `empty_dir` (`list[obj]`): Ephemeral storage used as a shared volume. When `null`, the `empty_dir` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.empty_dir.new](#fn-templatetemplateempty_dirnew) constructor.
+  - `gcs` (`list[obj]`): Represents a GCS Bucket mounted as a volume. When `null`, the `gcs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.gcs.new](#fn-templatetemplategcsnew) constructor.
+  - `nfs` (`list[obj]`): Represents an NFS mount. When `null`, the `nfs` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.nfs.new](#fn-templatetemplatenfsnew) constructor.
   - `secret` (`list[obj]`): Secret represents a secret that should populate this volume. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret When `null`, the `secret` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_cloud_run_v2_service.template.volumes.secret.new](#fn-templatetemplatesecretnew) constructor.
 
 **Returns**:
@@ -1134,6 +1154,55 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `empty_dir` sub block.
+
+
+## obj template.volumes.gcs
+
+
+
+### fn template.volumes.gcs.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloud_run_v2_service.template.volumes.gcs.new` constructs a new object with attributes and blocks configured for the `gcs`
+Terraform sub block.
+
+
+
+**Args**:
+  - `bucket` (`string`): GCS Bucket name
+  - `read_only` (`bool`): If true, mount the GCS bucket as read-only When `null`, the `read_only` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `gcs` sub block.
+
+
+## obj template.volumes.nfs
+
+
+
+### fn template.volumes.nfs.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_cloud_run_v2_service.template.volumes.nfs.new` constructs a new object with attributes and blocks configured for the `nfs`
+Terraform sub block.
+
+
+
+**Args**:
+  - `path` (`string`): Path that is exported by the NFS server.
+  - `read_only` (`bool`): If true, mount the NFS volume as read only When `null`, the `read_only` field will be omitted from the resulting object.
+  - `server` (`string`): Hostname or IP address of the NFS server
+
+**Returns**:
+  - An attribute object that represents the `nfs` sub block.
 
 
 ## obj template.volumes.secret

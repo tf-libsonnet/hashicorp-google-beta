@@ -55,7 +55,11 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `labels` (`obj`): Resource labels associated with this Namespace. No more than 64 user
 labels can be associated with a given resource. Label keys and values can
-be no longer than 63 characters. When `null`, the `labels` field will be omitted from the resulting object.
+be no longer than 63 characters.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location for the Namespace.
 A full list of valid locations can be found by running
 &#39;gcloud beta service-directory locations list&#39;.
@@ -88,7 +92,11 @@ injecting into a complete block.
 **Args**:
   - `labels` (`obj`): Resource labels associated with this Namespace. No more than 64 user
 labels can be associated with a given resource. Label keys and values can
-be no longer than 63 characters. When `null`, the `labels` field will be omitted from the resulting object.
+be no longer than 63 characters.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location for the Namespace.
 A full list of valid locations can be found by running
 &#39;gcloud beta service-directory locations list&#39;.

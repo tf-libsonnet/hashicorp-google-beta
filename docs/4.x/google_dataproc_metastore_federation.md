@@ -61,7 +61,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `federation_id` (`string`): The ID of the metastore federation. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),
 and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between
 3 and 63 characters.
-  - `labels` (`obj`): User-defined labels for the metastore federation. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): User-defined labels for the metastore federation.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the metastore federation should reside. When `null`, the `location` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `version` (`string`): The Apache Hive metastore version of the federation. All backend metastore versions must be compatible with the federation version.
@@ -93,7 +96,10 @@ injecting into a complete block.
   - `federation_id` (`string`): The ID of the metastore federation. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),
 and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between
 3 and 63 characters.
-  - `labels` (`obj`): User-defined labels for the metastore federation. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): User-defined labels for the metastore federation.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the metastore federation should reside. When `null`, the `location` field will be omitted from the resulting object.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `version` (`string`): The Apache Hive metastore version of the federation. All backend metastore versions must be compatible with the federation version.

@@ -72,7 +72,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `authorization_policy` (`string`): This field specifies the URL of AuthorizationPolicy resource that applies authorization policies to the inbound traffic at the matched endpoints. When `null`, the `authorization_policy` field will be omitted from the resulting object.
   - `client_tls_policy` (`string`): A URL referring to a ClientTlsPolicy resource. ClientTlsPolicy can be set to specify the authentication for traffic from the proxy to the actual endpoints. When `null`, the `client_tls_policy` field will be omitted from the resulting object.
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
-  - `labels` (`obj`): Set of label tags associated with the TcpRoute resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Set of label tags associated with the TcpRoute resource.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Name of the EndpointPolicy resource.
   - `project` (`string`): Set the `project` field on the resulting resource block. When `null`, the `project` field will be omitted from the resulting object.
   - `server_tls_policy` (`string`): A URL referring to ServerTlsPolicy resource. ServerTlsPolicy is used to determine the authentication policy to be applied to terminate the inbound traffic at the identified backends. When `null`, the `server_tls_policy` field will be omitted from the resulting object.
@@ -106,7 +109,10 @@ injecting into a complete block.
   - `authorization_policy` (`string`): This field specifies the URL of AuthorizationPolicy resource that applies authorization policies to the inbound traffic at the matched endpoints. When `null`, the `authorization_policy` field will be omitted from the resulting object.
   - `client_tls_policy` (`string`): A URL referring to a ClientTlsPolicy resource. ClientTlsPolicy can be set to specify the authentication for traffic from the proxy to the actual endpoints. When `null`, the `client_tls_policy` field will be omitted from the resulting object.
   - `description` (`string`): A free-text description of the resource. Max length 1024 characters. When `null`, the `description` field will be omitted from the resulting object.
-  - `labels` (`obj`): Set of label tags associated with the TcpRoute resource. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Set of label tags associated with the TcpRoute resource.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Name of the EndpointPolicy resource.
   - `project` (`string`): Set the `project` field on the resulting object. When `null`, the `project` field will be omitted from the resulting object.
   - `server_tls_policy` (`string`): A URL referring to ServerTlsPolicy resource. ServerTlsPolicy is used to determine the authentication policy to be applied to terminate the inbound traffic at the identified backends. When `null`, the `server_tls_policy` field will be omitted from the resulting object.

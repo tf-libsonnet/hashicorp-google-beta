@@ -17,6 +17,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withAnnotations()`](#fn-withannotations)
 * [`fn withDisplayName()`](#fn-withdisplayname)
+* [`fn withDomainConfig()`](#fn-withdomainconfig)
+* [`fn withDomainConfigMixin()`](#fn-withdomainconfigmixin)
 * [`fn withLabels()`](#fn-withlabels)
 * [`fn withLocation()`](#fn-withlocation)
 * [`fn withNetwork()`](#fn-withnetwork)
@@ -27,6 +29,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withWorkstationClusterId()`](#fn-withworkstationclusterid)
+* [`obj domain_config`](#obj-domain_config)
+  * [`fn new()`](#fn-domain_confignew)
 * [`obj private_cluster_config`](#obj-private_cluster_config)
   * [`fn new()`](#fn-private_cluster_confignew)
 * [`obj timeouts`](#obj-timeouts)
@@ -61,9 +65,15 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
-  - `annotations` (`obj`): Client-specified annotations. This is distinct from labels. When `null`, the `annotations` field will be omitted from the resulting object.
+  - `annotations` (`obj`): Client-specified annotations. This is distinct from labels.
+
+**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
-  - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation cluster should reside. When `null`, the `location` field will be omitted from the resulting object.
   - `network` (`string`): The relative resource name of the VPC network on which the instance can be accessed.
 It is specified in the following form: &#34;projects/{projectNumber}/global/networks/{network_id}&#34;.
@@ -71,6 +81,7 @@ It is specified in the following form: &#34;projects/{projectNumber}/global/netw
   - `subnetwork` (`string`): Name of the Compute Engine subnetwork in which instances associated with this cluster will be created.
 Must be part of the subnetwork specified for this cluster.
   - `workstation_cluster_id` (`string`): ID to use for the workstation cluster.
+  - `domain_config` (`list[obj]`): Configuration options for a custom domain. When `null`, the `domain_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_cluster.domain_config.new](#fn-domain_confignew) constructor.
   - `private_cluster_config` (`list[obj]`): Configuration for private cluster. When `null`, the `private_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_cluster.private_cluster_config.new](#fn-private_cluster_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -96,9 +107,15 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `annotations` (`obj`): Client-specified annotations. This is distinct from labels. When `null`, the `annotations` field will be omitted from the resulting object.
+  - `annotations` (`obj`): Client-specified annotations. This is distinct from labels.
+
+**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
   - `display_name` (`string`): Human-readable name for this resource. When `null`, the `display_name` field will be omitted from the resulting object.
-  - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `location` (`string`): The location where the workstation cluster should reside. When `null`, the `location` field will be omitted from the resulting object.
   - `network` (`string`): The relative resource name of the VPC network on which the instance can be accessed.
 It is specified in the following form: &#34;projects/{projectNumber}/global/networks/{network_id}&#34;.
@@ -106,6 +123,7 @@ It is specified in the following form: &#34;projects/{projectNumber}/global/netw
   - `subnetwork` (`string`): Name of the Compute Engine subnetwork in which instances associated with this cluster will be created.
 Must be part of the subnetwork specified for this cluster.
   - `workstation_cluster_id` (`string`): ID to use for the workstation cluster.
+  - `domain_config` (`list[obj]`): Configuration options for a custom domain. When `null`, the `domain_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_cluster.domain_config.new](#fn-domain_confignew) constructor.
   - `private_cluster_config` (`list[obj]`): Configuration for private cluster. When `null`, the `private_cluster_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_cluster.private_cluster_config.new](#fn-private_cluster_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_workstations_workstation_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -143,6 +161,43 @@ Terraform resource block to set or update the display_name field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `display_name` field.
+
+
+### fn withDomainConfig
+
+```ts
+withDomainConfig()
+```
+
+`google-beta.list[obj].withDomainConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the domain_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withDomainConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `domain_config` field.
+
+
+### fn withDomainConfigMixin
+
+```ts
+withDomainConfigMixin()
+```
+
+`google-beta.list[obj].withDomainConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the domain_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withDomainConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `domain_config` field.
 
 
 ### fn withLabels
@@ -312,6 +367,29 @@ Terraform resource block to set or update the workstation_cluster_id field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `workstation_cluster_id` field.
+
+
+## obj domain_config
+
+
+
+### fn domain_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_workstations_workstation_cluster.domain_config.new` constructs a new object with attributes and blocks configured for the `domain_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `domain` (`string`): Domain used by Workstations for HTTP ingress.
+
+**Returns**:
+  - An attribute object that represents the `domain_config` sub block.
 
 
 ## obj private_cluster_config

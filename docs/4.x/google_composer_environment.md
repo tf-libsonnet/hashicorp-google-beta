@@ -21,10 +21,16 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withName()`](#fn-withname)
 * [`fn withProject()`](#fn-withproject)
 * [`fn withRegion()`](#fn-withregion)
+* [`fn withStorageConfig()`](#fn-withstorageconfig)
+* [`fn withStorageConfigMixin()`](#fn-withstorageconfigmixin)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`obj config`](#obj-config)
   * [`fn new()`](#fn-confignew)
+  * [`obj config.data_retention_config`](#obj-configdata_retention_config)
+    * [`fn new()`](#fn-configdata_retention_confignew)
+    * [`obj config.data_retention_config.task_logs_retention_config`](#obj-configdata_retention_configtask_logs_retention_config)
+      * [`fn new()`](#fn-configdata_retention_configtask_logs_retention_confignew)
   * [`obj config.database_config`](#obj-configdatabase_config)
     * [`fn new()`](#fn-configdatabase_confignew)
   * [`obj config.encryption_config`](#obj-configencryption_config)
@@ -55,6 +61,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-configweb_server_network_access_controlallowed_ip_rangenew)
   * [`obj config.workloads_config`](#obj-configworkloads_config)
     * [`fn new()`](#fn-configworkloads_confignew)
+    * [`obj config.workloads_config.dag_processor`](#obj-configworkloads_configdag_processor)
+      * [`fn new()`](#fn-configworkloads_configdag_processornew)
     * [`obj config.workloads_config.scheduler`](#obj-configworkloads_configscheduler)
       * [`fn new()`](#fn-configworkloads_configschedulernew)
     * [`obj config.workloads_config.triggerer`](#obj-configworkloads_configtriggerer)
@@ -63,6 +71,8 @@ This package contains functions and utilities for setting up the resource using 
       * [`fn new()`](#fn-configworkloads_configweb_servernew)
     * [`obj config.workloads_config.worker`](#obj-configworkloads_configworker)
       * [`fn new()`](#fn-configworkloads_configworkernew)
+* [`obj storage_config`](#obj-storage_config)
+  * [`fn new()`](#fn-storage_confignew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -95,11 +105,15 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
-  - `labels` (`obj`): User-defined labels for this environment. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: [a-z]([-a-z0-9]*[a-z0-9])?. Label values must be between 0 and 63 characters long and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?. No more than 64 labels can be associated with a given environment. Both keys and values must be &lt;= 128 bytes in size. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): User-defined labels for this environment. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: [a-z]([-a-z0-9]*[a-z0-9])?. Label values must be between 0 and 63 characters long and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?. No more than 64 labels can be associated with a given environment. Both keys and values must be &lt;= 128 bytes in size.
+
+				**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+				Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Name of the environment.
   - `project` (`string`): The ID of the project in which the resource belongs. If it is not provided, the provider project is used. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): The location or Compute Engine region for the environment. When `null`, the `region` field will be omitted from the resulting object.
   - `config` (`list[obj]`): Configuration parameters for this environment. When `null`, the `config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.new](#fn-confignew) constructor.
+  - `storage_config` (`list[obj]`): Configuration options for storage used by Composer environment. When `null`, the `storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.storage_config.new](#fn-storage_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -124,11 +138,15 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `labels` (`obj`): User-defined labels for this environment. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: [a-z]([-a-z0-9]*[a-z0-9])?. Label values must be between 0 and 63 characters long and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?. No more than 64 labels can be associated with a given environment. Both keys and values must be &lt;= 128 bytes in size. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): User-defined labels for this environment. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: [a-z]([-a-z0-9]*[a-z0-9])?. Label values must be between 0 and 63 characters long and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?. No more than 64 labels can be associated with a given environment. Both keys and values must be &lt;= 128 bytes in size.
+
+				**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+				Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Name of the environment.
   - `project` (`string`): The ID of the project in which the resource belongs. If it is not provided, the provider project is used. When `null`, the `project` field will be omitted from the resulting object.
   - `region` (`string`): The location or Compute Engine region for the environment. When `null`, the `region` field will be omitted from the resulting object.
   - `config` (`list[obj]`): Configuration parameters for this environment. When `null`, the `config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.new](#fn-confignew) constructor.
+  - `storage_config` (`list[obj]`): Configuration options for storage used by Composer environment. When `null`, the `storage_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.storage_config.new](#fn-storage_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -236,6 +254,43 @@ Terraform resource block to set or update the region field.
   - `value` (`string`): The value to set for the `region` field.
 
 
+### fn withStorageConfig
+
+```ts
+withStorageConfig()
+```
+
+`google-beta.list[obj].withStorageConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the storage_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [google-beta.list[obj].withStorageConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `storage_config` field.
+
+
+### fn withStorageConfigMixin
+
+```ts
+withStorageConfigMixin()
+```
+
+`google-beta.list[obj].withStorageConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the storage_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [google-beta.list[obj].withStorageConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `storage_config` field.
+
+
 ### fn withTimeouts
 
 ```ts
@@ -289,9 +344,12 @@ Terraform sub block.
 
 
 **Args**:
+  - `enable_private_builds_only` (`bool`): Optional. If true, builds performed during operations that install Python packages have only private connectivity to Google services. If false, the builds also have access to the internet. When `null`, the `enable_private_builds_only` field will be omitted from the resulting object.
+  - `enable_private_environment` (`bool`): Optional. If true, a private Composer environment will be created. When `null`, the `enable_private_environment` field will be omitted from the resulting object.
   - `environment_size` (`string`): The size of the Cloud Composer environment. This field is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer. When `null`, the `environment_size` field will be omitted from the resulting object.
   - `node_count` (`number`): The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. When `null`, the `node_count` field will be omitted from the resulting object.
   - `resilience_mode` (`string`): Whether high resilience is enabled or not. This field is supported for Cloud Composer environments in versions composer-2.1.15-airflow-*.*.* and newer. When `null`, the `resilience_mode` field will be omitted from the resulting object.
+  - `data_retention_config` (`list[obj]`): The configuration setting for Airflow data retention mechanism. This field is supported for Cloud Composer environments in versions composer-2.0.32-airflow-2.1.4. or newer When `null`, the `data_retention_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.data_retention_config.new](#fn-configdata_retention_confignew) constructor.
   - `database_config` (`list[obj]`): The configuration of Cloud SQL instance that is used by the Apache Airflow software. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. When `null`, the `database_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.database_config.new](#fn-configdatabase_confignew) constructor.
   - `encryption_config` (`list[obj]`): The encryption options for the Composer environment and its dependencies. When `null`, the `encryption_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.encryption_config.new](#fn-configencryption_confignew) constructor.
   - `maintenance_window` (`list[obj]`): The configuration for Cloud Composer maintenance window. When `null`, the `maintenance_window` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.maintenance_window.new](#fn-configmaintenance_windownew) constructor.
@@ -301,11 +359,57 @@ Terraform sub block.
   - `recovery_config` (`list[obj]`): The recovery configuration settings for the Cloud Composer environment When `null`, the `recovery_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.recovery_config.new](#fn-configrecovery_confignew) constructor.
   - `software_config` (`list[obj]`): The configuration settings for software inside the environment. When `null`, the `software_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.software_config.new](#fn-configsoftware_confignew) constructor.
   - `web_server_config` (`list[obj]`): The configuration settings for the Airflow web server App Engine instance. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. When `null`, the `web_server_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.web_server_config.new](#fn-configweb_server_confignew) constructor.
-  - `web_server_network_access_control` (`list[obj]`): The network-level access control policy for the Airflow web server. If unspecified, no network-level access restrictions will be applied. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. When `null`, the `web_server_network_access_control` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.web_server_network_access_control.new](#fn-configweb_server_network_access_controlnew) constructor.
+  - `web_server_network_access_control` (`list[obj]`): Network-level access control policy for the Airflow web server. When `null`, the `web_server_network_access_control` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.web_server_network_access_control.new](#fn-configweb_server_network_access_controlnew) constructor.
   - `workloads_config` (`list[obj]`): The workloads configuration settings for the GKE cluster associated with the Cloud Composer environment. Supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer. When `null`, the `workloads_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.new](#fn-configworkloads_confignew) constructor.
 
 **Returns**:
   - An attribute object that represents the `config` sub block.
+
+
+## obj config.data_retention_config
+
+
+
+### fn config.data_retention_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_composer_environment.config.data_retention_config.new` constructs a new object with attributes and blocks configured for the `data_retention_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `task_logs_retention_config` (`list[obj]`): Optional. The configuration setting for Task Logs. When `null`, the `task_logs_retention_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.data_retention_config.task_logs_retention_config.new](#fn-configconfigtask_logs_retention_confignew) constructor.
+
+**Returns**:
+  - An attribute object that represents the `data_retention_config` sub block.
+
+
+## obj config.data_retention_config.task_logs_retention_config
+
+
+
+### fn config.data_retention_config.task_logs_retention_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_composer_environment.config.data_retention_config.task_logs_retention_config.new` constructs a new object with attributes and blocks configured for the `task_logs_retention_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `storage_mode` (`string`): Whether logs in cloud logging only is enabled or not. This field is supported for Cloud Composer environments in versions composer-2.0.32-airflow-2.1.4 and newer. When `null`, the `storage_mode` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `task_logs_retention_config` sub block.
 
 
 ## obj config.database_config
@@ -325,7 +429,8 @@ Terraform sub block.
 
 
 **Args**:
-  - `machine_type` (`string`): Optional. Cloud SQL machine type used by Airflow database. It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8 or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.
+  - `machine_type` (`string`): Optional. Cloud SQL machine type used by Airflow database. It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8 or db-n1-standard-16. If not specified, db-n1-standard-2 will be used. When `null`, the `machine_type` field will be omitted from the resulting object.
+  - `zone` (`string`): Optional. Cloud SQL database preferred zone. When `null`, the `zone` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `database_config` sub block.
@@ -444,6 +549,7 @@ Terraform sub block.
 
 
 **Args**:
+  - `composer_internal_ipv4_cidr_block` (`string`): IPv4 cidr range that will be used by Composer internal components. When `null`, the `composer_internal_ipv4_cidr_block` field will be omitted from the resulting object.
   - `disk_size_gb` (`number`): The disk size in GB used for node VMs. Minimum size is 20GB. If unspecified, defaults to 100GB. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. When `null`, the `disk_size_gb` field will be omitted from the resulting object.
   - `enable_ip_masq_agent` (`bool`): Deploys &#39;ip-masq-agent&#39; daemon set in the GKE cluster and defines nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for all destination addresses, except between pods traffic. See: https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent When `null`, the `enable_ip_masq_agent` field will be omitted from the resulting object.
   - `ip_allocation_policy` (`list`): Configuration for controlling how IPs are allocated in the GKE cluster. Cannot be updated. When `null`, the `ip_allocation_policy` field will be omitted from the resulting object.
@@ -562,6 +668,7 @@ Terraform sub block.
   - `pypi_packages` (`obj`): Custom Python Package Index (PyPI) packages to be installed in the environment. Keys refer to the lowercase package name (e.g. &#34;numpy&#34;). Values are the lowercase extras and version specifier (e.g. &#34;==1.12.0&#34;, &#34;[devel,gcp_api]&#34;, &#34;[devel]&gt;=1.8.2, &lt;1.9.2&#34;). To specify a package without pinning it to a version specifier, use the empty string as the value. When `null`, the `pypi_packages` field will be omitted from the resulting object.
   - `python_version` (`string`): The major version of Python used to run the Apache Airflow scheduler, worker, and webserver processes. Can be set to &#39;2&#39; or &#39;3&#39;. If not specified, the default is &#39;2&#39;. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. Environments in newer versions always use Python major version 3. When `null`, the `python_version` field will be omitted from the resulting object.
   - `scheduler_count` (`number`): The number of schedulers for Airflow. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-2.*.*. When `null`, the `scheduler_count` field will be omitted from the resulting object.
+  - `web_server_plugins_mode` (`string`): Should be either &#39;ENABLED&#39; or &#39;DISABLED&#39;. Defaults to &#39;ENABLED&#39;. Used in Composer 3. When `null`, the `web_server_plugins_mode` field will be omitted from the resulting object.
   - `cloud_data_lineage_integration` (`list[obj]`): The configuration for Cloud Data Lineage integration. Supported for Cloud Composer environments in versions composer-2.1.2-airflow-*.*.* and newer When `null`, the `cloud_data_lineage_integration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.software_config.cloud_data_lineage_integration.new](#fn-configconfigcloud_data_lineage_integrationnew) constructor.
 
 **Returns**:
@@ -678,6 +785,7 @@ Terraform sub block.
 
 
 **Args**:
+  - `dag_processor` (`list[obj]`): Configuration for resources used by DAG processor. When `null`, the `dag_processor` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.dag_processor.new](#fn-configconfigdag_processornew) constructor.
   - `scheduler` (`list[obj]`): Configuration for resources used by Airflow schedulers. When `null`, the `scheduler` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.scheduler.new](#fn-configconfigschedulernew) constructor.
   - `triggerer` (`list[obj]`): Configuration for resources used by Airflow triggerers. When `null`, the `triggerer` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.triggerer.new](#fn-configconfigtriggerernew) constructor.
   - `web_server` (`list[obj]`): Configuration for resources used by Airflow web server. When `null`, the `web_server` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [google-beta.google_composer_environment.config.workloads_config.web_server.new](#fn-configconfigweb_servernew) constructor.
@@ -685,6 +793,31 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `workloads_config` sub block.
+
+
+## obj config.workloads_config.dag_processor
+
+
+
+### fn config.workloads_config.dag_processor.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_composer_environment.config.workloads_config.dag_processor.new` constructs a new object with attributes and blocks configured for the `dag_processor`
+Terraform sub block.
+
+
+
+**Args**:
+  - `cpu` (`number`): CPU request and limit for DAG processor. When `null`, the `cpu` field will be omitted from the resulting object.
+  - `memory_gb` (`number`): Memory (GB) request and limit for DAG processor. When `null`, the `memory_gb` field will be omitted from the resulting object.
+  - `storage_gb` (`number`): Storage (GB) request and limit for DAG processor. When `null`, the `storage_gb` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `dag_processor` sub block.
 
 
 ## obj config.workloads_config.scheduler
@@ -788,6 +921,29 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `worker` sub block.
+
+
+## obj storage_config
+
+
+
+### fn storage_config.new
+
+```ts
+new()
+```
+
+
+`google-beta.google_composer_environment.storage_config.new` constructs a new object with attributes and blocks configured for the `storage_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `bucket` (`string`): Optional. Name of an existing Cloud Storage bucket to be used by the environment.
+
+**Returns**:
+  - An attribute object that represents the `storage_config` sub block.
 
 
 ## obj timeouts

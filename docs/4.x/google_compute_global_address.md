@@ -68,7 +68,11 @@ address or omitted to allow GCP to choose a valid one for you. When `null`, the 
 * INTERNAL indicates internal IP ranges belonging to some network. Default value: &#34;EXTERNAL&#34; Possible values: [&#34;EXTERNAL&#34;, &#34;INTERNAL&#34;] When `null`, the `address_type` field will be omitted from the resulting object.
   - `description` (`string`): An optional description of this resource. When `null`, the `description` field will be omitted from the resulting object.
   - `ip_version` (`string`): The IP Version that will be used by this address. The default value is &#39;IPV4&#39;. Possible values: [&#34;IPV4&#34;, &#34;IPV6&#34;] When `null`, the `ip_version` field will be omitted from the resulting object.
-  - `labels` (`obj`): Labels to apply to this address.  A list of key-&gt;value pairs. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Labels to apply to this address.  A list of key-&gt;value pairs.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Name of the resource. Provided by the client when the resource is
 created. The name must be 1-63 characters long, and comply with
 RFC1035.  Specifically, the name must be 1-63 characters long and
@@ -125,7 +129,11 @@ address or omitted to allow GCP to choose a valid one for you. When `null`, the 
 * INTERNAL indicates internal IP ranges belonging to some network. Default value: &#34;EXTERNAL&#34; Possible values: [&#34;EXTERNAL&#34;, &#34;INTERNAL&#34;] When `null`, the `address_type` field will be omitted from the resulting object.
   - `description` (`string`): An optional description of this resource. When `null`, the `description` field will be omitted from the resulting object.
   - `ip_version` (`string`): The IP Version that will be used by this address. The default value is &#39;IPV4&#39;. Possible values: [&#34;IPV4&#34;, &#34;IPV6&#34;] When `null`, the `ip_version` field will be omitted from the resulting object.
-  - `labels` (`obj`): Labels to apply to this address.  A list of key-&gt;value pairs. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Labels to apply to this address.  A list of key-&gt;value pairs.
+
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `name` (`string`): Name of the resource. Provided by the client when the resource is
 created. The name must be 1-63 characters long, and comply with
 RFC1035.  Specifically, the name must be 1-63 characters long and

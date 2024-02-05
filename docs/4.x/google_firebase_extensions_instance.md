@@ -223,7 +223,8 @@ emit, identified by their types. When `null`, the `allowed_event_types` field wi
   - `params` (`obj`): Environment variables that may be configured for the Extension
   - `system_params` (`obj`): Params whose values are only available at deployment time.
 Unlike other params, these will not be set as environment variables on
-functions. When `null`, the `system_params` field will be omitted from the resulting object.
+functions. See a full list of system parameters at
+https://firebase.google.com/docs/extensions/publishers/parameters#system_parameters When `null`, the `system_params` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `config` sub block.

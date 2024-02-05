@@ -70,7 +70,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `ike_version` (`number`): IKE protocol version to use when establishing the VPN tunnel with
 peer VPN gateway.
 Acceptable IKE versions are 1 or 2. Default version is 2. When `null`, the `ike_version` field will be omitted from the resulting object.
-  - `labels` (`obj`): Labels to apply to this VpnTunnel. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Labels to apply to this VpnTunnel.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `local_traffic_selector` (`list`): Local traffic selector to use when establishing the VPN tunnel with
 peer VPN gateway. The value should be a CIDR formatted string,
 for example &#39;192.168.0.0/16&#39;. The ranges should be disjoint.
@@ -132,7 +135,10 @@ injecting into a complete block.
   - `ike_version` (`number`): IKE protocol version to use when establishing the VPN tunnel with
 peer VPN gateway.
 Acceptable IKE versions are 1 or 2. Default version is 2. When `null`, the `ike_version` field will be omitted from the resulting object.
-  - `labels` (`obj`): Labels to apply to this VpnTunnel. When `null`, the `labels` field will be omitted from the resulting object.
+  - `labels` (`obj`): Labels to apply to this VpnTunnel.
+
+**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
+Please refer to the field &#39;effective_labels&#39; for all of the labels present on the resource. When `null`, the `labels` field will be omitted from the resulting object.
   - `local_traffic_selector` (`list`): Local traffic selector to use when establishing the VPN tunnel with
 peer VPN gateway. The value should be a CIDR formatted string,
 for example &#39;192.168.0.0/16&#39;. The ranges should be disjoint.

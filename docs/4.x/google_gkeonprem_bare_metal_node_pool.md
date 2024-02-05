@@ -70,7 +70,11 @@ Key can have 2 segments: prefix (optional) and name (required),
 separated by a slash (/).
 Prefix must be a DNS subdomain.
 Name must be 63 characters or less, begin and end with alphanumerics,
-with dashes (-), underscores (_), dots (.), and alphanumerics between. When `null`, the `annotations` field will be omitted from the resulting object.
+with dashes (-), underscores (_), dots (.), and alphanumerics between.
+
+
+**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
   - `bare_metal_cluster` (`string`): The cluster this node pool belongs to.
   - `display_name` (`string`): The display name for the Bare Metal Node Pool. When `null`, the `display_name` field will be omitted from the resulting object.
   - `location` (`string`): The location of the resource.
@@ -108,7 +112,11 @@ Key can have 2 segments: prefix (optional) and name (required),
 separated by a slash (/).
 Prefix must be a DNS subdomain.
 Name must be 63 characters or less, begin and end with alphanumerics,
-with dashes (-), underscores (_), dots (.), and alphanumerics between. When `null`, the `annotations` field will be omitted from the resulting object.
+with dashes (-), underscores (_), dots (.), and alphanumerics between.
+
+
+**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
+Please refer to the field &#39;effective_annotations&#39; for all of the annotations present on the resource. When `null`, the `annotations` field will be omitted from the resulting object.
   - `bare_metal_cluster` (`string`): The cluster this node pool belongs to.
   - `display_name` (`string`): The display name for the Bare Metal Node Pool. When `null`, the `display_name` field will be omitted from the resulting object.
   - `location` (`string`): The location of the resource.
